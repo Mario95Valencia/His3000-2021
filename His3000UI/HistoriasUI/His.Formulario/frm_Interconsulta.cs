@@ -254,7 +254,7 @@ namespace His.Formulario
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             tabControl1.Enabled = true;
-            HabilitarBotones(false, true, false, false);
+            HabilitarBotones(false, true, false, false); 
             nuevo = true;
             modo = "SAVE";
             limpiarCampos();
@@ -620,11 +620,7 @@ namespace His.Formulario
             //    AgregarError(txt_destino);
             //    flag = true;
             //}
-            if (txt_med_interconsultado.Text.ToString() == string.Empty)
-            {
-                AgregarError(txt_med_interconsultado);
-                flag = true;
-            }
+            
             if (txt_motivo.Text.ToString() == string.Empty)
             {
                 AgregarError(txt_motivo);
@@ -720,6 +716,7 @@ namespace His.Formulario
                 {
                     if (Sesion.codDepartamento == 1 || Sesion.codDepartamento == 23 || Sesion.codDepartamento == 34)
                     {
+                        int Cambio = 0;
                         His.Formulario.frm_ClaveFormularios usuario = new frm_ClaveFormularios("Signos");
                         usuario.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
                         usuario.ShowDialog();
@@ -730,7 +727,10 @@ namespace His.Formulario
                         if (interconsulta == null || nuevo == true)
                             interconsulta = new HC_INTERCONSULTA();
                         else
+                        {
                             modo = "UPDATE";
+                        }
+
                         if (medico != null)
                             HIN_MEDICO_CODIGO = Convert.ToString(medico.MED_CODIGO);
                         else
@@ -750,7 +750,14 @@ namespace His.Formulario
                         interconsulta.HIN_SALA = txt_sala.Text;
                         interconsulta.HIN_SERV_CONSULTADO = cmb_especialidadCirugia.Text;
                         interconsulta.HIN_SERV_SOLICITA = cmb_especialidadCirugia2.Text;
-                        interconsulta.HIN_MEDICO_INTERCONSULTADO = int.Parse(txtCodMedInterconsultado.Text);
+                        if (int.TryParse(txtCodMedInterconsultado.Text, out Cambio))
+                        {
+                            interconsulta.HIN_MEDICO_INTERCONSULTADO = Cambio;
+                        }                      
+                        else
+                        {
+                            interconsulta.HIN_MEDICO_INTERCONSULTADO = 1;
+                        }
                         //interconsulta.HIN_SERV_CONSULTADO = txt_serv_consultado.Text;
                         //interconsulta.HIN_SERV_SOLICITA = txt_serv_solicita.Text;
                         if (radioButton1.Checked)
@@ -796,18 +803,18 @@ namespace His.Formulario
                         tabControl1.Enabled = true;
                         if (ate_codigo != 0)
                         {
-
+                            
                         }
-                        //if (validarTodoFormulario())
-                        //{
-                        //    //if (MessageBox.Show("¡Formulario Incompleto!. ¿Desea continuar..?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-                        //    //    == DialogResult.Yes)
-                        imprimirReporte("reporte");
 
+                        if (validarTodoFormulario())
+                        {
+                            if (txt_med_interconsultado.Text.ToString() == string.Empty)
+                                if (MessageBox.Show("¡Medico no ingresado!. ¿El médico es de llamada?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+                                 == DialogResult.Yes)
 
-
-
-                        //}
+                                    imprimirReporte("reporte");
+                        }
+                        
                     }
                     else
                     {
@@ -904,7 +911,7 @@ namespace His.Formulario
                         detalle.CIE_CODIGO = "";
 
                     if (fila.Cells[2].Value != null)
-                        if ((bool)fila.Cells[2].Value)
+                        if (Convert.ToBoolean(fila.Cells[2].Value))
                             detalle.HID_ESTADO = true;
                         else
                             detalle.HID_ESTADO = false;
@@ -991,48 +998,54 @@ namespace His.Formulario
 
         private void BuscaCIEDTG4()
         {
-            frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
-            busqueda.ShowDialog();
-            diagnostico = busqueda.resultado;
-            codigoCIE = busqueda.codigo;
-
-            if ((diagnostico != "") && (diagnostico != null))
+            if (dtg_4.CurrentRow != null)
             {
-                if (dtg_4.Rows.Count < 7)
+                frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
+                busqueda.ShowDialog();
+                diagnostico = busqueda.resultado;
+                codigoCIE = busqueda.codigo;
+
+                if ((diagnostico != "") && (diagnostico != null))
                 {
-                    if (dtg_4.Rows.Count > 1)
+                    if (dtg_4.Rows.Count < 7)
                     {
-                        for (int i = 0; i < dtg_4.Rows.Count - 1; i++)
+                        if (dtg_4.Rows.Count > 1)
                         {
-                            if (busqueda.codigo == dtg_4.Rows[i].Cells[1].Value.ToString())
+                            for (int i = 0; i < dtg_4.Rows.Count - 1; i++)
                             {
-                                MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                return;
+                                if (busqueda.codigo == dtg_4.Rows[i].Cells[1].Value.ToString())
+                                {
+                                    MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    return;
+                                }
                             }
                         }
+                        DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[0];
+                        DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[1];
+                        DataGridViewCheckBoxCell chkpres = (DataGridViewCheckBoxCell)this.dtg_4.CurrentRow.Cells[2];
+
+
+                        if (diagnostico != null)
+                        {
+                            txtcell.Value = diagnostico;
+                            txtcell2.Value = codigoCIE;
+                            //chkpres.Value = true;
+                            diagnostico = "";
+                            //dtg_4_CellContentClick(object, dtg_4);
+
+                        }
+
+                        index2++;
                     }
-                    DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[0];
-                    DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[1];
-                    DataGridViewCheckBoxCell chkpres = (DataGridViewCheckBoxCell)this.dtg_4.CurrentRow.Cells[2];
-
-
-                    if (diagnostico != null)
-                    {
-                        txtcell.Value = diagnostico;
-                        txtcell2.Value = codigoCIE;
-                        //chkpres.Value = true;
-                        diagnostico = "";
-                        //  dtg_4_CellContentClick(object,dtg_4);
-
-
-
-                    }
-
-                    index2++;
+                    else
+                        MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else
-                    MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                MessageBox.Show("Seleccione una fila antes de ingresar el diagnóstico.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void dtg_8_KeyUp(object sender, KeyEventArgs e)
@@ -1091,10 +1104,22 @@ namespace His.Formulario
             imprimirReporte("reporte");
         }
 
+        public int calcularEdad(DateTime fechaNac)
+        {
+            DateTime fechaActual = DateTime.Now;
+            TimeSpan diferencia = fechaActual - fechaNac;
+
+            // Calcula la edad en años
+            int edad = (int)(diferencia.TotalDays / 365.25); 
+
+            return edad;
+        }
+
         private void imprimirReporte(string accion)
         {
             try
             {
+                
                 NegCertificadoMedico med = new NegCertificadoMedico();
                 ReporteInterconsulta reporte = new ReporteInterconsulta();
                 MEDICOS medic = null;
@@ -1118,27 +1143,37 @@ namespace His.Formulario
                 dr["apellido1"] = paciente.PAC_APELLIDO_PATERNO;
                 dr["apellido2"] = paciente.PAC_APELLIDO_MATERNO;
                 dr["sexo"] = txt_sexo.Text;
-                dr["edad"] = 43;
+                dr["edad"] = calcularEdad(Convert.ToDateTime(paciente.PAC_FECHA_NACIMIENTO));
                 dr["cuadroclinico"] = txt_cuadroclinico.Text;
                 dr["resultado"] = txt_resultados.Text;
                 dr["plan"] = txt_planes.Text;
                 dr["cama"] = txt_sala.Text.Trim();
                 dr["sala"] = txt_cama.Text.Trim();
-                dr["urgente"] = radioButton1.Checked == true ? "X" : "";
-                dr["normal"] = radioButton2.Checked == true ? "X" : "";
+                dr["urgente"] = radioButton2.Checked == true ? "X" : "";
+                dr["normal"] = radioButton1.Checked == true ? "X" : "";
                 if (!NegParametros.ParametroFormularios())
-                    dr["hc"] = paciente.PAC_HISTORIA_CLINICA;
+                    dr["hc"] = paciente.PAC_HISTORIA_CLINICA.Trim() + "-" + atencion.ATE_NUMERO_ATENCION.Trim();
                 else
                     dr["hc"] = paciente.PAC_IDENTIFICACION;
 
                 dr["sconsultado"] = cmb_especialidadCirugia.Text;
-                dr["ssolicitado"] = cmb_especialidadCirugia2.Text;
+                dr["ssolicitado"] = cmb_especialidadCirugia2.Text + "- (Dr/a. " + txt_med_interconsultado.Text + ")";
                 dr["semergencia"] = radioEmergencia.Checked == true ? "X" : "";
                 dr["scexterna"] = radioCExterna.Checked == true ? "X" : "";
                 dr["shospitalizacion"] = radioHospitalizacion.Checked == true ? "X" : "";
                 dr["descripcion"] = txt_motivo.Text;
+                dr["ci"] = paciente.PAC_IDENTIFICACION;
+                string[] medicointer;
+                if (txt_med_interconsultado.Text != "")
+                {
+                    medicointer = txt_med_interconsultado.Text.Split(' ');
+                }
+                else
+                {
+                    string medico = "NA NA NA NA";
+                    medicointer = medico.Split(' ');
+                }
 
-                string[] medicointer = txt_med_interconsultado.Text.Split(' ');
                 //reporte.for_med_int = "Dr/a. " + medicointer[0] + " " + medicointer[2];
                 dr["fecha"] = textBox9.Text;
                 dr["hora"] = textBox8.Text;
@@ -1154,7 +1189,7 @@ namespace His.Formulario
                         dr["medruc"] = medic.MED_RUC;
                 }
                 else
-                {
+                {   
                     dr["mednombre1"] = usu.NOMBRES;
                     dr["medapellido1"] = usu.APELLIDOS;
                     dr["medapellido2"] = "";
@@ -1266,7 +1301,7 @@ namespace His.Formulario
             {
                 NegCertificadoMedico med = new NegCertificadoMedico();
                 ReporteInterconsulta reporte = new ReporteInterconsulta();
-                MEDICOS medic = NegMedicos.recuperarMedico(int.Parse(txtCodMedInterconsultado.Text));
+                MEDICOS medic = NegMedicos.recuperarMedico(int.Parse(HIN_MEDICO_CODIGO));
 
                 if (pac_codigo != 0)
                     paciente = NegPacientes.RecuperarPacienteID(pac_codigo);
@@ -1284,41 +1319,53 @@ namespace His.Formulario
                 dr["apellido1"] = paciente.PAC_APELLIDO_PATERNO;
                 dr["apellido2"] = paciente.PAC_APELLIDO_MATERNO;
                 dr["sexo"] = txt_sexo.Text;
-                dr["edad"] = 43;
+                dr["edad"] = calcularEdad(Convert.ToDateTime(paciente.PAC_FECHA_NACIMIENTO));
                 dr["cuadroclinico"] = txt_cuadroclinico.Text;
                 dr["resultado"] = txt_resultados.Text;
                 dr["plan"] = txt_planes.Text;
                 dr["cama"] = txt_sala.Text.Trim();
                 dr["sala"] = txt_cama.Text.Trim();
-                dr["urgente"] = radioButton1.Checked == true ? "X" : "";
-                dr["normal"] = radioButton2.Checked == true ? "X" : "";
+                dr["urgente"] = radioButton2.Checked == true ? "X" : "";
+                dr["normal"] = radioButton1.Checked == true ? "X" : "";
                 if (!NegParametros.ParametroFormularios())
-                    dr["hc"] = paciente.PAC_HISTORIA_CLINICA;
+                    dr["hc"] = paciente.PAC_HISTORIA_CLINICA.Trim() + "-" + atencion.ATE_NUMERO_ATENCION.Trim();
                 else
                     dr["hc"] = paciente.PAC_IDENTIFICACION;
 
                 dr["sconsultado"] = cmb_especialidadCirugia.Text;
-                dr["ssolicitado"] = cmb_especialidadCirugia2.Text;
+                dr["ssolicitado"] = cmb_especialidadCirugia2.Text + "- (Dr/a. " + txt_med_interconsultado.Text + ")";
                 dr["semergencia"] = radioEmergencia.Checked == true ? "X" : "";
                 dr["scexterna"] = radioCExterna.Checked == true ? "X" : "";
                 dr["shospitalizacion"] = radioHospitalizacion.Checked == true ? "X" : "";
                 dr["descripcion"] = txt_motivo.Text;
-
+                dr["ci"] = paciente.PAC_IDENTIFICACION;
                 string[] medicointer = txt_med_interconsultado.Text.Split(' ');
+               
                 //reporte.for_med_int = "Dr/a. " + medicointer[0] + " " + medicointer[2];
                 dr["fecha"] = textBox9.Text;
                 dr["hora"] = textBox8.Text;
-                dr["mednombre1"] = "Dr/a. " + medic.MED_NOMBRE1;
-                dr["medapellido1"] = medic.MED_APELLIDO_PATERNO;
-                dr["medapellido2"] = medic.MED_APELLIDO_MATERNO;
+                if (medic != null)
+                {
+                    dr["mednombre1"] = "Dr/a. " + medic.MED_NOMBRE1;
+                    dr["medapellido1"] = medic.MED_APELLIDO_PATERNO;
+                    dr["medapellido2"] = medic.MED_APELLIDO_MATERNO;
 
-                if (medic.MED_RUC.Length > 10)
-                    dr["medruc"] = medic.MED_RUC.Substring(0, 10);
+                    if (medic.MED_RUC.Length > 10)
+                        dr["medruc"] = medic.MED_RUC.Substring(0, 10);
+                    else
+                        dr["medruc"] = medic.MED_RUC;
+                }
                 else
-                    dr["medruc"] = medic.MED_RUC;
+                {
+                    dr["mednombre1"] = usu.NOMBRES;
+                    dr["medapellido1"] = usu.APELLIDOS;
+                    dr["medapellido2"] = "";
 
-
-
+                    if (usu.IDENTIFICACION.Length > 10)
+                        dr["medruc"] = usu.IDENTIFICACION.Substring(0, 10);
+                    else
+                        dr["medruc"] = usu.IDENTIFICACION;
+                }
 
                 dtg_4.Refresh();
                 for (int i = 0; i < dtg_4.Rows.Count - 1; i++)
@@ -1446,10 +1493,6 @@ namespace His.Formulario
                 agregarMedico(med);
                 //medicointercosultado = med;
             }
-
-
-
-
 
         }
         public string interconsu_id = "";
@@ -1716,10 +1759,10 @@ namespace His.Formulario
             gridSol.DataSource = NegImagen.getInterconsultas(ate_codigo);
             gridSol.Columns["ID"].Visible = false;
             gridSol.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            if (gridSol.RowCount > 0)
-                btnImprimir.Enabled = true;
+            if (gridSol.RowCount > 0) //Habilita o deshabilita el boton de impresión en caso de tener campos cargados
+                btnImprimir.Enabled = false; //intercambiar true por false y false por true abajo
             else
-                btnImprimir.Enabled = false;
+                btnImprimir.Enabled = true;
         }
 
         private void gridSol_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
@@ -1788,6 +1831,11 @@ namespace His.Formulario
                 {
                     try
                     {
+                        if (txt_med_interconsultado.Text.ToString() == "")
+                        {
+                            MessageBox.Show("No se puede cerrar la interconsulta \n\r sin un médico ingresado", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                         if (hin_codigo == 0)
                         {
                             HC_INTERCONSULTA objInter = NegInterconsulta.UltimoCodigoAtencion(ate_codigo);
@@ -2007,6 +2055,17 @@ namespace His.Formulario
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
 
+        }
+
+        private void txt_med_interconsultado_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Delete:
+                    txt_med_interconsultado.Text = "";
+                    txtCodMedInterconsultado.Text = "";
+                    break;
+            }
         }
     }
 }

@@ -105,7 +105,7 @@ namespace His.Formulario
                                      paciente.PAC_APELLIDO_MATERNO + " " +
                                      paciente.PAC_NOMBRE1 + " " +
                                      paciente.PAC_NOMBRE2;
-                lblHc.Text = paciente.PAC_HISTORIA_CLINICA;
+                lblHc.Text = paciente.PAC_HISTORIA_CLINICA+ "-"+ atencion.ATE_NUMERO_ATENCION;
                 lblsexo.Text = paciente.PAC_GENERO;
             }
             else
@@ -242,6 +242,7 @@ namespace His.Formulario
             {
                 if (!validarFormulario())
                 {
+
                     interconsulta = new HC_INTERCONSULTA();
                     interconsulta.HIN_CODIGO = hin_codigo;
                     interconsulta.HIN_CUADRO_INTERCONSULTA = txt_ccInterconsulta.Text;
@@ -257,10 +258,17 @@ namespace His.Formulario
                         MessageBox.Show("Datos almacenados correctamente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Imprimir();
                         limpiarCampos();
-                        habilitarBotones(false, true, true);
+
+                        habilitarBotones(false, false, false); //Deshabilito todos los botones
+
+                        habilitaGrid(false); 
                     }
                     else
                         MessageBox.Show("Los datos no se pudieron almacenar.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Datos Incompletos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -422,7 +430,7 @@ namespace His.Formulario
             dr["prnombre1"] = medico.MED_NOMBRE1;
             dr["prapellido1"] = medico.MED_APELLIDO_PATERNO;
             dr["prapellido2"] = medico.MED_APELLIDO_MATERNO;
-            dr["ci"] = medico.MED_RUC.Substring(0, 9);
+            dr["ci"] = medico.MED_RUC.Substring(0, 10);
             ds.Tables["InterconsultaB"].Rows.Add(dr);
             return ds;
         }
@@ -595,6 +603,11 @@ namespace His.Formulario
                 AgregarError(txt_resumen);
                 flag = true;
             }
+            if (dtg_8.Rows.Count == 1)
+            {
+                AgregarError(dtg_8);
+                flag = true;
+            }
             foreach (DataGridViewRow fila in dtg_8.Rows)
             {
                 DataGridViewCheckBoxCell txtcell = (DataGridViewCheckBoxCell)this.dtg_8.Rows[fila.Index].Cells[2];
@@ -622,7 +635,7 @@ namespace His.Formulario
                 usuario.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
                 usuario.ShowDialog();
                 if (!usuario.aceptado)
-                    return;
+                    return;              
                 MEDICOS MED = NegMedicos.RecuperaMedicoIdUsuario(usuario.usuarioActual);
                 if (MED != null)
                 {
@@ -636,7 +649,7 @@ namespace His.Formulario
                         else
                         {
                             envioCorreo();
-                            Imprimir();
+                            //Imprimir();
                             limpiarCampos();
                             refrescarSolicitudes();
                             habilitarBotones(false, false, false);
@@ -646,6 +659,11 @@ namespace His.Formulario
                         MessageBox.Show("Solo el medico interconsultado puede responder", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnabrir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

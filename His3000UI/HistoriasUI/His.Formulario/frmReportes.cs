@@ -844,100 +844,101 @@ namespace His.Formulario
                 #region InterconsultaBNewCorreo
                 else if (reporte == "InterconsultaBCorreo")
                 {
-                    rptInterconsultaB myreport = new rptInterconsultaB();
-                    myreport.Refresh();
-                    myreport.SetDataSource(Datos);
+                    mailB();
+                    //rptInterconsultaB myreport = new rptInterconsultaB();
+                    //myreport.Refresh();
+                    //myreport.SetDataSource(Datos);
 
-                    //Recuepero de donde se va a enviar el correo Electronico
-                    List<DtoParametros> Informacion = new List<DtoParametros>();
-                    Informacion = NegUtilitarios.RecuperaInformacionCorreo();
-                    string[] datos = new string[10];
-                    foreach (var item in Informacion)
-                    {
-                        datos = item.PAD_VALOR.Split(';');
-                    }
-                    //Creacion de la Carpeda de Origen
-                    string carpeta = @"C:\adjuntos";
-
-                    // Verificar si la carpeta existe
-                    if (!Directory.Exists(carpeta))
-                    {
-                        // Crear la carpeta si no existe
-                        Directory.CreateDirectory(carpeta);
-                        Console.WriteLine("Carpeta creada correctamente.");
-                    }
-                    //Exporta a PDF
-                    string pathAutorizado = carpeta;
-                    string nombrenuevo = "INTERCONSULTA";
-                    myreport.ExportToDisk(ExportFormatType.PortableDocFormat, pathAutorizado + "\\" + nombrenuevo + ".pdf");
-                    ///envio mail
-                    string rutaCarpeta = pathAutorizado;
-                    string remitente = datos[3];
-
-
-                    string destinatario = med.MED_EMAIL;
-                    string asunto = "Interconsulta: ";
-                    string cuerpoMensaje = "Adjunto se encuentra la Interconsulta: ";
-
-
-                    // Crear instancia de MailMessage
-                    destinatario = Microsoft.VisualBasic.Interaction.InputBox("Correo", "Enviar Mail a:", destinatario);
-                    //if (destinatario == "")
+                    ////Recuepero de donde se va a enviar el correo Electronico
+                    //List<DtoParametros> Informacion = new List<DtoParametros>();
+                    //Informacion = NegUtilitarios.RecuperaInformacionCorreo();
+                    //string[] datos = new string[10];
+                    //foreach (var item in Informacion)
                     //{
-                    //    MessageBox.Show("No tiene mail", "Aviso");
+                    //    datos = item.PAD_VALOR.Split(';');
                     //}
-                    if (IsValidEmail(destinatario))
-                    {
-                        MailMessage mensaje = new MailMessage(remitente, destinatario, asunto, cuerpoMensaje);
+                    ////Creacion de la Carpeda de Origen
+                    //string carpeta = @"C:\adjuntos";
 
-                        // Obtener lista de archivos en la carpeta
-                        string[] archivos = Directory.GetFiles(rutaCarpeta);
+                    //// Verificar si la carpeta existe
+                    //if (!Directory.Exists(carpeta))
+                    //{
+                    //    // Crear la carpeta si no existe
+                    //    Directory.CreateDirectory(carpeta);
+                    //    Console.WriteLine("Carpeta creada correctamente.");
+                    //}
+                    ////Exporta a PDF
+                    //string pathAutorizado = carpeta;
+                    //string nombrenuevo = "INTERCONSULTA";
+                    //myreport.ExportToDisk(ExportFormatType.PortableDocFormat, pathAutorizado + "\\" + nombrenuevo + ".pdf");
+                    /////envio mail
+                    //string rutaCarpeta = pathAutorizado;
+                    //string remitente = datos[3];
 
-                        // Adjuntar cada archivo al correo electrónico
-                        foreach (string archivo in archivos)
-                        {
-                            mensaje.Attachments.Add(new Attachment(archivo));
-                        }
 
-                        // Configurar el cliente de correo electrónico
-                        SmtpClient clienteSmtp = new SmtpClient(datos[1], 25);
-                        clienteSmtp.EnableSsl = true;
-                        clienteSmtp.UseDefaultCredentials = false;
-                        string clave = datos[4];
-                        clienteSmtp.Credentials = new NetworkCredential(remitente, clave);
-                        try
-                        {
-                            // Enviar el correo electrónico
-                            clienteSmtp.Send(mensaje);
-                            Console.WriteLine("Correo electrónico enviado correctamente.");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Error al enviar el correo electrónico: " + ex.Message);
-                        }
-                        finally
-                        {
-                            // Liberar recursos
-                            mensaje.Dispose();
-                        }
-                        string carpetad = @"C:\adjuntos";
+                    //string destinatario = med.MED_EMAIL;
+                    //string asunto = "Interconsulta: ";
+                    //string cuerpoMensaje = "Adjunto se encuentra la Interconsulta: ";
 
-                        // Obtener la lista de archivos en la carpeta
-                        string[] archivosd = Directory.GetFiles(carpetad);
 
-                        // Eliminar cada archivo de la carpeta
-                        foreach (string archivo in archivosd)
-                        {
-                            File.Delete(archivo);
-                        }
+                    //// Crear instancia de MailMessage
+                    //destinatario = Microsoft.VisualBasic.Interaction.InputBox("Correo", "Enviar Mail a:", destinatario);
+                    ////if (destinatario == "")
+                    ////{
+                    ////    MessageBox.Show("No tiene mail", "Aviso");
+                    ////}
+                    //if (IsValidEmail(destinatario))
+                    //{
+                    //    MailMessage mensaje = new MailMessage(remitente, destinatario, asunto, cuerpoMensaje);
 
-                        myreport.Close();
-                        myreport.Dispose();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mail Incorrecto", "Aviso");
-                    }
+                    //    // Obtener lista de archivos en la carpeta
+                    //    string[] archivos = Directory.GetFiles(rutaCarpeta);
+
+                    //    // Adjuntar cada archivo al correo electrónico
+                    //    foreach (string archivo in archivos)
+                    //    {
+                    //        mensaje.Attachments.Add(new Attachment(archivo));
+                    //    }
+
+                    //    // Configurar el cliente de correo electrónico
+                    //    SmtpClient clienteSmtp = new SmtpClient(datos[1], 25);
+                    //    clienteSmtp.EnableSsl = true;
+                    //    clienteSmtp.UseDefaultCredentials = false;
+                    //    string clave = datos[4];
+                    //    clienteSmtp.Credentials = new NetworkCredential(remitente, clave);
+                    //    try
+                    //    {
+                    //        // Enviar el correo electrónico
+                    //        clienteSmtp.Send(mensaje);
+                    //        Console.WriteLine("Correo electrónico enviado correctamente.");
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        Console.WriteLine("Error al enviar el correo electrónico: " + ex.Message);
+                    //    }
+                    //    finally
+                    //    {
+                    //        // Liberar recursos
+                    //        mensaje.Dispose();
+                    //    }
+                    //    string carpetad = @"C:\adjuntos";
+
+                    //    // Obtener la lista de archivos en la carpeta
+                    //    string[] archivosd = Directory.GetFiles(carpetad);
+
+                    //    // Eliminar cada archivo de la carpeta
+                    //    foreach (string archivo in archivosd)
+                    //    {
+                    //        File.Delete(archivo);
+                    //    }
+
+                    //    myreport.Close();
+                    //    myreport.Dispose();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Mail Incorrecto", "Aviso");
+                    //}
                 }
                 #endregion
                 #region ANAMNESIS
@@ -1729,6 +1730,145 @@ namespace His.Formulario
             crystalReportViewer1.RefreshReport();
             
             
+        }
+        private void mailB()
+        {
+
+            try
+            {
+                //CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+                rptInterconsultaB myreport = new rptInterconsultaB();
+                myreport.Refresh();
+                myreport.SetDataSource(Datos);
+                DataTable dataTable = Datos.Tables["InterconsultaB"];
+                string nombre = "";
+                string apellido = "";
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    nombre = item["nombre1"].ToString();
+                    apellido = item["apellido1"].ToString();
+                }
+
+
+                crystalReportViewer1.ReportSource = myreport;
+                crystalReportViewer1.RefreshReport();
+                crystalReportViewer1.Visible = true;
+
+                List<DtoParametros> Informacion = new List<DtoParametros>();
+                Informacion = NegUtilitarios.RecuperaInformacionCorreo();
+                string[] datos = new string[10];
+                foreach (var item in Informacion)
+                {
+                    datos = item.PAD_VALOR.Split(';');
+                }
+
+
+
+
+                string carpeta = @"C:\adjuntos";
+
+                // Verificar si la carpeta existe
+                if (!Directory.Exists(carpeta))
+                {
+                    // Crear la carpeta si no existe
+                    Directory.CreateDirectory(carpeta);
+                    Console.WriteLine("Carpeta creada correctamente.");
+                }
+
+
+                string pathAutorizado = carpeta;
+                string nombrenuevo = "inteconsulta";
+
+
+                myreport.ExportToDisk(ExportFormatType.PortableDocFormat, pathAutorizado + "\\" + nombrenuevo + ".pdf");
+
+
+                ///envio mail
+                string rutaCarpeta = pathAutorizado;
+                string remitente = datos[3];
+
+
+                string destinatario = med.MED_EMAIL;
+                string asunto = "InterconsultaA del Paciente: " + nombre + " " + apellido;
+                string cuerpoMensaje = "Adjunto se encuentra la Interconsulta del paciente: ";
+
+
+                // Crear instancia de MailMessage
+
+
+
+                destinatario = Microsoft.VisualBasic.Interaction.InputBox("Correo", "Enviar Mail a:", destinatario);
+                //if (destinatario == "")
+                //{
+                //    MessageBox.Show("No tiene mail", "His3000",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                //}
+
+                if (IsValidEmail(destinatario))
+                {
+
+
+                    MailMessage mensaje = new MailMessage(remitente, destinatario, asunto, cuerpoMensaje);
+
+                    // Obtener lista de archivos en la carpeta
+                    string[] archivos = Directory.GetFiles(rutaCarpeta);
+
+                    // Adjuntar cada archivo al correo electrónico
+                    foreach (string archivo in archivos)
+                    {
+                        mensaje.Attachments.Add(new Attachment(archivo));
+                    }
+
+                    // Configurar el cliente de correo electrónico
+                    SmtpClient clienteSmtp = new SmtpClient(datos[1], 25);
+                    clienteSmtp.EnableSsl = true;
+                    clienteSmtp.UseDefaultCredentials = false;
+                    string clave = datos[4];
+                    clienteSmtp.Credentials = new NetworkCredential(remitente, clave);
+
+
+
+                    try
+                    {
+                        // Enviar el correo electrónico
+                        clienteSmtp.Send(mensaje);
+                        Console.WriteLine("Correo electrónico enviado correctamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error al enviar el correo electrónico: " + ex.Message);
+                    }
+                    finally
+                    {
+                        // Liberar recursos
+                        mensaje.Dispose();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mail Incorrecto", "Aviso");
+                }
+
+                ///
+
+                string carpetad = @"C:\adjuntos";
+
+                // Obtener la lista de archivos en la carpeta
+                string[] archivosd = Directory.GetFiles(carpetad);
+
+                // Eliminar cada archivo de la carpeta
+                foreach (string archivo in archivosd)
+                {
+                    File.Delete(archivo);
+                }
+
+                myreport.Close();
+                //myreport.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                //throw;
+            }
         }
         private void mail()
         {

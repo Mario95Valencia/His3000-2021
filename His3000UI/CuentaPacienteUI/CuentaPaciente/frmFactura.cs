@@ -2148,6 +2148,11 @@ namespace CuentaPaciente
                             txtfacturaelectronica.AppendText("      <campoAdicional nombre=\"Factura\">Transferencia a título gratuito</campoAdicional>\r\n");
 
                     }
+                    COPAGO copago = NegCopago.recuperaCopago(Convert.ToInt64(txt_Atencion.Text));
+                    if (copago != null)
+                    {
+                        txtfacturaelectronica.AppendText("      <campoAdicional nombre=\"Factura\">Copago</campoAdicional>\r\n");
+                    }
 
                     txtfacturaelectronica.AppendText("      <campoAdicional nombre=\"Teléfono Clínica\">" + Empresa.Rows[0]["telefono"].ToString() + "</campoAdicional>\r\n");
 

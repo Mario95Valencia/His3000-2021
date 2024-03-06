@@ -849,7 +849,7 @@ namespace His.Datos
             }
             try
             {
-                Sqlcmd = new SqlCommand("select codpro,despro from Sic3000..Producto where codpro =  " + codpro, Sqlcon);
+                Sqlcmd = new SqlCommand("select codpro,despro,iva from Sic3000..Producto where codpro =  " + codpro, Sqlcon);
                 Sqlcmd.CommandType = CommandType.Text;
                 Sqldap = new SqlDataAdapter();
                 Sqlcmd.CommandTimeout = 180;
