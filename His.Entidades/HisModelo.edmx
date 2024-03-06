@@ -541,6 +541,14 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="CON_VALOR_AYUDANTIA" Type="decimal" Precision="10" Scale="4" />
           <Property Name="CON_VALOR_AYUDANTIA2" Type="decimal" Precision="10" Scale="4" />
         </EntityType>
+        <EntityType Name="COPAGO">
+          <Key>
+            <PropertyRef Name="COP_CODIGO" />
+          </Key>
+          <Property Name="COP_CODIGO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ATE_CODIGO" Type="bigint" Nullable="false" />
+          <Property Name="ATE_CODIGO_COPAGO" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="CUENTA_LIQUIDACION_PACIENTE">
           <Key>
             <PropertyRef Name="CLA_CODIGO" />
@@ -572,6 +580,41 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Key>
             <PropertyRef Name="CUE_CODIGO" />
           </Key>
+          <Property Name="CUE_CODIGO" Type="bigint" Nullable="false" />
+          <Property Name="ATE_CODIGO" Type="int" />
+          <Property Name="CUE_FECHA" Type="datetime" />
+          <Property Name="PRO_CODIGO" Type="varchar" MaxLength="15" />
+          <Property Name="CUE_DETALLE" Type="varchar" MaxLength="1000" />
+          <Property Name="CUE_VALOR_UNITARIO" Type="decimal" Precision="12" Scale="3" />
+          <Property Name="CUE_CANTIDAD" Type="decimal" Precision="12" Scale="4" />
+          <Property Name="CUE_VALOR" Type="decimal" Precision="12" Scale="3" />
+          <Property Name="CUE_IVA" Type="decimal" Precision="12" Scale="4" />
+          <Property Name="CUE_ESTADO" Type="bigint" />
+          <Property Name="CUE_NUM_FAC" Type="varchar" MaxLength="15" />
+          <Property Name="RUB_CODIGO" Type="smallint" />
+          <Property Name="PED_CODIGO" Type="int" />
+          <Property Name="ID_USUARIO" Type="smallint" />
+          <Property Name="CAT_CODIGO" Type="int" />
+          <Property Name="PRO_CODIGO_BARRAS" Type="varchar" MaxLength="15" />
+          <Property Name="CUE_NUM_CONTROL" Type="varchar" MaxLength="15" />
+          <Property Name="CUE_OBSERVACION" Type="varchar" MaxLength="5000" />
+          <Property Name="MED_CODIGO" Type="int" />
+          <Property Name="CUE_ORDER_IMPRESION" Type="int" />
+          <Property Name="Codigo_Pedido" Type="bigint" />
+          <Property Name="Id_Tipo_Medico" Type="int" />
+          <Property Name="COSTO" Type="float" Nullable="false" />
+          <Property Name="NumVale" Type="varchar" MaxLength="20" />
+          <Property Name="DivideFactura" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Descuento" Type="float" Nullable="false" />
+          <Property Name="PorDescuento" Type="float" Nullable="false" />
+          <Property Name="USUARIO_FACTURA" Type="int" Nullable="false" />
+          <Property Name="FECHA_FACTURA" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUENTAS_PACIENTES_COPAGO">
+          <Key>
+            <PropertyRef Name="CUC_CODIGO" />
+          </Key>
+          <Property Name="CUC_CODIGO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CUE_CODIGO" Type="bigint" Nullable="false" />
           <Property Name="ATE_CODIGO" Type="int" />
           <Property Name="CUE_FECHA" Type="datetime" />
@@ -804,106 +847,106 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="Edad" Type="varchar" MaxLength="20" />
           <Property Name="Historia" Type="varchar" MaxLength="20" />
           <Property Name="AteCodigo" Type="varchar" MaxLength="20" />
-          <Property Name="Motivo" Type="varchar" MaxLength="1500" />
-          <Property Name="AntecedentesPersonales" Type="varchar" MaxLength="1500" />
-          <Property Name="Cardiopatia" Type="varchar" MaxLength="10" />
-          <Property Name="Diabetes" Type="varchar" MaxLength="10" />
-          <Property Name="Vascular" Type="varchar" MaxLength="10" />
-          <Property Name="Hipertencion" Type="varchar" MaxLength="10" />
-          <Property Name="Cancer" Type="varchar" MaxLength="10" />
-          <Property Name="tuberculosis" Type="varchar" MaxLength="10" />
-          <Property Name="mental" Type="varchar" MaxLength="10" />
-          <Property Name="infecciosa" Type="varchar" MaxLength="10" />
-          <Property Name="malformacion" Type="varchar" MaxLength="10" />
-          <Property Name="otro" Type="varchar" MaxLength="10" />
-          <Property Name="antecedentesFamiliares" Type="varchar" MaxLength="1500" />
+          <Property Name="Motivo" Type="varchar(max)" />
+          <Property Name="AntecedentesPersonales" Type="varchar(max)" />
+          <Property Name="Cardiopatia" Type="varchar(max)" />
+          <Property Name="Diabetes" Type="varchar(max)" />
+          <Property Name="Vascular" Type="varchar(max)" />
+          <Property Name="Hipertencion" Type="varchar(max)" />
+          <Property Name="Cancer" Type="varchar(max)" />
+          <Property Name="tuberculosis" Type="varchar(max)" />
+          <Property Name="mental" Type="varchar(max)" />
+          <Property Name="infecciosa" Type="varchar(max)" />
+          <Property Name="malformacion" Type="varchar(max)" />
+          <Property Name="otro" Type="varchar(max)" />
+          <Property Name="antecedentesFamiliares" Type="varchar(max)" />
           <Property Name="enfermedadActual" Type="varchar" MaxLength="1500" />
-          <Property Name="sentidos" Type="varchar" MaxLength="10" />
-          <Property Name="sentidossp" Type="varchar" MaxLength="10" />
-          <Property Name="respiratorio" Type="varchar" MaxLength="10" />
-          <Property Name="respiratoriosp" Type="varchar" MaxLength="10" />
-          <Property Name="cardioVascular" Type="varchar" MaxLength="10" />
-          <Property Name="cardioVascularsp" Type="varchar" MaxLength="10" />
-          <Property Name="digestivo" Type="varchar" MaxLength="10" />
-          <Property Name="digestivosp" Type="varchar" MaxLength="10" />
-          <Property Name="genital" Type="varchar" MaxLength="10" />
-          <Property Name="genitalsp" Type="varchar" MaxLength="10" />
-          <Property Name="urinario" Type="varchar" MaxLength="10" />
-          <Property Name="urinariosp" Type="varchar" MaxLength="10" />
-          <Property Name="esqueletico" Type="varchar" MaxLength="10" />
-          <Property Name="esqueleticosp" Type="varchar" MaxLength="10" />
-          <Property Name="endocrino" Type="varchar" MaxLength="10" />
-          <Property Name="endocrinosp" Type="varchar" MaxLength="10" />
-          <Property Name="linfatico" Type="varchar" MaxLength="10" />
-          <Property Name="linfaticosp" Type="varchar" MaxLength="10" />
-          <Property Name="nervioso" Type="varchar" MaxLength="10" />
-          <Property Name="nerviososp" Type="varchar" MaxLength="10" />
-          <Property Name="revisionactual" Type="varchar" MaxLength="1500" />
-          <Property Name="fechamedicion" Type="varchar" MaxLength="20" />
-          <Property Name="temperatura" Type="varchar" MaxLength="10" />
-          <Property Name="presion1" Type="varchar" MaxLength="10" />
-          <Property Name="presion2" Type="varchar" MaxLength="10" />
-          <Property Name="pulso" Type="varchar" MaxLength="10" />
-          <Property Name="frecuenciaRespiratoria" Type="varchar" MaxLength="10" />
-          <Property Name="peso" Type="varchar" MaxLength="10" />
-          <Property Name="talla" Type="varchar" MaxLength="10" />
-          <Property Name="cabeza" Type="varchar" MaxLength="10" />
-          <Property Name="cabezasp" Type="varchar" MaxLength="10" />
-          <Property Name="cuello" Type="varchar" MaxLength="10" />
-          <Property Name="cuellosp" Type="varchar" MaxLength="10" />
-          <Property Name="torax" Type="varchar" MaxLength="10" />
-          <Property Name="toraxsp" Type="varchar" MaxLength="10" />
-          <Property Name="abdomen" Type="varchar" MaxLength="10" />
-          <Property Name="abdomensp" Type="varchar" MaxLength="10" />
-          <Property Name="pelvis" Type="varchar" MaxLength="10" />
-          <Property Name="pelvissp" Type="varchar" MaxLength="10" />
-          <Property Name="extremidades" Type="varchar" MaxLength="10" />
-          <Property Name="extremidadessp" Type="varchar" MaxLength="10" />
-          <Property Name="examenFisico" Type="varchar" MaxLength="1500" />
-          <Property Name="diagnostico1" Type="varchar" MaxLength="100" />
-          <Property Name="diagnostico1cie" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico1pre" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico1def" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico2" Type="varchar" MaxLength="150" />
-          <Property Name="diagnostico2cie" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico2pre" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico2def" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico3" Type="varchar" MaxLength="150" />
-          <Property Name="diagnostico3cie" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico3def" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico3pre" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico4" Type="varchar" MaxLength="150" />
-          <Property Name="diagnostico4cie" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico4def" Type="varchar" MaxLength="10" />
-          <Property Name="diagnostico4pre" Type="varchar" MaxLength="10" />
-          <Property Name="planesTratamiento" Type="varchar" MaxLength="1500" />
-          <Property Name="evolucion" Type="varchar" MaxLength="1500" />
-          <Property Name="prescripciones" Type="varchar" MaxLength="1500" />
-          <Property Name="fecha" Type="varchar" MaxLength="30" />
-          <Property Name="hora" Type="varchar" MaxLength="10" />
-          <Property Name="dr" Type="varchar" MaxLength="1500" />
-          <Property Name="codigo" Type="varchar" MaxLength="300" />
-          <Property Name="endocrinoF" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="piel" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="pielsp" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="cardiopatiaP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="hipertencionP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="vascularP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="endocrinoP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="cancerP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="tuberculosisP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="mentalP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="infecciosaP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="malformacionP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="otroP" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rPiel" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rOjos" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rOidos" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rNariz" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rBoca" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rOrofaringe" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rAxilas" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="rColumna" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="sentidos" Type="varchar(max)" />
+          <Property Name="sentidossp" Type="varchar(max)" />
+          <Property Name="respiratorio" Type="varchar(max)" />
+          <Property Name="respiratoriosp" Type="varchar(max)" />
+          <Property Name="cardioVascular" Type="varchar(max)" />
+          <Property Name="cardioVascularsp" Type="varchar(max)" />
+          <Property Name="digestivo" Type="varchar(max)" />
+          <Property Name="digestivosp" Type="varchar(max)" />
+          <Property Name="genital" Type="varchar(max)" />
+          <Property Name="genitalsp" Type="varchar(max)" />
+          <Property Name="urinario" Type="varchar(max)" />
+          <Property Name="urinariosp" Type="varchar(max)" />
+          <Property Name="esqueletico" Type="varchar(max)" />
+          <Property Name="esqueleticosp" Type="varchar(max)" />
+          <Property Name="endocrino" Type="varchar(max)" />
+          <Property Name="endocrinosp" Type="varchar(max)" />
+          <Property Name="linfatico" Type="varchar(max)" />
+          <Property Name="linfaticosp" Type="varchar(max)" />
+          <Property Name="nervioso" Type="varchar(max)" />
+          <Property Name="nerviososp" Type="varchar(max)" />
+          <Property Name="revisionactual" Type="varchar(max)" />
+          <Property Name="fechamedicion" Type="varchar(max)" />
+          <Property Name="temperatura" Type="varchar(max)" />
+          <Property Name="presion1" Type="varchar(max)" />
+          <Property Name="presion2" Type="varchar(max)" />
+          <Property Name="pulso" Type="varchar(max)" />
+          <Property Name="frecuenciaRespiratoria" Type="varchar(max)" />
+          <Property Name="peso" Type="varchar(max)" />
+          <Property Name="talla" Type="varchar(max)" />
+          <Property Name="cabeza" Type="varchar(max)" />
+          <Property Name="cabezasp" Type="varchar(max)" />
+          <Property Name="cuello" Type="varchar(max)" />
+          <Property Name="cuellosp" Type="varchar(max)" />
+          <Property Name="torax" Type="varchar(max)" />
+          <Property Name="toraxsp" Type="varchar(max)" />
+          <Property Name="abdomen" Type="varchar(max)" />
+          <Property Name="abdomensp" Type="varchar(max)" />
+          <Property Name="pelvis" Type="varchar(max)" />
+          <Property Name="pelvissp" Type="varchar(max)" />
+          <Property Name="extremidades" Type="varchar(max)" />
+          <Property Name="extremidadessp" Type="varchar(max)" />
+          <Property Name="examenFisico" Type="varchar(max)" />
+          <Property Name="diagnostico1" Type="varchar(max)" />
+          <Property Name="diagnostico1cie" Type="varchar(max)" />
+          <Property Name="diagnostico1pre" Type="varchar(max)" />
+          <Property Name="diagnostico1def" Type="varchar(max)" />
+          <Property Name="diagnostico2" Type="varchar(max)" />
+          <Property Name="diagnostico2cie" Type="varchar(max)" />
+          <Property Name="diagnostico2pre" Type="varchar(max)" />
+          <Property Name="diagnostico2def" Type="varchar(max)" />
+          <Property Name="diagnostico3" Type="varchar(max)" />
+          <Property Name="diagnostico3cie" Type="varchar(max)" />
+          <Property Name="diagnostico3def" Type="varchar(max)" />
+          <Property Name="diagnostico3pre" Type="varchar(max)" />
+          <Property Name="diagnostico4" Type="varchar(max)" />
+          <Property Name="diagnostico4cie" Type="varchar(max)" />
+          <Property Name="diagnostico4def" Type="varchar(max)" />
+          <Property Name="diagnostico4pre" Type="varchar(max)" />
+          <Property Name="planesTratamiento" Type="varchar(max)" />
+          <Property Name="evolucion" Type="varchar(max)" />
+          <Property Name="prescripciones" Type="varchar(max)" />
+          <Property Name="fecha" Type="varchar(max)" />
+          <Property Name="hora" Type="varchar(max)" />
+          <Property Name="dr" Type="varchar(max)" />
+          <Property Name="codigo" Type="varchar(max)" />
+          <Property Name="endocrinoF" Type="varchar(max)" Nullable="false" />
+          <Property Name="piel" Type="varchar(max)" Nullable="false" />
+          <Property Name="pielsp" Type="varchar(max)" Nullable="false" />
+          <Property Name="cardiopatiaP" Type="varchar(max)" Nullable="false" />
+          <Property Name="hipertencionP" Type="varchar(max)" Nullable="false" />
+          <Property Name="vascularP" Type="varchar(max)" Nullable="false" />
+          <Property Name="endocrinoP" Type="varchar(max)" Nullable="false" />
+          <Property Name="cancerP" Type="varchar(max)" Nullable="false" />
+          <Property Name="tuberculosisP" Type="varchar(max)" Nullable="false" />
+          <Property Name="mentalP" Type="varchar(max)" Nullable="false" />
+          <Property Name="infecciosaP" Type="varchar(max)" Nullable="false" />
+          <Property Name="malformacionP" Type="varchar(max)" Nullable="false" />
+          <Property Name="otroP" Type="varchar(max)" Nullable="false" />
+          <Property Name="rPiel" Type="varchar(max)" Nullable="false" />
+          <Property Name="rOjos" Type="varchar(max)" Nullable="false" />
+          <Property Name="rOidos" Type="varchar(max)" Nullable="false" />
+          <Property Name="rNariz" Type="varchar(max)" Nullable="false" />
+          <Property Name="rBoca" Type="varchar(max)" Nullable="false" />
+          <Property Name="rOrofaringe" Type="varchar(max)" Nullable="false" />
+          <Property Name="rAxilas" Type="varchar(max)" Nullable="false" />
+          <Property Name="rColumna" Type="varchar(max)" Nullable="false" />
           <Property Name="rIngle" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="rInferior" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="sSentidos" Type="varchar" MaxLength="10" Nullable="false" />
@@ -916,14 +959,14 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="sEndocrino" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="sLimfatico" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="sNeurologico" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="diagnostico5" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="diagnostico5cie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="diagnostico5def" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="diagnostico5pre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="diagnostico6" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="diagnostico6cie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="diagnostico6def" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="diagnostico6pre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="diagnostico5" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico5cie" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico5def" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico5pre" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico6" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico6cie" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico6def" Type="varchar(max)" Nullable="false" />
+          <Property Name="diagnostico6pre" Type="varchar(max)" Nullable="false" />
           <Property Name="MED_CODIGO" Type="varchar" MaxLength="35" />
           <Property Name="ID_USUARIO" Type="int" />
         </EntityType>
@@ -6073,9 +6116,11 @@ advertencia 6037: La restricción de clave externa 'FK_NOTAS_CR_REFERENCE_TIPO_D
           <EntitySet Name="CONTACTOS_EMERGENCIAS" EntityType="Self.CONTACTOS_EMERGENCIAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONTROL_CONSULTA" EntityType="Self.CONTROL_CONSULTA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONVENIOS_TARIFARIOS" EntityType="Self.CONVENIOS_TARIFARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COPAGO" EntityType="Self.COPAGO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUENTA_LIQUIDACION_PACIENTE" EntityType="Self.CUENTA_LIQUIDACION_PACIENTE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUENTAS_CONSOLIDADAS" EntityType="Self.CUENTAS_CONSOLIDADAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUENTAS_PACIENTES" EntityType="Self.CUENTAS_PACIENTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUENTAS_PACIENTES_COPAGO" EntityType="Self.CUENTAS_PACIENTES_COPAGO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUENTAS_PACIENTES_HISTORIAL" EntityType="Self.CUENTAS_PACIENTES_HISTORIAL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUENTAS_PACIENTES_TOTALES" EntityType="Self.CUENTAS_PACIENTES_TOTALES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DEPARTAMENTOS" EntityType="Self.DEPARTAMENTOS" Schema="dbo" store:Type="Tables" />
@@ -8392,6 +8437,8 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <EntitySet Name="NACIONALIDAD_ETNIA" EntityType="HIS3000BDModel.NACIONALIDAD_ETNIA" />
           <EntitySet Name="Form002MSP" EntityType="HIS3000BDModel.Form002MSP" />
           <EntitySet Name="SIGNOSVITALES_CONSULTAEXTERNA" EntityType="HIS3000BDModel.SIGNOSVITALES_CONSULTAEXTERNA" />
+          <EntitySet Name="COPAGO" EntityType="HIS3000BDModel.COPAGO" />
+          <EntitySet Name="CUENTAS_PACIENTES_COPAGO" EntityType="HIS3000BDModel.CUENTAS_PACIENTES_COPAGO" />
           </EntityContainer>
 				<EntityType Name="ACCESO_OPCIONES">
 					<Key>
@@ -12991,106 +13038,106 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <Property Name="Edad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Historia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="AteCodigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Motivo" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="AntecedentesPersonales" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="Cardiopatia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Diabetes" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Vascular" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Hipertencion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Cancer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="tuberculosis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="mental" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="infecciosa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="malformacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="otro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="antecedentesFamiliares" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AntecedentesPersonales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cardiopatia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Diabetes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Vascular" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hipertencion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cancer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tuberculosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mental" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="infecciosa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="malformacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="otro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="antecedentesFamiliares" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="enfermedadActual" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="sentidos" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="sentidossp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="respiratorio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="respiratoriosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cardioVascular" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cardioVascularsp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="digestivo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="digestivosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="genital" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="genitalsp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="urinario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="urinariosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="esqueletico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="esqueleticosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="endocrino" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="endocrinosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="linfatico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="linfaticosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="nervioso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="nerviososp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="revisionactual" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="fechamedicion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="temperatura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="presion1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="presion2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="pulso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="frecuenciaRespiratoria" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="peso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="talla" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cabeza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cabezasp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cuello" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cuellosp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="torax" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="toraxsp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="abdomen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="abdomensp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="pelvis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="pelvissp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="extremidades" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="extremidadessp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="examenFisico" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico1cie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico1pre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico1def" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico2cie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico2pre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico2def" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico3cie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico3def" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico3pre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico4cie" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico4def" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico4pre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="planesTratamiento" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="evolucion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="prescripciones" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="fecha" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="dr" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
-          <Property Name="codigo" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="endocrinoF" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="piel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="pielsp" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cardiopatiaP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="hipertencionP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="vascularP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="endocrinoP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cancerP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="tuberculosisP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="mentalP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="infecciosaP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="malformacionP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="otroP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rPiel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rOjos" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rOidos" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rNariz" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rBoca" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rOrofaringe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rAxilas" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="rColumna" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="sentidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sentidossp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="respiratorio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="respiratoriosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cardioVascular" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cardioVascularsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="digestivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="digestivosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="genital" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="genitalsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="urinario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="urinariosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="esqueletico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="esqueleticosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="endocrino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="endocrinosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="linfatico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="linfaticosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nervioso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nerviososp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="revisionactual" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fechamedicion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="temperatura" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="presion1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="presion2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pulso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="frecuenciaRespiratoria" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="peso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="talla" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cabeza" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cabezasp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cuello" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cuellosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="torax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="toraxsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="abdomen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="abdomensp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pelvis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pelvissp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="extremidades" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="extremidadessp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="examenFisico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico1cie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico1pre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico1def" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico2cie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico2pre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico2def" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico3cie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico3def" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico3pre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico4cie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico4def" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico4pre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="planesTratamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="evolucion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prescripciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="hora" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codigo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="endocrinoF" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="piel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pielsp" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cardiopatiaP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="hipertencionP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="vascularP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="endocrinoP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cancerP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tuberculosisP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mentalP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="infecciosaP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="malformacionP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="otroP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rPiel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rOjos" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rOidos" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rNariz" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rBoca" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rOrofaringe" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rAxilas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rColumna" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="rIngle" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="rInferior" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="sSentidos" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -13103,14 +13150,14 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <Property Name="sEndocrino" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="sLimfatico" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="sNeurologico" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico5" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico5cie" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico5def" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico5pre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico6" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico6cie" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico6def" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="diagnostico6pre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico5" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico5cie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico5def" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico5pre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico6" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico6cie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico6def" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="diagnostico6pre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="MED_CODIGO" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <Property Name="ID_USUARIO" Type="Int32" />
         </EntityType>
@@ -13145,6 +13192,49 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <Property Name="Hemoglobina" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ID_USUARIO" Type="Int32" />
           <Property Name="Glucosa_Capilar" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="COPAGO">
+          <Key>
+            <PropertyRef Name="COP_CODIGO" />
+          </Key>
+          <Property Name="COP_CODIGO" Type="Int64" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ATE_CODIGO" Type="Int64" Nullable="false" />
+          <Property Name="ATE_CODIGO_COPAGO" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUENTAS_PACIENTES_COPAGO">
+          <Key>
+            <PropertyRef Name="CUC_CODIGO" />
+          </Key>
+          <Property Name="CUC_CODIGO" Type="Int64" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CUE_CODIGO" Type="Int64" Nullable="false" />
+          <Property Name="ATE_CODIGO" Type="Int32" />
+          <Property Name="CUE_FECHA" Type="DateTime" Precision="3" />
+          <Property Name="PRO_CODIGO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CUE_DETALLE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CUE_VALOR_UNITARIO" Type="Decimal" Precision="12" Scale="3" />
+          <Property Name="CUE_CANTIDAD" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CUE_VALOR" Type="Decimal" Precision="12" Scale="3" />
+          <Property Name="CUE_IVA" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CUE_ESTADO" Type="Int64" />
+          <Property Name="CUE_NUM_FAC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RUB_CODIGO" Type="Int16" />
+          <Property Name="PED_CODIGO" Type="Int32" />
+          <Property Name="ID_USUARIO" Type="Int16" />
+          <Property Name="CAT_CODIGO" Type="Int32" />
+          <Property Name="PRO_CODIGO_BARRAS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CUE_NUM_CONTROL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CUE_OBSERVACION" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="MED_CODIGO" Type="Int32" />
+          <Property Name="CUE_ORDER_IMPRESION" Type="Int32" />
+          <Property Name="Codigo_Pedido" Type="Int64" />
+          <Property Name="Id_Tipo_Medico" Type="Int32" />
+          <Property Name="COSTO" Type="Double" Nullable="false" />
+          <Property Name="NumVale" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DivideFactura" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Descuento" Type="Double" Nullable="false" />
+          <Property Name="PorDescuento" Type="Double" Nullable="false" />
+          <Property Name="USUARIO_FACTURA" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_FACTURA" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         </Schema>
 		</edmx:ConceptualModels>
@@ -18644,6 +18734,51 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="COPAGO">
+            <EntityTypeMapping TypeName="HIS3000BDModel.COPAGO">
+              <MappingFragment StoreEntitySet="COPAGO">
+                <ScalarProperty Name="ATE_CODIGO_COPAGO" ColumnName="ATE_CODIGO_COPAGO" />
+                <ScalarProperty Name="ATE_CODIGO" ColumnName="ATE_CODIGO" />
+                <ScalarProperty Name="COP_CODIGO" ColumnName="COP_CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUENTAS_PACIENTES_COPAGO">
+            <EntityTypeMapping TypeName="HIS3000BDModel.CUENTAS_PACIENTES_COPAGO">
+              <MappingFragment StoreEntitySet="CUENTAS_PACIENTES_COPAGO">
+                <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+                <ScalarProperty Name="USUARIO_FACTURA" ColumnName="USUARIO_FACTURA" />
+                <ScalarProperty Name="PorDescuento" ColumnName="PorDescuento" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="DivideFactura" ColumnName="DivideFactura" />
+                <ScalarProperty Name="NumVale" ColumnName="NumVale" />
+                <ScalarProperty Name="COSTO" ColumnName="COSTO" />
+                <ScalarProperty Name="Id_Tipo_Medico" ColumnName="Id_Tipo_Medico" />
+                <ScalarProperty Name="Codigo_Pedido" ColumnName="Codigo_Pedido" />
+                <ScalarProperty Name="CUE_ORDER_IMPRESION" ColumnName="CUE_ORDER_IMPRESION" />
+                <ScalarProperty Name="MED_CODIGO" ColumnName="MED_CODIGO" />
+                <ScalarProperty Name="CUE_OBSERVACION" ColumnName="CUE_OBSERVACION" />
+                <ScalarProperty Name="CUE_NUM_CONTROL" ColumnName="CUE_NUM_CONTROL" />
+                <ScalarProperty Name="PRO_CODIGO_BARRAS" ColumnName="PRO_CODIGO_BARRAS" />
+                <ScalarProperty Name="CAT_CODIGO" ColumnName="CAT_CODIGO" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="PED_CODIGO" ColumnName="PED_CODIGO" />
+                <ScalarProperty Name="RUB_CODIGO" ColumnName="RUB_CODIGO" />
+                <ScalarProperty Name="CUE_NUM_FAC" ColumnName="CUE_NUM_FAC" />
+                <ScalarProperty Name="CUE_ESTADO" ColumnName="CUE_ESTADO" />
+                <ScalarProperty Name="CUE_IVA" ColumnName="CUE_IVA" />
+                <ScalarProperty Name="CUE_VALOR" ColumnName="CUE_VALOR" />
+                <ScalarProperty Name="CUE_CANTIDAD" ColumnName="CUE_CANTIDAD" />
+                <ScalarProperty Name="CUE_VALOR_UNITARIO" ColumnName="CUE_VALOR_UNITARIO" />
+                <ScalarProperty Name="CUE_DETALLE" ColumnName="CUE_DETALLE" />
+                <ScalarProperty Name="PRO_CODIGO" ColumnName="PRO_CODIGO" />
+                <ScalarProperty Name="CUE_FECHA" ColumnName="CUE_FECHA" />
+                <ScalarProperty Name="ATE_CODIGO" ColumnName="ATE_CODIGO" />
+                <ScalarProperty Name="CUE_CODIGO" ColumnName="CUE_CODIGO" />
+                <ScalarProperty Name="CUC_CODIGO" ColumnName="CUC_CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
 			</Mapping>
 		</edmx:Mappings>
@@ -20148,6 +20283,8 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
         <EntityTypeShape EntityType="HIS3000BDModel.NACIONALIDAD_ETNIA" Width="1.5" PointX="28.375" PointY="41.75" />
         <EntityTypeShape EntityType="HIS3000BDModel.Form002MSP" Width="1.5" PointX="42.375" PointY="0.75" />
         <EntityTypeShape EntityType="HIS3000BDModel.SIGNOSVITALES_CONSULTAEXTERNA" Width="1.5" PointX="25.375" PointY="37.75" />
+        <EntityTypeShape EntityType="HIS3000BDModel.COPAGO" Width="1.5" PointX="27.375" PointY="36.75" />
+        <EntityTypeShape EntityType="HIS3000BDModel.CUENTAS_PACIENTES_COPAGO" Width="1.5" PointX="42.375" PointY="27.75" />
 			</Diagram>
 		</edmx:Diagrams>
 	</edmx:Designer>

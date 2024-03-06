@@ -94,6 +94,7 @@
     <Compile Include="DatCiudad.cs" />
     <Compile Include="DatConsultaExterna.cs" />
     <Compile Include="DatControlHc.cs" />
+    <Compile Include="DatCopago.cs" />
     <Compile Include="DatCuentasPacientes.cs" />
     <Compile Include="DatDatos.cs" />
     <Compile Include="DatDepartamentos.cs" />

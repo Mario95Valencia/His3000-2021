@@ -108,6 +108,7 @@
     <Compile Include="DtoCierreTurno.cs" />
     <Compile Include="DtoCiudad.cs" />
     <Compile Include="DtoConsultasWeb.cs" />
+    <Compile Include="DtoCopago.cs" />
     <Compile Include="DtoCuentaAtencionesIESS.cs" />
     <Compile Include="DtoCuentaCargas.cs" />
     <Compile Include="DtoCuentasPacientes.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="DtoPacientesImagen.cs" />
     <Compile Include="DtoPacientesInfo.cs" />
     <Compile Include="DtoParametros.cs" />
+    <Compile Include="DtopCuenta.cs" />
     <Compile Include="DtoPedidoDetalleOtros.cs" />
     <Compile Include="DtoPedidoDevolucion.cs" />
     <Compile Include="DtoPedidoDevolucionDetalle.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="DtoProtocolos.cs" />
     <Compile Include="DtopUsuariosPerfilesCg.cs" />
     <Compile Include="DtoRegistrosAdmision.cs" />
+    <Compile Include="DtoReporteCopago.cs" />
     <Compile Include="DtoRetenciones.cs" />
     <Compile Include="DtoRetencionesAutomaticas.cs" />
     <Compile Include="DtoRetencionFuente.cs" />
@@ -181,6 +184,7 @@
     <Compile Include="DtoUsuarios.cs" />
     <Compile Include="DtoUsuariosPerfil.cs" />
     <Compile Include="DtoUsuariosPerfilesSic.cs" />
+    <Compile Include="DtoVistaCopago.cs" />
     <Compile Include="DtoZonas.cs" />
     <Compile Include="Enumerados.cs" />
     <Compile Include="Especialidades.cs" />

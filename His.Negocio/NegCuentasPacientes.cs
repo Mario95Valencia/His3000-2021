@@ -18,7 +18,7 @@ namespace His.Negocio
         {
             try
             {
-               return new DatCuentasPacientes().CrearCuenta(cuenta);
+                return new DatCuentasPacientes().CrearCuenta(cuenta);
             }
             catch (Exception err) { throw err; }
         }
@@ -611,6 +611,10 @@ namespace His.Negocio
         public static void CreaHistorialNuevoAuditoria(NuevoAuditoria nuevo)
         {
             new DatCuentasPacientes().CreaHistorialNuevoAuditoria(nuevo);
+        }
+        public static Int64 generaCuentaAuditoria(Int64 ate_codigo, List<DtoCopago> copado, List<DtopCuenta> cuenta)
+        {
+            return new DatCuentasPacientes().generaCuentaAuditoria(ate_codigo, copado, cuenta);
         }
     }
 }

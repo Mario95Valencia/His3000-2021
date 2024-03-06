@@ -31,7 +31,7 @@ namespace His.Datos
 
         }
 
-        public bool RecuperaAtencion(Int32 ateCodigo)
+        public bool RecuperaAtencion(Int64 ateCodigo)
         {
             try
             {
@@ -55,13 +55,13 @@ namespace His.Datos
         {
             try
             {
-                using(var constexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
+                using (var constexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
                 {
                     List<AGRUPACION_CUENTAS> obj = (from a in constexto.AGRUPACION_CUENTAS
-                                              where a.ate_codigo_madre == ateCodigo
-                                              select a).ToList();
+                                                    where a.ate_codigo_madre == ateCodigo
+                                                    select a).ToList();
 
-                    if(obj != null)
+                    if (obj != null)
                     {
                         return true;
                     }
@@ -491,7 +491,7 @@ namespace His.Datos
 
                 Sqlcmd.Parameters.Add("@CodigoAtencion", SqlDbType.BigInt);
                 Sqlcmd.Parameters["@CodigoAtencion"].Value = (CodigoAtencion);
-                
+
                 Sqlcmd.Parameters.Add("@tipoIdentificacion", SqlDbType.NVarChar);
                 Sqlcmd.Parameters["@tipoIdentificacion"].Value = (identificador);
 
@@ -937,7 +937,7 @@ namespace His.Datos
 
                 Sqlcmd = new SqlCommand("sp_GuardaCambiosCuentasAgrupadas", Sqlcon);
                 Sqlcmd.CommandType = CommandType.StoredProcedure;
-                Sqlcmd.Transaction = transaction;                
+                Sqlcmd.Transaction = transaction;
 
                 Sqlcmd.Parameters.Add("@Ate_codigo", SqlDbType.BigInt);
                 Sqlcmd.Parameters["@Ate_codigo"].Value = (ateCodigo);
@@ -4440,7 +4440,7 @@ namespace His.Datos
             return Dts.Tables["tabla"];
 
         }
-        public DataTable ProductosFactura(Int32 CodigoAtencion)
+        public DataTable ProductosFactura(Int64 CodigoAtencion)
         {
 
             SqlConnection Sqlcon;
@@ -5151,8 +5151,8 @@ namespace His.Datos
                             Sqlcmd.CommandType = CommandType.StoredProcedure;
 
                             Sqlcmd.Parameters.Add("@p_CUE_CODIGO", SqlDbType.BigInt);
-                            Sqlcmd.Parameters["@p_CUE_CODIGO"].Value = (Item1["ID"].ToString()); 
-                            
+                            Sqlcmd.Parameters["@p_CUE_CODIGO"].Value = (Item1["ID"].ToString());
+
                             Sqlcmd.Parameters.Add("@CUE_CANTIDAD", SqlDbType.Decimal);
                             Sqlcmd.Parameters["@CUE_CANTIDAD"].Value = (Item1["CANTIDAD"].ToString());
 
@@ -6061,7 +6061,7 @@ namespace His.Datos
             catch (Exception err) { throw err; }
             return ok;
         }
-        public void EliminaMEDICOS_ALTA( Int64 codigo)
+        public void EliminaMEDICOS_ALTA(Int64 codigo)
         {
             SqlConnection Sqlcon;
             SqlCommand Sqlcmd;
@@ -6191,7 +6191,7 @@ namespace His.Datos
 
             command = new SqlCommand("sp_ValidarPEmision", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@caja",Convert.ToInt32(numcaja));
+            command.Parameters.AddWithValue("@caja", Convert.ToInt32(numcaja));
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -6300,7 +6300,7 @@ namespace His.Datos
             connection = obj.ConectarBd();
             connection.Open();
 
-            command = new SqlCommand("select * from Sic3000..Nota where numfac = '"+numfac+"'", connection);
+            command = new SqlCommand("select * from Sic3000..Nota where numfac = '" + numfac + "'", connection);
             command.CommandType = CommandType.Text;
             reader = command.ExecuteReader();
             DataTable Tabla = new DataTable();
@@ -6308,6 +6308,67 @@ namespace His.Datos
             reader.Close();
             connection.Close();
             return Tabla;
+        }
+
+        public List<DtoVistaCopago> cargaCuentaPacienteXAtencion(Int64 ate_codigo)
+        {
+            List<DtoVistaCopago> lstCopago = new List<DtoVistaCopago>();
+            using (var contexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
+            {
+                var resultado = from cuenta in contexto.CUENTAS_PACIENTES
+                                join rubro in contexto.RUBROS on cuenta.RUB_CODIGO equals rubro.RUB_CODIGO
+                                where cuenta.CUE_CANTIDAD > 0 && cuenta.CUE_VALOR > 0 && cuenta.ATE_CODIGO == ate_codigo
+                                orderby cuenta.CUE_FECHA ascending
+                                select new
+                                {
+                                    ID = cuenta.CUE_CODIGO,
+                                    PEDIDO = cuenta.Codigo_Pedido,
+                                    RUBRO = rubro.RUB_NOMBRE,
+                                    cuenta.PRO_CODIGO,
+                                    DETALLE = cuenta.CUE_DETALLE,
+                                    VALOR_UNITARIO = cuenta.CUE_VALOR_UNITARIO,
+                                    CANTIDAD = cuenta.CUE_CANTIDAD,
+                                    cuenta.CUE_VALOR,
+                                    cuenta.CUE_IVA,
+                                    VALOR_COPAGO = 0,
+                                    PORCENTAJE_COPAGO = 0,
+                                    UNITARIO_COPAGO = 0,
+                                    TOTAL_COPAGO = 0,
+                                    UNITARIO = 0,
+                                    TOTAL = 0,
+                                    TOTAL_CUENTA = 0,
+                                    IVA = 0,
+                                    IVA_COPAGO = 0
+                                };
+
+                foreach (var item in resultado)
+                {
+                    DtoVistaCopago copago = new DtoVistaCopago();
+                    copago.ID = item.ID;
+                    copago.PEDIDO = (long)item.PEDIDO;
+                    copago.RUBRO = item.RUBRO;
+                    copago.PRO_CODIGO = item.PRO_CODIGO;
+                    copago.DETALLE = item.DETALLE;
+                    copago.CANTIDAD = (long)item.CANTIDAD;
+                    copago.VALOR_UNITARIO = (decimal)item.VALOR_UNITARIO;
+                    copago.VALOR_IVA = (decimal)item.CUE_IVA;
+                    copago.VALOR_TOTAL = (decimal)item.CUE_VALOR;
+                    copago.PORCENTAJE_COPAGO = item.PORCENTAJE_COPAGO;
+                    copago.VALOR_COPAGO = item.VALOR_COPAGO;
+                    copago.UNITARIO_COPAGO = item.UNITARIO_COPAGO;
+                    copago.IVA_COPAGO = item.IVA_COPAGO;
+                    copago.TOTAL_COPAGO = item.TOTAL_COPAGO;
+                    copago.UNITARIO = (decimal)item.VALOR_UNITARIO;
+                    copago.IVA = (decimal)item.CUE_IVA;
+                    copago.TOTAL = (decimal)item.CUE_VALOR;
+
+                    lstCopago.Add(copago);
+
+                }
+
+                return lstCopago;
+            }
+
         }
     }
 }

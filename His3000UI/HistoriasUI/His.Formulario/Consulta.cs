@@ -3678,8 +3678,8 @@ namespace His.ConsultaExterna
                 else
                     datos.sexoPaciente = "F";
 
-                PACIENTES pacien = new PACIENTES();
-                pacien = NegPacientes.recuperarPacientePorAtencion(Convert.ToInt32(txtatecodigo.Text));
+                PACIENTES pacien = pacien = NegPacientes.recuperarPacientePorAtencion(Convert.ToInt32(txtatecodigo.Text));
+                ATENCIONES atencion = NegAtenciones.RecuepraAtencionNumeroAtencion(Convert.ToInt32(txtatecodigo.Text));
                 if (NegParametros.ParametroFormularios())
                     datos.historiaClinica = pacien.PAC_IDENTIFICACION;
                 else
@@ -3704,7 +3704,7 @@ namespace His.ConsultaExterna
                 tabla["Sexo"] = datos.sexoPaciente.ToString();
                 tabla["Edad"] = Regex.Match(consultaExterna.Edad.ToString(), patron);
                 tabla["Historia"] = pacien.PAC_IDENTIFICACION;
-                tabla["AteCodigo"] = consultaExterna.AteCodigo.ToString() + "-" + pacien.PAC_HISTORIA_CLINICA;
+                tabla["AteCodigo"] = pacien.PAC_HISTORIA_CLINICA + "-" + atencion.ATE_NUMERO_ATENCION;
                 tabla["Motivo"] = consultaExterna.Motivo.ToString();
                 tabla["AntecedentesPersonales"] = consultaExterna.AntecedentesPersonales.ToString();
                 tabla["Cardiopatia"] = consultaExterna.Cardiopatia.ToString();

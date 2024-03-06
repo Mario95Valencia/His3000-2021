@@ -1788,7 +1788,7 @@ namespace His.Datos
             }
 
         }
-        public DataTable atencionesID(Int32 ATE_CODIGO)
+        public DataTable atencionesID(Int64 ATE_CODIGO)
         {
             SqlConnection Sqlcon;
             SqlCommand Sqlcmd;

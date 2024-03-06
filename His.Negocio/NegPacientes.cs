@@ -185,7 +185,7 @@ namespace His.Negocio
         {
             return new DatPacientes().RecuperarDtoPacienteID(codPaciente);
         }
-        public static PACIENTES RecuperarPacienteID(Int32 codPaciente)
+        public static PACIENTES RecuperarPacienteID(Int64 codPaciente)
         {
             return new DatPacientes().RecuperarPacienteID(codPaciente);
         }

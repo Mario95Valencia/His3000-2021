@@ -16,7 +16,7 @@ namespace His.Negocio
             return new DatFactura().recuperaMaximoFactura();
         }
 
-        public static  bool RecuperaAtencion(Int32 ateCodigo)
+        public static  bool RecuperaAtencion(Int64 ateCodigo)
         {
             return new DatFactura().RecuperaAtencion(ateCodigo);
         }
@@ -348,7 +348,7 @@ namespace His.Negocio
         {
             return new DatFactura().AnticiposCliente(IdCliente);
         }
-        public static DataTable ProductosFactura(Int32 CodigoAtencion)  // genera los datos para el reporte de la prefactura
+        public static DataTable ProductosFactura(Int64 CodigoAtencion)  // genera los datos para el reporte de la prefactura
         {
             return new DatFactura().ProductosFactura(CodigoAtencion);
         }
@@ -640,6 +640,10 @@ namespace His.Negocio
         public static bool ExportaCuentaPaciente(Int64 ateCodigo, Int64 pacCodigo)
         {
             return new DatFactura().ExportaCuentaPaciente(ateCodigo, pacCodigo);
+        }
+        public static List<DtoVistaCopago> cargaCuentaPacienteXAtencion(Int64 ate_codigo)
+        {
+            return new DatFactura().cargaCuentaPacienteXAtencion(ate_codigo);
         }
     }
 }

@@ -712,6 +712,78 @@ namespace His.Datos
                 //Dts = new DataSet();
                 //Sqldap.Fill(Dts);
                 #endregion
+                //GUARDA OBSTETRICA SI SE GUARDA LO ANTERIOR
+
+                Sqlcmd = new SqlCommand("sp_GrabaObstetricaConsultaExterna", Sqlcon);
+                Sqlcmd.CommandType = CommandType.StoredProcedure;
+                Sqlcmd.Transaction = transaction;
+
+                Sqlcmd.Parameters.Add("@lblHistoria", SqlDbType.VarChar);
+                Sqlcmd.Parameters["@lblHistoria"].Value = (lblHistoria);
+
+                Sqlcmd.Parameters.Add("@lblAtencion", SqlDbType.BigInt);
+                Sqlcmd.Parameters["@lblAtencion"].Value = (lblAtencion);
+
+                Sqlcmd.Parameters.Add("@txt_Gesta", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Gesta"].Value = (txt_Gesta);
+
+                Sqlcmd.Parameters.Add("@txt_Partos", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Partos"].Value = (txt_Partos);
+
+                Sqlcmd.Parameters.Add("@txt_Abortos", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Abortos"].Value = (txt_Abortos);
+
+                Sqlcmd.Parameters.Add("@txt_Cesareas", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Cesareas"].Value = (txt_Cesareas);
+
+                Sqlcmd.Parameters.Add("@dtp_ultimaMenst1", SqlDbType.Date);
+                Sqlcmd.Parameters["@dtp_ultimaMenst1"].Value = (dtp_ultimaMenst1);
+
+                Sqlcmd.Parameters.Add("@txt_SemanaG", SqlDbType.Decimal);
+                Sqlcmd.Parameters["@txt_SemanaG"].Value = (txt_SemanaG);
+
+                Sqlcmd.Parameters.Add("@movFetal", SqlDbType.Int);
+                Sqlcmd.Parameters["@movFetal"].Value = (movFetal);
+
+                Sqlcmd.Parameters.Add("@txt_FrecCF", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_FrecCF"].Value = (txt_FrecCF);
+
+                Sqlcmd.Parameters.Add("@memRotas", SqlDbType.Int);
+                Sqlcmd.Parameters["@memRotas"].Value = (memRotas);
+
+                Sqlcmd.Parameters.Add("@txt_Tiempo", SqlDbType.VarChar);
+                Sqlcmd.Parameters["@txt_Tiempo"].Value = (txt_Tiempo);
+
+                Sqlcmd.Parameters.Add("@txt_AltU", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_AltU"].Value = (txt_AltU);
+
+                Sqlcmd.Parameters.Add("@txt_Presentacion", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Presentacion"].Value = (txt_Presentacion);
+
+                Sqlcmd.Parameters.Add("@txt_Dilatacion", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Dilatacion"].Value = (txt_Dilatacion);
+
+                Sqlcmd.Parameters.Add("@txt_Borramiento", SqlDbType.Int);
+                Sqlcmd.Parameters["@txt_Borramiento"].Value = (txt_Borramiento);
+
+                Sqlcmd.Parameters.Add("@txt_Plano", SqlDbType.VarChar);
+                Sqlcmd.Parameters["@txt_Plano"].Value = (txt_Plano);
+
+                Sqlcmd.Parameters.Add("@pelvis", SqlDbType.Int);
+                Sqlcmd.Parameters["@pelvis"].Value = (pelvis);
+
+                Sqlcmd.Parameters.Add("@sangrado", SqlDbType.Int);
+                Sqlcmd.Parameters["@sangrado"].Value = (sangrado);
+
+                Sqlcmd.Parameters.Add("@txt_Contracciones", SqlDbType.VarChar);
+                Sqlcmd.Parameters["@txt_Contracciones"].Value = (txt_Contracciones);
+
+                Sqldap = new SqlDataAdapter();
+                Sqlcmd.CommandTimeout = 180;
+                Sqldap.SelectCommand = Sqlcmd;
+                Dts = new DataSet();
+                Sqldap.Fill(Dts);
+
                 using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
                 {
                     ConexionEntidades.ConexionEDM.Open();
@@ -789,8 +861,9 @@ namespace His.Datos
 
                         db.SaveChanges();
                         transac.Commit();
+                        transaction.Commit();
+                        Sqlcon.Close();
                         ConexionEntidades.ConexionEDM.Close();
-                        return true;
                     }
                     catch (Exception ex)
                     {
@@ -803,89 +876,6 @@ namespace His.Datos
                     }
 
                 }
-                //GUARDA OBSTETRICA SI SE GUARDA LO ANTERIOR
-
-                Sqlcmd = new SqlCommand("sp_GrabaObstetricaConsultaExterna", Sqlcon);
-                Sqlcmd.CommandType = CommandType.StoredProcedure;
-                Sqlcmd.Transaction = transaction;
-
-                Sqlcmd.Parameters.Add("@lblHistoria", SqlDbType.VarChar);
-                Sqlcmd.Parameters["@lblHistoria"].Value = (lblHistoria);
-
-                Sqlcmd.Parameters.Add("@lblAtencion", SqlDbType.BigInt);
-                Sqlcmd.Parameters["@lblAtencion"].Value = (lblAtencion);
-
-                Sqlcmd.Parameters.Add("@txt_Gesta", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Gesta"].Value = (txt_Gesta);
-
-                Sqlcmd.Parameters.Add("@txt_Partos", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Partos"].Value = (txt_Partos);
-
-                Sqlcmd.Parameters.Add("@txt_Abortos", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Abortos"].Value = (txt_Abortos);
-
-                Sqlcmd.Parameters.Add("@txt_Cesareas", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Cesareas"].Value = (txt_Cesareas);
-
-                Sqlcmd.Parameters.Add("@dtp_ultimaMenst1", SqlDbType.Date);
-                Sqlcmd.Parameters["@dtp_ultimaMenst1"].Value = (dtp_ultimaMenst1);
-
-                Sqlcmd.Parameters.Add("@txt_SemanaG", SqlDbType.Decimal);
-                Sqlcmd.Parameters["@txt_SemanaG"].Value = (txt_SemanaG);
-
-                Sqlcmd.Parameters.Add("@movFetal", SqlDbType.Int);
-                Sqlcmd.Parameters["@movFetal"].Value = (movFetal);
-
-                Sqlcmd.Parameters.Add("@txt_FrecCF", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_FrecCF"].Value = (txt_FrecCF);
-
-                Sqlcmd.Parameters.Add("@memRotas", SqlDbType.Int);
-                Sqlcmd.Parameters["@memRotas"].Value = (memRotas);
-
-                Sqlcmd.Parameters.Add("@txt_Tiempo", SqlDbType.VarChar);
-                Sqlcmd.Parameters["@txt_Tiempo"].Value = (txt_Tiempo);
-
-                Sqlcmd.Parameters.Add("@txt_AltU", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_AltU"].Value = (txt_AltU);
-
-                Sqlcmd.Parameters.Add("@txt_Presentacion", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Presentacion"].Value = (txt_Presentacion);
-
-                Sqlcmd.Parameters.Add("@txt_Dilatacion", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Dilatacion"].Value = (txt_Dilatacion);
-
-                Sqlcmd.Parameters.Add("@txt_Borramiento", SqlDbType.Int);
-                Sqlcmd.Parameters["@txt_Borramiento"].Value = (txt_Borramiento);
-
-                Sqlcmd.Parameters.Add("@txt_Plano", SqlDbType.VarChar);
-                Sqlcmd.Parameters["@txt_Plano"].Value = (txt_Plano);
-
-                Sqlcmd.Parameters.Add("@pelvis", SqlDbType.Int);
-                Sqlcmd.Parameters["@pelvis"].Value = (pelvis);
-
-                Sqlcmd.Parameters.Add("@sangrado", SqlDbType.Int);
-                Sqlcmd.Parameters["@sangrado"].Value = (sangrado);
-
-                Sqlcmd.Parameters.Add("@txt_Contracciones", SqlDbType.VarChar);
-                Sqlcmd.Parameters["@txt_Contracciones"].Value = (txt_Contracciones);
-
-                Sqldap = new SqlDataAdapter();
-                Sqlcmd.CommandTimeout = 180;
-                Sqldap.SelectCommand = Sqlcmd;
-                Dts = new DataSet();
-                Sqldap.Fill(Dts);
-
-
-                transaction.Commit();
-                try
-                {
-                    Sqlcon.Close();
-                }
-                catch
-                {
-                    return false;
-                }
-
                 return true;
             }
             catch (Exception ex)

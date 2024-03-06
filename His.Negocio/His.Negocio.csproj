@@ -101,6 +101,7 @@
     <Compile Include="NegConsentimiento.cs" />
     <Compile Include="NegConsultaExterna.cs" />
     <Compile Include="NegControlHc.cs" />
+    <Compile Include="NegCopago.cs" />
     <Compile Include="NegCuentasPacientes.cs" />
     <Compile Include="NegDepartamentos.cs" />
     <Compile Include="NegDetalleCuenta.cs" />

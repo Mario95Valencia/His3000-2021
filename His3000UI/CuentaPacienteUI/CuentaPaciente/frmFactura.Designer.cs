@@ -309,6 +309,7 @@
             this.dtsDesgloseFactura = new CuentaPaciente.dtsDesgloseFactura();
             this.datosFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosCuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.detalleCopagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ultraTabPageControl3.SuspendLayout();
             this.gbxIdentificadores.SuspendLayout();
             this.ultraTabPageControl1.SuspendLayout();
@@ -372,14 +373,14 @@
             this.ultraTabPageControl3.Controls.Add(this.label1);
             this.ultraTabPageControl3.Controls.Add(this.txtfacturaelectronica);
             this.ultraTabPageControl3.Location = new System.Drawing.Point(1, 23);
-            this.ultraTabPageControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl3.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl3.Name = "ultraTabPageControl3";
-            this.ultraTabPageControl3.Size = new System.Drawing.Size(1216, 98);
+            this.ultraTabPageControl3.Size = new System.Drawing.Size(1714, 98);
             // 
             // btnBuscaClienteSic
             // 
             this.btnBuscaClienteSic.Location = new System.Drawing.Point(12, 43);
-            this.btnBuscaClienteSic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscaClienteSic.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscaClienteSic.Name = "btnBuscaClienteSic";
             this.btnBuscaClienteSic.Size = new System.Drawing.Size(61, 44);
             this.btnBuscaClienteSic.TabIndex = 103;
@@ -404,7 +405,7 @@
             // 
             this.txtEmailFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtEmailFactura.Location = new System.Drawing.Point(739, 39);
-            this.txtEmailFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailFactura.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailFactura.Name = "txtEmailFactura";
             this.txtEmailFactura.Size = new System.Drawing.Size(425, 22);
             this.txtEmailFactura.TabIndex = 49;
@@ -428,9 +429,9 @@
             this.gbxIdentificadores.Controls.Add(this.chk_pasaporte);
             this.gbxIdentificadores.Controls.Add(this.chk_Cedula);
             this.gbxIdentificadores.Location = new System.Drawing.Point(408, 0);
-            this.gbxIdentificadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxIdentificadores.Margin = new System.Windows.Forms.Padding(4);
             this.gbxIdentificadores.Name = "gbxIdentificadores";
-            this.gbxIdentificadores.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxIdentificadores.Padding = new System.Windows.Forms.Padding(4);
             this.gbxIdentificadores.Size = new System.Drawing.Size(205, 66);
             this.gbxIdentificadores.TabIndex = 47;
             this.gbxIdentificadores.TabStop = false;
@@ -440,7 +441,7 @@
             // 
             this.chk_Ruc.AutoSize = true;
             this.chk_Ruc.Location = new System.Drawing.Point(119, 20);
-            this.chk_Ruc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chk_Ruc.Margin = new System.Windows.Forms.Padding(4);
             this.chk_Ruc.Name = "chk_Ruc";
             this.chk_Ruc.Size = new System.Drawing.Size(71, 21);
             this.chk_Ruc.TabIndex = 46;
@@ -452,7 +453,7 @@
             // 
             this.chbConsumidorFinal.AutoSize = true;
             this.chbConsumidorFinal.Location = new System.Drawing.Point(119, 41);
-            this.chbConsumidorFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbConsumidorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.chbConsumidorFinal.Name = "chbConsumidorFinal";
             this.chbConsumidorFinal.Size = new System.Drawing.Size(77, 21);
             this.chbConsumidorFinal.TabIndex = 43;
@@ -464,7 +465,7 @@
             // 
             this.chk_pasaporte.AutoSize = true;
             this.chk_pasaporte.Location = new System.Drawing.Point(12, 41);
-            this.chk_pasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chk_pasaporte.Margin = new System.Windows.Forms.Padding(4);
             this.chk_pasaporte.Name = "chk_pasaporte";
             this.chk_pasaporte.Size = new System.Drawing.Size(95, 21);
             this.chk_pasaporte.TabIndex = 44;
@@ -476,7 +477,7 @@
             // 
             this.chk_Cedula.AutoSize = true;
             this.chk_Cedula.Location = new System.Drawing.Point(12, 20);
-            this.chk_Cedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chk_Cedula.Margin = new System.Windows.Forms.Padding(4);
             this.chk_Cedula.Name = "chk_Cedula";
             this.chk_Cedula.Size = new System.Drawing.Size(74, 21);
             this.chk_Cedula.TabIndex = 45;
@@ -488,7 +489,7 @@
             // 
             this.chb_NombreFactura.AutoSize = true;
             this.chb_NombreFactura.Location = new System.Drawing.Point(309, 43);
-            this.chb_NombreFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chb_NombreFactura.Margin = new System.Windows.Forms.Padding(4);
             this.chb_NombreFactura.Name = "chb_NombreFactura";
             this.chb_NombreFactura.Size = new System.Drawing.Size(58, 21);
             this.chb_NombreFactura.TabIndex = 42;
@@ -508,7 +509,7 @@
             "CLIENTE",
             "OTROS"});
             this.cbx_FacturaNombre.Location = new System.Drawing.Point(141, 14);
-            this.cbx_FacturaNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbx_FacturaNombre.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_FacturaNombre.Name = "cbx_FacturaNombre";
             this.cbx_FacturaNombre.Size = new System.Drawing.Size(258, 24);
             this.cbx_FacturaNombre.TabIndex = 40;
@@ -517,7 +518,7 @@
             // txt_telef_Cliente
             // 
             this.txt_telef_Cliente.Location = new System.Drawing.Point(1005, 11);
-            this.txt_telef_Cliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_telef_Cliente.Margin = new System.Windows.Forms.Padding(4);
             this.txt_telef_Cliente.Name = "txt_telef_Cliente";
             this.txt_telef_Cliente.Size = new System.Drawing.Size(159, 22);
             this.txt_telef_Cliente.TabIndex = 32;
@@ -529,7 +530,7 @@
             // 
             this.txt_Cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Cliente.Location = new System.Drawing.Point(141, 68);
-            this.txt_Cliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Cliente.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Cliente.Name = "txt_Cliente";
             this.txt_Cliente.Size = new System.Drawing.Size(425, 22);
             this.txt_Cliente.TabIndex = 19;
@@ -552,7 +553,7 @@
             this.txt_Direc_Cliente.AcceptsTab = true;
             this.txt_Direc_Cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Direc_Cliente.Location = new System.Drawing.Point(739, 68);
-            this.txt_Direc_Cliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Direc_Cliente.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Direc_Cliente.Name = "txt_Direc_Cliente";
             this.txt_Direc_Cliente.Size = new System.Drawing.Size(425, 22);
             this.txt_Direc_Cliente.TabIndex = 33;
@@ -562,7 +563,7 @@
             // 
             this.dtpFechaFacturacion.Enabled = false;
             this.dtpFechaFacturacion.Location = new System.Drawing.Point(739, 11);
-            this.dtpFechaFacturacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaFacturacion.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaFacturacion.Name = "dtpFechaFacturacion";
             this.dtpFechaFacturacion.Size = new System.Drawing.Size(159, 22);
             this.dtpFechaFacturacion.TabIndex = 39;
@@ -605,7 +606,7 @@
             // txt_Ruc
             // 
             this.txt_Ruc.Location = new System.Drawing.Point(141, 42);
-            this.txt_Ruc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Ruc.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Ruc.MaxLength = 13;
             this.txt_Ruc.Name = "txt_Ruc";
             this.txt_Ruc.Size = new System.Drawing.Size(159, 22);
@@ -629,7 +630,7 @@
             // txtfacturaelectronica
             // 
             this.txtfacturaelectronica.Location = new System.Drawing.Point(569, 66);
-            this.txtfacturaelectronica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfacturaelectronica.Margin = new System.Windows.Forms.Padding(4);
             this.txtfacturaelectronica.Multiline = true;
             this.txtfacturaelectronica.Name = "txtfacturaelectronica";
             this.txtfacturaelectronica.Size = new System.Drawing.Size(75, 24);
@@ -661,10 +662,10 @@
             this.ultraTabPageControl1.Controls.Add(this.label18);
             this.ultraTabPageControl1.Controls.Add(this.label14);
             this.ultraTabPageControl1.Controls.Add(this.label15);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-8889, -8000);
-            this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
-            this.ultraTabPageControl1.Size = new System.Drawing.Size(1216, 98);
+            this.ultraTabPageControl1.Size = new System.Drawing.Size(1714, 98);
             // 
             // txt_tipoIngreso
             // 
@@ -696,7 +697,7 @@
             // 
             this.txtNumeroAtencion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNumeroAtencion.Location = new System.Drawing.Point(972, 2);
-            this.txtNumeroAtencion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroAtencion.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroAtencion.Multiline = true;
             this.txtNumeroAtencion.Name = "txtNumeroAtencion";
             this.txtNumeroAtencion.Size = new System.Drawing.Size(123, 31);
@@ -803,7 +804,7 @@
             // 
             this.txt_Atencion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Atencion.Location = new System.Drawing.Point(1105, 2);
-            this.txt_Atencion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Atencion.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Atencion.Multiline = true;
             this.txt_Atencion.Name = "txt_Atencion";
             this.txt_Atencion.Size = new System.Drawing.Size(123, 31);
@@ -814,7 +815,7 @@
             // 
             this.txt_Historia_Pc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Historia_Pc.Location = new System.Drawing.Point(678, 2);
-            this.txt_Historia_Pc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Historia_Pc.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Historia_Pc.Multiline = true;
             this.txt_Historia_Pc.Name = "txt_Historia_Pc";
             this.txt_Historia_Pc.Size = new System.Drawing.Size(123, 31);
@@ -969,10 +970,10 @@
             // 
             // ultraTabPageControl4
             // 
-            this.ultraTabPageControl4.Location = new System.Drawing.Point(-8889, -8000);
-            this.ultraTabPageControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl4.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl4.Name = "ultraTabPageControl4";
-            this.ultraTabPageControl4.Size = new System.Drawing.Size(1216, 98);
+            this.ultraTabPageControl4.Size = new System.Drawing.Size(1714, 98);
             // 
             // ultraTabPageControl5
             // 
@@ -987,16 +988,16 @@
             this.ultraTabPageControl5.Controls.Add(this.label34);
             this.ultraTabPageControl5.Controls.Add(this.gridDetalleFactura);
             this.ultraTabPageControl5.Location = new System.Drawing.Point(1, 23);
-            this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
-            this.ultraTabPageControl5.Size = new System.Drawing.Size(1216, 238);
+            this.ultraTabPageControl5.Size = new System.Drawing.Size(1714, 238);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.ultraGroupBox3);
-            this.panel1.Location = new System.Drawing.Point(539, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(1037, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(676, 46);
             this.panel1.TabIndex = 117;
@@ -1013,7 +1014,7 @@
             this.ultraGroupBox3.Controls.Add(this.btnAuditaCuenta);
             this.ultraGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraGroupBox3.Location = new System.Drawing.Point(0, 0);
-            this.ultraGroupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraGroupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.ultraGroupBox3.Name = "ultraGroupBox3";
             this.ultraGroupBox3.Size = new System.Drawing.Size(676, 46);
             this.ultraGroupBox3.TabIndex = 93;
@@ -1024,7 +1025,7 @@
             this.btnAgrupar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAgrupar.Enabled = false;
             this.btnAgrupar.Location = new System.Drawing.Point(93, 0);
-            this.btnAgrupar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgrupar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgrupar.Name = "btnAgrupar";
             this.btnAgrupar.Size = new System.Drawing.Size(109, 45);
             this.btnAgrupar.TabIndex = 116;
@@ -1040,7 +1041,7 @@
             this.btnGeneraValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.btnGeneraValores.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGeneraValores.Location = new System.Drawing.Point(2, 0);
-            this.btnGeneraValores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGeneraValores.Margin = new System.Windows.Forms.Padding(4);
             this.btnGeneraValores.Name = "btnGeneraValores";
             this.btnGeneraValores.Size = new System.Drawing.Size(108, 44);
             this.btnGeneraValores.TabIndex = 113;
@@ -1053,7 +1054,7 @@
             this.btnSolicitar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSolicitar.Enabled = false;
             this.btnSolicitar.Location = new System.Drawing.Point(202, 0);
-            this.btnSolicitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSolicitar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(77, 45);
             this.btnSolicitar.TabIndex = 111;
@@ -1067,7 +1068,7 @@
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(279, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 45);
             this.button1.TabIndex = 114;
@@ -1080,7 +1081,7 @@
             this.btnAnticipos.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAnticipos.Enabled = false;
             this.btnAnticipos.Location = new System.Drawing.Point(375, 0);
-            this.btnAnticipos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnticipos.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnticipos.Name = "btnAnticipos";
             this.btnAnticipos.Size = new System.Drawing.Size(85, 45);
             this.btnAnticipos.TabIndex = 112;
@@ -1097,7 +1098,7 @@
             this.btnAltaPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.btnAltaPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAltaPaciente.Location = new System.Drawing.Point(460, 0);
-            this.btnAltaPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAltaPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.btnAltaPaciente.Name = "btnAltaPaciente";
             this.btnAltaPaciente.Size = new System.Drawing.Size(114, 45);
             this.btnAltaPaciente.TabIndex = 114;
@@ -1111,7 +1112,7 @@
             this.btnAuditaCuenta.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAuditaCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuditaCuenta.Location = new System.Drawing.Point(574, 0);
-            this.btnAuditaCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAuditaCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnAuditaCuenta.Name = "btnAuditaCuenta";
             this.btnAuditaCuenta.Size = new System.Drawing.Size(101, 45);
             this.btnAuditaCuenta.TabIndex = 115;
@@ -1125,8 +1126,8 @@
             this.cmb_Areas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Areas.Enabled = false;
             this.cmb_Areas.FormattingEnabled = true;
-            this.cmb_Areas.Location = new System.Drawing.Point(78, 10);
-            this.cmb_Areas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_Areas.Location = new System.Drawing.Point(327, 10);
+            this.cmb_Areas.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_Areas.Name = "cmb_Areas";
             this.cmb_Areas.Size = new System.Drawing.Size(217, 24);
             this.cmb_Areas.TabIndex = 89;
@@ -1137,7 +1138,7 @@
             this.cmbauxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbauxarea.FormattingEnabled = true;
             this.cmbauxarea.Location = new System.Drawing.Point(76, 12);
-            this.cmbauxarea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbauxarea.Margin = new System.Windows.Forms.Padding(4);
             this.cmbauxarea.Name = "cmbauxarea";
             this.cmbauxarea.Size = new System.Drawing.Size(204, 24);
             this.cmbauxarea.TabIndex = 109;
@@ -1151,8 +1152,8 @@
             // 
             this.chbCopago.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chbCopago.AutoSize = true;
-            this.chbCopago.Location = new System.Drawing.Point(649, 14);
-            this.chbCopago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbCopago.Location = new System.Drawing.Point(898, 14);
+            this.chbCopago.Margin = new System.Windows.Forms.Padding(4);
             this.chbCopago.Name = "chbCopago";
             this.chbCopago.Size = new System.Drawing.Size(90, 21);
             this.chbCopago.TabIndex = 108;
@@ -1166,8 +1167,8 @@
             // 
             this.cmbEstaciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbEstaciones.FormattingEnabled = true;
-            this.cmbEstaciones.Location = new System.Drawing.Point(665, 0);
-            this.cmbEstaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstaciones.Location = new System.Drawing.Point(914, 0);
+            this.cmbEstaciones.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstaciones.Name = "cmbEstaciones";
             this.cmbEstaciones.Size = new System.Drawing.Size(38, 24);
             this.cmbEstaciones.TabIndex = 94;
@@ -1191,8 +1192,8 @@
             this.cmb_Rubros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Rubros.Enabled = false;
             this.cmb_Rubros.FormattingEnabled = true;
-            this.cmb_Rubros.Location = new System.Drawing.Point(377, 10);
-            this.cmb_Rubros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_Rubros.Location = new System.Drawing.Point(626, 10);
+            this.cmb_Rubros.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_Rubros.Name = "cmb_Rubros";
             this.cmb_Rubros.Size = new System.Drawing.Size(255, 24);
             this.cmb_Rubros.TabIndex = 92;
@@ -1203,7 +1204,7 @@
             this.lblRubros.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRubros.AutoSize = true;
             this.lblRubros.BackColor = System.Drawing.Color.Transparent;
-            this.lblRubros.Location = new System.Drawing.Point(30, 14);
+            this.lblRubros.Location = new System.Drawing.Point(279, 14);
             this.lblRubros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRubros.Name = "lblRubros";
             this.lblRubros.Size = new System.Drawing.Size(46, 17);
@@ -1215,7 +1216,7 @@
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.Location = new System.Drawing.Point(308, 14);
+            this.label34.Location = new System.Drawing.Point(557, 14);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(71, 17);
@@ -1285,9 +1286,9 @@
             this.gridDetalleFactura.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.gridDetalleFactura.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.gridDetalleFactura.Location = new System.Drawing.Point(8, 46);
-            this.gridDetalleFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridDetalleFactura.Margin = new System.Windows.Forms.Padding(4);
             this.gridDetalleFactura.Name = "gridDetalleFactura";
-            this.gridDetalleFactura.Size = new System.Drawing.Size(1200, 209);
+            this.gridDetalleFactura.Size = new System.Drawing.Size(1698, 209);
             this.gridDetalleFactura.TabIndex = 41;
             this.gridDetalleFactura.Text = "ultraGridDetallefactura";
             this.gridDetalleFactura.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.gridDetalleFactura_InitializeLayout);
@@ -1306,10 +1307,10 @@
             this.ultraTabPageControl7.Controls.Add(this.ultraGrid1);
             this.ultraTabPageControl7.Controls.Add(this.txtCIva);
             this.ultraTabPageControl7.Controls.Add(this.txtSIva);
-            this.ultraTabPageControl7.Location = new System.Drawing.Point(-8889, -8000);
-            this.ultraTabPageControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl7.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl7.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl7.Name = "ultraTabPageControl7";
-            this.ultraTabPageControl7.Size = new System.Drawing.Size(1216, 238);
+            this.ultraTabPageControl7.Size = new System.Drawing.Size(1714, 238);
             // 
             // label47
             // 
@@ -1326,7 +1327,7 @@
             this.cboTipoDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoDescuento.FormattingEnabled = true;
             this.cboTipoDescuento.Location = new System.Drawing.Point(1049, 140);
-            this.cboTipoDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTipoDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.cboTipoDescuento.Name = "cboTipoDescuento";
             this.cboTipoDescuento.Size = new System.Drawing.Size(134, 24);
             this.cboTipoDescuento.TabIndex = 111;
@@ -1335,7 +1336,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1058, 172);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 57);
             this.button2.TabIndex = 108;
@@ -1348,7 +1349,7 @@
             this.chbGuardaCopago.AutoSize = true;
             this.chbGuardaCopago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.chbGuardaCopago.Location = new System.Drawing.Point(1048, 59);
-            this.chbGuardaCopago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbGuardaCopago.Margin = new System.Windows.Forms.Padding(4);
             this.chbGuardaCopago.Name = "chbGuardaCopago";
             this.chbGuardaCopago.Size = new System.Drawing.Size(110, 17);
             this.chbGuardaCopago.TabIndex = 107;
@@ -1361,7 +1362,7 @@
             // 
             this.chbDescuento.AutoSize = true;
             this.chbDescuento.Location = new System.Drawing.Point(1048, 30);
-            this.chbDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.chbDescuento.Name = "chbDescuento";
             this.chbDescuento.Size = new System.Drawing.Size(135, 21);
             this.chbDescuento.TabIndex = 2;
@@ -1375,7 +1376,7 @@
             this.dgvDescuento.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvDescuento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDescuento.Location = new System.Drawing.Point(16, 18);
-            this.dgvDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDescuento.Name = "dgvDescuento";
             this.dgvDescuento.RowHeadersWidth = 62;
             this.dgvDescuento.Size = new System.Drawing.Size(1024, 213);
@@ -1447,7 +1448,7 @@
             this.ultraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGrid1.Location = new System.Drawing.Point(14, 26);
-            this.ultraGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraGrid1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraGrid1.Name = "ultraGrid1";
             this.ultraGrid1.Size = new System.Drawing.Size(827, 245);
             this.ultraGrid1.TabIndex = 106;
@@ -1457,7 +1458,7 @@
             // txtCIva
             // 
             this.txtCIva.Location = new System.Drawing.Point(1052, 92);
-            this.txtCIva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCIva.Margin = new System.Windows.Forms.Padding(4);
             this.txtCIva.Name = "txtCIva";
             this.txtCIva.Size = new System.Drawing.Size(116, 22);
             this.txtCIva.TabIndex = 109;
@@ -1467,7 +1468,7 @@
             // txtSIva
             // 
             this.txtSIva.Location = new System.Drawing.Point(1058, 149);
-            this.txtSIva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSIva.Margin = new System.Windows.Forms.Padding(4);
             this.txtSIva.Name = "txtSIva";
             this.txtSIva.Size = new System.Drawing.Size(116, 22);
             this.txtSIva.TabIndex = 110;
@@ -1478,10 +1479,10 @@
             // 
             this.ultraTabPageControl8.Controls.Add(this.dgvDivideFactura);
             this.ultraTabPageControl8.Controls.Add(this.gridDivideFactura);
-            this.ultraTabPageControl8.Location = new System.Drawing.Point(-8889, -8000);
-            this.ultraTabPageControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl8.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl8.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl8.Name = "ultraTabPageControl8";
-            this.ultraTabPageControl8.Size = new System.Drawing.Size(1216, 238);
+            this.ultraTabPageControl8.Size = new System.Drawing.Size(1714, 238);
             // 
             // dgvDivideFactura
             // 
@@ -1489,7 +1490,7 @@
             this.dgvDivideFactura.BackgroundColor = System.Drawing.Color.White;
             this.dgvDivideFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDivideFactura.Location = new System.Drawing.Point(23, 41);
-            this.dgvDivideFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDivideFactura.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDivideFactura.Name = "dgvDivideFactura";
             this.dgvDivideFactura.RowHeadersWidth = 62;
             this.dgvDivideFactura.Size = new System.Drawing.Size(1152, 214);
@@ -1559,7 +1560,7 @@
             this.gridDivideFactura.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.gridDivideFactura.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.gridDivideFactura.Location = new System.Drawing.Point(23, 87);
-            this.gridDivideFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridDivideFactura.Margin = new System.Windows.Forms.Padding(4);
             this.gridDivideFactura.Name = "gridDivideFactura";
             this.gridDivideFactura.Size = new System.Drawing.Size(827, 329);
             this.gridDivideFactura.TabIndex = 107;
@@ -1592,10 +1593,10 @@
             this.ultraTabPageControl6.Controls.Add(this.label32);
             this.ultraTabPageControl6.Controls.Add(this.label33);
             this.ultraTabPageControl6.Controls.Add(this.gridRecuperaFP);
-            this.ultraTabPageControl6.Location = new System.Drawing.Point(-8889, -8000);
-            this.ultraTabPageControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl6.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl6.Name = "ultraTabPageControl6";
-            this.ultraTabPageControl6.Size = new System.Drawing.Size(1216, 238);
+            this.ultraTabPageControl6.Size = new System.Drawing.Size(1714, 238);
             // 
             // label45
             // 
@@ -1644,7 +1645,7 @@
             // txtDescuentos
             // 
             this.txtDescuentos.Location = new System.Drawing.Point(345, 9);
-            this.txtDescuentos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescuentos.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescuentos.MaxLength = 13;
             this.txtDescuentos.Name = "txtDescuentos";
             this.txtDescuentos.Size = new System.Drawing.Size(132, 22);
@@ -1659,7 +1660,7 @@
             // 
             this.cmbDescuentos.FormattingEnabled = true;
             this.cmbDescuentos.Location = new System.Drawing.Point(727, 5);
-            this.cmbDescuentos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDescuentos.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDescuentos.Name = "cmbDescuentos";
             this.cmbDescuentos.Size = new System.Drawing.Size(336, 24);
             this.cmbDescuentos.TabIndex = 96;
@@ -1672,7 +1673,7 @@
             appearance13.BackColor2 = System.Drawing.Color.LightGray;
             this.btn_AyudaPagos.Appearance = appearance13;
             this.btn_AyudaPagos.Location = new System.Drawing.Point(16, 274);
-            this.btn_AyudaPagos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AyudaPagos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AyudaPagos.Name = "btn_AyudaPagos";
             this.btn_AyudaPagos.Size = new System.Drawing.Size(48, 30);
             this.btn_AyudaPagos.TabIndex = 90;
@@ -1816,7 +1817,7 @@
             this.identificador});
             this.gridFormasPago.GridColor = System.Drawing.Color.LightGray;
             this.gridFormasPago.Location = new System.Drawing.Point(8, 42);
-            this.gridFormasPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridFormasPago.Margin = new System.Windows.Forms.Padding(4);
             this.gridFormasPago.Name = "gridFormasPago";
             this.gridFormasPago.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.gridFormasPago.RowHeadersWidth = 62;
@@ -2051,7 +2052,7 @@
             this.gridRecuperaFP.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.gridRecuperaFP.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.gridRecuperaFP.Location = new System.Drawing.Point(11, 41);
-            this.gridRecuperaFP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridRecuperaFP.Margin = new System.Windows.Forms.Padding(4);
             this.gridRecuperaFP.Name = "gridRecuperaFP";
             this.gridRecuperaFP.Size = new System.Drawing.Size(933, 327);
             this.gridRecuperaFP.TabIndex = 99;
@@ -2087,10 +2088,10 @@
             this.groupBox1.Controls.Add(this.AyudaF7);
             this.groupBox1.Controls.Add(this.AyudaF6);
             this.groupBox1.Controls.Add(this.AyudaF3);
-            this.groupBox1.Location = new System.Drawing.Point(-92, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(157, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(788, 142);
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
@@ -2109,7 +2110,7 @@
             // 
             this.txtObserva.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObserva.Location = new System.Drawing.Point(48, 106);
-            this.txtObserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtObserva.Margin = new System.Windows.Forms.Padding(4);
             this.txtObserva.Multiline = true;
             this.txtObserva.Name = "txtObserva";
             this.txtObserva.Size = new System.Drawing.Size(711, 27);
@@ -2417,7 +2418,7 @@
             this.lblConIva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblConIva.AutoSize = true;
             this.lblConIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConIva.Location = new System.Drawing.Point(396, 0);
+            this.lblConIva.Location = new System.Drawing.Point(645, 0);
             this.lblConIva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConIva.Name = "lblConIva";
             this.lblConIva.Size = new System.Drawing.Size(101, 48);
@@ -2429,7 +2430,7 @@
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(-8, 0);
+            this.label41.Location = new System.Drawing.Point(241, 0);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(367, 48);
@@ -2449,9 +2450,9 @@
             this.ultraGroupBox1.Controls.Add(this.btnBuscarDatos);
             this.ultraGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraGroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
-            this.ultraGroupBox1.Size = new System.Drawing.Size(1218, 78);
+            this.ultraGroupBox1.Size = new System.Drawing.Size(1716, 78);
             this.ultraGroupBox1.TabIndex = 3;
             this.ultraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
             // 
@@ -2459,7 +2460,7 @@
             // 
             this.txt_fechaalta.Enabled = false;
             this.txt_fechaalta.Location = new System.Drawing.Point(347, 41);
-            this.txt_fechaalta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_fechaalta.Margin = new System.Windows.Forms.Padding(4);
             this.txt_fechaalta.Name = "txt_fechaalta";
             this.txt_fechaalta.Size = new System.Drawing.Size(193, 22);
             this.txt_fechaalta.TabIndex = 91;
@@ -2497,7 +2498,7 @@
             this.dtp_FechaIngreso.Enabled = false;
             this.dtp_FechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_FechaIngreso.Location = new System.Drawing.Point(88, 42);
-            this.dtp_FechaIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_FechaIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_FechaIngreso.Name = "dtp_FechaIngreso";
             this.dtp_FechaIngreso.Size = new System.Drawing.Size(196, 22);
             this.dtp_FechaIngreso.TabIndex = 85;
@@ -2527,9 +2528,9 @@
             this.ultraGroupBox2.Controls.Add(this.label5);
             this.ultraGroupBox2.Controls.Add(this.label17);
             this.ultraGroupBox2.Location = new System.Drawing.Point(715, 0);
-            this.ultraGroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraGroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraGroupBox2.Name = "ultraGroupBox2";
-            this.ultraGroupBox2.Size = new System.Drawing.Size(500, 78);
+            this.ultraGroupBox2.Size = new System.Drawing.Size(998, 78);
             this.ultraGroupBox2.TabIndex = 74;
             this.ultraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
             // 
@@ -2662,7 +2663,7 @@
             this.btnBuscarDatos.Appearance = appearance50;
             this.btnBuscarDatos.Enabled = false;
             this.btnBuscarDatos.Location = new System.Drawing.Point(549, 9);
-            this.btnBuscarDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarDatos.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarDatos.Name = "btnBuscarDatos";
             this.btnBuscarDatos.Size = new System.Drawing.Size(37, 30);
             this.btnBuscarDatos.TabIndex = 3;
@@ -2677,10 +2678,10 @@
             this.ultraTabControl1.Controls.Add(this.ultraTabPageControl4);
             this.ultraTabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraTabControl1.Location = new System.Drawing.Point(0, 0);
-            this.ultraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabControl1.Name = "ultraTabControl1";
             this.ultraTabControl1.SharedControlsPage = this.ultraTabPageControl2;
-            this.ultraTabControl1.Size = new System.Drawing.Size(1218, 122);
+            this.ultraTabControl1.Size = new System.Drawing.Size(1716, 122);
             this.ultraTabControl1.TabIndex = 40;
             ultraTab5.Key = "datosFactura";
             ultraTab5.TabPage = this.ultraTabPageControl3;
@@ -2701,9 +2702,9 @@
             // ultraTabPageControl2
             // 
             this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabPageControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabPageControl2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
-            this.ultraTabPageControl2.Size = new System.Drawing.Size(1216, 98);
+            this.ultraTabPageControl2.Size = new System.Drawing.Size(1714, 98);
             // 
             // errorFactura
             // 
@@ -2718,10 +2719,10 @@
             this.ultraTabControl2.Controls.Add(this.ultraTabPageControl8);
             this.ultraTabControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraTabControl2.Location = new System.Drawing.Point(0, 0);
-            this.ultraTabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabControl2.Name = "ultraTabControl2";
             this.ultraTabControl2.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.ultraTabControl2.Size = new System.Drawing.Size(1218, 262);
+            this.ultraTabControl2.Size = new System.Drawing.Size(1716, 262);
             this.ultraTabControl2.TabIndex = 52;
             ultraTab1.Key = "detalle";
             ultraTab1.TabPage = this.ultraTabPageControl5;
@@ -2749,9 +2750,9 @@
             // ultraTabSharedControlsPage1
             // 
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabSharedControlsPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ultraTabSharedControlsPage1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(1216, 238);
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(1714, 238);
             // 
             // toolStrip1
             // 
@@ -2770,7 +2771,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1218, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1716, 39);
             this.toolStrip1.TabIndex = 53;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2824,7 +2825,8 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
             this.detallePorAreaToolStripMenuItem,
-            this.detalleCuentasAgrupadasToolStripMenuItem});
+            this.detalleCuentasAgrupadasToolStripMenuItem,
+            this.detalleCopagoToolStripMenuItem});
             this.btnDetalleCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCuenta.Image")));
             this.btnDetalleCuenta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDetalleCuenta.Name = "btnDetalleCuenta";
@@ -2982,7 +2984,7 @@
             // 
             this.label46.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(536, 21);
+            this.label46.Location = new System.Drawing.Point(785, 21);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(54, 17);
@@ -2995,7 +2997,7 @@
             this.txtAnticipos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAnticipos.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnticipos.Location = new System.Drawing.Point(69, 62);
-            this.txtAnticipos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnticipos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnticipos.Name = "txtAnticipos";
             this.txtAnticipos.ReadOnly = true;
             this.txtAnticipos.Size = new System.Drawing.Size(109, 38);
@@ -3006,7 +3008,7 @@
             this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F);
             this.txtSaldo.Location = new System.Drawing.Point(69, 139);
-            this.txtSaldo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSaldo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
             this.txtSaldo.Size = new System.Drawing.Size(109, 38);
@@ -3019,9 +3021,9 @@
             this.P_InferirorTotal.Controls.Add(this.P_InferiorTotales);
             this.P_InferirorTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.P_InferirorTotal.Location = new System.Drawing.Point(0, 0);
-            this.P_InferirorTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.P_InferirorTotal.Margin = new System.Windows.Forms.Padding(4);
             this.P_InferirorTotal.Name = "P_InferirorTotal";
-            this.P_InferirorTotal.Size = new System.Drawing.Size(1218, 212);
+            this.P_InferirorTotal.Size = new System.Drawing.Size(1716, 212);
             this.P_InferirorTotal.TabIndex = 95;
             // 
             // panel3
@@ -3030,9 +3032,9 @@
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(267, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(603, 215);
+            this.panel3.Size = new System.Drawing.Size(1101, 215);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -3042,9 +3044,9 @@
             this.panel4.Controls.Add(this.lblConIva);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 171);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(603, 44);
+            this.panel4.Size = new System.Drawing.Size(1101, 44);
             this.panel4.TabIndex = 81;
             // 
             // panel2
@@ -3055,7 +3057,7 @@
             this.panel2.Controls.Add(this.txtSaldo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 212);
             this.panel2.TabIndex = 1;
@@ -3105,8 +3107,8 @@
             this.P_InferiorTotales.Controls.Add(this.txt_Total);
             this.P_InferiorTotales.Controls.Add(this.label11);
             this.P_InferiorTotales.Dock = System.Windows.Forms.DockStyle.Right;
-            this.P_InferiorTotales.Location = new System.Drawing.Point(870, 0);
-            this.P_InferiorTotales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.P_InferiorTotales.Location = new System.Drawing.Point(1368, 0);
+            this.P_InferiorTotales.Margin = new System.Windows.Forms.Padding(4);
             this.P_InferiorTotales.Name = "P_InferiorTotales";
             this.P_InferiorTotales.Size = new System.Drawing.Size(348, 212);
             this.P_InferiorTotales.TabIndex = 0;
@@ -3128,9 +3130,9 @@
             this.P_paciente.Controls.Add(this.ultraGroupBox1);
             this.P_paciente.Dock = System.Windows.Forms.DockStyle.Top;
             this.P_paciente.Location = new System.Drawing.Point(0, 39);
-            this.P_paciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.P_paciente.Margin = new System.Windows.Forms.Padding(4);
             this.P_paciente.Name = "P_paciente";
-            this.P_paciente.Size = new System.Drawing.Size(1218, 84);
+            this.P_paciente.Size = new System.Drawing.Size(1716, 84);
             this.P_paciente.TabIndex = 96;
             // 
             // P_Factura
@@ -3138,9 +3140,9 @@
             this.P_Factura.Controls.Add(this.ultraTabControl1);
             this.P_Factura.Dock = System.Windows.Forms.DockStyle.Top;
             this.P_Factura.Location = new System.Drawing.Point(0, 123);
-            this.P_Factura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.P_Factura.Margin = new System.Windows.Forms.Padding(4);
             this.P_Factura.Name = "P_Factura";
-            this.P_Factura.Size = new System.Drawing.Size(1218, 123);
+            this.P_Factura.Size = new System.Drawing.Size(1716, 123);
             this.P_Factura.TabIndex = 97;
             // 
             // P_Gridfactura
@@ -3148,9 +3150,9 @@
             this.P_Gridfactura.Controls.Add(this.ultraTabControl2);
             this.P_Gridfactura.Dock = System.Windows.Forms.DockStyle.Top;
             this.P_Gridfactura.Location = new System.Drawing.Point(0, 246);
-            this.P_Gridfactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.P_Gridfactura.Margin = new System.Windows.Forms.Padding(4);
             this.P_Gridfactura.Name = "P_Gridfactura";
-            this.P_Gridfactura.Size = new System.Drawing.Size(1218, 266);
+            this.P_Gridfactura.Size = new System.Drawing.Size(1716, 266);
             this.P_Gridfactura.TabIndex = 98;
             // 
             // panel5
@@ -3158,9 +3160,9 @@
             this.panel5.Controls.Add(this.P_InferirorTotal);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 512);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1218, 212);
+            this.panel5.Size = new System.Drawing.Size(1716, 212);
             this.panel5.TabIndex = 99;
             // 
             // dataGridViewTextBoxColumn1
@@ -3288,18 +3290,25 @@
             this.datosCuentasBindingSource.DataMember = "DatosCuentas";
             this.datosCuentasBindingSource.DataSource = this.dtsDesgloseFactura;
             // 
+            // detalleCopagoToolStripMenuItem
+            // 
+            this.detalleCopagoToolStripMenuItem.Name = "detalleCopagoToolStripMenuItem";
+            this.detalleCopagoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.detalleCopagoToolStripMenuItem.Text = "Detalle Copago";
+            this.detalleCopagoToolStripMenuItem.Click += new System.EventHandler(this.detalleCopagoToolStripMenuItem_Click);
+            // 
             // frmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 599);
+            this.ClientSize = new System.Drawing.Size(1716, 600);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.P_Gridfactura);
             this.Controls.Add(this.P_Factura);
             this.Controls.Add(this.P_paciente);
             this.Controls.Add(this.label50);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1147, 465);
             this.Name = "frmFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3587,5 +3596,6 @@
         private System.Windows.Forms.Label txt_tipoIngreso;
         private System.Windows.Forms.ToolStripMenuItem detalleCuentasAgrupadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enviaHistoriaClinicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleCopagoToolStripMenuItem;
     }
 }

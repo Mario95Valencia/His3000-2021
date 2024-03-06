@@ -5347,13 +5347,17 @@ namespace CuentaPaciente
 
         private void chbCopago_Click(object sender, EventArgs e)
         {
-            chbDescuento.Checked = false;
-            cargarDetalleFactura();
-            if (chbCopago.Checked == true)
-                chbGuardaCopago.Visible = true;
+            PARAMETROS_DETALLE pd = NegParametros.RecuperaPorCodigo(70);
+            if (pd.PAD_VALOR != "1")
+            {
+                chbDescuento.Checked = false;
+                cargarDetalleFactura();
+                if (chbCopago.Checked == true)
+                    chbGuardaCopago.Visible = true;
 
-            else
-                chbGuardaCopago.Visible = false;
+                else
+                    chbGuardaCopago.Visible = false;
+            }
         }
         private void descuentoGeneral(Int32 codAte, Int32 CodRub)
         {
@@ -5452,35 +5456,47 @@ namespace CuentaPaciente
         {
             if (chbCopago.Checked)
             {
-                if (VerificaAltaPaciente())
+                PARAMETROS_DETALLE pd = NegParametros.RecuperaPorCodigo(70);
+                if (pd.PAD_VALOR == "1")
                 {
-                    ultraTabControl2.Tabs["descuento"].Visible = false; //invisible
-                    NegFactura.ActualizaDescuentoAtencion(Convert.ToInt64(txt_Atencion.Text));//encerar descuentos
-                                                                                              //alex////////////////////////            
-                    cargarDetalleFactura();
-                    /////////////////////////////
-                    if (ultraTabControl2.Tabs["descuento"].Visible == true)
-                    {
-                        if (chbCopago.Checked)
-                        {
-                            dgvDescuento.Columns[" % DESCUENTO"].ReadOnly = false;
-                            button2.Visible = false;
-                            cboTipoDescuento.Visible = false;
-                            label47.Visible = false;
-                        }
-                        else if (chbCopago.Checked == false)
-                        {
-                            dgvDescuento.Columns[" % DESCUENTO"].ReadOnly = true;
-                            button2.Visible = true;
-                            cboTipoDescuento.Visible = true;
-                            label47.Visible = true;
-                        }
-                    }
+                    frmCopagos frm = new frmCopagos(txt_Atencion.Text, txt_Historia_Pc.Text);
+                    frm.ShowDialog();
+                    if (frm.ate_codigo1 != 0 && frm.pac_codigo != 0)
+                        cargaFactura(frm.ate_codigo1, frm.pac_codigo);
                 }
                 else
                 {
-                    chbCopago.Checked = false;
-                    MessageBox.Show("El Paciente Debe Estar Dado El Alta Para Generar Copago", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (VerificaAltaPaciente())
+                    {
+                        ultraTabControl2.Tabs["descuento"].Visible = false; //invisible
+                        NegFactura.ActualizaDescuentoAtencion(Convert.ToInt64(txt_Atencion.Text));//encerar descuentos
+                                                                                                  //alex////////////////////////            
+                        cargarDetalleFactura();
+                        /////////////////////////////
+                        if (ultraTabControl2.Tabs["descuento"].Visible == true)
+                        {
+                            if (chbCopago.Checked)
+                            {
+                                dgvDescuento.Columns[" % DESCUENTO"].ReadOnly = false;
+                                button2.Visible = false;
+                                cboTipoDescuento.Visible = false;
+                                label47.Visible = false;
+                            }
+                            else if (chbCopago.Checked == false)
+                            {
+                                dgvDescuento.Columns[" % DESCUENTO"].ReadOnly = true;
+                                button2.Visible = true;
+                                cboTipoDescuento.Visible = true;
+                                label47.Visible = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        chbCopago.Checked = false;
+                        MessageBox.Show("El Paciente Debe Estar Dado El Alta Para Generar Copago", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
 
                 }
             }
@@ -6587,6 +6603,249 @@ namespace CuentaPaciente
         private void chbGuardaCopago_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+        public void cargaFactura(Int64 ate_codigo, Int64 pac_codigo)
+        {
+            incioFactura();
+            ultraTabControl2.Tabs["descuento"].Visible = false;
+            try
+            {
+                chbCopago.Checked = false;
+                if (txt_Atencion.Text != "")
+                {
+                    txtNumeroAtencion.Text = NegFactura.RecuperaNumeroAtencion(ate_codigo);
+                    txt_Atencion.Text = Convert.ToString(ate_codigo);
+                    NegValidaciones.alzheimer();// LIBERA MEMORIA
+                }
+                else
+                    return;
+                if (txt_Historia_Pc.Text.Trim() != "")
+                {
+                    pacienteFactura = NegPacientes.RecuperarPacienteID(pac_codigo);
+                    cargarDatosPacienteCopago(pacienteFactura, ate_codigo);
+                    habiltarBotones(false, true, false, true, true, true, true, true);
+                    if (ultimaAtencion.ESC_CODIGO == 6 || ultimaAtencion.ESC_CODIGO == 7 || ultimaAtencion.ESC_CODIGO == 3)
+                    {
+                        facturaimprime.Enabled = true;
+                        enviaHistoriaClinicaToolStripMenuItem.Enabled = true;
+                        facturaElectronicaToolStripMenuItem.Enabled = true;
+                        txtObserva.Text = ultimaAtencion.ATE_FACTURA_PACIENTE;
+                        txtObserva.Enabled = false;
+                        dtpFechaFacturacion.Enabled = false;
+                    }
+                    else
+                    {
+                        txtObserva.Enabled = true;
+                        NegFactura.ArreglaIVABase(Convert.ToString(ultimaAtencion.ATE_CODIGO));
+                    }
+                    cargarDetalleFactura();
+                    if (Convert.ToInt16(ultimaAtencion.ESC_CODIGO) == 6 || Convert.ToInt16(ultimaAtencion.ESC_CODIGO) == 7 || Convert.ToInt16(ultimaAtencion.ESC_CODIGO) == 3)
+                    {
+                        habiltarBotones(false, false, false, true, true, true, true, false);
+                        btnSolicitar.Enabled = false;
+                        btnAnticipos.Enabled = false;
+                        btnGeneraValores.Enabled = false;
+                        btnAltaPaciente.Enabled = false;
+                        btnAgrupar.Enabled = false;
+                        button1.Enabled = false;
+                        cbx_FacturaNombre.Enabled = false;
+                        txt_Ruc.Enabled = false;
+                        txt_Cliente.Enabled = false;
+                    }
+                    else
+                    {
+                        habiltarBotones(false, true, false, true, true, true, true, true);
+                        btnSolicitar.Enabled = true;
+                        btnAnticipos.Enabled = true;
+                        if (!mushuñan)
+                            btnGeneraValores.Enabled = true;
+                        btnAltaPaciente.Enabled = true;
+                        btnAgrupar.Enabled = true;
+                        button1.Enabled = true;
+                        cbx_FacturaNombre.Enabled = true;
+                        txt_Ruc.Enabled = true;
+                        txt_Cliente.Enabled = true;
+                    }
+                    Int32 atencion = Convert.ToInt32(this.txt_Atencion.Text.Trim());
+                    if (atencion > 0)
+                    {
+                        DataTable auxDT = NegFactura.fechasINOUT(atencion);
+                        foreach (DataRow row in auxDT.Rows)
+                        {
+                            cboTipoDescuento.Items.Add(row[0].ToString());
+                            this.dtp_FechaIngreso.Text = row[0].ToString();
+                            if (String.IsNullOrEmpty(row[1].ToString()))
+                            {
+                                this.txt_fechaalta.Text = "";
+                            }
+                            else
+                            {
+                                this.txt_fechaalta.Text = row[1].ToString();
+                            }
+                        }
+                    }
+                    CargarFormasPago();
+                }
+
+                //CAMBIOS EDGAR RAMOS PARA BLOQUEAR A USUARIO DE ATENCION AL CLIENTE
+                string departamento;
+                departamento = Convert.ToString(His.Entidades.Clases.Sesion.codDepartamento);
+                if (departamento == "15")
+                {
+                    btnGuardar.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    btnGeneraValores.Enabled = false;
+                    btnSolicitar.Enabled = false;
+                    btnAgrupar.Enabled = false;
+                    button1.Enabled = false;
+                    btnAnticipos.Enabled = false;
+                    btnAltaPaciente.Enabled = false;
+                }
+                CargarTiposDesuento();
+                if (CuentaAgrupada())
+                {
+                    detalleCuentasAgrupadasToolStripMenuItem.Visible = true;
+                    toolStripMenuItem2.Visible = false;
+                    toolStripMenuItem3.Visible = false;
+                    detallePorAreaToolStripMenuItem.Visible = false;
+                }
+                else
+                {
+                    detalleCuentasAgrupadasToolStripMenuItem.Visible = false;
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+                //MessageBox.Show("Algo ocurrio al cargar datos de paciente", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void detalleCopagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PACIENTES paciente = NegPacientes.recuperarPacientePorAtencion(Convert.ToInt32(ultimaAtencion.EntityKey.EntityKeyValues[0].Value));
+            ATENCIONES ultima = NegAtenciones.RecuperarAtencionID(Convert.ToInt64(Convert.ToInt32(ultimaAtencion.EntityKey.EntityKeyValues[0].Value)));
+            COPAGO copago = NegCopago.recuperaCopago(ultimaAtencion.ATE_CODIGO);
+
+            List<CUENTAS_PACIENTES> cuenta_original = NegCuentasPacientes.RecuperarCuenta(copago.ATE_CODIGO);
+            List<CUENTAS_PACIENTES> cuenta_Copago = NegCuentasPacientes.RecuperarCuenta(copago.ATE_CODIGO_COPAGO);
+            List<DtoReporteCopago> original = NegCopago.valoresCuentas(copago.ATE_CODIGO);
+            List<DtoReporteCopago> copgo = NegCopago.valoresCuentas(copago.ATE_CODIGO_COPAGO);
+            List<DtoReporteCopago> cuentaCopago = NegCopago.cuentaAuditoria(copago.ATE_CODIGO);
+
+            DSDetalleItem DSDetalle = new DSDetalleItem();
+            DataRow dr;
+
+            DataTable Detalle = NegFactura.DetalleItem(Convert.ToInt32(ultimaAtencion.EntityKey.EntityKeyValues[0].Value));
+            foreach (var item in cuentaCopago)
+            {
+                dr = DSDetalle.Tables["DetalleCopago"].NewRow();
+                dr["Logo"] = NegUtilitarios.RutaLogo("General");
+                dr["Paciente"] = paciente.PAC_APELLIDO_PATERNO + " " + paciente.PAC_APELLIDO_MATERNO + " " + paciente.PAC_NOMBRE1 + " " + paciente.PAC_NOMBRE2;
+                dr["Hc"] = paciente.PAC_HISTORIA_CLINICA;
+                dr["Atencion"] = ultima.ATE_NUMERO_ATENCION;
+                dr["FIngreso"] = ultima.ATE_FECHA_INGRESO;
+                dr["FAlta"] = ultima.ATE_FECHA_ALTA;
+                dr["Ruc"] = txt_Ruc.Text;
+                dr["Telefono"] = txt_telef_Cliente.Text;
+                dr["Descripcion"] = item.DETALLE;
+                dr["Cantidad"] = item.CANTIDAD;
+                dr["unitario"] = item.VALOR_UNITARIO;
+                dr["iva"] = item.IVA;
+                dr["valor"] = item.TOTAL;
+                dr["total"] = item.TOTAL;
+
+                DtoReporteCopago roriginal = original.FirstOrDefault(o => o.PRO_CODIGO == item.PRO_CODIGO);
+                if (roriginal != null)
+                    dr["t_original"] = roriginal.IVA + roriginal.TOTAL;
+                else
+                    dr["t_original"] = 0;
+                DtoReporteCopago rcopago = copgo.FirstOrDefault(y => y.PRO_CODIGO == item.PRO_CODIGO);
+                if (rcopago != null)
+                    dr["t_copago"] = rcopago.IVA + rcopago.TOTAL;
+                else
+                    dr["t_copago"] = 0;
+                dr["rubro"] = roriginal.RUBRO;
+                DSDetalle.Tables["DetalleCopago"].Rows.Add(dr);
+            }
+            His.Formulario.frmReportes x = new His.Formulario.frmReportes(1, "Copago", DSDetalle);
+            x.Show();
+        }
+
+        private void cargarDatosPacienteCopago(PACIENTES pacienteActual, Int64 ate_codigo)
+        {
+            ultimaAtencion = NegAtenciones.AtencionID(ate_codigo);
+            DataTable Atenciones = NegAtenciones.atencionesID(ate_codigo);
+            DataTable DatosConvenioAtencion = new DataTable();
+            limpiarCampos();
+            string NombreFactura = ultimaAtencion.ATE_FACTURA_NOMBRE;
+            if (NombreFactura != "PACIENTE")
+            {
+                txt_ApellidoH1.Text = pacienteActual.PAC_APELLIDO_PATERNO + ' ' + pacienteActual.PAC_APELLIDO_MATERNO + ' ' + pacienteActual.PAC_NOMBRE1 + ' ' + pacienteActual.PAC_NOMBRE2;
+                FacturaNombre(NombreFactura);
+            }
+            else
+            {
+                if (pacienteActual.PAC_IDENTIFICACION != null)
+                    txt_RucPaciente.Text = pacienteActual.PAC_IDENTIFICACION;
+                txt_ApellidoH1.Text = pacienteActual.PAC_APELLIDO_PATERNO + ' ' + pacienteActual.PAC_APELLIDO_MATERNO + ' ' + pacienteActual.PAC_NOMBRE1 + ' ' + pacienteActual.PAC_NOMBRE2;
+                txt_Telef_P.Text = pacienteActual.PAC_REFERENTE_TELEFONO;
+            }
+            txt_tipoIngreso.Text = Atenciones.Rows[0][0].ToString();
+            cbx_FacturaNombre.SelectedText = NombreFactura;
+            codigoAtencion = ultimaAtencion.ATE_CODIGO;
+            HABITACIONES hab = NegHabitaciones.listaHabitaciones().FirstOrDefault(h => h.EntityKey == ultimaAtencion.HABITACIONESReference.EntityKey);
+            if (hab != null)
+            {
+                Sesion.codHabitacion = hab.hab_Codigo;
+                txt_Habitacion_P.Text = hab.hab_Numero;
+            }
+            int codMedicos = Convert.ToInt32(ultimaAtencion.MEDICOSReference.EntityKey.EntityKeyValues[0].Value);
+            medico = NegMedicos.recuperarMedico(codMedicos);
+            DatosConvenioAtencion = NegAtenciones.CodigoConvenio(ultimaAtencion.ATE_CODIGO);
+            CodigoConvenio = Convert.ToInt32(DatosConvenioAtencion.Rows[0]["TE_CODIGO"].ToString());
+            CodigoTipoEmpresa = Convert.ToInt32(DatosConvenioAtencion.Rows[0]["CAT_CODIGO"].ToString()); /*CONVENIO*/
+            CodigoAseguradora = Convert.ToInt32(DatosConvenioAtencion.Rows[0]["ASE_CODIGO"].ToString()); /* EMPRESA */
+            this.lblCategoria.Text = DatosConvenioAtencion.Rows[0]["TE_DESCRIPCION"].ToString();
+            this.lblConvenio.Text = DatosConvenioAtencion.Rows[0]["CAT_NOMBRE"].ToString();
+            //CALCULO SI EL PACIENTE ESTA HOSPITALIZADO O NO PARA EL DIA DE HOSPITALIZACION PABLO ROCHA 30/05/2014
+            DateTime diashospitalizadoalta;
+            DateTime diashospitalizadoinicio;
+            TimeSpan diastotales;
+            int diaHospiAlta = (DateTime.Now.Day);
+            int mesHospiAlta = (DateTime.Now.Month);
+            int anioHospiAlta = (DateTime.Now.Year);
+            int diaHospiIngreso = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_INGRESO).Day);
+            int mesHospiIngreso = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_INGRESO).Month);
+            int anioHospiIngreso = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_INGRESO).Year);
+            if (ultimaAtencion.ESC_CODIGO == 1)
+            {
+                diashospitalizadoalta = Convert.ToDateTime(diaHospiAlta + "/" + mesHospiAlta + "/" + anioHospiAlta);
+                diashospitalizadoinicio = Convert.ToDateTime(diaHospiIngreso + "/" + mesHospiIngreso + "/" + anioHospiIngreso);
+                diastotales = diashospitalizadoalta.Subtract(diashospitalizadoinicio);
+                txt_Dias_P.Text = Convert.ToString(diastotales.Days);
+            }
+            else
+            {
+                diaHospiAlta = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_ALTA).Day);
+                mesHospiAlta = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_ALTA).Month);
+                anioHospiAlta = (Convert.ToDateTime(ultimaAtencion.ATE_FECHA_ALTA).Year);
+                diashospitalizadoalta = Convert.ToDateTime(diaHospiAlta + "/" + mesHospiAlta + "/" + anioHospiAlta);
+                diashospitalizadoinicio = Convert.ToDateTime(diaHospiIngreso + "/" + mesHospiIngreso + "/" + anioHospiIngreso);
+                diastotales = diashospitalizadoalta.Subtract(diashospitalizadoinicio);
+                txt_Dias_P.Text = Convert.ToString(diastotales.Days);
+            }
+            DataTable PacienteReferido = NegDetalleCuenta.ReferidoPaciente(ultimaAtencion.ATE_CODIGO);
+            if (txt_Dias_P.Text == "0")
+                txt_Dias_P.Text = "1";
+            if (PacienteReferido.Rows.Count > 0)
+                txt_Referido.Text = PacienteReferido.Rows[0][0].ToString();
+            datosPacienteActual = NegPacienteDatosAdicionales.RecuperarDatosAdicionalesPaciente(pacienteActual.PAC_CODIGO);
+            txt_Direccion_P.Text = datosPacienteActual.DAP_DIRECCION_DOMICILIO;
+            cargarDatosFacturaA(pacienteActual);
+            FacturaNombre(NombreFactura);
+            cargarDatosPagos(ultimaAtencion);
         }
     }
 }

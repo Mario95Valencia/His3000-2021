@@ -755,7 +755,7 @@ namespace His.Datos
             return Dts.Tables["tabla"];
 
         }
-        
+
 
         public DataTable ValoresHabitacionxFecha(Int64 ateCodigo, DateTime f_Ingreso, DateTime f_fin)
         {
@@ -2046,7 +2046,7 @@ namespace His.Datos
                 Console.WriteLine(ex.Message);
             }
 
-            transaction = Sqlcon.BeginTransaction();            
+            transaction = Sqlcon.BeginTransaction();
             try
             {
                 Sqlcmd = new SqlCommand("sp_AdministracionMedicamentos", Sqlcon);
@@ -2949,7 +2949,7 @@ namespace His.Datos
 
             command = new SqlCommand("sp_CreaHistorialNuevoAuditoria", connection);
             command.CommandType = CommandType.StoredProcedure;
-                     
+
             command.Parameters.AddWithValue("@CUE_CODIGO", nuevo.cue_codigoAud);
             command.Parameters.AddWithValue("@CUE_DETALLE", nuevo.cue_detalleAud);
             command.Parameters.AddWithValue("@CUE_CANTIDAD", nuevo.cue_cantidadAdi);
@@ -3280,6 +3280,229 @@ namespace His.Datos
                 conexion.Close();
             }
             return ok;
+        }
+        public Int64 generaCuentaAuditoria(Int64 ate_codigo, List<DtoCopago> copago, List<DtopCuenta> cuenta)
+        {
+            using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
+            {
+                ConexionEntidades.ConexionEDM.Open();
+                DbTransaction transa = ConexionEntidades.ConexionEDM.BeginTransaction();
+                try
+                {
+                    List<CUENTAS_PACIENTES_COPAGO> lCopago = new List<CUENTAS_PACIENTES_COPAGO>();
+                    List<CUENTAS_PACIENTES> cuentaPrincipal = new List<CUENTAS_PACIENTES>();
+                    List<CUENTAS_PACIENTES> cuentaSecundaria = new List<CUENTAS_PACIENTES>();
+                    List<CUENTAS_PACIENTES> lcuentPaciente = db.CUENTAS_PACIENTES.Where(x => x.CUE_CANTIDAD > 0 && x.CUE_VALOR > 0 && x.ATE_CODIGO == ate_codigo).ToList();
+                    ATENCIONES atencionPrincipal = db.ATENCIONES.FirstOrDefault(y => y.ATE_CODIGO == ate_codigo);
+                    Int64 pac_codigo = Convert.ToInt64(atencionPrincipal.PACIENTESReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 dap_codigo = Convert.ToInt64(atencionPrincipal.PACIENTES_DATOS_ADICIONALESReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 hab_codigo = Convert.ToInt64(atencionPrincipal.HABITACIONESReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 caj_codigo = Convert.ToInt64(atencionPrincipal.CAJASReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 tia_codigo = Convert.ToInt64(atencionPrincipal.TIPO_TRATAMIENTOReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 id_usuario = Convert.ToInt64(atencionPrincipal.USUARIOSReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 tir_codigo = Convert.ToInt64(atencionPrincipal.TIPO_REFERIDOReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 afl_codigo = Convert.ToInt64(atencionPrincipal.ATENCION_FORMAS_LLEGADAReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 med_codigo = Convert.ToInt64(atencionPrincipal.MEDICOSReference.EntityKey.EntityKeyValues[0].Value);
+                    Int64 tip_codigo = Convert.ToInt64(atencionPrincipal.TIPO_INGRESOReference.EntityKey.EntityKeyValues[0].Value);
+                    PACIENTES pacientes = db.PACIENTES.FirstOrDefault(w => w.PAC_CODIGO == pac_codigo);
+                    PACIENTES_DATOS_ADICIONALES datosAdicionales = db.PACIENTES_DATOS_ADICIONALES.FirstOrDefault(a => a.DAP_CODIGO == dap_codigo);
+                    HABITACIONES habitaciones = db.HABITACIONES.FirstOrDefault(b => b.hab_Codigo == hab_codigo);
+                    CAJAS caja = db.CAJAS.FirstOrDefault(c => c.CAJ_CODIGO == caj_codigo);
+                    TIPO_TRATAMIENTO tratamiento = db.TIPO_TRATAMIENTO.FirstOrDefault(d => d.TIA_CODIGO == tia_codigo);
+                    USUARIOS ususario = db.USUARIOS.FirstOrDefault(e => e.ID_USUARIO == id_usuario);
+                    TIPO_REFERIDO referido = db.TIPO_REFERIDO.FirstOrDefault(f => f.TIR_CODIGO == tir_codigo);
+                    ATENCION_FORMAS_LLEGADA llegada = db.ATENCION_FORMAS_LLEGADA.FirstOrDefault(g => g.AFL_CODIGO == afl_codigo);
+                    MEDICOS medico = db.MEDICOS.FirstOrDefault(h => h.MED_CODIGO == med_codigo);
+                    TIPO_INGRESO ingreso = db.TIPO_INGRESO.FirstOrDefault(i => i.TIP_CODIGO == tip_codigo);
+
+                    foreach (var item in lcuentPaciente)
+                    {
+                        CUENTAS_PACIENTES_COPAGO cp = new CUENTAS_PACIENTES_COPAGO();
+                        cp.CUE_CODIGO = item.CUE_CODIGO;
+                        cp.ATE_CODIGO = item.ATE_CODIGO;
+                        cp.CUE_FECHA = item.CUE_FECHA;
+                        cp.PRO_CODIGO = item.PRO_CODIGO;
+                        cp.CUE_DETALLE = item.CUE_DETALLE;
+                        cp.CUE_VALOR_UNITARIO = item.CUE_VALOR_UNITARIO;
+                        cp.CUE_CANTIDAD = item.CUE_CANTIDAD;
+                        cp.CUE_VALOR = item.CUE_VALOR;
+                        cp.CUE_IVA = item.CUE_IVA;
+                        cp.CUE_ESTADO = item.CUE_ESTADO;
+                        cp.CUE_NUM_FAC = item.CUE_NUM_FAC;
+                        cp.RUB_CODIGO = item.RUB_CODIGO;
+                        cp.PED_CODIGO = item.PED_CODIGO;
+                        cp.ID_USUARIO = item.ID_USUARIO;
+                        cp.CAT_CODIGO = item.CAT_CODIGO;
+                        cp.PRO_CODIGO_BARRAS = item.PRO_CODIGO_BARRAS;
+                        cp.CUE_NUM_CONTROL = item.CUE_NUM_CONTROL;
+                        cp.CUE_OBSERVACION = item.CUE_OBSERVACION;
+                        cp.MED_CODIGO = item.MED_CODIGO;
+                        cp.CUE_ORDER_IMPRESION = item.CUE_ORDER_IMPRESION;
+                        cp.Codigo_Pedido = item.Codigo_Pedido;
+                        cp.Id_Tipo_Medico = item.Id_Tipo_Medico;
+                        cp.COSTO = item.COSTO;
+                        cp.NumVale = item.NumVale;
+                        cp.DivideFactura = item.DivideFactura;
+                        cp.Descuento = item.Descuento;
+                        cp.PorDescuento = item.PorDescuento;
+                        cp.USUARIO_FACTURA = item.USUARIO_FACTURA;
+                        cp.FECHA_FACTURA = item.FECHA_FACTURA;
+                        lCopago.Add(cp);
+                    }
+                    db.CrearLista("CUENTAS_PACIENTES_COPAGO", lCopago);
+
+                    ATENCIONES atencionSecundaria = new ATENCIONES();
+                    var maxNumeroAtencion = db.ATENCIONES.OrderByDescending(z => z.ATE_CODIGO).FirstOrDefault();
+                    Int64 ATE_NUMERO_CONTROL = maxNumeroAtencion.ATE_CODIGO + 1;
+                    atencionSecundaria.ATE_CODIGO = (Int32)ATE_NUMERO_CONTROL;
+                    atencionSecundaria.ATE_NUMERO_ATENCION = atencionPrincipal.ATE_NUMERO_ATENCION;
+                    atencionSecundaria.ATE_FECHA = atencionPrincipal.ATE_FECHA;
+                    atencionSecundaria.ATE_NUMERO_CONTROL = atencionPrincipal.ATE_NUMERO_CONTROL;
+                    atencionSecundaria.ATE_FACTURA_PACIENTE = atencionPrincipal.ATE_FACTURA_PACIENTE;
+                    atencionSecundaria.ATE_FACTURA_FECHA = atencionPrincipal.ATE_FACTURA_FECHA;
+                    atencionSecundaria.ATE_FECHA_INGRESO = atencionPrincipal.ATE_FECHA_INGRESO;
+                    atencionSecundaria.ATE_FECHA_ALTA = atencionPrincipal.ATE_FECHA_ALTA;
+                    atencionSecundaria.ATE_REFERIDO = atencionPrincipal.ATE_REFERIDO;
+                    atencionSecundaria.ATE_REFERIDO_DE = atencionPrincipal.ATE_REFERIDO_DE;
+                    atencionSecundaria.ATE_EDAD_PACIENTE = atencionPrincipal.ATE_EDAD_PACIENTE;
+                    atencionSecundaria.ATE_ACOMPANANTE_NOMBRE = atencionPrincipal.ATE_ACOMPANANTE_NOMBRE;
+                    atencionSecundaria.ATE_ACOMPANANTE_CEDULA = atencionPrincipal.ATE_ACOMPANANTE_CEDULA;
+                    atencionSecundaria.ATE_ACOMPANANTE_PARENTESCO = atencionPrincipal.ATE_ACOMPANANTE_PARENTESCO;
+                    atencionSecundaria.ATE_ACOMPANANTE_TELEFONO = atencionPrincipal.ATE_ACOMPANANTE_TELEFONO;
+                    atencionSecundaria.ATE_ACOMPANANTE_DIRECCION = atencionPrincipal.ATE_ACOMPANANTE_DIRECCION;
+                    atencionSecundaria.ATE_ACOMPANANTE_CIUDAD = atencionPrincipal.ATE_ACOMPANANTE_CIUDAD;
+                    atencionSecundaria.ATE_GARANTE_NOMBRE = atencionPrincipal.ATE_GARANTE_NOMBRE;
+                    atencionSecundaria.ATE_GARANTE_CEDULA = atencionPrincipal.ATE_GARANTE_CEDULA;
+                    atencionSecundaria.ATE_GARANTE_PARENTESCO = atencionPrincipal.ATE_GARANTE_PARENTESCO;
+                    atencionSecundaria.ATE_GARANTE_MONTO_GARANTIA = atencionPrincipal.ATE_GARANTE_MONTO_GARANTIA;
+                    atencionSecundaria.ATE_GARANTE_TELEFONO = atencionPrincipal.ATE_GARANTE_TELEFONO;
+                    atencionSecundaria.ATE_GARANTE_DIRECCION = atencionPrincipal.ATE_GARANTE_DIRECCION;
+                    atencionSecundaria.ATE_GARANTE_CIUDAD = atencionPrincipal.ATE_GARANTE_CIUDAD;
+                    atencionSecundaria.ATE_DIAGNOSTICO_INICIAL = atencionPrincipal.ATE_DIAGNOSTICO_INICIAL;
+                    atencionSecundaria.ATE_DIAGNOSTICO_FINAL = atencionPrincipal.ATE_DIAGNOSTICO_FINAL;
+                    atencionSecundaria.ATE_OBSERVACIONES = atencionPrincipal.ATE_OBSERVACIONES;
+                    atencionSecundaria.ATE_ESTADO = atencionPrincipal.ATE_ESTADO;
+                    atencionSecundaria.ATE_FACTURA_NOMBRE = atencionPrincipal.ATE_FACTURA_NOMBRE;
+                    atencionSecundaria.ATE_DIRECTORIO = atencionPrincipal.ATE_DIRECTORIO;
+                    atencionSecundaria.PACIENTESReference.EntityKey = pacientes.EntityKey;
+                    atencionSecundaria.PACIENTES_DATOS_ADICIONALESReference.EntityKey = datosAdicionales.EntityKey;
+                    atencionSecundaria.HABITACIONESReference.EntityKey = habitaciones.EntityKey;
+                    atencionSecundaria.CAJASReference.EntityKey = caja.EntityKey;
+                    atencionSecundaria.TIPO_TRATAMIENTOReference.EntityKey = tratamiento.EntityKey;
+                    atencionSecundaria.USUARIOSReference.EntityKey = ususario.EntityKey;
+                    atencionSecundaria.TIPO_REFERIDOReference.EntityKey = referido.EntityKey;
+                    atencionSecundaria.ATENCION_FORMAS_LLEGADAReference.EntityKey = llegada.EntityKey;
+                    atencionSecundaria.MEDICOSReference.EntityKey = medico.EntityKey;
+                    atencionSecundaria.TIPO_INGRESOReference.EntityKey = ingreso.EntityKey;
+                    atencionSecundaria.TIF_CODIGO = atencionPrincipal.TIF_CODIGO;
+                    atencionSecundaria.TIF_OBSERVACION = atencionPrincipal.TIF_OBSERVACION;
+                    atencionSecundaria.ATE_NUMERO_ADMISION = atencionPrincipal.ATE_NUMERO_ADMISION;
+                    atencionSecundaria.ATE_EN_QUIROFANO = atencionPrincipal.ATE_EN_QUIROFANO;
+                    atencionSecundaria.FOR_PAGO = atencionPrincipal.FOR_PAGO;
+                    atencionSecundaria.ATE_QUIEN_ENTREGA_PAC = atencionPrincipal.ATE_QUIEN_ENTREGA_PAC;
+                    atencionSecundaria.ATE_CIERRE_HC = atencionPrincipal.ATE_CIERRE_HC;
+                    atencionSecundaria.ATE_FEC_ING_HABITACION = atencionPrincipal.ATE_FEC_ING_HABITACION;
+                    atencionSecundaria.ESC_CODIGO = 2;
+                    atencionSecundaria.CUE_ESTADO = atencionPrincipal.CUE_ESTADO;
+                    atencionSecundaria.TipoAtencion = atencionPrincipal.TipoAtencion;
+                    atencionSecundaria.ate_discapacidad = atencionPrincipal.ate_discapacidad;
+                    atencionSecundaria.ate_carnet_conadis = atencionPrincipal.ate_carnet_conadis;
+                    atencionSecundaria.ATE_ID_ACCIDENTE = atencionPrincipal.ATE_ID_ACCIDENTE;
+                    atencionSecundaria.idTipoDescuento = atencionPrincipal.idTipoDescuento;
+                    db.Crear("ATENCIONES", atencionSecundaria);
+
+                    ATENCION_DETALLE_CATEGORIAS detCat = db.ATENCION_DETALLE_CATEGORIAS.FirstOrDefault(x => x.ATENCIONES.ATE_CODIGO == ate_codigo);
+                    var maxNumeroAtencionCategoria = db.ATENCION_DETALLE_CATEGORIAS.OrderByDescending(z => z.ADA_CODIGO).FirstOrDefault();
+                    Int64 ADA_NUMERO_CONTROL = maxNumeroAtencionCategoria.ADA_CODIGO + 1;
+                    ATENCION_DETALLE_CATEGORIAS detGraba = new ATENCION_DETALLE_CATEGORIAS();
+                    detGraba.ADA_CODIGO = (int)ADA_NUMERO_CONTROL;
+                    detGraba.ATENCIONESReference.EntityKey = atencionSecundaria.EntityKey;
+                    detGraba.CATEGORIAS_CONVENIOSReference.EntityKey = detCat.CATEGORIAS_CONVENIOSReference.EntityKey;
+                    detGraba.ADA_FECHA_INICIO = detCat.ADA_FECHA_INICIO;
+                    detGraba.ADA_FECHA_FIN = detCat.ADA_FECHA_FIN;
+                    detGraba.ADA_AUTORIZACION = detCat.ADA_AUTORIZACION;
+                    detGraba.ADA_CONTRATO = detCat.ADA_CONTRATO;
+                    detGraba.ADA_MONTO_COBERTURA = detCat.ADA_MONTO_COBERTURA;
+                    detGraba.ADA_ORDEN = detCat.ADA_ORDEN;
+                    detGraba.ADA_ESTADO = detCat.ADA_ESTADO;
+                    detGraba.HCC_CODIGO_TS = detCat.HCC_CODIGO_TS;
+                    detGraba.HCC_CODIGO_DE = detCat.HCC_CODIGO_DE;
+                    detGraba.HCC_CODIGO_ES = detCat.HCC_CODIGO_ES;
+                    db.Crear("ATENCION_DETALLE_CATEGORIAS", detGraba);
+
+                    var maxNumeroCuentaPaciente = db.CUENTAS_PACIENTES.OrderByDescending(z => z.CUE_CODIGO).FirstOrDefault();
+                    Int64 CUE_NUMERO_CONTROL = maxNumeroCuentaPaciente.CUE_CODIGO + 1;
+                    foreach (var item in lcuentPaciente)
+                    {
+                        CUENTAS_PACIENTES cp = new CUENTAS_PACIENTES();
+                        DtoCopago cop = copago.FirstOrDefault(x => x.CPpro_codigo == Convert.ToInt64(item.PRO_CODIGO) && x.id == item.CUE_CODIGO);
+                        if (cop != null)
+                        {
+                            cp.CUE_CODIGO = CUE_NUMERO_CONTROL;
+                            cp.ATE_CODIGO = (Int32)ATE_NUMERO_CONTROL;
+                            cp.CUE_FECHA = item.CUE_FECHA;
+                            cp.PRO_CODIGO = item.PRO_CODIGO;
+                            cp.CUE_DETALLE = item.CUE_DETALLE;
+                            cp.CUE_VALOR_UNITARIO = cop.CPv_unitario;
+                            cp.CUE_CANTIDAD = item.CUE_CANTIDAD;
+                            cp.CUE_VALOR = cop.CPtotal;
+                            cp.CUE_IVA = cop.CPiva;
+                            cp.CUE_ESTADO = item.CUE_ESTADO;
+                            cp.CUE_NUM_FAC = item.CUE_NUM_FAC;
+                            cp.RUB_CODIGO = item.RUB_CODIGO;
+                            cp.PED_CODIGO = item.PED_CODIGO;
+                            cp.ID_USUARIO = item.ID_USUARIO;
+                            cp.CAT_CODIGO = item.CAT_CODIGO;
+                            cp.PRO_CODIGO_BARRAS = item.PRO_CODIGO_BARRAS;
+                            cp.CUE_NUM_CONTROL = item.CUE_NUM_CONTROL;
+                            cp.CUE_OBSERVACION = item.CUE_OBSERVACION;
+                            cp.MED_CODIGO = item.MED_CODIGO;
+                            cp.CUE_ORDER_IMPRESION = item.CUE_ORDER_IMPRESION;
+                            cp.Codigo_Pedido = item.Codigo_Pedido;
+                            cp.Id_Tipo_Medico = item.Id_Tipo_Medico;
+                            cp.COSTO = item.COSTO;
+                            cp.NumVale = item.NumVale;
+                            cp.DivideFactura = item.DivideFactura;
+                            cp.Descuento = item.Descuento;
+                            cp.PorDescuento = item.PorDescuento;
+                            cp.USUARIO_FACTURA = item.USUARIO_FACTURA;
+                            cp.FECHA_FACTURA = item.FECHA_FACTURA;
+                            cuentaSecundaria.Add(cp);
+                            CUE_NUMERO_CONTROL++;
+                        }
+                    }
+                    db.CrearLista("CUENTAS_PACIENTES", cuentaSecundaria);
+
+                    foreach (var item in lcuentPaciente)
+                    {
+                        DtopCuenta cue = cuenta.FirstOrDefault(x => x.COpro_codigo == Convert.ToInt64(item.PRO_CODIGO) && x.id == item.CUE_CODIGO);
+                        if (cue != null)
+                        {
+                            item.CUE_VALOR_UNITARIO = cue.COv_unitario;
+                            item.CUE_VALOR = cue.COtotal;
+                            item.CUE_IVA = cue.COiva;
+                        }
+                    }
+
+                    COPAGO aud_copago = new COPAGO();
+                    aud_copago.ATE_CODIGO = ate_codigo;
+                    aud_copago.ATE_CODIGO_COPAGO = ATE_NUMERO_CONTROL;
+
+                    db.Crear("COPAGO", aud_copago);
+
+                    db.SaveChanges();
+                    transa.Commit();
+                    ConexionEntidades.ConexionEDM.Close();
+                    return ATE_NUMERO_CONTROL;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    transa.Rollback();
+                    ConexionEntidades.ConexionEDM.Close();
+                    return 0;
+                }
+            }
         }
     }
 }

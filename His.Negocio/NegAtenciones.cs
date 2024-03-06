@@ -233,7 +233,7 @@ namespace His.Negocio
         }
 
         //Recupera los datos de la atencion
-        public static DataTable atencionesID(Int32 ATE_CODIGO)
+        public static DataTable atencionesID(Int64 ATE_CODIGO)
         {
             return new DatAtenciones().atencionesID(ATE_CODIGO);
         }

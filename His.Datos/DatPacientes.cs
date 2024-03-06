@@ -2404,7 +2404,7 @@ namespace His.Datos
             }
         }
 
-        public PACIENTES RecuperarPacienteID(Int32 codPaciente)
+        public PACIENTES RecuperarPacienteID(Int64 codPaciente)
         {
             using (var contexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
             {
