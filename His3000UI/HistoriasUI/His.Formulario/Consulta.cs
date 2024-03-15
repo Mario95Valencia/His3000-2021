@@ -1042,9 +1042,12 @@ namespace His.ConsultaExterna
             svcex.T_Bucal = Convert.ToDecimal(txtTemperatura.Text);
             svcex.T_Axilar = Convert.ToDecimal(txtTempAx.Text);
             svcex.Reaccion_Iz = txtReaccionIz.Text;
-            svcex.Diametro_Iz = Convert.ToInt16(txtDiametroIz.Text);
+            if (txtDiametroIz.Text.Trim() != "")
+                svcex.Diametro_Iz = Convert.ToInt16(txtDiametroIz.Text);
+
             svcex.Reaccion_Der = txtReaccionDer.Text;
-            svcex.Diametro_Der = Convert.ToInt16(txtDiametroDer.Text);
+            if (txtDiametroDer.Text.Trim() != "")
+                svcex.Diametro_Der = Convert.ToInt16(txtDiametroDer.Text);
 
             svcex.ID_USUARIO = Sesion.codUsuario;
             #region CodigoAntiguo // se comenta por que se trabaja ahora con el modelo Mario Valencia 20/10/2023
@@ -2279,9 +2282,15 @@ namespace His.ConsultaExterna
                         txtHemoglobina.Text = Convert.ToString(sign.Hemoglobina);
                         txtGlucosa.Text = Convert.ToString(sign.Glucosa_Capilar);
                         txtPulsioximetria.Text = Convert.ToInt32(sign.S_Oxigeno).ToString();
-                        txtDiametroDer.Text = sign.Diametro_Der.ToString();
+                        if (sign.Diametro_Der.ToString() == "-1")
+                            txtDiametroDer.Text = "";
+                        else
+                            txtDiametroDer.Text = sign.Diametro_Der.ToString();
                         txtReaccionDer.Text = sign.Reaccion_Der.ToString();
-                        txtDiametroIz.Text = sign.Diametro_Iz.ToString();
+                        if (sign.Diametro_Iz.ToString() == "-1")
+                            txtDiametroIz.Text = "";
+                        else
+                            txtDiametroIz.Text = sign.Diametro_Iz.ToString();
                         txtReaccionIz.Text = sign.Reaccion_Iz.ToString();
                     }
                     if (conExter.cabeza == "X")
@@ -2595,9 +2604,15 @@ namespace His.ConsultaExterna
                     txtHemoglobina.Text = Convert.ToString(sign.Hemoglobina);
                     txtGlucosa.Text = Convert.ToString(sign.Glucosa_Capilar);
                     txtPulsioximetria.Text = Convert.ToInt32(sign.S_Oxigeno).ToString();
-                    txtDiametroDer.Text = sign.Diametro_Der.ToString();
+                    if (sign.Diametro_Der.ToString() == "-1")
+                        txtDiametroDer.Text = "";
+                    else
+                        txtDiametroDer.Text = sign.Diametro_Der.ToString();
                     txtReaccionDer.Text = sign.Reaccion_Der.ToString();
-                    txtDiametroIz.Text = sign.Diametro_Iz.ToString();
+                    if (sign.Diametro_Iz.ToString() == "-1")
+                        txtDiametroIz.Text = "";
+                    else
+                        txtDiametroIz.Text = sign.Diametro_Iz.ToString();
                     txtReaccionIz.Text = sign.Reaccion_Iz.ToString();
                 }
                 ////CONSULTO SI PACIENTE YA TIENE CONSULTA EXTERNA
@@ -3526,9 +3541,15 @@ namespace His.ConsultaExterna
                     txtHemoglobina.Text = Convert.ToString(sign.Hemoglobina);
                     txtGlucosa.Text = Convert.ToString(sign.Glucosa_Capilar);
                     txtPulsioximetria.Text = Convert.ToInt32(sign.S_Oxigeno).ToString();
-                    txtDiametroDer.Text = sign.Diametro_Der.ToString();
+                    if (sign.Diametro_Der.ToString() == "-1")
+                        txtDiametroDer.Text = "";
+                    else
+                        txtDiametroDer.Text = sign.Diametro_Der.ToString();
                     txtReaccionDer.Text = sign.Reaccion_Der.ToString();
-                    txtDiametroIz.Text = sign.Diametro_Iz.ToString();
+                    if (sign.Diametro_Iz.ToString() == "-1")
+                        txtDiametroIz.Text = "";
+                    else
+                        txtDiametroIz.Text = sign.Diametro_Iz.ToString();
                     txtReaccionIz.Text = sign.Reaccion_Iz.ToString();
                 }
                 //if (signos.Rows.Count > 0)
@@ -3752,7 +3773,7 @@ namespace His.ConsultaExterna
 
                 tabla["presion1"] = consultaExterna.presion1.ToString();
                 tabla["presion2"] = consultaExterna.presion2.ToString();
-                tabla["pulso"] = consultaExterna.pulso.ToString();                
+                tabla["pulso"] = consultaExterna.pulso.ToString();
                 tabla["peso"] = consultaExterna.peso.ToString();
                 tabla["talla"] = consultaExterna.talla.ToString();
                 tabla["cabeza"] = consultaExterna.cabeza.ToString();
@@ -3795,7 +3816,8 @@ namespace His.ConsultaExterna
                 tabla["planesTratamiento"] = consultaExterna.planesTratamiento.ToString();
                 tabla["evolucion"] = consultaExterna.evolucion.ToString();
                 tabla["prescripciones"] = consultaExterna.prescripciones.ToString();
-                tabla["fecha"] = Convert.ToString(dtp_fechaAltaEmerencia.Value);
+                DateTime fecha1 = dtp_fechaAltaEmerencia.Value;
+                tabla["fecha"] = fecha1.ToString("yyyy-MM-dd");
                 tabla["hora"] = Convert.ToDateTime(consultaExterna.fecha).ToShortTimeString();
                 tabla["dr"] = consultaExterna.dr.ToString();
                 tabla["codigo"] = Sesion.codMedico.ToString();
@@ -3847,9 +3869,18 @@ namespace His.ConsultaExterna
                 tabla["urinario1"] = consultaExterna.sUrinario;
                 tabla["endocrino1"] = consultaExterna.sEndocrino;
 
-                tabla["perimetroabdominal"] = sign.PerimetroA;
-                tabla["hemoglobina"] = sign.Hemoglobina;
-                tabla["glucosa"] = sign.Glucosa_Capilar;
+                if (sign.PerimetroA.ToString() == "0.00" || sign.PerimetroA.ToString() == "0")
+                    tabla["perimetroabdominal"] = "";
+                else
+                    tabla["perimetroabdominal"] = sign.PerimetroA;
+                if (sign.Hemoglobina.ToString() == "0.00" || sign.Hemoglobina.ToString() == "0")
+                    tabla["hemoglobina"] = "";
+                else
+                    tabla["hemoglobina"] = sign.Hemoglobina;
+                if (sign.Glucosa_Capilar.ToString() == "0.00" || sign.Glucosa_Capilar.ToString() == "0")
+                    tabla["glucosa"] = "";
+                else
+                    tabla["glucosa"] = sign.Glucosa_Capilar;
                 tabla["pulsox"] = Math.Round(sign.S_Oxigeno);
                 tabla["frecuenciaRespiratoria"] = Math.Round(sign.F_Respiratoria);
                 tabla["indice"] = sign.Ind_Masa;
@@ -4883,12 +4914,12 @@ namespace His.ConsultaExterna
 
         private void txtPeso_Validating(object sender, CancelEventArgs e)
         {
-            
+
         }
 
         private void txtTalla_Validating(object sender, CancelEventArgs e)
         {
-            
+
         }
 
         private void txtPerimetro_Validating(object sender, CancelEventArgs e)
@@ -4993,7 +5024,7 @@ namespace His.ConsultaExterna
         {
             if (chbHipertensionP.Checked == true)
             {
-                if (txtAntecedentesPersonales.Text!="")
+                if (txtAntecedentesPersonales.Text != "")
                 {
                     txtAntecedentesPersonales.Focus();
                     txtAntecedentesPersonales.Text += "\r\n2.-";
@@ -5004,7 +5035,7 @@ namespace His.ConsultaExterna
                     txtAntecedentesPersonales.Focus();
                     txtAntecedentesPersonales.Text += "2.-";
                     txtAntecedentesPersonales.Select(txtAntecedentesPersonales.Text.Length, 0);
-                }                
+                }
             }
         }
 
@@ -5423,6 +5454,153 @@ namespace His.ConsultaExterna
         private void chbInferior_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTemperatura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTempAx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPresionArteria1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPresionArteria2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPulso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFrecuenciaRespiratoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTalla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPerimetro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtHemoglobina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGlucosa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPulsioximetria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiametroDer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiametroIz_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

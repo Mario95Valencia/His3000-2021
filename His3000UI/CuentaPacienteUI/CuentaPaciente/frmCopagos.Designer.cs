@@ -55,9 +55,12 @@ namespace CuentaPaciente
             this.maskPor = new System.Windows.Forms.MaskedTextBox();
             this.gridN = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraGroupBox2 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.txtTotalCopago = new System.Windows.Forms.TextBox();
+            this.txtStotal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSiva = new System.Windows.Forms.TextBox();
+            this.txtCtotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTTporcentage = new System.Windows.Forms.TextBox();
+            this.txtCiva = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -79,7 +82,7 @@ namespace CuentaPaciente
             this.toolStripButton1});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1278, 36);
+            this.menu.Size = new System.Drawing.Size(1692, 36);
             this.menu.TabIndex = 107;
             this.menu.Text = "menu";
             // 
@@ -253,7 +256,7 @@ namespace CuentaPaciente
             this.gridN.Location = new System.Drawing.Point(0, 36);
             this.gridN.Margin = new System.Windows.Forms.Padding(4);
             this.gridN.Name = "gridN";
-            this.gridN.Size = new System.Drawing.Size(1278, 488);
+            this.gridN.Size = new System.Drawing.Size(1692, 488);
             this.gridN.TabIndex = 133;
             this.gridN.Text = "ultraGrid";
             this.gridN.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.gridN_InitializeLayout);
@@ -262,9 +265,12 @@ namespace CuentaPaciente
             // 
             // ultraGroupBox2
             // 
-            this.ultraGroupBox2.Controls.Add(this.txtTotalCopago);
+            this.ultraGroupBox2.Controls.Add(this.txtStotal);
+            this.ultraGroupBox2.Controls.Add(this.label4);
+            this.ultraGroupBox2.Controls.Add(this.txtSiva);
+            this.ultraGroupBox2.Controls.Add(this.txtCtotal);
             this.ultraGroupBox2.Controls.Add(this.label3);
-            this.ultraGroupBox2.Controls.Add(this.txtTTporcentage);
+            this.ultraGroupBox2.Controls.Add(this.txtCiva);
             this.ultraGroupBox2.Controls.Add(this.label1);
             this.ultraGroupBox2.Controls.Add(this.txtCantidad);
             this.ultraGroupBox2.Controls.Add(this.txtTotal);
@@ -273,20 +279,55 @@ namespace CuentaPaciente
             this.ultraGroupBox2.Location = new System.Drawing.Point(0, 524);
             this.ultraGroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraGroupBox2.Name = "ultraGroupBox2";
-            this.ultraGroupBox2.Size = new System.Drawing.Size(1278, 43);
+            this.ultraGroupBox2.Size = new System.Drawing.Size(1692, 43);
             this.ultraGroupBox2.TabIndex = 134;
             this.ultraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
             // 
-            // txtTotalCopago
+            // txtStotal
             // 
-            this.txtTotalCopago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalCopago.Location = new System.Drawing.Point(1129, 12);
-            this.txtTotalCopago.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTotalCopago.Multiline = true;
-            this.txtTotalCopago.Name = "txtTotalCopago";
-            this.txtTotalCopago.ReadOnly = true;
-            this.txtTotalCopago.Size = new System.Drawing.Size(139, 24);
-            this.txtTotalCopago.TabIndex = 99;
+            this.txtStotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStotal.Location = new System.Drawing.Point(1525, 11);
+            this.txtStotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStotal.Multiline = true;
+            this.txtStotal.Name = "txtStotal";
+            this.txtStotal.ReadOnly = true;
+            this.txtStotal.Size = new System.Drawing.Size(139, 24);
+            this.txtStotal.TabIndex = 102;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1305, 13);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.TabIndex = 101;
+            this.label4.Text = "Seguro:";
+            // 
+            // txtSiva
+            // 
+            this.txtSiva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSiva.Location = new System.Drawing.Point(1379, 12);
+            this.txtSiva.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSiva.Multiline = true;
+            this.txtSiva.Name = "txtSiva";
+            this.txtSiva.ReadOnly = true;
+            this.txtSiva.Size = new System.Drawing.Size(139, 24);
+            this.txtSiva.TabIndex = 100;
+            // 
+            // txtCtotal
+            // 
+            this.txtCtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtotal.Location = new System.Drawing.Point(1155, 12);
+            this.txtCtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCtotal.Multiline = true;
+            this.txtCtotal.Name = "txtCtotal";
+            this.txtCtotal.ReadOnly = true;
+            this.txtCtotal.Size = new System.Drawing.Size(139, 24);
+            this.txtCtotal.TabIndex = 99;
             // 
             // label3
             // 
@@ -294,23 +335,23 @@ namespace CuentaPaciente
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(904, 14);
+            this.label3.Location = new System.Drawing.Point(925, 12);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 98;
             this.label3.Text = "Copago:";
             // 
-            // txtTTporcentage
+            // txtCiva
             // 
-            this.txtTTporcentage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTTporcentage.Location = new System.Drawing.Point(985, 12);
-            this.txtTTporcentage.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTTporcentage.Multiline = true;
-            this.txtTTporcentage.Name = "txtTTporcentage";
-            this.txtTTporcentage.ReadOnly = true;
-            this.txtTTporcentage.Size = new System.Drawing.Size(139, 24);
-            this.txtTTporcentage.TabIndex = 97;
+            this.txtCiva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCiva.Location = new System.Drawing.Point(1011, 12);
+            this.txtCiva.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCiva.Multiline = true;
+            this.txtCiva.Name = "txtCiva";
+            this.txtCiva.ReadOnly = true;
+            this.txtCiva.Size = new System.Drawing.Size(139, 24);
+            this.txtCiva.TabIndex = 97;
             // 
             // label1
             // 
@@ -318,7 +359,7 @@ namespace CuentaPaciente
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(691, 14);
+            this.label1.Location = new System.Drawing.Point(717, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 20);
@@ -328,17 +369,18 @@ namespace CuentaPaciente
             // txtCantidad
             // 
             this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad.Location = new System.Drawing.Point(534, 14);
+            this.txtCantidad.Location = new System.Drawing.Point(547, 12);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(148, 24);
             this.txtCantidad.TabIndex = 95;
+            this.txtCantidad.Visible = false;
             // 
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(752, 11);
+            this.txtTotal.Location = new System.Drawing.Point(778, 9);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
@@ -351,18 +393,19 @@ namespace CuentaPaciente
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(436, 14);
+            this.label7.Location = new System.Drawing.Point(462, 12);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 66;
             this.label7.Text = "Cantidad:";
+            this.label7.Visible = false;
             // 
             // frmCopagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 567);
+            this.ClientSize = new System.Drawing.Size(1692, 567);
             this.Controls.Add(this.gridN);
             this.Controls.Add(this.optInd);
             this.Controls.Add(this.label6);
@@ -375,7 +418,7 @@ namespace CuentaPaciente
             this.Controls.Add(this.menu);
             this.Controls.Add(this.ultraGroupBox2);
             this.Name = "frmCopagos";
-            this.Text = "frmCopagos";
+            this.Text = "Generar Copago";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -408,9 +451,12 @@ namespace CuentaPaciente
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTTporcentage;
-        private System.Windows.Forms.TextBox txtTotalCopago;
+        private System.Windows.Forms.TextBox txtCiva;
+        private System.Windows.Forms.TextBox txtCtotal;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter1;
+        private System.Windows.Forms.TextBox txtStotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSiva;
     }
 }

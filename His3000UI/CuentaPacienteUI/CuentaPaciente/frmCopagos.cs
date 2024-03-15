@@ -284,31 +284,38 @@ namespace CuentaPaciente
         }
         public void sumar()
         {
-            decimal suma = 0;
-            decimal sumaCIva = 0;
+            decimal utotal = 0;
+            decimal iva = 0;
             decimal total = 0;
-            decimal sumaValor = 0;
-            decimal cantidades = 0;
+            decimal civa = 0;
+            decimal ctotal = 0;
+            decimal siva = 0;
+            decimal scopago = 0;
             try
             {
                 foreach (UltraGridRow fila in gridN.Rows)
                 {
-                    suma += Convert.ToDecimal(fila.Cells["VALOR_COPAGO"].Value);
-                    sumaValor += Convert.ToDecimal(fila.Cells["VALOR_TOTAL"].Value);
-                    cantidades += Convert.ToDecimal(fila.Cells["CANTIDAD"].Value);
+                    utotal += Convert.ToDecimal(fila.Cells["VALOR_TOTAL"].Value);
+                    ctotal += Convert.ToDecimal(fila.Cells["TOTAL_COPAGO"].Value);
+                    scopago += Convert.ToDecimal(fila.Cells["TOTAL"].Value);
                     if (Convert.ToDecimal(fila.Cells["VALOR_IVA"].Value) > 0)
                     {
-                        sumaCIva += Convert.ToDecimal(fila.Cells["VALOR_IVA"].Value);
+                        civa += Convert.ToDecimal(fila.Cells["IVA_COPAGO"].Value);
+                        siva += Convert.ToDecimal(fila.Cells["IVA"].Value);
+                        iva += Convert.ToDecimal(fila.Cells["VALOR_IVA"].Value);
                     }
                 }
-                total = sumaValor + sumaCIva;
+                total = utotal + iva;
                 txtTotal.Text = total.ToString("#####0.000"); // total valor
-                txtCantidad.Text = cantidades.ToString("#####0.000"); // cantidades
-                this.txtTotalCopago.Text = suma.ToString("#####0.000"); //descuento
-                if (sumaValor != 0)
-                    txtTTporcentage.Text = ((suma * 100) / sumaValor).ToString("#####0.000"); // porcentage descueto global
-                else
-                    txtTTporcentage.Text = "0.00";
+                //txtCantidad.Text = cantidades.ToString("#####0.000"); // cantidades
+                this.txtSiva.Text = siva.ToString("#####0.000"); 
+                this.txtStotal.Text = scopago.ToString("#####0.000"); 
+                this.txtCiva.Text = civa.ToString("#####0.000"); 
+                this.txtCtotal.Text = ctotal.ToString("#####0.000"); 
+                //if (sumaValor != 0)
+                //    txtCiva.Text = ((suma * 100) / sumaValor).ToString("#####0.000"); // porcentage descueto global
+                //else
+                //    txtCiva.Text = "0.00";
             }
             catch (Exception ex)
             {

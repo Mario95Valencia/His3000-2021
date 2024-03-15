@@ -848,6 +848,12 @@
     <Compile Include="frm_Emergencia.designer.cs">
       <DependentUpon>frm_Emergencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_EmergenciaNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_EmergenciaNew.Designer.cs">
+      <DependentUpon>frm_EmergenciaNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Epicrisis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1607,6 +1613,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Emergencia.resx">
       <DependentUpon>frm_Emergencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_EmergenciaNew.resx">
+      <DependentUpon>frm_EmergenciaNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Epicrisis.resx">
       <DependentUpon>frm_Epicrisis.cs</DependentUpon>

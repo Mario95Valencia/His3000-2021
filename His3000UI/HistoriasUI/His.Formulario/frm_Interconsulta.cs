@@ -200,7 +200,7 @@ namespace His.Formulario
                 //lbl_aseguradora.Text = aseguradora.ASE_NOMBRE;
                 List<MEDICOS> medicos = NegMedicos.listaMedicos();
                 codigoMedico = medicos.FirstOrDefault(m => m.EntityKey == atencion.MEDICOSReference.EntityKey).MED_CODIGO;
-                if (codigoMedico != 0)
+                //if (codigoMedico != 0) Causa que no se pueda validar una Interconsulta con medico residente Mario Valencia
                     cargarMedico(codigoMedico);
                 cargarHora();
                 cargarInterconsulta(atencion.ATE_CODIGO);
@@ -254,11 +254,10 @@ namespace His.Formulario
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             tabControl1.Enabled = true;
-            HabilitarBotones(false, true, false, false); 
+            HabilitarBotones(false, true, false, false);
             nuevo = true;
             modo = "SAVE";
             limpiarCampos();
-
         }
 
         private void limpiarCampos()
@@ -620,7 +619,7 @@ namespace His.Formulario
             //    AgregarError(txt_destino);
             //    flag = true;
             //}
-            
+
             if (txt_motivo.Text.ToString() == string.Empty)
             {
                 AgregarError(txt_motivo);
@@ -753,7 +752,7 @@ namespace His.Formulario
                         if (int.TryParse(txtCodMedInterconsultado.Text, out Cambio))
                         {
                             interconsulta.HIN_MEDICO_INTERCONSULTADO = Cambio;
-                        }                      
+                        }
                         else
                         {
                             interconsulta.HIN_MEDICO_INTERCONSULTADO = 1;
@@ -799,22 +798,30 @@ namespace His.Formulario
                         //NegInterconsulta.crearInterconsulta(interconsulta);
                         //guardarDiagnosticos();
                         //MessageBox.Show("Registro Guardado", "INTERCONSULTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        HabilitarBotones(false, true, true, true);
-                        tabControl1.Enabled = true;
+
+
+                        //if (txt_med_interconsultado.Text.ToString() == string.Empty)
+                        //{
+                        //    if (MessageBox.Show("¡Medico no ingresado!. ¿El médico es de llamada?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+                        //         == DialogResult.Yes)
+                        //    {
+
+                        //        imprimirReporte("reporte");
+
+                        //    }
+
+                        //}
+
+                        HabilitarBotones(true, false, false, false);
+                        limpiarCampos();
+
+                        tabControl1.Enabled = false;
+
                         if (ate_codigo != 0)
                         {
-                            
+
                         }
 
-                        if (validarTodoFormulario())
-                        {
-                            if (txt_med_interconsultado.Text.ToString() == string.Empty)
-                                if (MessageBox.Show("¡Medico no ingresado!. ¿El médico es de llamada?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-                                 == DialogResult.Yes)
-
-                                    imprimirReporte("reporte");
-                        }
-                        
                     }
                     else
                     {
@@ -839,7 +846,14 @@ namespace His.Formulario
             guardarDiagnosticos();
         }
 
-
+        private void habilitaGrid(bool grp)
+        {
+            groupBox1.Enabled = grp;
+            groupBox2.Enabled = grp;
+            groupBox5.Enabled = grp;
+            groupBox6.Enabled = grp;
+            groupBox7.Enabled = grp;
+        }
 
         private void actualizarDiagnosticos4(int codInterc)
         {
@@ -998,54 +1012,73 @@ namespace His.Formulario
 
         private void BuscaCIEDTG4()
         {
-            if (dtg_4.CurrentRow != null)
-            {
-                frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
-                busqueda.ShowDialog();
-                diagnostico = busqueda.resultado;
-                codigoCIE = busqueda.codigo;
+            //if (dtg_4.CurrentRow != null)
+            //{
+            frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
+            busqueda.ShowDialog();
+            diagnostico = busqueda.resultado;
+            codigoCIE = busqueda.codigo;
 
-                if ((diagnostico != "") && (diagnostico != null))
+            if ((diagnostico != "") && (diagnostico != null))
+            {
+                if (dtg_4.Rows.Count < 7)
                 {
-                    if (dtg_4.Rows.Count < 7)
+                    if (dtg_4.Rows.Count > 1)
                     {
-                        if (dtg_4.Rows.Count > 1)
+                        for (int i = 0; i < dtg_4.Rows.Count - 1; i++)
                         {
-                            for (int i = 0; i < dtg_4.Rows.Count - 1; i++)
+                            if (busqueda.codigo == dtg_4.Rows[i].Cells[1].Value.ToString())
                             {
-                                if (busqueda.codigo == dtg_4.Rows[i].Cells[1].Value.ToString())
-                                {
-                                    MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    return;
-                                }
+                                MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
                             }
                         }
-                        DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[0];
-                        DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[1];
-                        DataGridViewCheckBoxCell chkpres = (DataGridViewCheckBoxCell)this.dtg_4.CurrentRow.Cells[2];
-
-
-                        if (diagnostico != null)
-                        {
-                            txtcell.Value = diagnostico;
-                            txtcell2.Value = codigoCIE;
-                            //chkpres.Value = true;
-                            diagnostico = "";
-                            //dtg_4_CellContentClick(object, dtg_4);
-
-                        }
-
-                        index2++;
                     }
-                    else
-                        MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[0]; // se comenta por el proceso y genere una fila de manera automatica // Mario Valencia //11-03-2024
+                    //DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_4.CurrentRow.Cells[1];
+                    //DataGridViewCheckBoxCell chkpres = (DataGridViewCheckBoxCell)this.dtg_4.CurrentRow.Cells[2];
+
+
+                    //if (diagnostico != null)
+                    //{
+                    //    txtcell.Value = diagnostico;
+                    //    txtcell2.Value = codigoCIE;
+                    //    //chkpres.Value = true;
+                    //    diagnostico = "";
+                    //    //dtg_4_CellContentClick(object, dtg_4);
+
+                    //}
+                    DataGridViewRow fila = new DataGridViewRow();
+
+                    DataGridViewTextBoxCell codigoCell = new DataGridViewTextBoxCell();
+                    DataGridViewTextBoxCell textcell = new DataGridViewTextBoxCell();
+                    DataGridViewTextBoxCell CodigoPcell = new DataGridViewTextBoxCell();
+
+                    DataGridViewCheckBoxCell Check1Cell = new DataGridViewCheckBoxCell();
+                    DataGridViewCheckBoxCell Check2Cell = new DataGridViewCheckBoxCell();
+
+                    codigoCell.Value = null;
+                    CodigoPcell.Value = busqueda.resultado;
+                    textcell.Value = busqueda.codigo;
+
+                    Check1Cell = null;
+                    Check2Cell = null;
+
+                    fila.Cells.Add(CodigoPcell);
+                    fila.Cells.Add(textcell);
+
+                    dtg_4.Rows.Add(fila);
+                    index2++;
                 }
+                else
+                    MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else
-            {
-                MessageBox.Show("Seleccione una fila antes de ingresar el diagnóstico.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Seleccione una fila antes de ingresar el diagnóstico.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+
         }
 
         private void dtg_8_KeyUp(object sender, KeyEventArgs e)
@@ -1110,7 +1143,7 @@ namespace His.Formulario
             TimeSpan diferencia = fechaActual - fechaNac;
 
             // Calcula la edad en años
-            int edad = (int)(diferencia.TotalDays / 365.25); 
+            int edad = (int)(diferencia.TotalDays / 365.25);
 
             return edad;
         }
@@ -1119,7 +1152,7 @@ namespace His.Formulario
         {
             try
             {
-                
+
                 NegCertificadoMedico med = new NegCertificadoMedico();
                 ReporteInterconsulta reporte = new ReporteInterconsulta();
                 MEDICOS medic = null;
@@ -1136,6 +1169,7 @@ namespace His.Formulario
                 DSInterconsulta ds = new DSInterconsulta();
                 DataRow dr;
                 dr = ds.Tables["InterconsultaA"].NewRow();
+
                 dr["establecimiento"] = His.Entidades.Clases.Sesion.nomEmpresa;
                 dr["path"] = IO.Rows[0]["EMP_PATHIMAGEN"].ToString();
                 dr["nombre1"] = paciente.PAC_NOMBRE1;
@@ -1189,7 +1223,7 @@ namespace His.Formulario
                         dr["medruc"] = medic.MED_RUC;
                 }
                 else
-                {   
+                {
                     dr["mednombre1"] = usu.NOMBRES;
                     dr["medapellido1"] = usu.APELLIDOS;
                     dr["medapellido2"] = "";
@@ -1207,7 +1241,7 @@ namespace His.Formulario
                     {
                         dr["d1c"] = dtg_4.Rows[0].Cells[0].Value.ToString();
                         dr["d1"] = (dtg_4.Rows[0].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value)) //Convierte explicitamente a booleano para que pueda validar la casilla seleccionada A.Cabrera 2024/03/06
                             dr["d1p"] = dtg_4.Rows[0].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d1d"] = dtg_4.Rows[0].Cells[3].Value != null ? "X" : " ";
@@ -1216,16 +1250,16 @@ namespace His.Formulario
                     {
                         dr["d2c"] = dtg_4.Rows[1].Cells[0].Value.ToString();
                         dr["d2"] = (dtg_4.Rows[1].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value))
                             dr["d2p"] = dtg_4.Rows[1].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d2d"] = dtg_4.Rows[1].Cells[3].Value != null ? "X" : " ";
                     }
                     if (i == 2)
                     {
-                        dr["d3"] = dtg_4.Rows[2].Cells[0].Value.ToString();
-                        dr["d3c"] = (dtg_4.Rows[2].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        dr["d3c"] = dtg_4.Rows[2].Cells[0].Value.ToString();
+                        dr["d3"] = (dtg_4.Rows[2].Cells[1].Value.ToString()).Replace("'", "´");
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value))
                             dr["d3p"] = dtg_4.Rows[2].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d3d"] = dtg_4.Rows[2].Cells[3].Value != null ? "X" : " ";
@@ -1234,7 +1268,7 @@ namespace His.Formulario
                     {
                         dr["d4c"] = dtg_4.Rows[3].Cells[0].Value.ToString();
                         dr["d4"] = (dtg_4.Rows[3].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value))
                             dr["d4p"] = dtg_4.Rows[3].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d4d"] = dtg_4.Rows[3].Cells[3].Value != null ? "X" : " ";
@@ -1243,7 +1277,7 @@ namespace His.Formulario
                     {
                         dr["d5c"] = dtg_4.Rows[4].Cells[0].Value.ToString();
                         dr["d5"] = (dtg_4.Rows[4].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value))
                             dr["d5p"] = dtg_4.Rows[4].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d5d"] = dtg_4.Rows[4].Cells[3].Value != null ? "X" : " ";
@@ -1252,7 +1286,7 @@ namespace His.Formulario
                     {
                         dr["d6c"] = dtg_4.Rows[5].Cells[0].Value.ToString();
                         dr["d6"] = (dtg_4.Rows[5].Cells[1].Value.ToString()).Replace("'", "´");
-                        if ((bool)dtg_4.Rows[i].Cells[2].Value)
+                        if (Convert.ToBoolean(dtg_4.Rows[i].Cells[2].Value))
                             dr["d6p"] = dtg_4.Rows[5].Cells[2].Value != null ? "X" : " ";
                         else
                             dr["d6d"] = dtg_4.Rows[5].Cells[3].Value != null ? "X" : " ";
@@ -1340,7 +1374,7 @@ namespace His.Formulario
                 dr["descripcion"] = txt_motivo.Text;
                 dr["ci"] = paciente.PAC_IDENTIFICACION;
                 string[] medicointer = txt_med_interconsultado.Text.Split(' ');
-               
+
                 //reporte.for_med_int = "Dr/a. " + medicointer[0] + " " + medicointer[2];
                 dr["fecha"] = textBox9.Text;
                 dr["hora"] = textBox8.Text;
@@ -1390,8 +1424,8 @@ namespace His.Formulario
                     }
                     if (i == 2)
                     {
-                        dr["d3"] = dtg_4.Rows[2].Cells[0].Value.ToString();
-                        dr["d3c"] = (dtg_4.Rows[2].Cells[1].Value.ToString()).Replace("'", "´");
+                        dr["d3c"] = dtg_4.Rows[2].Cells[0].Value.ToString();
+                        dr["d3"] = (dtg_4.Rows[2].Cells[1].Value.ToString()).Replace("'", "´");
                         if ((bool)dtg_4.Rows[i].Cells[2].Value)
                             dr["d3p"] = dtg_4.Rows[2].Cells[2].Value != null ? "X" : " ";
                         else
@@ -1653,6 +1687,7 @@ namespace His.Formulario
             //cambio las dimenciones de los paneles
             panelInfPaciente.Size = new Size(panelInfPaciente.Width, 110);
             //pantab1.Top = 125;
+            HabilitarBotones(true, false, false, false);
         }
 
         private void txt_destino_KeyDown(object sender, KeyEventArgs e)
@@ -1833,7 +1868,8 @@ namespace His.Formulario
                     {
                         if (txt_med_interconsultado.Text.ToString() == "")
                         {
-                            MessageBox.Show("No se puede cerrar la interconsulta \n\r sin un médico ingresado", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //MessageBox.Show("No se puede cerrar la interconsulta \n\r sin un médico ingresado", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            AgregarError(txt_med_interconsultado);
                             return;
                         }
                         if (hin_codigo == 0)
@@ -1843,6 +1879,7 @@ namespace His.Formulario
                         }
                         if (NegInterconsulta.EditarEstado(hin_codigo, true))
                         {
+                            error.Clear();
                             MessageBox.Show("La interconsulta ha sido cerrada con exito", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ValidarCerrado();
                             btnabrir.Visible = false;

@@ -220,7 +220,7 @@
             this.txt_cuadroclinico.Location = new System.Drawing.Point(10, 19);
             this.txt_cuadroclinico.Multiline = true;
             this.txt_cuadroclinico.Name = "txt_cuadroclinico";
-            this.txt_cuadroclinico.Size = new System.Drawing.Size(675, 184);
+            this.txt_cuadroclinico.Size = new System.Drawing.Size(676, 184);
             this.txt_cuadroclinico.TabIndex = 40;
             // 
             // groupBox1
@@ -529,7 +529,7 @@
             // 
             this.ultraTabPageControl2.Controls.Add(this.groupBox6);
             this.ultraTabPageControl2.Controls.Add(this.groupBox5);
-            this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl2.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
             this.ultraTabPageControl2.Size = new System.Drawing.Size(742, 421);
             // 
@@ -642,7 +642,7 @@
             this.dtg_4.Location = new System.Drawing.Point(5, 89);
             this.dtg_4.Name = "dtg_4";
             this.dtg_4.RowHeadersWidth = 62;
-            this.dtg_4.Size = new System.Drawing.Size(683, 157);
+            this.dtg_4.Size = new System.Drawing.Size(684, 157);
             this.dtg_4.TabIndex = 5;
             this.dtg_4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_4_CellContentClick);
             this.dtg_4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtg_4_KeyUp);
@@ -698,13 +698,13 @@
             this.txt_resultados.Location = new System.Drawing.Point(5, 19);
             this.txt_resultados.Multiline = true;
             this.txt_resultados.Name = "txt_resultados";
-            this.txt_resultados.Size = new System.Drawing.Size(681, 136);
+            this.txt_resultados.Size = new System.Drawing.Size(682, 136);
             this.txt_resultados.TabIndex = 41;
             // 
             // ultraTabPageControl3
             // 
             this.ultraTabPageControl3.Controls.Add(this.groupBox7);
-            this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl3.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl3.Name = "ultraTabPageControl3";
             this.ultraTabPageControl3.Size = new System.Drawing.Size(742, 421);
             // 
@@ -739,7 +739,7 @@
             this.ultraTabPageControl4.Controls.Add(this.groupBox4);
             this.ultraTabPageControl4.Controls.Add(this.btnF1_8);
             this.ultraTabPageControl4.Controls.Add(this.groupBox3);
-            this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl4.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl4.Name = "ultraTabPageControl4";
             this.ultraTabPageControl4.Size = new System.Drawing.Size(742, 421);
             // 
@@ -937,7 +937,7 @@
             this.ultraTabPageControl5.Controls.Add(this.groupBox11);
             this.ultraTabPageControl5.Controls.Add(this.label6);
             this.ultraTabPageControl5.Controls.Add(this.groupBox10);
-            this.ultraTabPageControl5.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl5.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
             this.ultraTabPageControl5.Size = new System.Drawing.Size(742, 421);
             // 
@@ -1523,7 +1523,7 @@
             this.tableLayoutPanel1.Controls.Add(this.gridSol, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 151);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

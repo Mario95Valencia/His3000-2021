@@ -351,6 +351,8 @@ namespace His.Formulario
             DataRow dr;
             dr = ds.Tables["InterconsultaB"].NewRow();
 
+
+            dr["institucion"] = NegUtilitarios.RutaLogo("General");
             dr["establecimiento"] = His.Entidades.Clases.Sesion.nomEmpresa;
             dr["path"] = IO.Rows[0]["EMP_PATHIMAGEN"].ToString();
             dr["nombre1"] = paciente.PAC_NOMBRE1;
@@ -389,8 +391,8 @@ namespace His.Formulario
                 }
                 if (i == 2)
                 {
-                    dr["d3"] = dtg_8.Rows[2].Cells[1].Value.ToString();
-                    dr["d3c"] = (dtg_8.Rows[2].Cells[0].Value.ToString()).Replace("'", "´");
+                    dr["d3c"] = dtg_8.Rows[2].Cells[1].Value.ToString();
+                    dr["d3"] = (dtg_8.Rows[2].Cells[0].Value.ToString()).Replace("'", "´");
                     if (!(bool)dtg_8.Rows[i].Cells[3].Value)
                         dr["d3p"] = dtg_8.Rows[2].Cells[2].Value != null ? "X" : " ";
                     else
@@ -436,40 +438,68 @@ namespace His.Formulario
         }
         private void BuscaCIEDTG8()
         {
-            frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
-            busqueda.ShowDialog();
-            diagnostico2 = busqueda.resultado;
-            codigoCIE2 = busqueda.codigo;
+            //if (dtg_8.CurrentRow != null)
+            //{
 
-            if ((diagnostico2 != "") && (diagnostico2 != null))
-            {
-                if (dtg_8.Rows.Count < 7)
+                frm_BusquedaCIE10 busqueda = new frm_BusquedaCIE10();
+                busqueda.ShowDialog();
+                diagnostico2 = busqueda.resultado;
+                codigoCIE2 = busqueda.codigo;
+
+                if ((diagnostico2 != "") && (diagnostico2 != null))
                 {
-                    if (dtg_8.Rows.Count > 1)
+                    if (dtg_8.Rows.Count < 7)
                     {
-                        for (int i = 0; i < dtg_8.Rows.Count - 1; i++)
+                        if (dtg_8.Rows.Count > 1)
                         {
-                            if (busqueda.codigo == dtg_8.Rows[i].Cells[1].Value.ToString())
+                            for (int i = 0; i < dtg_8.Rows.Count - 1; i++)
                             {
-                                MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                return;
+                                if (busqueda.codigo == dtg_8.Rows[i].Cells[1].Value.ToString())
+                                {
+                                    MessageBox.Show("El procedimiento ya ha sido agregado.\r\nIntente con uno diferente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    return;
+                                }
                             }
                         }
-                    }
-                    DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_8.CurrentRow.Cells[0];
-                    DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_8.CurrentRow.Cells[1];
+                    //DataGridViewTextBoxCell txtcell = (DataGridViewTextBoxCell)this.dtg_8.CurrentRow.Cells[0]; // se comenta por el proceso y genere una fila de manera automatica // Mario Valencia //11-03-2024
+                    //DataGridViewTextBoxCell txtcell2 = (DataGridViewTextBoxCell)this.dtg_8.CurrentRow.Cells[1];
 
-                    if (diagnostico2 != null)
-                    {
-                        txtcell.Value = diagnostico2;
-                        txtcell2.Value = codigoCIE2;
-                        diagnostico2 = "";
-                    }
+                    //if (diagnostico2 != null)
+                    //{
+                    //    txtcell.Value = diagnostico2;
+                    //    txtcell2.Value = codigoCIE2;
+                    //    diagnostico2 = "";
+                    //}
+                    DataGridViewRow fila = new DataGridViewRow();
+
+                    DataGridViewTextBoxCell codigoCell = new DataGridViewTextBoxCell();
+                    DataGridViewTextBoxCell textcell = new DataGridViewTextBoxCell();
+                    DataGridViewTextBoxCell CodigoPcell = new DataGridViewTextBoxCell();
+
+                    DataGridViewCheckBoxCell Check1Cell = new DataGridViewCheckBoxCell();
+                    DataGridViewCheckBoxCell Check2Cell = new DataGridViewCheckBoxCell();
+
+                    codigoCell.Value = null;
+                    CodigoPcell.Value = busqueda.resultado;
+                    textcell.Value = busqueda.codigo;
+
+                    Check1Cell = null;
+                    Check2Cell = null;
+
+                    fila.Cells.Add(CodigoPcell);
+                    fila.Cells.Add(textcell);
+
+                    dtg_8.Rows.Add(fila);
                     index3++;
+                    }
+                    else
+                        MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else
-                    MessageBox.Show("No puede agregar mas de 6 procedimientos.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Seleccione una fila antes de ingresar el diagnóstico.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
         }
         private void dtg_8_KeyUp(object sender, KeyEventArgs e)
         {
@@ -651,6 +681,7 @@ namespace His.Formulario
                             envioCorreo();
                             //Imprimir();
                             limpiarCampos();
+                            habilitaGrid(false);
                             refrescarSolicitudes();
                             habilitarBotones(false, false, false);
                         }

@@ -7043,16 +7043,18 @@ namespace His.Admision
             }
             if (datosPacienteActual.COD_CANTON != null)
             {
-                dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_CANTON);
-                drAdmision["Canton"] = dp.DIPO_NOMBRE;
+                dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_CANTON);                
                 drAdmision["Canton"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Canton"] = "N/A";
             if (datosPacienteActual.COD_PROVINCIA != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_PROVINCIA);
-                drAdmision["Provincia"] = dp.DIPO_NOMBRE;
                 drAdmision["Provincia"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Provincia"] = "N/A";
             drAdmision["Zona"] = "N/A";
             //if (datosPacienteActual.DAP_TELEFONO1 == null || datosPacienteActual.DAP_TELEFONO1 == "")
             //    drAdmision["Telefono"] = datosPacienteActual.DAP_TELEFONO2;

@@ -1699,6 +1699,9 @@ namespace His.Admision
                 ultimaAtencion.HABITACIONESReference.EntityKey = listaHabitaciones.FirstOrDefault(h => h.hab_Codigo == Sesion.codHabitacion).EntityKey;
 
                 /**********************************************************************************************************************/
+                ultimaAtencion.ATE_FUENTE_INFORMACION = txt_Finformacion.Text;
+                ultimaAtencion.ATE_INSTITUCION_ENTREGA = txt_Institucion.Text;
+                ultimaAtencion.ATE_INSTITUCION_TELEFONO = msk_TelefonoL.Text;
             }
             catch (Exception err)
             {
@@ -3255,16 +3258,6 @@ namespace His.Admision
             }
         }
 
-        private void cb_personaFactura_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-
         private void txt_apellido1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
@@ -3667,15 +3660,6 @@ namespace His.Admision
         }
 
         private void txt_diagnostico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-        private void txt_observaciones_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
             {
@@ -5453,11 +5437,15 @@ namespace His.Admision
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_CANTON);
                 drAdmision["Canton"] = dp.DIPO_NOMBRE;
             }
+            else
+                drAdmision["Canton"] = "N/A";
             if (datosPacienteActual.COD_PROVINCIA != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_PROVINCIA);
                 drAdmision["Provincia"] = dp.DIPO_NOMBRE;
             }
+            else
+                drAdmision["Provincia"] = "N/A";
             drAdmision["Zona"] = "N/A";
             //if (datosPacienteActual.DAP_TELEFONO1 == null || datosPacienteActual.DAP_TELEFONO1 == "")
             //    drAdmision["Telefono"] = datosPacienteActual.DAP_TELEFONO2;
@@ -5625,16 +5613,6 @@ namespace His.Admision
             }
             Formulario.frmReportes x = new Formulario.frmReportes(1, "Admision", Admision);
             x.ShowDialog();
-        }
-
-        private void label63_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ultraButton1_Click(object sender, EventArgs e)
-        {
-            BuscarDivision("pais");
         }
 
         private void ultraButton2_Click(object sender, EventArgs e)
@@ -6761,22 +6739,6 @@ namespace His.Admision
 
         }
 
-        private void txtPorcentageDA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtPorcentageDA_Leave(object sender, EventArgs e)
-        {
-            if (txtPorcentageDA.Text.Trim() == "")
-                txtPorcentageDA.Text = "0";
-        }
-
         private void btnGuardar_EnabledChanged(object sender, EventArgs e)
         {
             if (btnGuardar.Enabled)
@@ -7098,42 +7060,6 @@ namespace His.Admision
         }
 
         private void cb_tipoGarantia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-        private void ultraButton1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-        private void chkDiscapacidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-        private void txtIdDiscapacidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
-            {
-                e.Handled = true;
-                SendKeys.SendWait("{TAB}");
-            }
-        }
-
-        private void cmbTiposDiscapacidadesDA_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
             {
@@ -7499,24 +7425,6 @@ namespace His.Admision
             }
         }
 
-        private void chkDiscapacidad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkDiscapacidad.Checked)
-            {
-                txtPorcentageDA.Enabled = true;
-                txtIdDiscapacidad.Enabled = true;
-                cmbTiposDiscapacidadesDA.Enabled = true;
-            }
-            else
-            {
-                txtPorcentageDA.Enabled = false;
-                txtIdDiscapacidad.Enabled = false;
-                cmbTiposDiscapacidadesDA.Enabled = false;
-                txtPorcentageDA.Text = "0";
-                txtIdDiscapacidad.Text = "";
-                cmbTiposDiscapacidadesDA.SelectedIndex = 0;
-            }
-        }
         public void limpiarFacturar()
         {
             txt_nombreAcomp.Text = "";
@@ -7530,42 +7438,6 @@ namespace His.Admision
             txt_ciudadAcomp.Text = "";
         }
 
-        private void cb_personaFactura_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_personaFactura.SelectedIndex != -1)
-            {
-                if (cb_personaFactura.SelectedIndex == 0)//Paciente
-                {
-                    limpiarFacturar();
-                    txt_nombreAcomp.Text = txt_apellido1.Text.Trim() + " " + txt_apellido2.Text.Trim() + " " + txt_nombre1.Text.Trim() + " " + txt_nombre2.Text.Trim();
-                    txt_cedulaAcomp.Text = txt_cedula.Text.Trim();
-                    txt_direccionAcomp.Text = txt_direccion.Text.Trim();
-                    txt_parentescoAcomp.Text = txt_parentRef.Text;
-                    txt_emailAcomp.Text = txt_email.Text;
-                    txt_telefonoAcomp.Text = txt_telefono2.Text;
-                    uBtnAddAcompaniante.Visible = false;
-                    btnReligioso.Visible = false;
-                }
-                else if (cb_personaFactura.SelectedIndex == 1)//Seguros
-                {
-                    limpiarFacturar();
-                    uBtnAddAcompaniante.Visible = false;
-                    btnReligioso.Visible = true;
-                }
-                else if (cb_personaFactura.SelectedIndex == 2)//Religiosos
-                {
-                    limpiarFacturar();
-                    uBtnAddAcompaniante.Visible = false;
-                    btnReligioso.Visible = true;
-                }
-                else if (cb_personaFactura.SelectedIndex == 3) //Otros
-                {
-                    limpiarFacturar();
-                    uBtnAddAcompaniante.Visible = true;
-                    btnReligioso.Visible = false;
-                }
-            }
-        }
 
         private void btnReligioso_Click(object sender, EventArgs e)
         {
@@ -8347,6 +8219,139 @@ namespace His.Admision
         private void txt_ocupacion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb_personaFactura_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void cb_personaFactura_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cb_personaFactura.SelectedIndex != -1)
+            {
+                if (cb_personaFactura.SelectedIndex == 0)//Paciente
+                {
+                    limpiarFacturar();
+                    txt_nombreAcomp.Text = txt_apellido1.Text.Trim() + " " + txt_apellido2.Text.Trim() + " " + txt_nombre1.Text.Trim() + " " + txt_nombre2.Text.Trim();
+                    txt_cedulaAcomp.Text = txt_cedula.Text.Trim();
+                    txt_direccionAcomp.Text = txt_direccion.Text.Trim();
+                    txt_parentescoAcomp.Text = txt_parentRef.Text;
+                    txt_emailAcomp.Text = txt_email.Text;
+                    txt_telefonoAcomp.Text = txt_telefono2.Text;
+                    uBtnAddAcompaniante.Visible = false;
+                    btnReligioso.Visible = false;
+                }
+                else if (cb_personaFactura.SelectedIndex == 1)//Seguros
+                {
+                    limpiarFacturar();
+                    uBtnAddAcompaniante.Visible = false;
+                    btnReligioso.Visible = true;
+                }
+                else if (cb_personaFactura.SelectedIndex == 2)//Religiosos
+                {
+                    limpiarFacturar();
+                    uBtnAddAcompaniante.Visible = false;
+                    btnReligioso.Visible = true;
+                }
+                else if (cb_personaFactura.SelectedIndex == 3) //Otros
+                {
+                    limpiarFacturar();
+                    uBtnAddAcompaniante.Visible = true;
+                    btnReligioso.Visible = false;
+                }
+            }
+        }
+
+        private void txtIdDiscapacidad_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void cmbTiposDiscapacidadesDA_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void ultraButton1_Click_2(object sender, EventArgs e)
+        {
+            Formulario.frm_BusquedaCIE10 cieDiez = new His.Formulario.frm_BusquedaCIE10();
+            cieDiez.ShowDialog();
+            textBox1.Text = cieDiez.resultado;
+        }
+
+        private void ultraButton1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void txt_observaciones_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void chkDiscapacidad_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkDiscapacidad.Checked)
+            {
+                txtPorcentageDA.Enabled = true;
+                txtIdDiscapacidad.Enabled = true;
+                cmbTiposDiscapacidadesDA.Enabled = true;
+            }
+            else
+            {
+                txtPorcentageDA.Enabled = false;
+                txtIdDiscapacidad.Enabled = false;
+                cmbTiposDiscapacidadesDA.Enabled = false;
+                txtPorcentageDA.Text = "0";
+                txtIdDiscapacidad.Text = "";
+                cmbTiposDiscapacidadesDA.SelectedIndex = 0;
+            }
+        }
+
+        private void chkDiscapacidad_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+        }
+
+        private void txtPorcentageDA_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPorcentageDA_Leave_1(object sender, EventArgs e)
+        {
+            if (txtPorcentageDA.Text.Trim() == "")
+                txtPorcentageDA.Text = "0";
         }
     }
 }

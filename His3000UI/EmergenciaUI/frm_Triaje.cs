@@ -121,8 +121,8 @@ namespace His.Emergencia
             txtIMCorporal.Text = "0";
             txt_Talla.Text = "0";
             txt_PerimetroC.Text = "0";
-            txt_DiamPDV.Text = "3";
-            txt_DiamPIV.Text = "3";
+            txt_DiamPDV.Text = "";
+            txt_DiamPIV.Text = "";
             txt_Gesta.Text = "0";
             txt_Partos.Text = "0";
             txt_Abortos.Text = "0";
@@ -428,13 +428,21 @@ namespace His.Emergencia
             cmb_Ocular.Text = signos.Rows[0][16].ToString();
             cmb_Verbal.Text = signos.Rows[0][17].ToString();
             cmb_Motora.Text = signos.Rows[0][18].ToString();
-            txt_DiamPDV.Text = signos.Rows[0][19].ToString();
+            if(signos.Rows[0][19].ToString()!="-1")
+                txt_DiamPDV.Text = signos.Rows[0][19].ToString();
+            else
+                txt_DiamPDV.Text = "";
             cmb_ReacPDValor.Text = signos.Rows[0][20].ToString();
-            txt_DiamPIV.Text = signos.Rows[0][21].ToString();
+            if (signos.Rows[0][21].ToString() != "-1")
+                txt_DiamPIV.Text = signos.Rows[0][21].ToString();
+            else
+                txt_DiamPIV.Text = "";
+            
+
             cmb_ReacPIValor.Text = signos.Rows[0][22].ToString();
             txtPerimetro.Text = signos.Rows[0][23].ToString();
             txtHemoglobina.Text = signos.Rows[0][24].ToString();
-            txtGlucosa.Text = signos.Rows[0][25].ToString();
+            txtGlucosa.Text = signos.Rows[0][26].ToString();
             /////////OBSTETRICIA\\\\\\\\\\\\\
 
             if (obstetrica == 0)
@@ -704,12 +712,25 @@ namespace His.Emergencia
 
         private void txt_PesoKG_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox textbox = (TextBox)sender; // Convierto el sender a TextBox
-            e.Handled = txtKeyPress(textbox, Convert.ToInt32(e.KeyChar));
-
-            if (e.KeyChar == (char)09)
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
             {
-                txt_Talla.Focus();
+                // Permitir solo un punto decimal y asegurarse de que no esté al inicio
+                if (e.KeyChar == '.' && ((TextBox)sender).Text.IndexOf('.') > -1)
+                {
+                    e.Handled = true; // Bloquear la entrada
+                }
+                else if (e.KeyChar == '.' && ((TextBox)sender).Text.Length == 0)
+                {
+                    e.Handled = true; // Bloquear la entrada
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                e.Handled = true; // Bloquear la entrada
             }
         }
 
@@ -1483,7 +1504,22 @@ namespace His.Emergencia
                         {
                             cmb_Verbal.Text = "0";
                         }
-                        if (NegConsultaExterna.GuardaTriajeSignosVitales(lblHistoria.Text, Convert.ToInt64(lblAteCodigo.Text), nourgente, urgente, critico, muerto, alcohol, drogas, otros, txtOtrasActual.Text, txtObserEnfer.Text, Convert.ToDecimal(txt_PresionA1.Text), Convert.ToDecimal(txt_PresionA2.Text), Convert.ToDecimal(txt_FCardiaca.Text), Convert.ToDecimal(txt_FResp.Text), Convert.ToDecimal(txt_TBucal.Text), Convert.ToDecimal(txt_TAxilar.Text), Convert.ToDecimal(txt_SaturaO.Text), Convert.ToDecimal(txt_PesoKG.Text), Convert.ToDecimal(txt_Talla.Text), Convert.ToDecimal(txtIMCorporal.Text), Convert.ToDecimal(txt_PerimetroC.Text), Convert.ToDecimal(txt_Glicemia.Text), Convert.ToDecimal(txt_TotalG.Text), Convert.ToInt16(cmb_Motora.Text), Convert.ToInt16(cmb_Verbal.Text), Convert.ToInt16(cmb_Ocular.Text), Convert.ToInt16(txt_DiamPDV.Text), cmb_ReacPDValor.Text, Convert.ToInt16(txt_DiamPIV.Text), cmb_ReacPIValor.Text, Convert.ToInt16(txt_Gesta.Text), Convert.ToInt16(txt_Partos.Text), Convert.ToInt16(txt_Abortos.Text), Convert.ToInt16(txt_Cesareas.Text), dtp_ultimaMenst1.Value, Convert.ToDecimal(txt_SemanaG.Text), movFetal, Convert.ToInt16(txt_FrecCF.Text), memRotas, txt_Tiempo.Text, Convert.ToInt16(txt_AltU.Text), Convert.ToInt16(txt_Presentacion.Text), Convert.ToInt16(txt_Dilatacion.Text), Convert.ToInt16(txt_Borramiento.Text), txt_Plano.Text, pelvis, sangrado, txt_Contracciones.Text, urgente2, Convert.ToDecimal(txtPerimetro.Text), Convert.ToDecimal(txtHemoglobina.Text), Convert.ToDecimal(txtGlucosa.Text),Sesion.codUsuario))
+                        string valor1 = "";
+                        string valor2 = "";
+                        if (txt_DiamPDV.Text == "")
+                        {
+                            valor1 = "-1";
+                        }
+                        else
+                            valor1 = txt_DiamPDV.Text;
+                        if (txt_DiamPIV.Text == "")
+                        {
+                            valor2 = "-1";
+                        }
+                        else
+                            valor2 = txt_DiamPIV.Text;
+
+                        if (NegConsultaExterna.GuardaTriajeSignosVitales(lblHistoria.Text, Convert.ToInt64(lblAteCodigo.Text), nourgente, urgente, critico, muerto, alcohol, drogas, otros, txtOtrasActual.Text, txtObserEnfer.Text, Convert.ToDecimal(txt_PresionA1.Text), Convert.ToDecimal(txt_PresionA2.Text), Convert.ToDecimal(txt_FCardiaca.Text), Convert.ToDecimal(txt_FResp.Text), Convert.ToDecimal(txt_TBucal.Text), Convert.ToDecimal(txt_TAxilar.Text), Convert.ToDecimal(txt_SaturaO.Text), Convert.ToDecimal(txt_PesoKG.Text), Convert.ToDecimal(txt_Talla.Text), Convert.ToDecimal(txtIMCorporal.Text), Convert.ToDecimal(txt_PerimetroC.Text), Convert.ToDecimal(txt_Glicemia.Text), Convert.ToDecimal(txt_TotalG.Text), Convert.ToInt16(cmb_Motora.Text), Convert.ToInt16(cmb_Verbal.Text), Convert.ToInt16(cmb_Ocular.Text), Convert.ToInt16(valor1), cmb_ReacPDValor.Text, Convert.ToInt16(valor2), cmb_ReacPIValor.Text, Convert.ToInt16(txt_Gesta.Text), Convert.ToInt16(txt_Partos.Text), Convert.ToInt16(txt_Abortos.Text), Convert.ToInt16(txt_Cesareas.Text), dtp_ultimaMenst1.Value, Convert.ToDecimal(txt_SemanaG.Text), movFetal, Convert.ToInt16(txt_FrecCF.Text), memRotas, txt_Tiempo.Text, Convert.ToInt16(txt_AltU.Text), Convert.ToInt16(txt_Presentacion.Text), Convert.ToInt16(txt_Dilatacion.Text), Convert.ToInt16(txt_Borramiento.Text), txt_Plano.Text, pelvis, sangrado, txt_Contracciones.Text, urgente2, Convert.ToDecimal(txtPerimetro.Text), Convert.ToDecimal(txtHemoglobina.Text), Convert.ToDecimal(txtGlucosa.Text),Sesion.codUsuario))
                         {
                             MessageBox.Show("Información Almacenada Con Exito!!!", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             HabilitarBotones(true);
@@ -1864,7 +1900,7 @@ namespace His.Emergencia
                 {
                     if (NegUtilitarios.ValidaTemperatura(Convert.ToDecimal(txt_TBucal.Text)))
                     {
-
+                        txt_SaturaO.Focus();
                     }
                     else
                         txt_TBucal.Text = "0";
@@ -1954,6 +1990,48 @@ namespace His.Emergencia
             if (e.KeyChar == (char)09)
             {
 
+            }
+        }
+
+        private void txt_FCardiaca_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (txt_FCardiaca.Text == "" || !NegUtilitarios.ValidaFcardiaca(Convert.ToDouble(txt_FCardiaca.Text.Trim())))
+            {
+                txt_FCardiaca.Text = NegParametros.RecuperaValorParSvXcodigo(56).ToString();
+                return;
+            }
+        }
+
+        private void txt_FResp_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_FResp.Text == "" || !NegUtilitarios.ValidaFrespiratoria(Convert.ToDouble(txt_FResp.Text.Trim())))
+            {
+                txt_FResp.Text = NegParametros.RecuperaValorParSvXcodigo(58).ToString();
+            }
+        }
+
+        private void txt_PesoKG_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_PesoKG.Text))
+            {
+                decimal valorIngresado;
+                if (decimal.TryParse(txt_PesoKG.Text, out valorIngresado))
+                {
+                    if (valorIngresado < 0 || valorIngresado > 635)
+                    {
+                        MessageBox.Show("El valor debe estar entre 0 y 635.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_PesoKG.Text = "0";
+                        txt_PesoKG.Focus();
+                    }
+
+                }
+                else
+                {
+                    txt_PesoKG.Text = "0";
+                    txt_PesoKG.Focus();
+                    MessageBox.Show("Ingresa un numero decimal valido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

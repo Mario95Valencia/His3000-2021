@@ -98,11 +98,13 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtReaccionIz = new System.Windows.Forms.ComboBox();
             this.txtDiametroIz = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtReaccionDer = new System.Windows.Forms.ComboBox();
             this.txtDiametroDer = new System.Windows.Forms.TextBox();
             this.label75 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
@@ -369,8 +371,6 @@
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorSV = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtReaccionDer = new System.Windows.Forms.ComboBox();
-            this.txtReaccionIz = new System.Windows.Forms.ComboBox();
             this.ultraTabPageControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpPrimerGrupo)).BeginInit();
             this.grpPrimerGrupo.SuspendLayout();
@@ -946,6 +946,7 @@
             // 
             // cmb_Motora
             // 
+            this.cmb_Motora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Motora.FormattingEnabled = true;
             this.cmb_Motora.Items.AddRange(new object[] {
             "0",
@@ -964,6 +965,7 @@
             // 
             // cmb_Verbal
             // 
+            this.cmb_Verbal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Verbal.FormattingEnabled = true;
             this.cmb_Verbal.Items.AddRange(new object[] {
             "0",
@@ -981,6 +983,7 @@
             // 
             // cmb_Ocular
             // 
+            this.cmb_Ocular.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Ocular.FormattingEnabled = true;
             this.cmb_Ocular.Items.AddRange(new object[] {
             "0",
@@ -1017,6 +1020,7 @@
             this.txtTempAx.Size = new System.Drawing.Size(76, 26);
             this.txtTempAx.TabIndex = 117;
             this.txtTempAx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTempAx_KeyDown);
+            this.txtTempAx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTempAx_KeyPress);
             this.txtTempAx.Leave += new System.EventHandler(this.txtTempAx_Leave);
             this.txtTempAx.Validating += new System.ComponentModel.CancelEventHandler(this.txtTempAx_Validating);
             // 
@@ -1060,6 +1064,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PUPILA IZQUIERDA";
             // 
+            // txtReaccionIz
+            // 
+            this.txtReaccionIz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtReaccionIz.FormattingEnabled = true;
+            this.txtReaccionIz.Items.AddRange(new object[] {
+            "Ausente",
+            "Disminuida",
+            "Normal"});
+            this.txtReaccionIz.Location = new System.Drawing.Point(307, 24);
+            this.txtReaccionIz.Name = "txtReaccionIz";
+            this.txtReaccionIz.Size = new System.Drawing.Size(188, 32);
+            this.txtReaccionIz.TabIndex = 124;
+            // 
             // txtDiametroIz
             // 
             this.txtDiametroIz.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1068,6 +1085,7 @@
             this.txtDiametroIz.Name = "txtDiametroIz";
             this.txtDiametroIz.Size = new System.Drawing.Size(76, 26);
             this.txtDiametroIz.TabIndex = 92;
+            this.txtDiametroIz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiametroIz_KeyPress);
             // 
             // label78
             // 
@@ -1120,6 +1138,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PUPILA DERECHA";
             // 
+            // txtReaccionDer
+            // 
+            this.txtReaccionDer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtReaccionDer.FormattingEnabled = true;
+            this.txtReaccionDer.Items.AddRange(new object[] {
+            "Ausente",
+            "Disminuida",
+            "Normal"});
+            this.txtReaccionDer.Location = new System.Drawing.Point(308, 30);
+            this.txtReaccionDer.Name = "txtReaccionDer";
+            this.txtReaccionDer.Size = new System.Drawing.Size(188, 32);
+            this.txtReaccionDer.TabIndex = 123;
+            // 
             // txtDiametroDer
             // 
             this.txtDiametroDer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1128,6 +1159,7 @@
             this.txtDiametroDer.Name = "txtDiametroDer";
             this.txtDiametroDer.Size = new System.Drawing.Size(76, 26);
             this.txtDiametroDer.TabIndex = 88;
+            this.txtDiametroDer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiametroDer_KeyPress);
             // 
             // label75
             // 
@@ -1162,6 +1194,7 @@
             this.txtTemperatura.Size = new System.Drawing.Size(76, 26);
             this.txtTemperatura.TabIndex = 22;
             this.txtTemperatura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTemperatura_KeyDown);
+            this.txtTemperatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTemperatura_KeyPress);
             this.txtTemperatura.Leave += new System.EventHandler(this.txtTemperatura_Leave_1);
             this.txtTemperatura.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemperatura_Validating);
             // 
@@ -1198,6 +1231,7 @@
             this.txtPulsioximetria.Size = new System.Drawing.Size(76, 26);
             this.txtPulsioximetria.TabIndex = 110;
             this.txtPulsioximetria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPulsioximetria_KeyDown);
+            this.txtPulsioximetria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPulsioximetria_KeyPress);
             this.txtPulsioximetria.Leave += new System.EventHandler(this.txtPulsioximetria_Leave);
             this.txtPulsioximetria.Validating += new System.ComponentModel.CancelEventHandler(this.txtPulsioximetria_Validating);
             // 
@@ -1210,6 +1244,7 @@
             this.txtPresionArteria1.Size = new System.Drawing.Size(76, 25);
             this.txtPresionArteria1.TabIndex = 28;
             this.txtPresionArteria1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPresionArteria1_KeyDown);
+            this.txtPresionArteria1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresionArteria1_KeyPress);
             this.txtPresionArteria1.Validating += new System.ComponentModel.CancelEventHandler(this.txtPresionArteria1_Validating);
             // 
             // txtGlucosa
@@ -1221,6 +1256,7 @@
             this.txtGlucosa.Size = new System.Drawing.Size(76, 26);
             this.txtGlucosa.TabIndex = 109;
             this.txtGlucosa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGlucosa_KeyDown);
+            this.txtGlucosa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGlucosa_KeyPress);
             this.txtGlucosa.Validating += new System.ComponentModel.CancelEventHandler(this.txtGlucosa_Validating);
             // 
             // label81
@@ -1245,6 +1281,7 @@
             this.txtHemoglobina.TabIndex = 108;
             this.txtHemoglobina.TextChanged += new System.EventHandler(this.txtHemoglobina_TextChanged);
             this.txtHemoglobina.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHemoglobina_KeyDown);
+            this.txtHemoglobina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHemoglobina_KeyPress);
             this.txtHemoglobina.Validating += new System.ComponentModel.CancelEventHandler(this.txtHemoglobina_Validating);
             // 
             // txtPresionArteria2
@@ -1257,6 +1294,7 @@
             this.txtPresionArteria2.TabIndex = 29;
             this.txtPresionArteria2.TextChanged += new System.EventHandler(this.txtPresionArteria2_TextChanged_1);
             this.txtPresionArteria2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPresionArteria2_KeyDown);
+            this.txtPresionArteria2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresionArteria2_KeyPress);
             // 
             // label22
             // 
@@ -1279,6 +1317,7 @@
             this.txtPerimetro.Size = new System.Drawing.Size(76, 26);
             this.txtPerimetro.TabIndex = 107;
             this.txtPerimetro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPerimetro_KeyDown);
+            this.txtPerimetro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerimetro_KeyPress);
             this.txtPerimetro.Validating += new System.ComponentModel.CancelEventHandler(this.txtPerimetro_Validating);
             // 
             // txtPulso
@@ -1291,6 +1330,7 @@
             this.txtPulso.TabIndex = 30;
             this.txtPulso.TextChanged += new System.EventHandler(this.txtPulso_TextChanged);
             this.txtPulso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPulso_KeyDown);
+            this.txtPulso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPulso_KeyPress);
             this.txtPulso.Leave += new System.EventHandler(this.txtPulso_Leave_1);
             this.txtPulso.Validating += new System.ComponentModel.CancelEventHandler(this.txtPulso_Validating);
             // 
@@ -1303,6 +1343,7 @@
             this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(76, 26);
             this.txtFrecuenciaRespiratoria.TabIndex = 31;
             this.txtFrecuenciaRespiratoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFrecuenciaRespiratoria_KeyDown);
+            this.txtFrecuenciaRespiratoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrecuenciaRespiratoria_KeyPress);
             this.txtFrecuenciaRespiratoria.Validating += new System.ComponentModel.CancelEventHandler(this.txtFrecuenciaRespiratoria_Validating);
             // 
             // label70
@@ -1407,6 +1448,7 @@
             this.txtPeso.TabIndex = 32;
             this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
             this.txtPeso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPeso_KeyDown);
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             this.txtPeso.Validating += new System.ComponentModel.CancelEventHandler(this.txtPeso_Validating);
             // 
             // label25
@@ -1454,6 +1496,7 @@
             this.txtTalla.TabIndex = 33;
             this.txtTalla.TextChanged += new System.EventHandler(this.txtTalla_TextChanged);
             this.txtTalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTalla_KeyDown);
+            this.txtTalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTalla_KeyPress);
             this.txtTalla.Validating += new System.ComponentModel.CancelEventHandler(this.txtTalla_Validating);
             // 
             // label26
@@ -4672,30 +4715,6 @@
             // errorSV
             // 
             this.errorSV.ContainerControl = this;
-            // 
-            // txtReaccionDer
-            // 
-            this.txtReaccionDer.FormattingEnabled = true;
-            this.txtReaccionDer.Items.AddRange(new object[] {
-            "Ausente",
-            "Disminuida",
-            "Normal"});
-            this.txtReaccionDer.Location = new System.Drawing.Point(308, 30);
-            this.txtReaccionDer.Name = "txtReaccionDer";
-            this.txtReaccionDer.Size = new System.Drawing.Size(188, 32);
-            this.txtReaccionDer.TabIndex = 123;
-            // 
-            // txtReaccionIz
-            // 
-            this.txtReaccionIz.FormattingEnabled = true;
-            this.txtReaccionIz.Items.AddRange(new object[] {
-            "Ausente",
-            "Disminuida",
-            "Normal"});
-            this.txtReaccionIz.Location = new System.Drawing.Point(307, 24);
-            this.txtReaccionIz.Name = "txtReaccionIz";
-            this.txtReaccionIz.Size = new System.Drawing.Size(188, 32);
-            this.txtReaccionIz.TabIndex = 124;
             // 
             // Consulta
             // 

@@ -176,7 +176,7 @@ namespace His.Formulario
             // 
             this.ultraTabPageControl4.Controls.Add(this.gb9);
             this.ultraTabPageControl4.Controls.Add(this.gb8);
-            this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl4.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl4.Name = "ultraTabPageControl4";
             this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 334);
             // 
@@ -316,7 +316,7 @@ namespace His.Formulario
             this.dtg_8.Location = new System.Drawing.Point(7, 35);
             this.dtg_8.Name = "dtg_8";
             this.dtg_8.RowHeadersWidth = 62;
-            this.dtg_8.Size = new System.Drawing.Size(646, 124);
+            this.dtg_8.Size = new System.Drawing.Size(645, 124);
             this.dtg_8.TabIndex = 5;
             this.dtg_8.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_8_CellContentClick);
             this.dtg_8.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtg_8_KeyUp);
@@ -356,7 +356,7 @@ namespace His.Formulario
             this.ultraTabPageControl5.Controls.Add(this.groupBox10);
             this.ultraTabPageControl5.Controls.Add(this.gb10);
             this.ultraTabPageControl5.Controls.Add(this.label6);
-            this.ultraTabPageControl5.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl5.Location = new System.Drawing.Point(-7500, -8125);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
             this.ultraTabPageControl5.Size = new System.Drawing.Size(711, 334);
             // 
@@ -555,7 +555,7 @@ namespace His.Formulario
             this.tableLayoutPanel1.Controls.Add(this.gridSol, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 124);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -636,7 +636,7 @@ namespace His.Formulario
             this.ultraGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOutsideBorder;
             this.ultraGroupBox1.Location = new System.Drawing.Point(0, 31);
-            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
             this.ultraGroupBox1.Size = new System.Drawing.Size(881, 93);
             this.ultraGroupBox1.TabIndex = 97;
@@ -823,7 +823,7 @@ namespace His.Formulario
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ultraGroupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_InterconsultaB";
             this.Text = "Interconsulta B";
             this.ultraTabPageControl3.ResumeLayout(false);
