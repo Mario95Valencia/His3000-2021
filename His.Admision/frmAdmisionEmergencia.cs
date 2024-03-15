@@ -5402,47 +5402,51 @@ namespace His.Admision
             drAdmision["Logo"] = NegUtilitarios.RutaLogo("General");
             drAdmision["Unidad"] = tratamiento.TIA_DESCRIPCION;
             drAdmision["Cod"] = datosPacienteActual.COD_PROVINCIA;
-            drAdmision["c_Parroquia"] = datosPacienteActual.COD_PARROQUIA;
-            drAdmision["c_Canton"] = datosPacienteActual.COD_CANTON;
-            drAdmision["c_Provincia"] = datosPacienteActual.COD_PROVINCIA;
+            drAdmision["c_Parroquia"] = !string.IsNullOrEmpty(datosPacienteActual.COD_PARROQUIA) ? datosPacienteActual.COD_PARROQUIA : "N/A";
+            drAdmision["c_Canton"] = !string.IsNullOrEmpty(datosPacienteActual.COD_CANTON) ? datosPacienteActual.COD_CANTON : "N/A";
+            drAdmision["c_Provincia"] = !string.IsNullOrEmpty(datosPacienteActual.COD_PROVINCIA) ? datosPacienteActual.COD_PROVINCIA : "N/A";
             //if (!NegParametros.ParametroFormularios())
             //    drAdmision["Hc"] = pacienteActual.PAC_HISTORIA_CLINICA;
             //else
             //    drAdmision["Hc"] = pacienteActual.PAC_IDENTIFICACION;
             drAdmision["Hc"] = pacienteActual.PAC_HISTORIA_CLINICA;
-            drAdmision["Apellido1"] = pacienteActual.PAC_APELLIDO_PATERNO.Trim();
-            drAdmision["Apellido2"] = pacienteActual.PAC_APELLIDO_MATERNO.Trim();
-            drAdmision["Nombre1"] = pacienteActual.PAC_NOMBRE1.Trim();
-            drAdmision["Nombre2"] = pacienteActual.PAC_NOMBRE2.Trim();
+            drAdmision["Apellido1"] = !string.IsNullOrEmpty(pacienteActual.PAC_APELLIDO_PATERNO.Trim()) ? pacienteActual.PAC_APELLIDO_PATERNO.Trim() : "N/A";
+            drAdmision["Apellido2"] = !string.IsNullOrEmpty(pacienteActual.PAC_APELLIDO_MATERNO) ? pacienteActual.PAC_APELLIDO_MATERNO : "N/A";
+            drAdmision["Nombre1"] = !string.IsNullOrEmpty(pacienteActual.PAC_NOMBRE1) ? pacienteActual.PAC_NOMBRE1 : "N/A";
+            drAdmision["Nombre2"] = !string.IsNullOrEmpty(pacienteActual.PAC_NOMBRE2) ? pacienteActual.PAC_NOMBRE2 : "N/A";
             drAdmision["Identificacion"] = pacienteActual.PAC_IDENTIFICACION.Trim();
             drAdmision["Direccion"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO.Trim();
             //drAdmision["CalleSecundaria"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO2.Trim();
-            drAdmision["CalleSecundaria"] = (datosPacienteActual.DAP_DIRECCION_DOMICILIO2 ?? "").Trim();
-            //drAdmision["Referencia"] = datosPacienteActual.DAP_REFERENCIA.Trim();
-            drAdmision["Referencia"] = (datosPacienteActual.DAP_REFERENCIA ?? "").Trim();
-            drAdmision["Email"] = (pacienteActual.PAC_EMAIL ?? "").Trim();
+            drAdmision["CalleSecundaria"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_DIRECCION_DOMICILIO2) ? datosPacienteActual.DAP_DIRECCION_DOMICILIO2 : "N/A";
+            drAdmision["Referencia"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_REFERENCIA.Trim()) ? datosPacienteActual.DAP_REFERENCIA.Trim() : "N/A";
+            drAdmision["Email"] = !string.IsNullOrEmpty(pacienteActual.PAC_EMAIL) ? pacienteActual.PAC_EMAIL : "N/A";
 
             if (datosPacienteActual.COD_SECTOR != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_SECTOR);
-                drAdmision["Barrio"] = dp.DIPO_NOMBRE;
+                drAdmision["Barrio"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Barrio"] = "N/A";
             if (datosPacienteActual.COD_PARROQUIA != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_PARROQUIA);
-                drAdmision["Parroquia"] = dp.DIPO_NOMBRE;
+                drAdmision["Parroquia"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Parroquia"] = "N/A";
+
             if (datosPacienteActual.COD_CANTON != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_CANTON);
-                drAdmision["Canton"] = dp.DIPO_NOMBRE;
+                drAdmision["Canton"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
             else
                 drAdmision["Canton"] = "N/A";
             if (datosPacienteActual.COD_PROVINCIA != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_PROVINCIA);
-                drAdmision["Provincia"] = dp.DIPO_NOMBRE;
+                drAdmision["Provincia"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
             else
                 drAdmision["Provincia"] = "N/A";
@@ -5453,15 +5457,27 @@ namespace His.Admision
             //    drAdmision["Telefono"] = datosPacienteActual.DAP_TELEFONO1;
             //else
             //    drAdmision["Telefono"] = datosPacienteActual.DAP_TELEFONO1 + " / " + datosPacienteActual.DAP_TELEFONO2;
-            drAdmision["Telefono"] = datosPacienteActual.DAP_TELEFONO1;
-            drAdmision["Telefono2"] = datosPacienteActual.DAP_TELEFONO2;
+            drAdmision["Telefono"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_TELEFONO1.Trim()) ? datosPacienteActual.DAP_TELEFONO1.Trim() : "N/A";
+            drAdmision["Telefono2"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_TELEFONO2) ? datosPacienteActual.DAP_TELEFONO2 : "N/A";
             drAdmision["F_Nacimiento"] = Convert.ToDateTime(pacienteActual.PAC_FECHA_NACIMIENTO).ToShortDateString();
             dp = NegDivisionPolitica.DivisionPolitica(pacienteActual.DIPO_CODIINEC);
             drAdmision["L_Nacimiento"] = dp.DIPO_NOMBRE;
             drAdmision["Nacionalidad"] = pacienteActual.PAC_NACIONALIDAD;
             drAdmision["Etnia"] = etnia.E_NOMBRE;
-            drAdmision["Netnica"] = cb_netnica.Text.Trim();
-            drAdmision["Pueblo"] = cb_pueblo.Text.Trim();
+            drAdmision["Nacionalidad"] = pacienteActual.PAC_NACIONALIDAD;
+            if (int.TryParse(cb_etnia.SelectedValue.ToString(), out int codigoEtnia))
+            {
+                if (codigoEtnia == 15)
+                {
+                    drAdmision["Netnica"] = cb_netnica.Text.Trim();
+                    drAdmision["Pueblo"] = cb_pueblo.Text.Trim();
+                }
+                else
+                {
+                    drAdmision["Netnica"] = "N/A";
+                    drAdmision["Pueblo"] = "N/A";
+                }
+            }
 
             drAdmision["Edad"] = NegUtilitarios.EdadCalculada(Convert.ToDateTime(pacienteActual.PAC_FECHA_NACIMIENTO), dateTimeFecIngreso.Value);
             //drAdmision["Edad"] = DateTime.Now.Year - Convert.ToDateTime(pacienteActual.PAC_FECHA_NACIMIENTO).Year;
@@ -5498,22 +5514,23 @@ namespace His.Admision
             else if (Convert.ToInt32(datosPacienteActual.ESTADO_CIVILReference.EntityKey.EntityKeyValues[0].Value) == 5)
                 drAdmision["Soltero"] = "X=UNION DE HECHO";
 
-            drAdmision["Instruccion"] = datosPacienteActual.DAP_INSTRUCCION;
-            drAdmision["c_Emergencia"] = pacienteActual.PAC_REFERENTE_NOMBRE.Trim();
-            drAdmision["Parentesco"] = pacienteActual.PAC_REFERENTE_PARENTESCO.Trim();
-            drAdmision["c_Direccion"] = pacienteActual.PAC_REFERENTE_DIRECCION.Trim();
-            drAdmision["c_Telefono"] = pacienteActual.PAC_REFERENTE_TELEFONO.Trim();
             drAdmision["Admisionista"] = ultimaAtencion.USUARIOSReference.EntityKey.EntityKeyValues[0].Value;
             drAdmision["F_Admision"] = ultimaAtencion.ATE_FECHA_INGRESO;
-            drAdmision["Ocupacion"] = datosPacienteActual.DAP_OCUPACION;
-            drAdmision["p_Empresa"] = datosPacienteActual.DAP_EMP_NOMBRE;
             drAdmision["T_Seguro"] = cc.CAT_NOMBRE;
             drAdmision["Referido"] = referido.TIR_NOMBRE;
             drAdmision["ATE_CODIGO"] = ultimaAtencion.ATE_CODIGO;
-            drAdmision["NEducacion"] = dadicionales2.neducacion;
-            drAdmision["TEmpresa"] = dadicionales2.tempresa;
-            drAdmision["SSalud"] = dadicionales2.ssalud;
-            drAdmision["TBono"] = dadicionales2.tbono;
+
+            drAdmision["Instruccion"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_INSTRUCCION) ? datosPacienteActual.DAP_INSTRUCCION : "N/A";
+            drAdmision["c_Emergencia"] = !string.IsNullOrEmpty(pacienteActual.PAC_REFERENTE_NOMBRE.Trim()) ? pacienteActual.PAC_REFERENTE_NOMBRE.Trim() : "N/A";
+            drAdmision["Parentesco"] = !string.IsNullOrEmpty(pacienteActual.PAC_REFERENTE_PARENTESCO) ? pacienteActual.PAC_REFERENTE_PARENTESCO : "N/A";
+            drAdmision["c_Direccion"] = !string.IsNullOrEmpty(pacienteActual.PAC_REFERENTE_DIRECCION.Trim()) ? pacienteActual.PAC_REFERENTE_DIRECCION.Trim() : "N/A";
+            drAdmision["c_Telefono"] = !string.IsNullOrEmpty(pacienteActual.PAC_REFERENTE_TELEFONO) ? pacienteActual.PAC_REFERENTE_TELEFONO : "N/A";
+            drAdmision["Ocupacion"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_OCUPACION) ? datosPacienteActual.DAP_OCUPACION : "N/A";
+            drAdmision["p_Empresa"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_EMP_NOMBRE) ? datosPacienteActual.DAP_EMP_NOMBRE : "N/A";
+            drAdmision["NEducacion"] = !string.IsNullOrEmpty(dadicionales2.neducacion) ? dadicionales2.neducacion : "N/A";
+            drAdmision["TEmpresa"] = !string.IsNullOrEmpty(dadicionales2.tempresa) ? dadicionales2.tempresa : "N/A";
+            drAdmision["SSalud"] = !string.IsNullOrEmpty(dadicionales2.ssalud) ? dadicionales2.ssalud : "N/A";
+            drAdmision["TBono"] = !string.IsNullOrEmpty(dadicionales2.tbono) ? dadicionales2.tbono : "N/A";
 
             Admision.Tables["Admision"].Rows.Add(drAdmision);
             int aux = 0;
@@ -5571,34 +5588,14 @@ namespace His.Admision
             foreach (DataRow item in Cambios1.Rows)
             {
                 drCambios = Admision.Tables["Cambios"].NewRow();
-                drCambios["Numero"] = item[0].ToString();
+                drCambios["Numero"] = item[0].ToString().Trim();
                 drCambios["Fecha"] = item[2].ToString();
                 drCambios["Estado_Civil"] = item[7].ToString();
-                drCambios["Instruccion"] = item[3].ToString();
-                drCambios["Ocupacion"] = item[4].ToString();
-                drCambios["Empresa"] = item[5].ToString();
-                drCambios["T_Seguro"] = item[8].ToString();
-                drCambios["Direccion"] = item[6].ToString();
-                drCambios["Barrio"] = item[9].ToString();
-                drCambios["Zona"] = item[10].ToString();
-                drCambios["Parroquia"] = item[11].ToString();
-                drCambios["Canton"] = item[12].ToString();
-                drCambios["Provincia"] = item[13].ToString();
-                drCambios["Telefono"] = item[14].ToString();
-                drCambios["ATE_CODIGO"] = ultimaAtencion.ATE_CODIGO;
-                drCambios["CalleSecundaria"] = item[15].ToString();
-                drCambios["Referencia"] = item[16].ToString();
-
-                Admision.Tables["Cambios"].Rows.Add(drCambios);
-                //drCambios = Admision.Tables["Cambios"].NewRow();
-                //drCambios["Numero"] = item[0].ToString();
-                //drCambios["Fecha"] = item[2].ToString();
-                //drCambios["Estado_Civil"] = item[3].ToString();
-                //drCambios["Instruccion"] = item[4].ToString();
-                //drCambios["Ocupacion"] = item[5].ToString();
-                //drCambios["Empresa"] = item[6].ToString();
-                //drCambios["T_Seguro"] = item[7].ToString();
-                //drCambios["Direccion"] = item[8].ToString();
+                //drCambios["Instruccion"] = item[3].ToString();
+                //drCambios["Ocupacion"] = item[4].ToString();
+                //drCambios["Empresa"] = item[5].ToString();
+                //drCambios["T_Seguro"] = item["PAC_SEG_SALUD"].ToString();
+                //drCambios["Direccion"] = item[6].ToString();
                 //drCambios["Barrio"] = item[9].ToString();
                 //drCambios["Zona"] = item[10].ToString();
                 //drCambios["Parroquia"] = item[11].ToString();
@@ -5607,9 +5604,22 @@ namespace His.Admision
                 //drCambios["Telefono"] = item[14].ToString();
                 //drCambios["CalleSecundaria"] = item[15].ToString();
                 //drCambios["Referencia"] = item[16].ToString();
-                //drCambios["ATE_CODIGO"] = ultimaAtencion.ATE_CODIGO;
+                drCambios["ATE_CODIGO"] = ultimaAtencion.ATE_CODIGO;
 
-                //Admision.Tables["Cambios"].Rows.Add(drCambios);
+                drCambios["Instruccion"] = !string.IsNullOrEmpty(item["DAP_INSTRUCCION"].ToString().Trim()) ? item["DAP_INSTRUCCION"].ToString().Trim() : "N/A";
+                drCambios["Ocupacion"] = !string.IsNullOrEmpty(item["DAP_OCUPACION"].ToString().Trim()) ? item["DAP_OCUPACION"].ToString().Trim() : "N/A";
+                drCambios["Empresa"] = !string.IsNullOrEmpty(item["DAP_EMP_NOMBRE"].ToString().Trim()) ? item["DAP_EMP_NOMBRE"].ToString().Trim() : "N/A";
+                drCambios["T_Seguro"] = !string.IsNullOrEmpty(item["TIPO_SEGURO"].ToString().Trim()) ? item["TIPO_SEGURO"].ToString().Trim() : "N/A";
+                drCambios["Direccion"] = !string.IsNullOrEmpty(item["DAP_DIRECCION_DOMICILIO"].ToString().Trim()) ? item["DAP_DIRECCION_DOMICILIO"].ToString().Trim() : "N/A";
+                drCambios["Barrio"] = !string.IsNullOrEmpty(item["BARRIO"].ToString().Trim()) ? item["BARRIO"].ToString().Trim() : "N/A";
+                drCambios["Zona"] = !string.IsNullOrEmpty(item["ZONA"].ToString().Trim()) ? item["ZONA"].ToString().Trim() : "N/A";
+                drCambios["Parroquia"] = !string.IsNullOrEmpty(item["PARROQUIA"].ToString().Trim()) ? item["PARROQUIA"].ToString().Trim() : "N/A";
+                drCambios["Canton"] = !string.IsNullOrEmpty(item["CANTON"].ToString().Trim()) ? item["CANTON"].ToString().Trim() : "N/A";
+                drCambios["Provincia"] = !string.IsNullOrEmpty(item["PROVINCIA"].ToString().Trim()) ? item["PROVINCIA"].ToString().Trim() : "N/A";
+                drCambios["Telefono"] = !string.IsNullOrEmpty(item["DAP_TELEFONO1"].ToString().Trim()) ? item["DAP_TELEFONO1"].ToString().Trim() : "N/A";
+                drCambios["CalleSecundaria"] = !string.IsNullOrEmpty(item["DAP_DIRECCION_DOMICILIO2"].ToString().Trim()) ? item["DAP_DIRECCION_DOMICILIO2"].ToString().Trim() : "N/A";
+                drCambios["Referencia"] = !string.IsNullOrEmpty(item["DAP_REFERENCIA"].ToString().Trim()) ? item["DAP_REFERENCIA"].ToString().Trim() : "N/A";
+                Admision.Tables["Cambios"].Rows.Add(drCambios);
             }
             Formulario.frmReportes x = new Formulario.frmReportes(1, "Admision", Admision);
             x.ShowDialog();

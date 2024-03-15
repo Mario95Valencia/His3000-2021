@@ -7025,22 +7025,24 @@ namespace His.Admision
             drAdmision["Direccion"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO.Trim();
             //drAdmision["CalleSecundaria"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO2.Trim();
             drAdmision["CalleSecundaria"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_DIRECCION_DOMICILIO2) ? datosPacienteActual.DAP_DIRECCION_DOMICILIO2 : "N/A";
-            //drAdmision["Referencia"] = datosPacienteActual.DAP_REFERENCIA.Trim();
-            drAdmision["Referencia"] = (datosPacienteActual.DAP_REFERENCIA ?? "").Trim();
+            drAdmision["Referencia"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_REFERENCIA.Trim()) ? datosPacienteActual.DAP_REFERENCIA.Trim() : "N/A";
             drAdmision["Email"] = !string.IsNullOrEmpty(pacienteActual.PAC_EMAIL) ? pacienteActual.PAC_EMAIL : "N/A";
 
             if (datosPacienteActual.COD_SECTOR != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_SECTOR);
-                //drAdmision["Barrio"] = dp.DIPO_NOMBRE;
                 drAdmision["Barrio"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Barrio"] = "N/A";
             if (datosPacienteActual.COD_PARROQUIA != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_PARROQUIA);
-                drAdmision["Parroquia"] = dp.DIPO_NOMBRE;
                 drAdmision["Parroquia"] = !string.IsNullOrEmpty(dp.DIPO_NOMBRE) ? dp.DIPO_NOMBRE : "N/A";
             }
+            else
+                drAdmision["Parroquia"] = "N/A";
+
             if (datosPacienteActual.COD_CANTON != null)
             {
                 dp = NegDivisionPolitica.DivisionPolitica(datosPacienteActual.COD_CANTON);                
@@ -7222,19 +7224,19 @@ namespace His.Admision
                 //drCambios["Referencia"] = item[16].ToString();
                 drCambios["ATE_CODIGO"] = ultimaAtencion.ATE_CODIGO;
 
-                drCambios["Instruccion"] = !string.IsNullOrEmpty(item[3].ToString().Trim()) ? item[3].ToString().Trim() : "N/A";
-                drCambios["Ocupacion"] = !string.IsNullOrEmpty(item[4].ToString().Trim()) ? item[4].ToString().Trim() : "N/A";
-                drCambios["Empresa"] = !string.IsNullOrEmpty(item[5].ToString().Trim()) ? item[5].ToString().Trim() : "N/A";
-                drCambios["T_Seguro"] = !string.IsNullOrEmpty(item["PAC_SEG_SALUD"].ToString().Trim()) ? item["PAC_SEG_SALUD"].ToString().Trim() : "N/A";
-                drCambios["Direccion"] = !string.IsNullOrEmpty(item[9].ToString().Trim()) ? item[6].ToString().Trim() : "N/A";
-                drCambios["Barrio"] = !string.IsNullOrEmpty(item[10].ToString().Trim()) ? item[9].ToString().Trim() : "N/A";
-                drCambios["Zona"] = !string.IsNullOrEmpty(item[11].ToString().Trim()) ? item[10].ToString().Trim() : "N/A";
-                drCambios["Parroquia"] = !string.IsNullOrEmpty(item[12].ToString().Trim()) ? item[11].ToString().Trim() : "N/A";
-                drCambios["Canton"] = !string.IsNullOrEmpty(item[13].ToString().Trim()) ? item[0].ToString().Trim() : "N/A";
-                drCambios["Provincia"] = !string.IsNullOrEmpty(item[0].ToString().Trim()) ? item[13].ToString().Trim() : "N/A";
-                drCambios["Telefono"] = !string.IsNullOrEmpty(item[14].ToString().Trim()) ? item[14].ToString().Trim() : "N/A";
-                drCambios["CalleSecundaria"] = !string.IsNullOrEmpty(item[15].ToString().Trim()) ? item[15].ToString().Trim() : "N/A";
-                drCambios["Referencia"] = !string.IsNullOrEmpty(item[16].ToString().Trim()) ? item[16].ToString().Trim() : "N/A";
+                drCambios["Instruccion"] = !string.IsNullOrEmpty(item["DAP_INSTRUCCION"].ToString().Trim()) ? item["DAP_INSTRUCCION"].ToString().Trim() : "N/A";
+                drCambios["Ocupacion"] = !string.IsNullOrEmpty(item["DAP_OCUPACION"].ToString().Trim()) ? item["DAP_OCUPACION"].ToString().Trim() : "N/A";
+                drCambios["Empresa"] = !string.IsNullOrEmpty(item["DAP_EMP_NOMBRE"].ToString().Trim()) ? item["DAP_EMP_NOMBRE"].ToString().Trim() : "N/A";
+                drCambios["T_Seguro"] = !string.IsNullOrEmpty(item["TIPO_SEGURO"].ToString().Trim()) ? item["TIPO_SEGURO"].ToString().Trim() : "N/A";
+                drCambios["Direccion"] = !string.IsNullOrEmpty(item["DAP_DIRECCION_DOMICILIO"].ToString().Trim()) ? item["DAP_DIRECCION_DOMICILIO"].ToString().Trim() : "N/A";
+                drCambios["Barrio"] = !string.IsNullOrEmpty(item["BARRIO"].ToString().Trim()) ? item["BARRIO"].ToString().Trim() : "N/A";
+                drCambios["Zona"] = !string.IsNullOrEmpty(item["ZONA"].ToString().Trim()) ? item["ZONA"].ToString().Trim() : "N/A";
+                drCambios["Parroquia"] = !string.IsNullOrEmpty(item["PARROQUIA"].ToString().Trim()) ? item["PARROQUIA"].ToString().Trim() : "N/A";
+                drCambios["Canton"] = !string.IsNullOrEmpty(item["CANTON"].ToString().Trim()) ? item["CANTON"].ToString().Trim() : "N/A";
+                drCambios["Provincia"] = !string.IsNullOrEmpty(item["PROVINCIA"].ToString().Trim()) ? item["PROVINCIA"].ToString().Trim() : "N/A";
+                drCambios["Telefono"] = !string.IsNullOrEmpty(item["DAP_TELEFONO1"].ToString().Trim()) ? item["DAP_TELEFONO1"].ToString().Trim() : "N/A";
+                drCambios["CalleSecundaria"] = !string.IsNullOrEmpty(item["DAP_DIRECCION_DOMICILIO2"].ToString().Trim()) ? item["DAP_DIRECCION_DOMICILIO2"].ToString().Trim() : "N/A";
+                drCambios["Referencia"] = !string.IsNullOrEmpty(item["DAP_REFERENCIA"].ToString().Trim()) ? item["DAP_REFERENCIA"].ToString().Trim() : "N/A";
                 Admision.Tables["Cambios"].Rows.Add(drCambios);
             }
             Formulario.frmReportes x = new Formulario.frmReportes(1, "Admision", Admision);

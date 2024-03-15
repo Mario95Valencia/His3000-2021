@@ -876,7 +876,7 @@
             // ultraTabPageControl11
             // 
             this.ultraTabPageControl11.Controls.Add(this.grpCincoSeis);
-            this.ultraTabPageControl11.Location = new System.Drawing.Point(1, 31);
+            this.ultraTabPageControl11.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl11.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl11.Name = "ultraTabPageControl11";
             this.ultraTabPageControl11.Size = new System.Drawing.Size(1319, 764);
@@ -2883,7 +2883,7 @@
             // ultraTabPageControl13
             // 
             this.ultraTabPageControl13.Controls.Add(this.grpDiezOnceDoce);
-            this.ultraTabPageControl13.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl13.Location = new System.Drawing.Point(1, 31);
             this.ultraTabPageControl13.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl13.Name = "ultraTabPageControl13";
             this.ultraTabPageControl13.Size = new System.Drawing.Size(1319, 764);
@@ -3155,7 +3155,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(327, 23);
             this.label3.TabIndex = 82;
-            this.label3.Text = "Precione \"F1\" para buscar un diagnóstico";
+            this.label3.Text = "Presione \"F1\" para buscar un diagnóstico";
             // 
             // label44
             // 

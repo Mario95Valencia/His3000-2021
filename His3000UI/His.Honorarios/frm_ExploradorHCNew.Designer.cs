@@ -86,10 +86,9 @@ namespace His.Honorarios
             // ultraExplorerBarContainerControl1
             // 
             this.ultraExplorerBarContainerControl1.Controls.Add(this.ultraPanelInfPaciente);
-            this.ultraExplorerBarContainerControl1.Location = new System.Drawing.Point(6, 32);
-            this.ultraExplorerBarContainerControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.ultraExplorerBarContainerControl1.Location = new System.Drawing.Point(6, 28);
             this.ultraExplorerBarContainerControl1.Name = "ultraExplorerBarContainerControl1";
-            this.ultraExplorerBarContainerControl1.Size = new System.Drawing.Size(307, 201);
+            this.ultraExplorerBarContainerControl1.Size = new System.Drawing.Size(227, 159);
             this.ultraExplorerBarContainerControl1.TabIndex = 0;
             // 
             // ultraPanelInfPaciente
@@ -115,9 +114,8 @@ namespace His.Honorarios
             this.ultraPanelInfPaciente.ClientArea.Controls.Add(this.pbInfPaciente);
             this.ultraPanelInfPaciente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraPanelInfPaciente.Location = new System.Drawing.Point(0, 0);
-            this.ultraPanelInfPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.ultraPanelInfPaciente.Name = "ultraPanelInfPaciente";
-            this.ultraPanelInfPaciente.Size = new System.Drawing.Size(307, 201);
+            this.ultraPanelInfPaciente.Size = new System.Drawing.Size(227, 159);
             this.ultraPanelInfPaciente.TabIndex = 0;
             // 
             // lblInfPacienteHCL
@@ -126,11 +124,10 @@ namespace His.Honorarios
             this.lblInfPacienteHCL.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteHCL.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteHCL.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteHCL.Location = new System.Drawing.Point(69, 137);
-            this.lblInfPacienteHCL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteHCL.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteHCL.Location = new System.Drawing.Point(52, 111);
+            this.lblInfPacienteHCL.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteHCL.Name = "lblInfPacienteHCL";
-            this.lblInfPacienteHCL.Size = new System.Drawing.Size(20, 16);
+            this.lblInfPacienteHCL.Size = new System.Drawing.Size(16, 14);
             this.lblInfPacienteHCL.TabIndex = 12;
             this.lblInfPacienteHCL.Text = "...";
             // 
@@ -139,10 +136,9 @@ namespace His.Honorarios
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(8, 135);
-            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label45.Location = new System.Drawing.Point(6, 110);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(39, 17);
+            this.label45.Size = new System.Drawing.Size(31, 13);
             this.label45.TabIndex = 11;
             this.label45.Text = "HCL:";
             // 
@@ -152,11 +148,10 @@ namespace His.Honorarios
             this.lblInfPacienteAseguradora.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteAseguradora.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteAseguradora.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteAseguradora.Location = new System.Drawing.Point(133, 199);
-            this.lblInfPacienteAseguradora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteAseguradora.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteAseguradora.Location = new System.Drawing.Point(100, 162);
+            this.lblInfPacienteAseguradora.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteAseguradora.Name = "lblInfPacienteAseguradora";
-            this.lblInfPacienteAseguradora.Size = new System.Drawing.Size(20, 16);
+            this.lblInfPacienteAseguradora.Size = new System.Drawing.Size(16, 14);
             this.lblInfPacienteAseguradora.TabIndex = 10;
             this.lblInfPacienteAseguradora.Text = "...";
             // 
@@ -166,11 +161,10 @@ namespace His.Honorarios
             this.lblInfPacienteMedico.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteMedico.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteMedico.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteMedico.Location = new System.Drawing.Point(133, 162);
-            this.lblInfPacienteMedico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteMedico.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteMedico.Location = new System.Drawing.Point(100, 132);
+            this.lblInfPacienteMedico.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteMedico.Name = "lblInfPacienteMedico";
-            this.lblInfPacienteMedico.Size = new System.Drawing.Size(20, 16);
+            this.lblInfPacienteMedico.Size = new System.Drawing.Size(16, 14);
             this.lblInfPacienteMedico.TabIndex = 9;
             this.lblInfPacienteMedico.Text = "...";
             // 
@@ -180,11 +174,10 @@ namespace His.Honorarios
             this.lblInfPacienteEdad.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteEdad.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteEdad.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteEdad.Location = new System.Drawing.Point(69, 106);
-            this.lblInfPacienteEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteEdad.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteEdad.Location = new System.Drawing.Point(52, 86);
+            this.lblInfPacienteEdad.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteEdad.Name = "lblInfPacienteEdad";
-            this.lblInfPacienteEdad.Size = new System.Drawing.Size(20, 16);
+            this.lblInfPacienteEdad.Size = new System.Drawing.Size(16, 14);
             this.lblInfPacienteEdad.TabIndex = 8;
             this.lblInfPacienteEdad.Text = "...";
             // 
@@ -194,11 +187,10 @@ namespace His.Honorarios
             this.lblInfPacienteSexo.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteSexo.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteSexo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteSexo.Location = new System.Drawing.Point(69, 75);
-            this.lblInfPacienteSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteSexo.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteSexo.Location = new System.Drawing.Point(52, 61);
+            this.lblInfPacienteSexo.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteSexo.Name = "lblInfPacienteSexo";
-            this.lblInfPacienteSexo.Size = new System.Drawing.Size(20, 16);
+            this.lblInfPacienteSexo.Size = new System.Drawing.Size(16, 14);
             this.lblInfPacienteSexo.TabIndex = 7;
             this.lblInfPacienteSexo.Text = "...";
             // 
@@ -207,10 +199,9 @@ namespace His.Honorarios
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(8, 105);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Location = new System.Drawing.Point(6, 85);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(45, 17);
+            this.label33.Size = new System.Drawing.Size(35, 13);
             this.label33.TabIndex = 5;
             this.label33.Text = "Edad:";
             // 
@@ -220,11 +211,10 @@ namespace His.Honorarios
             this.lblInfPacienteNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblInfPacienteNombre.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfPacienteNombre.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblInfPacienteNombre.Location = new System.Drawing.Point(8, 17);
-            this.lblInfPacienteNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfPacienteNombre.MaximumSize = new System.Drawing.Size(160, 0);
+            this.lblInfPacienteNombre.Location = new System.Drawing.Point(6, 14);
+            this.lblInfPacienteNombre.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblInfPacienteNombre.Name = "lblInfPacienteNombre";
-            this.lblInfPacienteNombre.Size = new System.Drawing.Size(160, 32);
+            this.lblInfPacienteNombre.Size = new System.Drawing.Size(118, 28);
             this.lblInfPacienteNombre.TabIndex = 4;
             this.lblInfPacienteNombre.Text = "............................................";
             this.lblInfPacienteNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,10 +224,9 @@ namespace His.Honorarios
             this.label66.AutoSize = true;
             this.label66.BackColor = System.Drawing.Color.Transparent;
             this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(8, 74);
-            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label66.Location = new System.Drawing.Point(6, 60);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(43, 17);
+            this.label66.Size = new System.Drawing.Size(34, 13);
             this.label66.TabIndex = 3;
             this.label66.Text = "Sexo:";
             // 
@@ -246,11 +235,10 @@ namespace His.Honorarios
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 166);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.MaximumSize = new System.Drawing.Size(160, 0);
+            this.label2.Location = new System.Drawing.Point(6, 135);
+            this.label2.MaximumSize = new System.Drawing.Size(120, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 17);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Medico Tratante:";
             // 
@@ -259,27 +247,26 @@ namespace His.Honorarios
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Aseguradora:";
             // 
             // pbInfPaciente
             // 
-            this.pbInfPaciente.Location = new System.Drawing.Point(175, 17);
-            this.pbInfPaciente.Margin = new System.Windows.Forms.Padding(4);
+            this.pbInfPaciente.Location = new System.Drawing.Point(131, 14);
             this.pbInfPaciente.Name = "pbInfPaciente";
-            this.pbInfPaciente.Size = new System.Drawing.Size(129, 123);
+            this.pbInfPaciente.Size = new System.Drawing.Size(97, 100);
             this.pbInfPaciente.TabIndex = 0;
             this.pbInfPaciente.TabStop = false;
             // 
             // ultraExplorerBarContainerControl2
             // 
             this.ultraExplorerBarContainerControl2.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExplorerBarContainerControl2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraExplorerBarContainerControl2.Name = "ultraExplorerBarContainerControl2";
-            this.ultraExplorerBarContainerControl2.Size = new System.Drawing.Size(242, 264);
+            this.ultraExplorerBarContainerControl2.Size = new System.Drawing.Size(227, 159);
             this.ultraExplorerBarContainerControl2.TabIndex = 1;
             this.ultraExplorerBarContainerControl2.Visible = false;
             // 
@@ -308,10 +295,9 @@ namespace His.Honorarios
             ultraExplorerBarGroup1,
             ultraExplorerBarGroup4});
             this.ultraExplorerBarPaciente.GroupSettings.Style = Infragistics.Win.UltraWinExplorerBar.GroupStyle.ControlContainer;
-            this.ultraExplorerBarPaciente.Location = new System.Drawing.Point(4, 4);
-            this.ultraExplorerBarPaciente.Margin = new System.Windows.Forms.Padding(4);
+            this.ultraExplorerBarPaciente.Location = new System.Drawing.Point(3, 3);
             this.ultraExplorerBarPaciente.Name = "ultraExplorerBarPaciente";
-            this.ultraExplorerBarPaciente.Size = new System.Drawing.Size(319, 265);
+            this.ultraExplorerBarPaciente.Size = new System.Drawing.Size(239, 215);
             this.ultraExplorerBarPaciente.Style = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarStyle.Listbar;
             this.ultraExplorerBarPaciente.TabIndex = 13;
             this.ultraExplorerBarPaciente.ViewStyle = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarViewStyle.Office2007;
@@ -356,10 +342,9 @@ namespace His.Honorarios
             ultraExplorerBarGroup2,
             ultraExplorerBarGroup3});
             this.ultraExplorerBar1.GroupSettings.Style = Infragistics.Win.UltraWinExplorerBar.GroupStyle.LargeImagesWithTextBelow;
-            this.ultraExplorerBar1.Location = new System.Drawing.Point(4, 277);
-            this.ultraExplorerBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.ultraExplorerBar1.Location = new System.Drawing.Point(3, 224);
             this.ultraExplorerBar1.Name = "ultraExplorerBar1";
-            this.ultraExplorerBar1.Size = new System.Drawing.Size(319, 307);
+            this.ultraExplorerBar1.Size = new System.Drawing.Size(239, 251);
             this.ultraExplorerBar1.Style = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarStyle.OutlookNavigationPane;
             this.ultraExplorerBar1.TabIndex = 15;
             this.ultraExplorerBar1.ViewStyle = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarViewStyle.Office2007;
@@ -373,11 +358,12 @@ namespace His.Honorarios
             this.tableLayoutPanel1.Controls.Add(this.ultraExplorerBar1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(327, 588);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(245, 478);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // gbxProtocolos
@@ -385,11 +371,9 @@ namespace His.Honorarios
             this.gbxProtocolos.Controls.Add(this.button2);
             this.gbxProtocolos.Controls.Add(this.button1);
             this.gbxProtocolos.Controls.Add(this.dgrProtocolosOperacion);
-            this.gbxProtocolos.Location = new System.Drawing.Point(334, 171);
-            this.gbxProtocolos.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxProtocolos.Location = new System.Drawing.Point(250, 139);
             this.gbxProtocolos.Name = "gbxProtocolos";
-            this.gbxProtocolos.Padding = new System.Windows.Forms.Padding(4);
-            this.gbxProtocolos.Size = new System.Drawing.Size(692, 271);
+            this.gbxProtocolos.Size = new System.Drawing.Size(519, 220);
             this.gbxProtocolos.TabIndex = 37;
             this.gbxProtocolos.TabStop = false;
             this.gbxProtocolos.Text = ".";
@@ -397,10 +381,9 @@ namespace His.Honorarios
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 230);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(460, 187);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 33);
+            this.button2.Size = new System.Drawing.Size(53, 27);
             this.button2.TabIndex = 2;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
@@ -409,10 +392,9 @@ namespace His.Honorarios
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(669, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(502, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 25);
+            this.button1.Size = new System.Drawing.Size(17, 20);
             this.button1.TabIndex = 1;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
@@ -423,22 +405,22 @@ namespace His.Honorarios
             this.dgrProtocolosOperacion.AllowUserToAddRows = false;
             this.dgrProtocolosOperacion.AllowUserToDeleteRows = false;
             this.dgrProtocolosOperacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrProtocolosOperacion.Location = new System.Drawing.Point(8, 31);
-            this.dgrProtocolosOperacion.Margin = new System.Windows.Forms.Padding(4);
+            this.dgrProtocolosOperacion.Location = new System.Drawing.Point(6, 25);
             this.dgrProtocolosOperacion.Name = "dgrProtocolosOperacion";
             this.dgrProtocolosOperacion.RowHeadersWidth = 51;
-            this.dgrProtocolosOperacion.Size = new System.Drawing.Size(676, 199);
+            this.dgrProtocolosOperacion.Size = new System.Drawing.Size(507, 162);
             this.dgrProtocolosOperacion.TabIndex = 0;
             this.dgrProtocolosOperacion.DoubleClick += new System.EventHandler(this.dgrProtocolosOperacion_DoubleClick);
             // 
             // frm_ExploradorHCNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 588);
+            this.ClientSize = new System.Drawing.Size(856, 478);
             this.Controls.Add(this.gbxProtocolos);
             this.Controls.Add(this.tableLayoutPanel1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_ExploradorHCNew";
             this.Text = "Explorador de Historias Clinicas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

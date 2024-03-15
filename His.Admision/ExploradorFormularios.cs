@@ -498,7 +498,7 @@ namespace His.Admision
                     }
                     else if (c.Equals("EMERGENCIA"))
                     {
-                        His.Formulario.frm_Emergencia evolucion = new His.Formulario.frm_Emergencia(codigoAtencion);
+                        His.Emergencia.frm_EmergenciaNew evolucion = new His.Emergencia.frm_EmergenciaNew(codigoAtencion);
 
                         evolucion.Show();
                     }

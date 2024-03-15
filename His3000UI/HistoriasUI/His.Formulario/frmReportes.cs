@@ -968,7 +968,7 @@ namespace His.Formulario
                 #region AnamnesisNew
                 else if (reporte == "AnamnesisNew")
                 {
-                    rptFormAnamnesis myreport = new rptFormAnamnesis();
+                    FrmAnamnesi003 myreport = new FrmAnamnesi003();
                     myreport.Refresh();
                     myreport.SetDataSource(Datos);
                     crystalReportViewer1.ReportSource = myreport;
@@ -981,7 +981,8 @@ namespace His.Formulario
                     try
                     {
 
-                        rptForm008 myreport = new rptForm008();
+                        rptForm008 myreport = new rptForm008(); 
+                        //FrmEmergencia008 myreport = new FrmEmergencia008();
                         myreport.Refresh();
                         myreport.SetDataSource(Datos);
                         crystalReportViewer1.ReportSource = myreport;
@@ -1013,6 +1014,26 @@ namespace His.Formulario
                     //catch (Exception err)
                     //{ throw err; }
                     #endregion
+                }
+                #endregion
+                #region FORMULARIO 008 del 2021
+                else if (reporte == "Hoja 008New")
+                {
+                    try
+                    {
+
+                        //rptForm008 myreport = new rptForm008();
+                        FrmEmergencia008 myreport = new FrmEmergencia008();
+                        myreport.Refresh();
+                        myreport.SetDataSource(Datos);
+                        crystalReportViewer1.ReportSource = myreport;
+                        crystalReportViewer1.RefreshReport();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
                 #endregion
 
@@ -1397,6 +1418,24 @@ namespace His.Formulario
                         //reporteProtocolo.Refresh();
                         //crystalReportViewer1.ReportSource = reporteProtocolo;
                         //crystalReportViewer1.RefreshReport();
+                        myreport.Refresh();
+                        myreport.SetDataSource(Datos);
+                        crystalReportViewer1.ReportSource = myreport;
+                        crystalReportViewer1.RefreshReport();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                #endregion
+                #region Copago x Item
+                else if (reporte == "Copago")
+                {
+                    try
+                    {
+                        ReportDocument myreport = new ReportDocument();
+                        myreport.FileName = Application.StartupPath + "\\Reportes\\CuentasPacientes\\rptDesgloseCopago.rpt";
                         myreport.Refresh();
                         myreport.SetDataSource(Datos);
                         crystalReportViewer1.ReportSource = myreport;

@@ -309,9 +309,30 @@ namespace His.Honorarios
                     }
                     else if (c.Equals("EMERGENCIA"))
                     {
-                        His.Formulario.frm_Emergencia evolucion = new His.Formulario.frm_Emergencia(codigoAtencion);
-                        evolucion.MdiParent = exploradorHC;
-                        evolucion.Show();
+
+
+                        //His.Formulario.frm_Emergencia evolucion = new His.Formulario.frm_Emergencia(codigoAtencion);
+                        //evolucion.MdiParent = exploradorHC;
+                        //evolucion.Show();
+
+                        FORMULARIOS_HCU parametroFecha = NegParametros.RecuperaFechaPorCodigo(7);
+                        ATENCIONES ate = NegAtenciones.RecuperarAtencionID(codigoAtencion);
+
+
+                        if (Convert.ToDateTime(parametroFecha.fecha) <= ate.ATE_FECHA_INGRESO)
+                        {
+                            His.Emergencia.frm_EmergenciaNew emerge = new His.Emergencia.frm_EmergenciaNew(codigoAtencion);
+                            emerge.MdiParent = exploradorHC;
+                            emerge.Show();
+                        }
+                        else
+                        {
+                            His.Formulario.frm_Emergencia evolucion1 = new His.Formulario.frm_Emergencia(codigoAtencion);
+                            evolucion1.MdiParent = exploradorHC;
+                            evolucion1.Show();
+                        }
+
+
                     }
                     else if (c.Equals("EPICRISIS"))
                     {

@@ -281,7 +281,7 @@ namespace His.Emergencia
 
         private void ingresoFormO8ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new frm_Emergencia();
+            Form form = new frm_EmergenciaNew();
             form.MdiParent = this;
             form.Show();
         }

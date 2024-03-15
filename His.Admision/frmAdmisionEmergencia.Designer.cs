@@ -539,7 +539,7 @@
             this.ultraTabPageControl5.Controls.Add(this.label27);
             this.ultraTabPageControl5.Controls.Add(this.label28);
             this.ultraTabPageControl5.Controls.Add(this.txt_direccionAcomp);
-            this.ultraTabPageControl5.Location = new System.Drawing.Point(1, 24);
+            this.ultraTabPageControl5.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
             this.ultraTabPageControl5.Size = new System.Drawing.Size(1237, 126);
@@ -1025,7 +1025,7 @@
             this.ultraTabPageControl6.Controls.Add(this.txt_DireccionTitular);
             this.ultraTabPageControl6.Controls.Add(this.txt_nombreTitular);
             this.ultraTabPageControl6.Controls.Add(this.labeelnombre);
-            this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 24);
             this.ultraTabPageControl6.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl6.Name = "ultraTabPageControl6";
             this.ultraTabPageControl6.Size = new System.Drawing.Size(1237, 126);
@@ -4444,7 +4444,7 @@
             this.tabulador2.Controls.Add(this.ultraTabPageControl5);
             this.tabulador2.Controls.Add(this.ultraTabSharedControlsPage3);
             this.tabulador2.Controls.Add(this.ultraTabPageControl6);
-            this.tabulador2.Location = new System.Drawing.Point(18, 574);
+            this.tabulador2.Location = new System.Drawing.Point(18, 554);
             this.tabulador2.Margin = new System.Windows.Forms.Padding(4);
             this.tabulador2.Name = "tabulador2";
             appearance38.BorderColor = System.Drawing.Color.Black;
@@ -4619,7 +4619,7 @@
             this.uTabFormaPago.Controls.Add(this.ultraTabSharedControlsPage4);
             this.uTabFormaPago.Controls.Add(this.ultraTabPageControl8);
             this.uTabFormaPago.Controls.Add(this.ultraTabPageControl9);
-            this.uTabFormaPago.Location = new System.Drawing.Point(15, 351);
+            this.uTabFormaPago.Location = new System.Drawing.Point(15, 332);
             this.uTabFormaPago.Margin = new System.Windows.Forms.Padding(4);
             this.uTabFormaPago.Name = "uTabFormaPago";
             this.uTabFormaPago.SharedControlsPage = this.ultraTabSharedControlsPage4;
@@ -4732,8 +4732,8 @@
             this.btnActualizar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnCancelar,
             this.btnImprimir,
+            this.btnCancelar,
             this.btnFormularios,
             this.btnCerrar});
             this.menu.Location = new System.Drawing.Point(0, 0);

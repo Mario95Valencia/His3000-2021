@@ -114,9 +114,30 @@ namespace His.Honorarios
                     }
                     break;
                 case "Emergencia":
-                    frm_Emergencia emergencia = new frm_Emergencia();
-                    emergencia.MdiParent = this;
-                    emergencia.Show();
+
+                    FORMULARIOS_HCU parametroFecha = NegParametros.RecuperaFechaPorCodigo(7);
+                    ATENCIONES ate = NegAtenciones.RecuperarAtencionID(codigoAtencion);
+
+
+                    if (Convert.ToDateTime(parametroFecha.fecha) <= ate.ATE_FECHA_INGRESO)
+                    {
+                        His.Emergencia.frm_EmergenciaNew emergencia = new His.Emergencia.frm_EmergenciaNew(codigoAtencion);
+                        emergencia.MdiParent = this;
+                        emergencia.Show();
+
+                    }
+                    else
+                    {
+                        frm_Emergencia emergencia = new frm_Emergencia();
+                        emergencia.MdiParent = this;
+                        emergencia.Show();
+
+                    }
+
+
+                       
+
+
                     break;
                 case "Interconsulta":
                     frm_Interconsulta interconsulta = new frm_Interconsulta(codigoAtencion);

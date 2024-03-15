@@ -943,8 +943,9 @@ namespace His.Emergencia
             {
                 ant2 = NegCatalogos.RecuperarCatalogosPorTipo(His.Parametros.EmergenciaForm.CodigoExaFD);
 
+                List<string> ordenExamenFisico = new List<string> {"PIEL-FANERAS","CABEZA","OJOS","OIDOS","NARIZ","BOCA","OROFARINGE","CUELLO","AXILAS MAMAS","TORAX","ABDOMEN","COLUMNA","INGLE PERINE","MIEMBROS SUPERIORES", "MIEMBROS INFERIORES"};
 
-                List<DtoCatalogos> ant2N = ant2.Where(item => item.HCC_NOMBRE != "VÍA AÉREA OBSTRUIDA" && item.HCC_NOMBRE != "EXTREMIDAD").ToList();
+                List<DtoCatalogos> ant2N = ant2.Where(item => item.HCC_NOMBRE != "VÍA AÉREA OBSTRUIDA" && item.HCC_NOMBRE != "EXTREMIDAD" && item.HCC_NOMBRE != "OTROS" && item.HCC_NOMBRE != "PELVIS").OrderBy(item => ordenExamenFisico.IndexOf(item.HCC_NOMBRE)).ToList();
 
 
 
