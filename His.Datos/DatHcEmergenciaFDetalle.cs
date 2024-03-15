@@ -357,7 +357,19 @@ namespace His.Datos
                 {
                     tratamiento.EMER_POSOLOGIA = nuevoTratamiento.EMER_POSOLOGIA;
                 }
-                
+                if (nuevoTratamiento.VIA != "")
+                {
+                    tratamiento.VIA = nuevoTratamiento.VIA;
+                }
+                if (nuevoTratamiento.DOSIS != "")
+                {
+                    tratamiento.DOSIS = nuevoTratamiento.DOSIS;
+                }
+                if (nuevoTratamiento.DIAS != "")
+                {
+                    tratamiento.DIAS = nuevoTratamiento.DIAS;
+                }
+
                 contexto.SaveChanges();
             }
         }

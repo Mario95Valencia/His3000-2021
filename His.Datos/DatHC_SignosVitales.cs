@@ -51,7 +51,10 @@ namespace His.Datos
             {
                 return (from s in db.HC_SIGNOS_VITALES
                         where s.ATE_CODIGO == ate_codigo && s.SV_HOJA == SV_HOJA
+                        orderby s.SV_FECHA
                         select s).ToList();
+              
+
             }
         }
         public void GuardarSignosVitales(Int64 ate_codigo, Int32 SV_DIA, DateTime SV_FECHA, string SV_INTERACCION, string SV_POSTQUIRURGICO,
@@ -636,17 +639,19 @@ namespace His.Datos
                 DbTransaction transac = ConexionEntidades.ConexionEDM.BeginTransaction();
 
                 List<DtoSignosVitales> lstSv = new List<DtoSignosVitales>();
-                var sv = (from s in db.HC_SIGNOS_VITALES
-                          join sd in db.HC_SIGNOS_DATOS_ADICIONALES on s.SV_CODIGO equals sd.SV_CODIGO
-                          where s.ATE_CODIGO == ATE_CODIGO && s.SV_HOJA == SV_HOJA
-                          select new { s, sd }).OrderBy(x => x.s.SV_FECHA).OrderBy(y => y.sd.SVD_HORA).ToList();
+                //var sv = (from s in db.HC_SIGNOS_VITALES
+                //          join sd in db.HC_SIGNOS_DATOS_ADICIONALES on s.SV_CODIGO equals sd.SV_CODIGO
+                //          where s.ATE_CODIGO == ATE_CODIGO && s.SV_HOJA == SV_HOJA
+                //          select new { s, sd }).OrderBy(x => x.s.SV_FECHA).OrderBy(y => y.sd.SVD_HORA).ToList();
+
+                var sv = SignosVitales(ATE_CODIGO, SV_HOJA);
 
                 var sv1 = (from s in db.HC_SIGNOS_VITALES
                            join sd in db.HC_SIGNOS_DATOS_ADICIONALES on s.SV_CODIGO equals sd.SV_CODIGO
                            where s.ATE_CODIGO == ATE_CODIGO && s.SV_HOJA == SV_HOJA
                            select new { s, sd }).OrderBy(x => x.s.SV_FECHA).OrderBy(y => y.sd.SVD_HORA).FirstOrDefault();
 
-                if (sv1.sd.SVD_HORA != h1.TimeOfDay || sv1.sd.SVD_HORA != h2.TimeOfDay)
+                if (sv1.sd.SVD_HORA != h1.TimeOfDay && sv1.sd.SVD_HORA != h2.TimeOfDay)
                 {
                     DtoSignosVitales dtSv = new DtoSignosVitales();
                     dtSv.PULSO = sv1.sd.SVD_PULSO_AM;
@@ -657,12 +662,12 @@ namespace His.Datos
 
                 foreach (var item in sv)
                 {
-                    if (item.sd.SVD_HORA == h1.TimeOfDay || item.sd.SVD_HORA == h2.TimeOfDay)
+                    if (item.HORA == h1.TimeOfDay || item.HORA == h2.TimeOfDay)
                     {
                         DtoSignosVitales dtSv = new DtoSignosVitales();
-                        dtSv.PULSO = item.sd.SVD_PULSO_AM;
-                        dtSv.TEMPERATURA = item.sd.SVD_TEMPERATURA_AM;
-                        dtSv.HORA = (TimeSpan)item.sd.SVD_HORA;
+                        dtSv.PULSO = item.PULSO;
+                        dtSv.TEMPERATURA = item.TEMPERATURA;
+                        dtSv.HORA = (TimeSpan)item.HORA;
                         lstSv.Add(dtSv);
                     }
                 }
@@ -910,5 +915,57 @@ namespace His.Datos
                 return lsv;
             }
         }
+
+
+        public List<DtoSignosVitales> SignosVitales(Int64 ate_codigo, int hoja)
+        {
+            List<DtoSignosVitales> listaSignosVitales = new List<DtoSignosVitales>();
+            SqlConnection conexion;
+            SqlCommand command = new SqlCommand();
+            BaseContextoDatos obj = new BaseContextoDatos();
+
+            conexion = obj.ConectarBd();
+
+            try
+            {
+                command.Connection = conexion;
+                command.CommandText = "SELECT s.*, sd.* FROM HC_SIGNOS_VITALES s JOIN HC_SIGNOS_DATOS_ADICIONALES sd ON s.SV_CODIGO = sd.SV_CODIGO WHERE s.ATE_CODIGO = @ATE_CODIGO AND s.SV_HOJA = @SV_HOJA ORDER BY s.SV_FECHA ASC, sd.SVD_HORA";
+                command.Parameters.AddWithValue("@ATE_CODIGO", ate_codigo);
+                command.Parameters.AddWithValue("@SV_HOJA", hoja);
+
+                conexion.Open();
+                SqlDataReader Sqldr = command.ExecuteReader();
+
+                while (Sqldr.Read())
+                {
+                    DtoSignosVitales sv = new DtoSignosVitales();
+                    sv.HORA = Sqldr["SVD_HORA"] != DBNull.Value ? (TimeSpan)Sqldr["SVD_HORA"] : TimeSpan.Zero;
+                    sv.PULSO =  Sqldr["SVD_PULSO_AM"].ToString() ;                    // Asumiendo que PULSO es un entero
+                    sv.TEMPERATURA =  (string)Sqldr["SVD_TEMPERATURA_AM"].ToString();   // Asumiendo que TEMPERATURA es un decimal
+                                                                                                                    // Asigna otras propiedades si es necesario
+                    listaSignosVitales.Add(sv);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción adecuadamente, puede lanzarla o registrarla
+                Console.WriteLine("Error al recuperar los signos vitales: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión en el bloque finally
+                if (conexion != null && conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return listaSignosVitales;
+        }
+
+
+
+
+
     }
 }

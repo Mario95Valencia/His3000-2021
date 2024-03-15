@@ -32,6 +32,7 @@ using His.Admision;
 using His.DatosReportes;
 using System.Drawing.Printing;
 using System.Threading;
+using His.Emergencia;
 
 
 
@@ -1808,7 +1809,7 @@ namespace His.HabitacionesUI
                 {
                     var anemeasis = new frm_Anemnesis(atencionDetalle.ATENCIONES.ATE_CODIGO, false);
                     //var anemeasis = new frm_Anemnesis();
-                    //anemeasis.codigoAtencion = atencionDetalle.ATENCIONES.ATE_CODIGO;  
+                    //anemeasis.codigoAtencion = atencionDetalle.ATENCIONES.ATE_CODIGO; 
                     anemeasis.ShowDialog();
                 }
                 else if (atencionDetalle.FORMULARIOS_HCU.FH_CODIGO == AdmisionParametros.getHcEpicrisis())
@@ -1844,9 +1845,23 @@ namespace His.HabitacionesUI
                 }
                 else if (atencionDetalle.FORMULARIOS_HCU.FH_CODIGO == AdmisionParametros.getHcEmergencia())
                 {
-                    frm_Emergencia x = new frm_Emergencia(atencionDetalle.ATENCIONES.ATE_CODIGO);
-                    x.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-                    x.ShowDialog();
+                    FORMULARIOS_HCU parametroFecha = NegParametros.RecuperaFechaPorCodigo(7);
+                    ATENCIONES ate = NegAtenciones.RecuperarAtencionID(atencionDetalle.ATENCIONES.ATE_CODIGO);
+
+
+                    if (Convert.ToDateTime(parametroFecha.fecha) <= ate.ATE_FECHA_INGRESO)
+
+                    {
+                        frm_EmergenciaNew x = new frm_EmergenciaNew(atencionDetalle.ATENCIONES.ATE_CODIGO);
+                        x.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                        x.ShowDialog();
+                    }
+                    else
+                    {
+                        frm_Emergencia x = new frm_Emergencia(atencionDetalle.ATENCIONES.ATE_CODIGO);
+                        x.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                        x.ShowDialog();
+                    }
                 }
                 //agregacion Edgar 20210115 -----------------------------------------
                 else if (atencionDetalle.FORMULARIOS_HCU.FH_CODIGO == AdmisionParametros.getHcReferenciaContrarreferencia())
@@ -3001,7 +3016,7 @@ namespace His.HabitacionesUI
                     detalle.ATENCIONESReference.EntityKey = _atencionActiva.EntityKey;
                     detalle.ADF_FECHA_INGRESO = DateTime.Now;
                     detalle.ID_USUARIO = His.Entidades.Clases.Sesion.codUsuario;
-                    
+
                     HC_EVOLUCION evolucion = new HC_EVOLUCION();
                     evolucion.EVO_CODIGO = NegEvolucion.ultimoCodigo() + 1;
                     evolucion.ATENCIONESReference.EntityKey = _atencionActiva.EntityKey;

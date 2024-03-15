@@ -158,6 +158,7 @@
     <Compile Include="DtoPacientesEmergencia.cs" />
     <Compile Include="DtoPacientesImagen.cs" />
     <Compile Include="DtoPacientesInfo.cs" />
+    <Compile Include="DtopAnulaCopago.cs" />
     <Compile Include="DtoParametros.cs" />
     <Compile Include="DtopCuenta.cs" />
     <Compile Include="DtoPedidoDetalleOtros.cs" />

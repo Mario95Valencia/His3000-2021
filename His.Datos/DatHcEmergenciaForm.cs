@@ -167,6 +167,49 @@ namespace His.Datos
                     emergenciaFOri.EMER_HORA_E = emergenciaF.EMER_HORA_E;
                     emergenciaFOri.EMER_NOMBRE_PROF_E = emergenciaF.EMER_NOMBRE_PROF_E;
                     emergenciaFOri.EMER_CODIGO_PRO_E = emergenciaF.EMER_CODIGO_PRO_E;
+                    //CAMPOS NUEVOS FORMULARIO 2021
+                    emergenciaFOri.EMER_CL_ESTABLE = emergenciaF.EMER_CL_ESTABLE;
+                    emergenciaFOri.EMER_CL_INESTABLE = emergenciaF.EMER_CL_INESTABLE;
+                    emergenciaFOri.EMER_CL_FALLECIDO = emergenciaF.EMER_CL_FALLECIDO;
+                    emergenciaFOri.EMER_CL_MOTIVO = emergenciaF.EMER_CL_MOTIVO;
+                    emergenciaFOri.EMER_ACT_TRA = emergenciaF.EMER_ACT_TRA;
+                    emergenciaFOri.EMER_VIO_ARM = emergenciaF.EMER_VIO_ARM;
+                    emergenciaFOri.EMER_INT_ALC = emergenciaF.EMER_INT_ALC;
+                    emergenciaFOri.EMER_CAIDA = emergenciaF.EMER_CAIDA;
+                    emergenciaFOri.EMER_VIO_PUN = emergenciaF.EMER_VIO_PUN;
+                    emergenciaFOri.EMER_INT_ALI = emergenciaF.EMER_INT_ALI;
+                    emergenciaFOri.EMER_QUEMADURA = emergenciaF.EMER_QUEMADURA;
+                    emergenciaFOri.EMER_VIO_RINA = emergenciaF.EMER_VIO_RINA;
+                    emergenciaFOri.EMER_INT_DRO = emergenciaF.EMER_INT_DRO;
+                    emergenciaFOri.EMER_MORDEDURA = emergenciaF.EMER_MORDEDURA;
+                    emergenciaFOri.EMER_VIO_FAM = emergenciaF.EMER_VIO_FAM;
+                    emergenciaFOri.EMER_INH_GAS = emergenciaF.EMER_INH_GAS;
+                    emergenciaFOri.EMER_AHOGAMIENTO = emergenciaF.EMER_AHOGAMIENTO;
+                    emergenciaFOri.EMER_PRE_FIS = emergenciaF.EMER_PRE_FIS;
+                    emergenciaFOri.EMER_OTR_INT = emergenciaF.EMER_OTR_INT;
+                    emergenciaFOri.EMER_CUE_EXT = emergenciaF.EMER_CUE_EXT;
+                    emergenciaFOri.EMER_PRE_PSI = emergenciaF.EMER_PRE_PSI;
+                    emergenciaFOri.EMER_PICADURA = emergenciaF.EMER_PICADURA;
+                    emergenciaFOri.EMER_APLASTAMIENTO = emergenciaF.EMER_APLASTAMIENTO;
+                    emergenciaFOri.EMER_PRE_SEX = emergenciaF.EMER_PRE_SEX;
+                    emergenciaFOri.EMER_ENVENENAMIENTO = emergenciaF.EMER_ENVENENAMIENTO;
+                    emergenciaFOri.EMER_OTR_ACC = emergenciaF.EMER_OTR_ACC;
+                    emergenciaFOri.EMER_NOTIFICACION = emergenciaF.EMER_NOTIFICACION;
+                    emergenciaFOri.EMER_ANAFILAXIA = emergenciaF.EMER_ANAFILAXIA;
+                    emergenciaFOri.EMER_LLE_CAP = emergenciaF.EMER_LLE_CAP;
+                    emergenciaFOri.EMER_SIN_VIT = emergenciaF.EMER_SIN_VIT;
+                    emergenciaFOri.EMER_PERIMETRO = emergenciaF.EMER_PERIMETRO;
+                    emergenciaFOri.EMER_OBS_EGR = emergenciaF.EMER_OBS_EGR;
+                    emergenciaFOri.EMER_HOSPITALIZACION = emergenciaF.EMER_HOSPITALIZACION;
+                    emergenciaFOri.EMER_REF_INV = emergenciaF.EMER_REF_INV;
+                    emergenciaFOri.EMER_OBS_EGR = emergenciaF.EMER_OBS_EGR;
+                    emergenciaFOri.EMER_GRU_PRIO = emergenciaF.EMER_GRU_PRIO;
+                    emergenciaFOri.EMER_PRIORITARIO = emergenciaF.EMER_PRIORITARIO;
+                    emergenciaFOri.EMER_DERIVACION = emergenciaF.EMER_DERIVACION;
+                    emergenciaFOri.EMER_ALT_DEF = emergenciaF.EMER_ALT_DEF;
+                    emergenciaFOri.EMER_OBS_EXA_FIS = emergenciaF.EMER_OBS_EXA_FIS;
+                    emergenciaFOri.EMER_SCORE = emergenciaF.EMER_SCORE;
+
                     contexto.SaveChanges();
                 }
             }

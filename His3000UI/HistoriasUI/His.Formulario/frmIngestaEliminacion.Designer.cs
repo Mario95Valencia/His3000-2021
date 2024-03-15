@@ -566,7 +566,7 @@ namespace His.Formulario
             this.dtgOralN.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgOralN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOralN.Location = new System.Drawing.Point(3, 16);
-            this.dtgOralN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOralN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOralN.Name = "dtgOralN";
             this.dtgOralN.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -665,7 +665,7 @@ namespace His.Formulario
             this.dtgOralt.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgOralt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOralt.Location = new System.Drawing.Point(3, 16);
-            this.dtgOralt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOralt.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOralt.Name = "dtgOralt";
             this.dtgOralt.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -764,7 +764,7 @@ namespace His.Formulario
             this.dtgOral.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtgOral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOral.Location = new System.Drawing.Point(3, 16);
-            this.dtgOral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOral.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOral.Name = "dtgOral";
             this.dtgOral.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -890,7 +890,7 @@ namespace His.Formulario
             this.btnOral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOral.Location = new System.Drawing.Point(576, 33);
-            this.btnOral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOral.Margin = new System.Windows.Forms.Padding(2);
             this.btnOral.Name = "btnOral";
             this.btnOral.Size = new System.Drawing.Size(27, 23);
             this.btnOral.TabIndex = 152;
@@ -901,7 +901,7 @@ namespace His.Formulario
             // txtCantidadO
             // 
             this.txtCantidadO.Location = new System.Drawing.Point(447, 36);
-            this.txtCantidadO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadO.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadO.Name = "txtCantidadO";
             this.txtCantidadO.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadO.TabIndex = 151;
@@ -912,7 +912,7 @@ namespace His.Formulario
             // 
             this.txtClaseO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaseO.Location = new System.Drawing.Point(81, 36);
-            this.txtClaseO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseO.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseO.Name = "txtClaseO";
             this.txtClaseO.Size = new System.Drawing.Size(363, 20);
             this.txtClaseO.TabIndex = 150;
@@ -922,7 +922,7 @@ namespace His.Formulario
             // 
             this.umskHoraO.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraO.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraO.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraO.Name = "umskHoraO";
             this.umskHoraO.Size = new System.Drawing.Size(37, 20);
             this.umskHoraO.TabIndex = 149;
@@ -935,7 +935,7 @@ namespace His.Formulario
             this.ultraTabPageControl3.Controls.Add(this.grbParentalT);
             this.ultraTabPageControl3.Controls.Add(this.grbParental);
             this.ultraTabPageControl3.Controls.Add(this.grbDatParenteral);
-            this.ultraTabPageControl3.Location = new System.Drawing.Point(-7500, -8125);
+            this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl3.Name = "ultraTabPageControl3";
             this.ultraTabPageControl3.Size = new System.Drawing.Size(772, 430);
             // 
@@ -983,7 +983,7 @@ namespace His.Formulario
             this.dtgParentalN.DefaultCellStyle = dataGridViewCellStyle11;
             this.dtgParentalN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgParentalN.Location = new System.Drawing.Point(3, 16);
-            this.dtgParentalN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgParentalN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgParentalN.Name = "dtgParentalN";
             this.dtgParentalN.ReadOnly = true;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1091,7 +1091,7 @@ namespace His.Formulario
             this.dtgParentalT.DefaultCellStyle = dataGridViewCellStyle14;
             this.dtgParentalT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgParentalT.Location = new System.Drawing.Point(3, 16);
-            this.dtgParentalT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgParentalT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgParentalT.Name = "dtgParentalT";
             this.dtgParentalT.ReadOnly = true;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1199,7 +1199,7 @@ namespace His.Formulario
             this.dtgParental.DefaultCellStyle = dataGridViewCellStyle17;
             this.dtgParental.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgParental.Location = new System.Drawing.Point(3, 16);
-            this.dtgParental.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgParental.Margin = new System.Windows.Forms.Padding(2);
             this.dtgParental.Name = "dtgParental";
             this.dtgParental.ReadOnly = true;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1355,7 +1355,7 @@ namespace His.Formulario
             this.btnParenteral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnParenteral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnParenteral.Location = new System.Drawing.Point(596, 36);
-            this.btnParenteral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnParenteral.Margin = new System.Windows.Forms.Padding(2);
             this.btnParenteral.Name = "btnParenteral";
             this.btnParenteral.Size = new System.Drawing.Size(27, 23);
             this.btnParenteral.TabIndex = 152;
@@ -1366,7 +1366,7 @@ namespace His.Formulario
             // txtCantidadP
             // 
             this.txtCantidadP.Location = new System.Drawing.Point(464, 41);
-            this.txtCantidadP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadP.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadP.Name = "txtCantidadP";
             this.txtCantidadP.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadP.TabIndex = 151;
@@ -1376,7 +1376,7 @@ namespace His.Formulario
             // txtClaseP
             // 
             this.txtClaseP.Location = new System.Drawing.Point(435, 68);
-            this.txtClaseP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseP.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseP.Name = "txtClaseP";
             this.txtClaseP.Size = new System.Drawing.Size(175, 20);
             this.txtClaseP.TabIndex = 150;
@@ -1387,7 +1387,7 @@ namespace His.Formulario
             // 
             this.umskHoraP.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraP.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraP.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraP.Name = "umskHoraP";
             this.umskHoraP.Size = new System.Drawing.Size(37, 20);
             this.umskHoraP.TabIndex = 149;
@@ -1400,8 +1400,8 @@ namespace His.Formulario
             this.ultraTabPageControl8.Controls.Add(this.grbEnteralT);
             this.ultraTabPageControl8.Controls.Add(this.grbEnteral);
             this.ultraTabPageControl8.Controls.Add(this.grbDatEnteral);
-            this.ultraTabPageControl8.Location = new System.Drawing.Point(-7500, -8125);
-            this.ultraTabPageControl8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabPageControl8.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl8.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabPageControl8.Name = "ultraTabPageControl8";
             this.ultraTabPageControl8.Size = new System.Drawing.Size(772, 430);
             // 
@@ -1449,7 +1449,7 @@ namespace His.Formulario
             this.dtgEnteralN.DefaultCellStyle = dataGridViewCellStyle20;
             this.dtgEnteralN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEnteralN.Location = new System.Drawing.Point(3, 16);
-            this.dtgEnteralN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEnteralN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEnteralN.Name = "dtgEnteralN";
             this.dtgEnteralN.ReadOnly = true;
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1555,7 +1555,7 @@ namespace His.Formulario
             this.dtgEnteralT.DefaultCellStyle = dataGridViewCellStyle23;
             this.dtgEnteralT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEnteralT.Location = new System.Drawing.Point(3, 16);
-            this.dtgEnteralT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEnteralT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEnteralT.Name = "dtgEnteralT";
             this.dtgEnteralT.ReadOnly = true;
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1661,7 +1661,7 @@ namespace His.Formulario
             this.dtgEnteral.DefaultCellStyle = dataGridViewCellStyle26;
             this.dtgEnteral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEnteral.Location = new System.Drawing.Point(3, 16);
-            this.dtgEnteral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEnteral.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEnteral.Name = "dtgEnteral";
             this.dtgEnteral.ReadOnly = true;
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1814,7 +1814,7 @@ namespace His.Formulario
             this.btnEnteral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEnteral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnteral.Location = new System.Drawing.Point(596, 36);
-            this.btnEnteral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnteral.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnteral.Name = "btnEnteral";
             this.btnEnteral.Size = new System.Drawing.Size(27, 23);
             this.btnEnteral.TabIndex = 152;
@@ -1824,7 +1824,7 @@ namespace His.Formulario
             // txtCantidadE
             // 
             this.txtCantidadE.Location = new System.Drawing.Point(464, 41);
-            this.txtCantidadE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadE.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadE.Name = "txtCantidadE";
             this.txtCantidadE.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadE.TabIndex = 151;
@@ -1835,7 +1835,7 @@ namespace His.Formulario
             // 
             this.umskHoraE.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraE.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraE.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraE.Name = "umskHoraE";
             this.umskHoraE.Size = new System.Drawing.Size(37, 20);
             this.umskHoraE.TabIndex = 149;
@@ -1848,7 +1848,7 @@ namespace His.Formulario
             this.ultraTabPageControl4.Controls.Add(this.grbOrinaT);
             this.ultraTabPageControl4.Controls.Add(this.grbOrina);
             this.ultraTabPageControl4.Controls.Add(this.grbDatOrina);
-            this.ultraTabPageControl4.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl4.Name = "ultraTabPageControl4";
             this.ultraTabPageControl4.Size = new System.Drawing.Size(772, 430);
             // 
@@ -1896,7 +1896,7 @@ namespace His.Formulario
             this.dtgOrinaN.DefaultCellStyle = dataGridViewCellStyle29;
             this.dtgOrinaN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOrinaN.Location = new System.Drawing.Point(3, 16);
-            this.dtgOrinaN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOrinaN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOrinaN.Name = "dtgOrinaN";
             this.dtgOrinaN.ReadOnly = true;
             dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2003,7 +2003,7 @@ namespace His.Formulario
             this.dtgOrinaT.DefaultCellStyle = dataGridViewCellStyle32;
             this.dtgOrinaT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOrinaT.Location = new System.Drawing.Point(3, 16);
-            this.dtgOrinaT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOrinaT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOrinaT.Name = "dtgOrinaT";
             this.dtgOrinaT.ReadOnly = true;
             dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2110,7 +2110,7 @@ namespace His.Formulario
             this.dtgOrina.DefaultCellStyle = dataGridViewCellStyle35;
             this.dtgOrina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOrina.Location = new System.Drawing.Point(3, 16);
-            this.dtgOrina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOrina.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOrina.Name = "dtgOrina";
             this.dtgOrina.ReadOnly = true;
             dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2208,9 +2208,8 @@ namespace His.Formulario
             // txtDescripcionR
             // 
             this.txtDescripcionR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcionR.Enabled = false;
             this.txtDescripcionR.Location = new System.Drawing.Point(452, 35);
-            this.txtDescripcionR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionR.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionR.Name = "txtDescripcionR";
             this.txtDescripcionR.Size = new System.Drawing.Size(122, 20);
             this.txtDescripcionR.TabIndex = 157;
@@ -2266,7 +2265,7 @@ namespace His.Formulario
             this.btnOrina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOrina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrina.Location = new System.Drawing.Point(706, 32);
-            this.btnOrina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOrina.Margin = new System.Windows.Forms.Padding(2);
             this.btnOrina.Name = "btnOrina";
             this.btnOrina.Size = new System.Drawing.Size(27, 23);
             this.btnOrina.TabIndex = 152;
@@ -2277,7 +2276,7 @@ namespace His.Formulario
             // txtCantidadR
             // 
             this.txtCantidadR.Location = new System.Drawing.Point(579, 35);
-            this.txtCantidadR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadR.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadR.Name = "txtCantidadR";
             this.txtCantidadR.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadR.TabIndex = 151;
@@ -2288,7 +2287,7 @@ namespace His.Formulario
             // 
             this.txtClaseR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaseR.Location = new System.Drawing.Point(81, 36);
-            this.txtClaseR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseR.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseR.Name = "txtClaseR";
             this.txtClaseR.Size = new System.Drawing.Size(363, 20);
             this.txtClaseR.TabIndex = 150;
@@ -2298,7 +2297,7 @@ namespace His.Formulario
             // 
             this.umskHoraR.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraR.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraR.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraR.Name = "umskHoraR";
             this.umskHoraR.Size = new System.Drawing.Size(37, 20);
             this.umskHoraR.TabIndex = 149;
@@ -2311,8 +2310,8 @@ namespace His.Formulario
             this.ultraTabPageControl5.Controls.Add(this.grbDeposicionesT);
             this.ultraTabPageControl5.Controls.Add(this.grbDeposiciones);
             this.ultraTabPageControl5.Controls.Add(this.grbDatDeposiciones);
-            this.ultraTabPageControl5.Location = new System.Drawing.Point(-7500, -8125);
-            this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabPageControl5.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
             this.ultraTabPageControl5.Size = new System.Drawing.Size(772, 430);
             // 
@@ -2360,7 +2359,7 @@ namespace His.Formulario
             this.dtgDeposicionesN.DefaultCellStyle = dataGridViewCellStyle38;
             this.dtgDeposicionesN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDeposicionesN.Location = new System.Drawing.Point(3, 16);
-            this.dtgDeposicionesN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDeposicionesN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDeposicionesN.Name = "dtgDeposicionesN";
             this.dtgDeposicionesN.ReadOnly = true;
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2466,7 +2465,7 @@ namespace His.Formulario
             this.dtgDeposicionesT.DefaultCellStyle = dataGridViewCellStyle41;
             this.dtgDeposicionesT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDeposicionesT.Location = new System.Drawing.Point(3, 16);
-            this.dtgDeposicionesT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDeposicionesT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDeposicionesT.Name = "dtgDeposicionesT";
             this.dtgDeposicionesT.ReadOnly = true;
             dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2572,7 +2571,7 @@ namespace His.Formulario
             this.dtgDeposiciones.DefaultCellStyle = dataGridViewCellStyle44;
             this.dtgDeposiciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDeposiciones.Location = new System.Drawing.Point(3, 16);
-            this.dtgDeposiciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDeposiciones.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDeposiciones.Name = "dtgDeposiciones";
             this.dtgDeposiciones.ReadOnly = true;
             dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2670,7 +2669,7 @@ namespace His.Formulario
             // 
             this.txtDescripcionDP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcionDP.Location = new System.Drawing.Point(452, 35);
-            this.txtDescripcionDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionDP.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionDP.Name = "txtDescripcionDP";
             this.txtDescripcionDP.Size = new System.Drawing.Size(122, 20);
             this.txtDescripcionDP.TabIndex = 157;
@@ -2726,7 +2725,7 @@ namespace His.Formulario
             this.btnDeposiciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeposiciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposiciones.Location = new System.Drawing.Point(706, 32);
-            this.btnDeposiciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeposiciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeposiciones.Name = "btnDeposiciones";
             this.btnDeposiciones.Size = new System.Drawing.Size(27, 23);
             this.btnDeposiciones.TabIndex = 152;
@@ -2737,7 +2736,7 @@ namespace His.Formulario
             // txtCantidadDP
             // 
             this.txtCantidadDP.Location = new System.Drawing.Point(579, 35);
-            this.txtCantidadDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadDP.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadDP.Name = "txtCantidadDP";
             this.txtCantidadDP.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadDP.TabIndex = 151;
@@ -2748,7 +2747,7 @@ namespace His.Formulario
             // 
             this.txtClaseDP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaseDP.Location = new System.Drawing.Point(81, 36);
-            this.txtClaseDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseDP.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseDP.Name = "txtClaseDP";
             this.txtClaseDP.Size = new System.Drawing.Size(363, 20);
             this.txtClaseDP.TabIndex = 150;
@@ -2758,7 +2757,7 @@ namespace His.Formulario
             // 
             this.umskHoraDP.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraDP.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraDP.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraDP.Name = "umskHoraDP";
             this.umskHoraDP.Size = new System.Drawing.Size(37, 20);
             this.umskHoraDP.TabIndex = 149;
@@ -2771,8 +2770,8 @@ namespace His.Formulario
             this.ultraTabPageControl1.Controls.Add(this.grbDrenajeT);
             this.ultraTabPageControl1.Controls.Add(this.grbDrenaje);
             this.ultraTabPageControl1.Controls.Add(this.grbDatDrenaje);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-7500, -8125);
-            this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(772, 430);
             // 
@@ -2819,7 +2818,7 @@ namespace His.Formulario
             this.dtgDrenajeN.DefaultCellStyle = dataGridViewCellStyle47;
             this.dtgDrenajeN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDrenajeN.Location = new System.Drawing.Point(3, 16);
-            this.dtgDrenajeN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDrenajeN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDrenajeN.Name = "dtgDrenajeN";
             this.dtgDrenajeN.ReadOnly = true;
             dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2917,7 +2916,7 @@ namespace His.Formulario
             this.dtgDrenajeT.DefaultCellStyle = dataGridViewCellStyle50;
             this.dtgDrenajeT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDrenajeT.Location = new System.Drawing.Point(3, 16);
-            this.dtgDrenajeT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDrenajeT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDrenajeT.Name = "dtgDrenajeT";
             this.dtgDrenajeT.ReadOnly = true;
             dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3015,7 +3014,7 @@ namespace His.Formulario
             this.dtgDrenaje.DefaultCellStyle = dataGridViewCellStyle53;
             this.dtgDrenaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDrenaje.Location = new System.Drawing.Point(3, 16);
-            this.dtgDrenaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDrenaje.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDrenaje.Name = "dtgDrenaje";
             this.dtgDrenaje.ReadOnly = true;
             dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3151,7 +3150,7 @@ namespace His.Formulario
             this.btnDrenaje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDrenaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrenaje.Location = new System.Drawing.Point(576, 33);
-            this.btnDrenaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDrenaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnDrenaje.Name = "btnDrenaje";
             this.btnDrenaje.Size = new System.Drawing.Size(27, 23);
             this.btnDrenaje.TabIndex = 152;
@@ -3162,7 +3161,7 @@ namespace His.Formulario
             // txtCantidadD
             // 
             this.txtCantidadD.Location = new System.Drawing.Point(447, 36);
-            this.txtCantidadD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadD.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadD.Name = "txtCantidadD";
             this.txtCantidadD.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadD.TabIndex = 151;
@@ -3172,7 +3171,7 @@ namespace His.Formulario
             // txtClaseD
             // 
             this.txtClaseD.Location = new System.Drawing.Point(668, 35);
-            this.txtClaseD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseD.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseD.Name = "txtClaseD";
             this.txtClaseD.Size = new System.Drawing.Size(19, 20);
             this.txtClaseD.TabIndex = 150;
@@ -3183,7 +3182,7 @@ namespace His.Formulario
             // 
             this.umskHoraD.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraD.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraD.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraD.Name = "umskHoraD";
             this.umskHoraD.Size = new System.Drawing.Size(37, 20);
             this.umskHoraD.TabIndex = 149;
@@ -3196,8 +3195,8 @@ namespace His.Formulario
             this.ultraTabPageControl10.Controls.Add(this.grbVomitoT);
             this.ultraTabPageControl10.Controls.Add(this.grbVomito);
             this.ultraTabPageControl10.Controls.Add(this.grbDatVomito);
-            this.ultraTabPageControl10.Location = new System.Drawing.Point(-7500, -8125);
-            this.ultraTabPageControl10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabPageControl10.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl10.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabPageControl10.Name = "ultraTabPageControl10";
             this.ultraTabPageControl10.Size = new System.Drawing.Size(772, 430);
             // 
@@ -3244,7 +3243,7 @@ namespace His.Formulario
             this.dtgVomitoN.DefaultCellStyle = dataGridViewCellStyle56;
             this.dtgVomitoN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgVomitoN.Location = new System.Drawing.Point(3, 16);
-            this.dtgVomitoN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgVomitoN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgVomitoN.Name = "dtgVomitoN";
             this.dtgVomitoN.ReadOnly = true;
             dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3341,7 +3340,7 @@ namespace His.Formulario
             this.dtgVomitoT.DefaultCellStyle = dataGridViewCellStyle59;
             this.dtgVomitoT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgVomitoT.Location = new System.Drawing.Point(3, 16);
-            this.dtgVomitoT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgVomitoT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgVomitoT.Name = "dtgVomitoT";
             this.dtgVomitoT.ReadOnly = true;
             dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3438,7 +3437,7 @@ namespace His.Formulario
             this.dtgVomito.DefaultCellStyle = dataGridViewCellStyle62;
             this.dtgVomito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgVomito.Location = new System.Drawing.Point(3, 16);
-            this.dtgVomito.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgVomito.Margin = new System.Windows.Forms.Padding(2);
             this.dtgVomito.Name = "dtgVomito";
             this.dtgVomito.ReadOnly = true;
             dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3515,7 +3514,7 @@ namespace His.Formulario
             // 
             this.txtClaseV.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaseV.Location = new System.Drawing.Point(81, 36);
-            this.txtClaseV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseV.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseV.Name = "txtClaseV";
             this.txtClaseV.Size = new System.Drawing.Size(363, 20);
             this.txtClaseV.TabIndex = 157;
@@ -3571,7 +3570,7 @@ namespace His.Formulario
             this.btnVomito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVomito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVomito.Location = new System.Drawing.Point(576, 33);
-            this.btnVomito.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVomito.Margin = new System.Windows.Forms.Padding(2);
             this.btnVomito.Name = "btnVomito";
             this.btnVomito.Size = new System.Drawing.Size(27, 23);
             this.btnVomito.TabIndex = 152;
@@ -3581,7 +3580,7 @@ namespace His.Formulario
             // txtCantidadV
             // 
             this.txtCantidadV.Location = new System.Drawing.Point(447, 36);
-            this.txtCantidadV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadV.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadV.Name = "txtCantidadV";
             this.txtCantidadV.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadV.TabIndex = 151;
@@ -3592,7 +3591,7 @@ namespace His.Formulario
             // 
             this.umskHoraV.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraV.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraV.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraV.Name = "umskHoraV";
             this.umskHoraV.Size = new System.Drawing.Size(37, 20);
             this.umskHoraV.TabIndex = 149;
@@ -3605,7 +3604,7 @@ namespace His.Formulario
             this.ultraTabPageControl9.Controls.Add(this.grbOtrosT);
             this.ultraTabPageControl9.Controls.Add(this.grbOtros);
             this.ultraTabPageControl9.Controls.Add(this.grbDatOtros);
-            this.ultraTabPageControl9.Location = new System.Drawing.Point(-7500, -8125);
+            this.ultraTabPageControl9.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl9.Name = "ultraTabPageControl9";
             this.ultraTabPageControl9.Size = new System.Drawing.Size(772, 430);
             // 
@@ -3652,7 +3651,7 @@ namespace His.Formulario
             this.dtgOtrosN.DefaultCellStyle = dataGridViewCellStyle65;
             this.dtgOtrosN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOtrosN.Location = new System.Drawing.Point(3, 16);
-            this.dtgOtrosN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOtrosN.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOtrosN.Name = "dtgOtrosN";
             this.dtgOtrosN.ReadOnly = true;
             dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3751,7 +3750,7 @@ namespace His.Formulario
             this.dtgOtrosT.DefaultCellStyle = dataGridViewCellStyle68;
             this.dtgOtrosT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOtrosT.Location = new System.Drawing.Point(3, 16);
-            this.dtgOtrosT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOtrosT.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOtrosT.Name = "dtgOtrosT";
             this.dtgOtrosT.ReadOnly = true;
             dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3850,7 +3849,7 @@ namespace His.Formulario
             this.dtgOtros.DefaultCellStyle = dataGridViewCellStyle71;
             this.dtgOtros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgOtros.Location = new System.Drawing.Point(3, 16);
-            this.dtgOtros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgOtros.Margin = new System.Windows.Forms.Padding(2);
             this.dtgOtros.Name = "dtgOtros";
             this.dtgOtros.ReadOnly = true;
             dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3975,7 +3974,7 @@ namespace His.Formulario
             this.btnOtros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOtros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOtros.Location = new System.Drawing.Point(576, 33);
-            this.btnOtros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOtros.Margin = new System.Windows.Forms.Padding(2);
             this.btnOtros.Name = "btnOtros";
             this.btnOtros.Size = new System.Drawing.Size(27, 23);
             this.btnOtros.TabIndex = 152;
@@ -3986,7 +3985,7 @@ namespace His.Formulario
             // txtCantidadT
             // 
             this.txtCantidadT.Location = new System.Drawing.Point(447, 36);
-            this.txtCantidadT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadT.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Size = new System.Drawing.Size(99, 20);
             this.txtCantidadT.TabIndex = 151;
@@ -3997,7 +3996,7 @@ namespace His.Formulario
             // 
             this.txtClaseT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClaseT.Location = new System.Drawing.Point(81, 36);
-            this.txtClaseT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClaseT.Margin = new System.Windows.Forms.Padding(2);
             this.txtClaseT.Name = "txtClaseT";
             this.txtClaseT.Size = new System.Drawing.Size(363, 20);
             this.txtClaseT.TabIndex = 150;
@@ -4007,7 +4006,7 @@ namespace His.Formulario
             // 
             this.umskHoraT.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.Time;
             this.umskHoraT.Location = new System.Drawing.Point(18, 35);
-            this.umskHoraT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.umskHoraT.Margin = new System.Windows.Forms.Padding(2);
             this.umskHoraT.Name = "umskHoraT";
             this.umskHoraT.Size = new System.Drawing.Size(37, 20);
             this.umskHoraT.TabIndex = 149;
@@ -4017,7 +4016,7 @@ namespace His.Formulario
             // ultraTabPageControl6
             // 
             this.ultraTabPageControl6.Controls.Add(this.ultraTabControl2);
-            this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl6.Name = "ultraTabPageControl6";
             this.ultraTabPageControl6.Size = new System.Drawing.Size(774, 453);
             // 
@@ -4030,7 +4029,7 @@ namespace His.Formulario
             this.ultraTabControl2.Controls.Add(this.ultraTabPageControl8);
             this.ultraTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraTabControl2.Location = new System.Drawing.Point(0, 0);
-            this.ultraTabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabControl2.Name = "ultraTabControl2";
             this.ultraTabControl2.SharedControlsPage = this.ultraTabSharedControlsPage2;
             this.ultraTabControl2.Size = new System.Drawing.Size(774, 453);
@@ -4052,14 +4051,14 @@ namespace His.Formulario
             // ultraTabSharedControlsPage2
             // 
             this.ultraTabSharedControlsPage2.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabSharedControlsPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabSharedControlsPage2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabSharedControlsPage2.Name = "ultraTabSharedControlsPage2";
             this.ultraTabSharedControlsPage2.Size = new System.Drawing.Size(772, 430);
             // 
             // ultraTabPageControl7
             // 
             this.ultraTabPageControl7.Controls.Add(this.grb);
-            this.ultraTabPageControl7.Location = new System.Drawing.Point(-7500, -8125);
+            this.ultraTabPageControl7.Location = new System.Drawing.Point(1, 22);
             this.ultraTabPageControl7.Name = "ultraTabPageControl7";
             this.ultraTabPageControl7.Size = new System.Drawing.Size(774, 453);
             // 
@@ -4074,7 +4073,7 @@ namespace His.Formulario
             this.grb.Controls.Add(this.ultraTabPageControl10);
             this.grb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grb.Location = new System.Drawing.Point(0, 0);
-            this.grb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grb.Margin = new System.Windows.Forms.Padding(2);
             this.grb.Name = "grb";
             this.grb.SharedControlsPage = this.ultraTabSharedControlsPage3;
             this.grb.Size = new System.Drawing.Size(774, 453);
@@ -4102,7 +4101,7 @@ namespace His.Formulario
             // ultraTabSharedControlsPage3
             // 
             this.ultraTabSharedControlsPage3.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabSharedControlsPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabSharedControlsPage3.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabSharedControlsPage3.Name = "ultraTabSharedControlsPage3";
             this.ultraTabSharedControlsPage3.Size = new System.Drawing.Size(772, 430);
             // 
@@ -4264,7 +4263,7 @@ namespace His.Formulario
             this.ultraGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOutsideBorder;
             this.ultraGroupBox1.Location = new System.Drawing.Point(0, 36);
-            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
             this.ultraGroupBox1.Size = new System.Drawing.Size(922, 93);
             this.ultraGroupBox1.TabIndex = 100;
@@ -4286,7 +4285,7 @@ namespace His.Formulario
             this.dtp_Creacion.Enabled = false;
             this.dtp_Creacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_Creacion.Location = new System.Drawing.Point(680, 65);
-            this.dtp_Creacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_Creacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_Creacion.Name = "dtp_Creacion";
             this.dtp_Creacion.Size = new System.Drawing.Size(98, 20);
             this.dtp_Creacion.TabIndex = 35;
@@ -4503,7 +4502,7 @@ namespace His.Formulario
             this.ultraTabControl1.Controls.Add(this.ultraTabPageControl7);
             this.ultraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraTabControl1.Location = new System.Drawing.Point(144, 2);
-            this.ultraTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabControl1.Name = "ultraTabControl1";
             this.ultraTabControl1.SharedControlsPage = this.ultraTabSharedControlsPage1;
             this.ultraTabControl1.Size = new System.Drawing.Size(776, 476);
@@ -4522,7 +4521,7 @@ namespace His.Formulario
             // ultraTabSharedControlsPage1
             // 
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabSharedControlsPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraTabSharedControlsPage1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
             this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(774, 453);
             // 
@@ -4535,7 +4534,7 @@ namespace His.Formulario
             this.tableLayoutPanel1.Controls.Add(this.gridSol, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 129);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

@@ -495,6 +495,7 @@ namespace His.Formulario
             cmbFrecuencia.SelectedIndex = -1;
             chkOxigeno.Checked = false;
             chkAmbiente.Checked = false;
+           
             errorProvider1.Clear();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -1272,7 +1273,7 @@ namespace His.Formulario
         {
             if (txt_aSistonica1.Text == "" || !NegUtilitarios.ValidaPrecion1(Convert.ToInt16(txt_aSistonica1.Text)))
             {
-                txt_aSistonica1.Text = "0";
+                //txt_aSistonica1.Text = "0";
             }
         }
 
@@ -1473,6 +1474,7 @@ namespace His.Formulario
             DialogResult dialogResult = MessageBox.Show("¿Desea cargar los Signos?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.Yes)
             {
+                limpiarSV();
                 btnGrabasignos.Visible = true;
                 SV_HOJA = Convert.ToInt32(gridSol.Rows[gridSol.CurrentRow.Index].Cells["SV_HOJA"].Value.ToString());
                 SV_CODIGO = Convert.ToInt32(gridSol.Rows[gridSol.CurrentRow.Index].Cells["SV_CODIGO"].Value.ToString());
@@ -1568,6 +1570,7 @@ namespace His.Formulario
                         limpiarSV();
                         ultraGridSignosVitales.DataSource = NegSignosVitales.CargarSignosAtencion(CodigoAtencion);
                         MessageBox.Show("Datos almacenados correctamente.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_aSistonica1.Text = "";
                     }
                     else
                         MessageBox.Show("Los datos no se pudieron almacenar.", "HIS3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -1597,6 +1600,7 @@ namespace His.Formulario
                         DialogResult dialogResult = MessageBox.Show("¿Desea editar los Signos?", "HIS3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                         if (dialogResult == DialogResult.Yes)
                         {
+                            limpiarSV();
                             SVD_CODIGO = Convert.ToInt32(e.Cell.Row.Cells["CODIGO"].Value.ToString());
                             HC_SIGNOS_DATOS_ADICIONALES svd = NegSignosVitales.CargarDatosSignosDatos(SVD_CODIGO);
                             txt_Pulso1.Text = e.Cell.Row.Cells["F_CARDIACA"].Value.ToString();
@@ -1848,6 +1852,42 @@ namespace His.Formulario
                 //throw;
             }
         }
+        public void CerrarArchivoExcelSinGuardarCambios(string nombreArchivo)
+        {
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+
+            try
+            {
+                // Inicializar la aplicación Excel y abrir el archivo
+                excelApp = new Excel.Application();
+                workbook = excelApp.Workbooks.Open(nombreArchivo);
+
+                // Marcar el libro como guardado para evitar el diálogo de guardar
+                workbook.Saved = true;
+
+                // Cerrar el libro sin guardar cambios
+                workbook.Close(false);
+
+                // Cerrar la aplicación Excel
+                excelApp.Quit();
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepciones
+                Console.WriteLine("Error al intentar cerrar el archivo Excel: " + ex.Message);
+            }
+            finally
+            {
+                // Liberar recursos
+                if (workbook != null)
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            }
+        }
+
+
         public void grabaDatosExcel(int lg)
         {
             // Crear una instancia de Excel
@@ -1858,11 +1898,12 @@ namespace His.Formulario
 
             // Abrir el archivo Excel
             LOGOS_EMPRESA logEmp = NegParametros.logosEmpresa(lg);
+            CerrarArchivoExcelSinGuardarCambios(logEmp.LEM_RUTA);
             Excel.Workbook workbook = excelApp.Workbooks.Open(@"" + logEmp.LEM_RUTA);
 
             workbook.RefreshAll();
             // Esperar un tiempo para asegurarse de que los datos se actualicen correctamente
-            System.Threading.Thread.Sleep(5500); // Puedes ajustar el tiempo según tus necesidades
+            System.Threading.Thread.Sleep(3500); // Puedes ajustar el tiempo según tus necesidades
             // Guardar el archivo
             workbook.Save();
             // Cerrar el archivo y Excel
@@ -1997,6 +2038,7 @@ namespace His.Formulario
             frmReportes x = new frmReportes(1, "CurvaTermica", frm);
             x.Show();
         }
+
         public void grabarImagenExcelCT(int lg, int im, int imagen)
         {
             Excel.Application excelApp = new Excel.Application();
@@ -2026,5 +2068,44 @@ namespace His.Formulario
 
             Console.WriteLine("Grafico exportado como imagen.");
         }
+        //public void grabarImagenExcelCT(int lg, int im, int imagen, int width, int height)
+        //{
+        //    Excel.Application excelApp = new Excel.Application();
+        //    excelApp.Visible = false;
+
+        //    LOGOS_EMPRESA logEmp = NegParametros.logosEmpresa(lg);
+        //    Excel.Workbook workbook = excelApp.Workbooks.Open(@"" + logEmp.LEM_RUTA);
+        //    Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+
+        //    Excel.ChartObjects chartObjects = (Excel.ChartObjects)worksheet.ChartObjects();
+        //    Excel.ChartObject chartObject = (Excel.ChartObject)chartObjects.Item(1);
+
+        //    logEmp = NegParametros.logosEmpresa(im);
+        //    // string imagePath = Path.Combine(logEmp.LEM_RUTA.Substring(0, logEmp.LEM_RUTA.Length - 4), imagen + ".png");
+        //    string rutaSinExtension = Path.GetDirectoryName(logEmp.LEM_RUTA);
+        //    string nombreArchivo = "GraficoCT" + imagen + ".png";
+        //    string imagePath = Path.Combine(rutaSinExtension, nombreArchivo);
+        //    if (File.Exists(imagePath))
+        //    {
+        //        File.Delete(imagePath);
+        //        Console.WriteLine("El archivo fue eliminado con éxito.");
+        //    }
+
+        //    // Ajustar el tamaño del objeto ChartObject antes de exportarlo
+        //    chartObject.Width = width;
+        //    chartObject.Height = height;
+
+        //    // Exportar el gráfico como una imagen PNG
+        //    chartObject.Chart.Export(imagePath, "PNG");
+
+        //    workbook.Close(false);
+        //    excelApp.Quit();
+
+        //    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+        //    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+
+        //    Console.WriteLine("Gráfico exportado como imagen.");
+        //}
+
     }
 }

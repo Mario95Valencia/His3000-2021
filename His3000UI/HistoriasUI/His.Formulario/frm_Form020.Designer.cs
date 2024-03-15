@@ -42,9 +42,9 @@ namespace His.Formulario
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Form020));
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Form020));
             this.ultraTabPageControl9 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.grb_MedicionesActividades1 = new Infragistics.Win.Misc.UltraGroupBox();
             this.cmbDieta = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
@@ -106,6 +106,7 @@ namespace His.Formulario
             this.label23 = new System.Windows.Forms.Label();
             this.mskSaturacion = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnGrabasignos = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_aTemp1 = new System.Windows.Forms.TextBox();
             this.txt_Pulso1 = new System.Windows.Forms.TextBox();
@@ -129,7 +130,15 @@ namespace His.Formulario
             this.ultraTabPageControl12 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.ultraGridSignosVitales = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.tsbImprimirSV = new System.Windows.Forms.ToolStripButton();
+            this.tsbImprimirCT = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.txtDiaSignos = new System.Windows.Forms.TextBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
@@ -415,15 +424,6 @@ namespace His.Formulario
             this.tabulador = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
             this.ultraTabSharedControlsPage2 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnGrabasignos = new System.Windows.Forms.Button();
-            this.tsbImprimirSV = new System.Windows.Forms.ToolStripButton();
-            this.tsbImprimirCT = new System.Windows.Forms.ToolStripButton();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.ultraTabPageControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grb_MedicionesActividades1)).BeginInit();
             this.grb_MedicionesActividades1.SuspendLayout();
@@ -476,10 +476,9 @@ namespace His.Formulario
             this.ultraTabPageControl9.Controls.Add(this.grb_SignosVitales1);
             this.ultraTabPageControl9.Controls.Add(this.grb_Informacion1);
             this.ultraTabPageControl9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraTabPageControl9.Location = new System.Drawing.Point(1, 23);
-            this.ultraTabPageControl9.Margin = new System.Windows.Forms.Padding(4);
+            this.ultraTabPageControl9.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl9.Name = "ultraTabPageControl9";
-            this.ultraTabPageControl9.Size = new System.Drawing.Size(1140, 625);
+            this.ultraTabPageControl9.Size = new System.Drawing.Size(798, 451);
             // 
             // grb_MedicionesActividades1
             // 
@@ -516,10 +515,9 @@ namespace His.Formulario
             this.grb_MedicionesActividades1.Controls.Add(this.label14);
             this.grb_MedicionesActividades1.Controls.Add(this.label15);
             this.grb_MedicionesActividades1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grb_MedicionesActividades1.Location = new System.Drawing.Point(0, 414);
-            this.grb_MedicionesActividades1.Margin = new System.Windows.Forms.Padding(4);
+            this.grb_MedicionesActividades1.Location = new System.Drawing.Point(0, 337);
             this.grb_MedicionesActividades1.Name = "grb_MedicionesActividades1";
-            this.grb_MedicionesActividades1.Size = new System.Drawing.Size(1140, 210);
+            this.grb_MedicionesActividades1.Size = new System.Drawing.Size(798, 171);
             this.grb_MedicionesActividades1.TabIndex = 94;
             this.grb_MedicionesActividades1.Text = "3 MEDICIONES Y ACTIVIDADES";
             this.grb_MedicionesActividades1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -529,20 +527,19 @@ namespace His.Formulario
             this.cmbDieta.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.cmbDieta.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
             this.cmbDieta.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList;
-            this.cmbDieta.Location = new System.Drawing.Point(212, 95);
-            this.cmbDieta.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDieta.Location = new System.Drawing.Point(159, 77);
             this.cmbDieta.Name = "cmbDieta";
-            this.cmbDieta.Size = new System.Drawing.Size(164, 25);
+            this.cmbDieta.Size = new System.Drawing.Size(123, 21);
             this.cmbDieta.TabIndex = 156;
             // 
             // chkAmbulatorio
             // 
             this.chkAmbulatorio.AutoSize = true;
             this.chkAmbulatorio.BackColor = System.Drawing.Color.Transparent;
-            this.chkAmbulatorio.Location = new System.Drawing.Point(813, 70);
-            this.chkAmbulatorio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkAmbulatorio.Location = new System.Drawing.Point(610, 57);
+            this.chkAmbulatorio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAmbulatorio.Name = "chkAmbulatorio";
-            this.chkAmbulatorio.Size = new System.Drawing.Size(116, 21);
+            this.chkAmbulatorio.Size = new System.Drawing.Size(92, 17);
             this.chkAmbulatorio.TabIndex = 116;
             this.chkAmbulatorio.Text = "Ambulatorio";
             this.chkAmbulatorio.UseVisualStyleBackColor = false;
@@ -552,10 +549,10 @@ namespace His.Formulario
             // 
             this.chkSonda.AutoSize = true;
             this.chkSonda.BackColor = System.Drawing.Color.Transparent;
-            this.chkSonda.Location = new System.Drawing.Point(758, 101);
-            this.chkSonda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSonda.Location = new System.Drawing.Point(568, 82);
+            this.chkSonda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkSonda.Name = "chkSonda";
-            this.chkSonda.Size = new System.Drawing.Size(99, 21);
+            this.chkSonda.Size = new System.Drawing.Size(81, 17);
             this.chkSonda.TabIndex = 115;
             this.chkSonda.Text = "No Aplica";
             this.chkSonda.UseVisualStyleBackColor = false;
@@ -564,20 +561,19 @@ namespace His.Formulario
             // 
             this.dtpSonda.Enabled = false;
             this.dtpSonda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpSonda.Location = new System.Drawing.Point(619, 100);
-            this.dtpSonda.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpSonda.Location = new System.Drawing.Point(464, 81);
             this.dtpSonda.Name = "dtpSonda";
-            this.dtpSonda.Size = new System.Drawing.Size(128, 23);
+            this.dtpSonda.Size = new System.Drawing.Size(97, 20);
             this.dtpSonda.TabIndex = 114;
             // 
             // chkAplica
             // 
             this.chkAplica.AutoSize = true;
             this.chkAplica.BackColor = System.Drawing.Color.Transparent;
-            this.chkAplica.Location = new System.Drawing.Point(759, 130);
-            this.chkAplica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkAplica.Location = new System.Drawing.Point(569, 106);
+            this.chkAplica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAplica.Name = "chkAplica";
-            this.chkAplica.Size = new System.Drawing.Size(99, 21);
+            this.chkAplica.Size = new System.Drawing.Size(81, 17);
             this.chkAplica.TabIndex = 113;
             this.chkAplica.Text = "No Aplica";
             this.chkAplica.UseVisualStyleBackColor = false;
@@ -587,10 +583,10 @@ namespace His.Formulario
             // 
             this.chkRelativoA.AutoSize = true;
             this.chkRelativoA.BackColor = System.Drawing.Color.Transparent;
-            this.chkRelativoA.Location = new System.Drawing.Point(716, 71);
-            this.chkRelativoA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkRelativoA.Location = new System.Drawing.Point(537, 58);
+            this.chkRelativoA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkRelativoA.Name = "chkRelativoA";
-            this.chkRelativoA.Size = new System.Drawing.Size(89, 21);
+            this.chkRelativoA.Size = new System.Drawing.Size(73, 17);
             this.chkRelativoA.TabIndex = 110;
             this.chkRelativoA.Text = "Relativo";
             this.chkRelativoA.UseVisualStyleBackColor = false;
@@ -600,10 +596,10 @@ namespace His.Formulario
             // 
             this.chkAbsolutoA.AutoSize = true;
             this.chkAbsolutoA.BackColor = System.Drawing.Color.Transparent;
-            this.chkAbsolutoA.Location = new System.Drawing.Point(615, 71);
-            this.chkAbsolutoA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkAbsolutoA.Location = new System.Drawing.Point(461, 58);
+            this.chkAbsolutoA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAbsolutoA.Name = "chkAbsolutoA";
-            this.chkAbsolutoA.Size = new System.Drawing.Size(93, 21);
+            this.chkAbsolutoA.Size = new System.Drawing.Size(75, 17);
             this.chkAbsolutoA.TabIndex = 109;
             this.chkAbsolutoA.Text = "Absoluto";
             this.chkAbsolutoA.UseVisualStyleBackColor = false;
@@ -613,20 +609,19 @@ namespace His.Formulario
             // 
             this.dtpVia.Enabled = false;
             this.dtpVia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVia.Location = new System.Drawing.Point(620, 130);
-            this.dtpVia.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpVia.Location = new System.Drawing.Point(465, 106);
             this.dtpVia.Name = "dtpVia";
-            this.dtpVia.Size = new System.Drawing.Size(128, 23);
+            this.dtpVia.Size = new System.Drawing.Size(97, 20);
             this.dtpVia.TabIndex = 95;
             // 
             // rbAplica
             // 
             this.rbAplica.AutoSize = true;
             this.rbAplica.BackColor = System.Drawing.Color.Transparent;
-            this.rbAplica.Location = new System.Drawing.Point(301, 38);
-            this.rbAplica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbAplica.Location = new System.Drawing.Point(226, 31);
+            this.rbAplica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbAplica.Name = "rbAplica";
-            this.rbAplica.Size = new System.Drawing.Size(97, 21);
+            this.rbAplica.Size = new System.Drawing.Size(79, 17);
             this.rbAplica.TabIndex = 108;
             this.rbAplica.TabStop = true;
             this.rbAplica.Text = "No aplica";
@@ -636,10 +631,10 @@ namespace His.Formulario
             // 
             this.rbDucha.AutoSize = true;
             this.rbDucha.BackColor = System.Drawing.Color.Transparent;
-            this.rbDucha.Location = new System.Drawing.Point(217, 38);
-            this.rbDucha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbDucha.Location = new System.Drawing.Point(163, 31);
+            this.rbDucha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbDucha.Name = "rbDucha";
-            this.rbDucha.Size = new System.Drawing.Size(75, 21);
+            this.rbDucha.Size = new System.Drawing.Size(62, 17);
             this.rbDucha.TabIndex = 107;
             this.rbDucha.TabStop = true;
             this.rbDucha.Text = "Ducha";
@@ -649,10 +644,10 @@ namespace His.Formulario
             // 
             this.rbCama.AutoSize = true;
             this.rbCama.BackColor = System.Drawing.Color.Transparent;
-            this.rbCama.Location = new System.Drawing.Point(137, 38);
-            this.rbCama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbCama.Location = new System.Drawing.Point(103, 31);
+            this.rbCama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbCama.Name = "rbCama";
-            this.rbCama.Size = new System.Drawing.Size(69, 21);
+            this.rbCama.Size = new System.Drawing.Size(56, 17);
             this.rbCama.TabIndex = 106;
             this.rbCama.TabStop = true;
             this.rbCama.Text = "Cama";
@@ -660,10 +655,9 @@ namespace His.Formulario
             // 
             // txt_abreMed1
             // 
-            this.txt_abreMed1.Location = new System.Drawing.Point(850, 158);
-            this.txt_abreMed1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_abreMed1.Location = new System.Drawing.Point(638, 128);
             this.txt_abreMed1.Name = "txt_abreMed1";
-            this.txt_abreMed1.Size = new System.Drawing.Size(29, 23);
+            this.txt_abreMed1.Size = new System.Drawing.Size(23, 20);
             this.txt_abreMed1.TabIndex = 105;
             this.txt_abreMed1.Visible = false;
             // 
@@ -671,20 +665,18 @@ namespace His.Formulario
             // 
             this.txt_Deposicion1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Deposicion1.Enabled = false;
-            this.txt_Deposicion1.Location = new System.Drawing.Point(619, 32);
-            this.txt_Deposicion1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Deposicion1.Location = new System.Drawing.Point(464, 26);
             this.txt_Deposicion1.Name = "txt_Deposicion1";
-            this.txt_Deposicion1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Deposicion1.Size = new System.Drawing.Size(100, 20);
             this.txt_Deposicion1.TabIndex = 103;
             this.txt_Deposicion1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Deposicion1_KeyDown);
             // 
             // txt_Recalalizacion1
             // 
             this.txt_Recalalizacion1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Recalalizacion1.Location = new System.Drawing.Point(852, 132);
-            this.txt_Recalalizacion1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Recalalizacion1.Location = new System.Drawing.Point(639, 107);
             this.txt_Recalalizacion1.Name = "txt_Recalalizacion1";
-            this.txt_Recalalizacion1.Size = new System.Drawing.Size(27, 23);
+            this.txt_Recalalizacion1.Size = new System.Drawing.Size(21, 20);
             this.txt_Recalalizacion1.TabIndex = 102;
             this.txt_Recalalizacion1.Visible = false;
             this.txt_Recalalizacion1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Recalalizacion1_KeyDown);
@@ -692,19 +684,17 @@ namespace His.Formulario
             // txt_responsable1
             // 
             this.txt_responsable1.Enabled = false;
-            this.txt_responsable1.Location = new System.Drawing.Point(620, 159);
-            this.txt_responsable1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_responsable1.Location = new System.Drawing.Point(465, 129);
             this.txt_responsable1.Name = "txt_responsable1";
-            this.txt_responsable1.Size = new System.Drawing.Size(316, 23);
+            this.txt_responsable1.Size = new System.Drawing.Size(238, 20);
             this.txt_responsable1.TabIndex = 101;
             // 
             // txt_Fisica1
             // 
             this.txt_Fisica1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Fisica1.Location = new System.Drawing.Point(850, 68);
-            this.txt_Fisica1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Fisica1.Location = new System.Drawing.Point(638, 55);
             this.txt_Fisica1.Name = "txt_Fisica1";
-            this.txt_Fisica1.Size = new System.Drawing.Size(29, 23);
+            this.txt_Fisica1.Size = new System.Drawing.Size(23, 20);
             this.txt_Fisica1.TabIndex = 100;
             this.txt_Fisica1.Visible = false;
             this.txt_Fisica1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Fisica1_KeyDown);
@@ -712,10 +702,9 @@ namespace His.Formulario
             // txt_Sonda1
             // 
             this.txt_Sonda1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Sonda1.Location = new System.Drawing.Point(850, 103);
-            this.txt_Sonda1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Sonda1.Location = new System.Drawing.Point(638, 84);
             this.txt_Sonda1.Name = "txt_Sonda1";
-            this.txt_Sonda1.Size = new System.Drawing.Size(28, 23);
+            this.txt_Sonda1.Size = new System.Drawing.Size(22, 20);
             this.txt_Sonda1.TabIndex = 99;
             this.txt_Sonda1.Visible = false;
             this.txt_Sonda1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sonda1_KeyDown);
@@ -725,10 +714,9 @@ namespace His.Formulario
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(436, 166);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(327, 135);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 15);
+            this.label20.Size = new System.Drawing.Size(74, 12);
             this.label20.TabIndex = 98;
             this.label20.Text = "RESPONSABLE";
             // 
@@ -737,10 +725,9 @@ namespace His.Formulario
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(436, 135);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(327, 110);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(131, 15);
+            this.label19.Size = new System.Drawing.Size(112, 12);
             this.label19.TabIndex = 97;
             this.label19.Text = "CANALIZACIÓN DE VIA";
             // 
@@ -749,10 +736,9 @@ namespace His.Formulario
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(436, 70);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(327, 57);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 15);
+            this.label18.Size = new System.Drawing.Size(92, 12);
             this.label18.TabIndex = 96;
             this.label18.Text = "ACTIVIDAD FÍSICA";
             // 
@@ -761,10 +747,9 @@ namespace His.Formulario
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(436, 102);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(327, 83);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(149, 15);
+            this.label17.Size = new System.Drawing.Size(120, 12);
             this.label17.TabIndex = 95;
             this.label17.Text = "COLOCACION DE SONDA";
             // 
@@ -773,20 +758,18 @@ namespace His.Formulario
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(428, 38);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(321, 31);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(175, 15);
+            this.label16.Size = new System.Drawing.Size(136, 12);
             this.label16.TabIndex = 94;
             this.label16.Text = "NUMERO DE DEPOSICIONES";
             // 
             // txt_Baño1
             // 
             this.txt_Baño1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Baño1.Location = new System.Drawing.Point(851, 38);
-            this.txt_Baño1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Baño1.Location = new System.Drawing.Point(638, 31);
             this.txt_Baño1.Name = "txt_Baño1";
-            this.txt_Baño1.Size = new System.Drawing.Size(27, 23);
+            this.txt_Baño1.Size = new System.Drawing.Size(21, 20);
             this.txt_Baño1.TabIndex = 92;
             this.txt_Baño1.Visible = false;
             this.txt_Baño1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Baño1_KeyDown);
@@ -795,10 +778,9 @@ namespace His.Formulario
             // 
             this.txt_Comidas1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Comidas1.Enabled = false;
-            this.txt_Comidas1.Location = new System.Drawing.Point(211, 130);
-            this.txt_Comidas1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Comidas1.Location = new System.Drawing.Point(158, 106);
             this.txt_Comidas1.Name = "txt_Comidas1";
-            this.txt_Comidas1.Size = new System.Drawing.Size(165, 23);
+            this.txt_Comidas1.Size = new System.Drawing.Size(125, 20);
             this.txt_Comidas1.TabIndex = 91;
             this.txt_Comidas1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Comidas1_KeyDown);
             // 
@@ -806,10 +788,9 @@ namespace His.Formulario
             // 
             this.txt_Medicciones1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Medicciones1.Enabled = false;
-            this.txt_Medicciones1.Location = new System.Drawing.Point(211, 162);
-            this.txt_Medicciones1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Medicciones1.Location = new System.Drawing.Point(158, 132);
             this.txt_Medicciones1.Name = "txt_Medicciones1";
-            this.txt_Medicciones1.Size = new System.Drawing.Size(165, 23);
+            this.txt_Medicciones1.Size = new System.Drawing.Size(125, 20);
             this.txt_Medicciones1.TabIndex = 90;
             this.txt_Medicciones1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Medicciones1_KeyDown);
             // 
@@ -818,10 +799,9 @@ namespace His.Formulario
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(19, 38);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(14, 31);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 15);
+            this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 89;
             this.label11.Text = "ASEO / BAÑO";
             // 
@@ -830,20 +810,18 @@ namespace His.Formulario
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 71);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(14, 58);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 15);
+            this.label12.Size = new System.Drawing.Size(45, 12);
             this.label12.TabIndex = 88;
             this.label12.Text = "PESO KG";
             // 
             // txt_Peso1
             // 
             this.txt_Peso1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Peso1.Location = new System.Drawing.Point(211, 66);
-            this.txt_Peso1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Peso1.Location = new System.Drawing.Point(158, 54);
             this.txt_Peso1.Name = "txt_Peso1";
-            this.txt_Peso1.Size = new System.Drawing.Size(165, 23);
+            this.txt_Peso1.Size = new System.Drawing.Size(125, 20);
             this.txt_Peso1.TabIndex = 87;
             this.txt_Peso1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Peso1_KeyDown);
             this.txt_Peso1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Peso1_KeyPress);
@@ -851,10 +829,9 @@ namespace His.Formulario
             // txt_Dieta1
             // 
             this.txt_Dieta1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Dieta1.Location = new System.Drawing.Point(173, 95);
-            this.txt_Dieta1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Dieta1.Location = new System.Drawing.Point(130, 77);
             this.txt_Dieta1.Name = "txt_Dieta1";
-            this.txt_Dieta1.Size = new System.Drawing.Size(32, 23);
+            this.txt_Dieta1.Size = new System.Drawing.Size(25, 20);
             this.txt_Dieta1.TabIndex = 86;
             this.txt_Dieta1.Visible = false;
             this.txt_Dieta1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Dieta1_KeyDown);
@@ -864,10 +841,9 @@ namespace His.Formulario
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(19, 167);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(14, 136);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(152, 15);
+            this.label13.Size = new System.Drawing.Size(120, 12);
             this.label13.TabIndex = 85;
             this.label13.Text = "NUMERO DE MICCIONES";
             // 
@@ -876,10 +852,9 @@ namespace His.Formulario
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(16, 135);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(12, 110);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 15);
+            this.label14.Size = new System.Drawing.Size(111, 12);
             this.label14.TabIndex = 84;
             this.label14.Text = "NUMERO DE COMIDAS";
             // 
@@ -888,10 +863,9 @@ namespace His.Formulario
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(16, 103);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(12, 84);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 15);
+            this.label15.Size = new System.Drawing.Size(110, 12);
             this.label15.TabIndex = 83;
             this.label15.Text = "DIETA ADMINISTRADA";
             // 
@@ -915,10 +889,9 @@ namespace His.Formulario
             this.grb_BalanceHidrico1.Controls.Add(this.label126);
             this.grb_BalanceHidrico1.Controls.Add(this.label127);
             this.grb_BalanceHidrico1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grb_BalanceHidrico1.Location = new System.Drawing.Point(0, 263);
-            this.grb_BalanceHidrico1.Margin = new System.Windows.Forms.Padding(4);
+            this.grb_BalanceHidrico1.Location = new System.Drawing.Point(0, 214);
             this.grb_BalanceHidrico1.Name = "grb_BalanceHidrico1";
-            this.grb_BalanceHidrico1.Size = new System.Drawing.Size(1140, 151);
+            this.grb_BalanceHidrico1.Size = new System.Drawing.Size(798, 123);
             this.grb_BalanceHidrico1.TabIndex = 39;
             this.grb_BalanceHidrico1.Text = "2 BALANCE HIDRICO";
             this.grb_BalanceHidrico1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -928,10 +901,9 @@ namespace His.Formulario
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(702, 118);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(526, 96);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 15);
+            this.label22.Size = new System.Drawing.Size(59, 12);
             this.label22.TabIndex = 144;
             this.label22.Text = "Porcentaje %";
             this.label22.Visible = false;
@@ -941,10 +913,9 @@ namespace His.Formulario
             this.label334.AutoSize = true;
             this.label334.BackColor = System.Drawing.Color.Transparent;
             this.label334.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label334.Location = new System.Drawing.Point(276, 110);
-            this.label334.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label334.Location = new System.Drawing.Point(207, 89);
             this.label334.Name = "label334";
-            this.label334.Size = new System.Drawing.Size(66, 15);
+            this.label334.Size = new System.Drawing.Size(51, 12);
             this.label334.TabIndex = 141;
             this.label334.Text = "TOTALES :";
             // 
@@ -953,10 +924,9 @@ namespace His.Formulario
             this.label331.AutoSize = true;
             this.label331.BackColor = System.Drawing.Color.Transparent;
             this.label331.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label331.Location = new System.Drawing.Point(540, 50);
-            this.label331.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label331.Location = new System.Drawing.Point(405, 41);
             this.label331.Name = "label331";
-            this.label331.Size = new System.Drawing.Size(55, 15);
+            this.label331.Size = new System.Drawing.Size(42, 12);
             this.label331.TabIndex = 140;
             this.label331.Text = "OTROS :";
             // 
@@ -965,10 +935,9 @@ namespace His.Formulario
             this.label332.AutoSize = true;
             this.label332.BackColor = System.Drawing.Color.Transparent;
             this.label332.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label332.Location = new System.Drawing.Point(276, 80);
-            this.label332.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label332.Location = new System.Drawing.Point(207, 65);
             this.label332.Name = "label332";
-            this.label332.Size = new System.Drawing.Size(69, 15);
+            this.label332.Size = new System.Drawing.Size(55, 12);
             this.label332.TabIndex = 139;
             this.label332.Text = "DRENAJE :";
             // 
@@ -977,20 +946,18 @@ namespace His.Formulario
             this.label333.AutoSize = true;
             this.label333.BackColor = System.Drawing.Color.Transparent;
             this.label333.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label333.Location = new System.Drawing.Point(276, 50);
-            this.label333.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label333.Location = new System.Drawing.Point(207, 41);
             this.label333.Name = "label333";
-            this.label333.Size = new System.Drawing.Size(50, 15);
+            this.label333.Size = new System.Drawing.Size(41, 12);
             this.label333.TabIndex = 138;
             this.label333.Text = "ORINA :";
             // 
             // txt_eTotal1
             // 
             this.txt_eTotal1.Enabled = false;
-            this.txt_eTotal1.Location = new System.Drawing.Point(366, 110);
-            this.txt_eTotal1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_eTotal1.Location = new System.Drawing.Point(274, 89);
             this.txt_eTotal1.Name = "txt_eTotal1";
-            this.txt_eTotal1.Size = new System.Drawing.Size(132, 23);
+            this.txt_eTotal1.Size = new System.Drawing.Size(100, 20);
             this.txt_eTotal1.TabIndex = 131;
             this.txt_eTotal1.Text = "0";
             this.txt_eTotal1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_eTotal1_KeyPress);
@@ -999,10 +966,9 @@ namespace His.Formulario
             // txt_Otros1
             // 
             this.txt_Otros1.Enabled = false;
-            this.txt_Otros1.Location = new System.Drawing.Point(615, 46);
-            this.txt_Otros1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Otros1.Location = new System.Drawing.Point(461, 37);
             this.txt_Otros1.Name = "txt_Otros1";
-            this.txt_Otros1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Otros1.Size = new System.Drawing.Size(100, 20);
             this.txt_Otros1.TabIndex = 93;
             this.txt_Otros1.Text = "0";
             this.txt_Otros1.TextChanged += new System.EventHandler(this.txt_Otros1_TextChanged);
@@ -1012,10 +978,9 @@ namespace His.Formulario
             // txt_Parental1
             // 
             this.txt_Parental1.Enabled = false;
-            this.txt_Parental1.Location = new System.Drawing.Point(110, 46);
-            this.txt_Parental1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Parental1.Location = new System.Drawing.Point(82, 37);
             this.txt_Parental1.Name = "txt_Parental1";
-            this.txt_Parental1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Parental1.Size = new System.Drawing.Size(100, 20);
             this.txt_Parental1.TabIndex = 92;
             this.txt_Parental1.Text = "0";
             this.txt_Parental1.TextChanged += new System.EventHandler(this.txt_Parental1_TextChanged);
@@ -1025,10 +990,9 @@ namespace His.Formulario
             // txt_Drenaje1
             // 
             this.txt_Drenaje1.Enabled = false;
-            this.txt_Drenaje1.Location = new System.Drawing.Point(368, 76);
-            this.txt_Drenaje1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Drenaje1.Location = new System.Drawing.Point(276, 62);
             this.txt_Drenaje1.Name = "txt_Drenaje1";
-            this.txt_Drenaje1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Drenaje1.Size = new System.Drawing.Size(100, 20);
             this.txt_Drenaje1.TabIndex = 91;
             this.txt_Drenaje1.Text = "0";
             this.txt_Drenaje1.TextChanged += new System.EventHandler(this.txt_Drenaje1_TextChanged);
@@ -1038,10 +1002,9 @@ namespace His.Formulario
             // txt_iTotal1
             // 
             this.txt_iTotal1.Enabled = false;
-            this.txt_iTotal1.Location = new System.Drawing.Point(110, 107);
-            this.txt_iTotal1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_iTotal1.Location = new System.Drawing.Point(82, 87);
             this.txt_iTotal1.Name = "txt_iTotal1";
-            this.txt_iTotal1.Size = new System.Drawing.Size(132, 23);
+            this.txt_iTotal1.Size = new System.Drawing.Size(100, 20);
             this.txt_iTotal1.TabIndex = 90;
             this.txt_iTotal1.Text = "0";
             this.txt_iTotal1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_iTotal1_KeyPress);
@@ -1052,10 +1015,9 @@ namespace His.Formulario
             this.label121.AutoSize = true;
             this.label121.BackColor = System.Drawing.Color.Transparent;
             this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label121.Location = new System.Drawing.Point(135, 27);
-            this.label121.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label121.Location = new System.Drawing.Point(101, 22);
             this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(89, 15);
+            this.label121.Size = new System.Drawing.Size(70, 12);
             this.label121.TabIndex = 89;
             this.label121.Text = "INGRESOS CC";
             // 
@@ -1064,20 +1026,18 @@ namespace His.Formulario
             this.label122.AutoSize = true;
             this.label122.BackColor = System.Drawing.Color.Transparent;
             this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label122.Location = new System.Drawing.Point(377, 27);
-            this.label122.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label122.Location = new System.Drawing.Point(283, 22);
             this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(103, 15);
+            this.label122.Size = new System.Drawing.Size(85, 12);
             this.label122.TabIndex = 88;
             this.label122.Text = "ELIMINACION CC";
             // 
             // txt_Orina1
             // 
             this.txt_Orina1.Enabled = false;
-            this.txt_Orina1.Location = new System.Drawing.Point(368, 46);
-            this.txt_Orina1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Orina1.Location = new System.Drawing.Point(276, 37);
             this.txt_Orina1.Name = "txt_Orina1";
-            this.txt_Orina1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Orina1.Size = new System.Drawing.Size(100, 20);
             this.txt_Orina1.TabIndex = 87;
             this.txt_Orina1.Text = "0";
             this.txt_Orina1.TextChanged += new System.EventHandler(this.txt_Orina1_TextChanged);
@@ -1087,10 +1047,9 @@ namespace His.Formulario
             // txt_Oral1
             // 
             this.txt_Oral1.Enabled = false;
-            this.txt_Oral1.Location = new System.Drawing.Point(110, 76);
-            this.txt_Oral1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Oral1.Location = new System.Drawing.Point(82, 62);
             this.txt_Oral1.Name = "txt_Oral1";
-            this.txt_Oral1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Oral1.Size = new System.Drawing.Size(100, 20);
             this.txt_Oral1.TabIndex = 86;
             this.txt_Oral1.Text = "0";
             this.txt_Oral1.TextChanged += new System.EventHandler(this.txt_Oral1_TextChanged);
@@ -1102,10 +1061,9 @@ namespace His.Formulario
             this.label125.AutoSize = true;
             this.label125.BackColor = System.Drawing.Color.Transparent;
             this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label125.Location = new System.Drawing.Point(16, 108);
-            this.label125.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label125.Location = new System.Drawing.Point(12, 88);
             this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(66, 15);
+            this.label125.Size = new System.Drawing.Size(51, 12);
             this.label125.TabIndex = 85;
             this.label125.Text = "TOTALES :";
             // 
@@ -1114,10 +1072,9 @@ namespace His.Formulario
             this.label126.AutoSize = true;
             this.label126.BackColor = System.Drawing.Color.Transparent;
             this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label126.Location = new System.Drawing.Point(16, 82);
-            this.label126.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label126.Location = new System.Drawing.Point(12, 67);
             this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(65, 15);
+            this.label126.Size = new System.Drawing.Size(55, 12);
             this.label126.TabIndex = 84;
             this.label126.Text = "VIA ORAL :";
             // 
@@ -1126,10 +1083,9 @@ namespace His.Formulario
             this.label127.AutoSize = true;
             this.label127.BackColor = System.Drawing.Color.Transparent;
             this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label127.Location = new System.Drawing.Point(18, 50);
-            this.label127.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label127.Location = new System.Drawing.Point(14, 41);
             this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(89, 15);
+            this.label127.Size = new System.Drawing.Size(71, 12);
             this.label127.TabIndex = 83;
             this.label127.Text = "PARENTERAL:";
             // 
@@ -1157,10 +1113,9 @@ namespace His.Formulario
             this.grb_SignosVitales1.Controls.Add(this.label66);
             this.grb_SignosVitales1.Controls.Add(this.label67);
             this.grb_SignosVitales1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grb_SignosVitales1.Location = new System.Drawing.Point(0, 82);
-            this.grb_SignosVitales1.Margin = new System.Windows.Forms.Padding(4);
+            this.grb_SignosVitales1.Location = new System.Drawing.Point(0, 67);
             this.grb_SignosVitales1.Name = "grb_SignosVitales1";
-            this.grb_SignosVitales1.Size = new System.Drawing.Size(1140, 181);
+            this.grb_SignosVitales1.Size = new System.Drawing.Size(798, 147);
             this.grb_SignosVitales1.TabIndex = 36;
             this.grb_SignosVitales1.Text = "1 SIGNOS VITALES";
             this.grb_SignosVitales1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -1170,10 +1125,9 @@ namespace His.Formulario
             this.cmb_frecuencia_hora.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.cmb_frecuencia_hora.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
             this.cmb_frecuencia_hora.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList;
-            this.cmb_frecuencia_hora.Location = new System.Drawing.Point(205, 55);
-            this.cmb_frecuencia_hora.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_frecuencia_hora.Location = new System.Drawing.Point(154, 45);
             this.cmb_frecuencia_hora.Name = "cmb_frecuencia_hora";
-            this.cmb_frecuencia_hora.Size = new System.Drawing.Size(123, 25);
+            this.cmb_frecuencia_hora.Size = new System.Drawing.Size(92, 21);
             this.cmb_frecuencia_hora.TabIndex = 155;
             // 
             // cmbFrecuencia
@@ -1181,10 +1135,9 @@ namespace His.Formulario
             this.cmbFrecuencia.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.cmbFrecuencia.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
             this.cmbFrecuencia.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList;
-            this.cmbFrecuencia.Location = new System.Drawing.Point(19, 55);
-            this.cmbFrecuencia.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbFrecuencia.Location = new System.Drawing.Point(14, 45);
             this.cmbFrecuencia.Name = "cmbFrecuencia";
-            this.cmbFrecuencia.Size = new System.Drawing.Size(164, 25);
+            this.cmbFrecuencia.Size = new System.Drawing.Size(123, 21);
             this.cmbFrecuencia.TabIndex = 154;
             this.cmbFrecuencia.SelectionChanged += new System.EventHandler(this.cmbFrecuencia_SelectionChanged);
             // 
@@ -1192,10 +1145,9 @@ namespace His.Formulario
             // 
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Location = new System.Drawing.Point(50, 35);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Location = new System.Drawing.Point(38, 28);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(104, 17);
+            this.label32.Size = new System.Drawing.Size(85, 13);
             this.label32.TabIndex = 153;
             this.label32.Text = "FRECUENCIA";
             // 
@@ -1204,10 +1156,10 @@ namespace His.Formulario
             this.chkAmbiente.AutoSize = true;
             this.chkAmbiente.BackColor = System.Drawing.Color.Transparent;
             this.chkAmbiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAmbiente.Location = new System.Drawing.Point(431, 136);
-            this.chkAmbiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkAmbiente.Location = new System.Drawing.Point(323, 110);
+            this.chkAmbiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAmbiente.Name = "chkAmbiente";
-            this.chkAmbiente.Size = new System.Drawing.Size(121, 17);
+            this.chkAmbiente.Size = new System.Drawing.Size(97, 14);
             this.chkAmbiente.TabIndex = 149;
             this.chkAmbiente.Text = "AIRE AMBIENTE";
             this.chkAmbiente.UseVisualStyleBackColor = false;
@@ -1218,10 +1170,10 @@ namespace His.Formulario
             this.chkOxigeno.AutoSize = true;
             this.chkOxigeno.BackColor = System.Drawing.Color.Transparent;
             this.chkOxigeno.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOxigeno.Location = new System.Drawing.Point(319, 136);
-            this.chkOxigeno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkOxigeno.Location = new System.Drawing.Point(239, 110);
+            this.chkOxigeno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkOxigeno.Name = "chkOxigeno";
-            this.chkOxigeno.Size = new System.Drawing.Size(113, 17);
+            this.chkOxigeno.Size = new System.Drawing.Size(91, 14);
             this.chkOxigeno.TabIndex = 116;
             this.chkOxigeno.Text = "CON OXIGENO";
             this.chkOxigeno.UseVisualStyleBackColor = false;
@@ -1232,20 +1184,18 @@ namespace His.Formulario
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(393, 120);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(295, 98);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(141, 15);
+            this.label23.Size = new System.Drawing.Size(113, 12);
             this.label23.TabIndex = 147;
             this.label23.Text = "SATURACION OXIGENO";
             // 
             // mskSaturacion
             // 
-            this.mskSaturacion.Location = new System.Drawing.Point(559, 129);
-            this.mskSaturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.mskSaturacion.Location = new System.Drawing.Point(419, 105);
             this.mskSaturacion.Mask = "000%";
             this.mskSaturacion.Name = "mskSaturacion";
-            this.mskSaturacion.Size = new System.Drawing.Size(72, 23);
+            this.mskSaturacion.Size = new System.Drawing.Size(55, 20);
             this.mskSaturacion.TabIndex = 146;
             this.mskSaturacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskSaturacion_KeyDown);
             this.mskSaturacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskSaturacion_KeyPress);
@@ -1256,30 +1206,40 @@ namespace His.Formulario
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(683, 51);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(512, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 15);
+            this.label9.Size = new System.Drawing.Size(124, 12);
             this.label9.TabIndex = 141;
             this.label9.Text = "Grabar Signos Vitales del Dia";
+            // 
+            // btnGrabasignos
+            // 
+            this.btnGrabasignos.BackgroundImage = global::His.Formulario.Properties.Resources.HIS_GUARDAR;
+            this.btnGrabasignos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGrabasignos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabasignos.Location = new System.Drawing.Point(562, 58);
+            this.btnGrabasignos.Name = "btnGrabasignos";
+            this.btnGrabasignos.Size = new System.Drawing.Size(33, 28);
+            this.btnGrabasignos.TabIndex = 140;
+            this.btnGrabasignos.UseVisualStyleBackColor = true;
+            this.btnGrabasignos.Visible = false;
+            this.btnGrabasignos.Click += new System.EventHandler(this.btnGrabasignos_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(737, 142);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(553, 115);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(72, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(55, 20);
             this.dateTimePicker1.TabIndex = 95;
             this.dateTimePicker1.Visible = false;
             // 
             // txt_aTemp1
             // 
-            this.txt_aTemp1.Location = new System.Drawing.Point(562, 83);
-            this.txt_aTemp1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_aTemp1.Location = new System.Drawing.Point(422, 67);
             this.txt_aTemp1.MaxLength = 4;
             this.txt_aTemp1.Name = "txt_aTemp1";
-            this.txt_aTemp1.Size = new System.Drawing.Size(69, 23);
+            this.txt_aTemp1.Size = new System.Drawing.Size(53, 20);
             this.txt_aTemp1.TabIndex = 4;
             this.txt_aTemp1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_aTemp1_KeyDown);
             this.txt_aTemp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_aTemp1_KeyPress);
@@ -1288,10 +1248,9 @@ namespace His.Formulario
             // 
             // txt_Pulso1
             // 
-            this.txt_Pulso1.Location = new System.Drawing.Point(132, 129);
-            this.txt_Pulso1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Pulso1.Location = new System.Drawing.Point(99, 105);
             this.txt_Pulso1.Name = "txt_Pulso1";
-            this.txt_Pulso1.Size = new System.Drawing.Size(59, 23);
+            this.txt_Pulso1.Size = new System.Drawing.Size(45, 20);
             this.txt_Pulso1.TabIndex = 136;
             this.txt_Pulso1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pulso1_KeyDown);
             this.txt_Pulso1.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Pulso1_Validating);
@@ -1301,10 +1260,9 @@ namespace His.Formulario
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 133);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
+            this.label4.Size = new System.Drawing.Size(89, 12);
             this.label4.TabIndex = 135;
             this.label4.Text = "F.CARDIACA (min)";
             // 
@@ -1313,19 +1271,17 @@ namespace His.Formulario
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(407, 87);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(305, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 15);
+            this.label5.Size = new System.Drawing.Size(89, 12);
             this.label5.TabIndex = 134;
             this.label5.Text = "TEMPERATURA ºC";
             // 
             // txt_aDiastonica1
             // 
-            this.txt_aDiastonica1.Location = new System.Drawing.Point(212, 97);
-            this.txt_aDiastonica1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_aDiastonica1.Location = new System.Drawing.Point(159, 79);
             this.txt_aDiastonica1.Name = "txt_aDiastonica1";
-            this.txt_aDiastonica1.Size = new System.Drawing.Size(60, 23);
+            this.txt_aDiastonica1.Size = new System.Drawing.Size(46, 20);
             this.txt_aDiastonica1.TabIndex = 132;
             this.txt_aDiastonica1.TextChanged += new System.EventHandler(this.txt_aDiastonica1_TextChanged);
             this.txt_aDiastonica1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_aDiastonica1_KeyDown);
@@ -1334,10 +1290,9 @@ namespace His.Formulario
             // 
             // txt_aSistonica1
             // 
-            this.txt_aSistonica1.Location = new System.Drawing.Point(132, 97);
-            this.txt_aSistonica1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_aSistonica1.Location = new System.Drawing.Point(99, 79);
             this.txt_aSistonica1.Name = "txt_aSistonica1";
-            this.txt_aSistonica1.Size = new System.Drawing.Size(57, 23);
+            this.txt_aSistonica1.Size = new System.Drawing.Size(44, 20);
             this.txt_aSistonica1.TabIndex = 131;
             this.txt_aSistonica1.TextChanged += new System.EventHandler(this.txt_aSistonica1_TextChanged);
             this.txt_aSistonica1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_aSistonica1_KeyDown);
@@ -1345,10 +1300,9 @@ namespace His.Formulario
             // 
             // txt_aRespiratoria1
             // 
-            this.txt_aRespiratoria1.Location = new System.Drawing.Point(562, 46);
-            this.txt_aRespiratoria1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_aRespiratoria1.Location = new System.Drawing.Point(422, 37);
             this.txt_aRespiratoria1.Name = "txt_aRespiratoria1";
-            this.txt_aRespiratoria1.Size = new System.Drawing.Size(72, 23);
+            this.txt_aRespiratoria1.Size = new System.Drawing.Size(55, 20);
             this.txt_aRespiratoria1.TabIndex = 128;
             this.txt_aRespiratoria1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_aRespiratoria1_KeyDown);
             this.txt_aRespiratoria1.Validating += new System.ComponentModel.CancelEventHandler(this.txt_aRespiratoria1_Validating);
@@ -1357,10 +1311,9 @@ namespace His.Formulario
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(239, 35);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(179, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
+            this.label6.Size = new System.Drawing.Size(46, 13);
             this.label6.TabIndex = 125;
             this.label6.Text = "HORA ";
             // 
@@ -1369,10 +1322,9 @@ namespace His.Formulario
             this.label65.AutoSize = true;
             this.label65.BackColor = System.Drawing.Color.Transparent;
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(8, 101);
-            this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label65.Location = new System.Drawing.Point(6, 82);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(121, 15);
+            this.label65.Size = new System.Drawing.Size(96, 12);
             this.label65.TabIndex = 123;
             this.label65.Text = "PRESION ARTERIAL";
             // 
@@ -1381,10 +1333,9 @@ namespace His.Formulario
             this.label66.AutoSize = true;
             this.label66.BackColor = System.Drawing.Color.Transparent;
             this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(193, 94);
-            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label66.Location = new System.Drawing.Point(145, 76);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(20, 29);
+            this.label66.Size = new System.Drawing.Size(15, 24);
             this.label66.TabIndex = 122;
             this.label66.Text = "/";
             // 
@@ -1393,10 +1344,9 @@ namespace His.Formulario
             this.label67.AutoSize = true;
             this.label67.BackColor = System.Drawing.Color.Transparent;
             this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(407, 51);
-            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label67.Location = new System.Drawing.Point(305, 41);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(136, 15);
+            this.label67.Size = new System.Drawing.Size(108, 12);
             this.label67.TabIndex = 121;
             this.label67.Text = "F.RESPIRATORIA (min)";
             // 
@@ -1411,9 +1361,8 @@ namespace His.Formulario
             this.grb_Informacion1.Controls.Add(this.label8);
             this.grb_Informacion1.Dock = System.Windows.Forms.DockStyle.Top;
             this.grb_Informacion1.Location = new System.Drawing.Point(0, 0);
-            this.grb_Informacion1.Margin = new System.Windows.Forms.Padding(4);
             this.grb_Informacion1.Name = "grb_Informacion1";
-            this.grb_Informacion1.Size = new System.Drawing.Size(1140, 82);
+            this.grb_Informacion1.Size = new System.Drawing.Size(798, 67);
             this.grb_Informacion1.TabIndex = 40;
             this.grb_Informacion1.Text = "INFORMACIÓN ";
             this.grb_Informacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -1421,10 +1370,9 @@ namespace His.Formulario
             // btn_Fecha
             // 
             this.btn_Fecha.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_Fecha.Location = new System.Drawing.Point(542, 38);
-            this.btn_Fecha.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Fecha.Location = new System.Drawing.Point(406, 31);
             this.btn_Fecha.Name = "btn_Fecha";
-            this.btn_Fecha.Size = new System.Drawing.Size(142, 28);
+            this.btn_Fecha.Size = new System.Drawing.Size(106, 23);
             this.btn_Fecha.TabIndex = 94;
             this.btn_Fecha.Text = "Cambiar Fecha";
             this.btn_Fecha.UseCompatibleTextRendering = true;
@@ -1433,21 +1381,19 @@ namespace His.Formulario
             // 
             // txt_Postquirurgico1
             // 
-            this.txt_Postquirurgico1.Location = new System.Drawing.Point(348, 43);
-            this.txt_Postquirurgico1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Postquirurgico1.Location = new System.Drawing.Point(261, 35);
             this.txt_Postquirurgico1.MaxLength = 15;
             this.txt_Postquirurgico1.Name = "txt_Postquirurgico1";
-            this.txt_Postquirurgico1.Size = new System.Drawing.Size(129, 23);
+            this.txt_Postquirurgico1.Size = new System.Drawing.Size(98, 20);
             this.txt_Postquirurgico1.TabIndex = 93;
             this.txt_Postquirurgico1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Postquirurgico1_KeyDown);
             // 
             // txt_Interaccion1
             // 
             this.txt_Interaccion1.Enabled = false;
-            this.txt_Interaccion1.Location = new System.Drawing.Point(186, 43);
-            this.txt_Interaccion1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Interaccion1.Location = new System.Drawing.Point(140, 35);
             this.txt_Interaccion1.Name = "txt_Interaccion1";
-            this.txt_Interaccion1.Size = new System.Drawing.Size(132, 23);
+            this.txt_Interaccion1.Size = new System.Drawing.Size(100, 20);
             this.txt_Interaccion1.TabIndex = 92;
             this.txt_Interaccion1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Interaccion1_KeyDown);
             // 
@@ -1455,10 +1401,9 @@ namespace His.Formulario
             // 
             this.dtpFechaIngreso1.Enabled = false;
             this.dtpFechaIngreso1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso1.Location = new System.Drawing.Point(20, 42);
-            this.dtpFechaIngreso1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaIngreso1.Location = new System.Drawing.Point(15, 34);
             this.dtpFechaIngreso1.Name = "dtpFechaIngreso1";
-            this.dtpFechaIngreso1.Size = new System.Drawing.Size(130, 23);
+            this.dtpFechaIngreso1.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaIngreso1.TabIndex = 91;
             // 
             // label10
@@ -1466,10 +1411,9 @@ namespace His.Formulario
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(345, 20);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(259, 16);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 15);
+            this.label10.Size = new System.Drawing.Size(110, 12);
             this.label10.TabIndex = 90;
             this.label10.Text = "DIA POSTQUIRÚRGICO";
             // 
@@ -1478,10 +1422,9 @@ namespace His.Formulario
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 21);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(14, 17);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 15);
+            this.label7.Size = new System.Drawing.Size(38, 12);
             this.label7.TabIndex = 89;
             this.label7.Text = "FECHA";
             // 
@@ -1490,10 +1433,9 @@ namespace His.Formulario
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(184, 21);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(138, 17);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 15);
+            this.label8.Size = new System.Drawing.Size(105, 12);
             this.label8.TabIndex = 88;
             this.label8.Text = "DIA DE INTERACCIÓN";
             // 
@@ -1501,10 +1443,10 @@ namespace His.Formulario
             // 
             this.ultraTabPageControl12.Controls.Add(this.ultraGridSignosVitales);
             this.ultraTabPageControl12.Controls.Add(this.toolStrip2);
-            this.ultraTabPageControl12.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabPageControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ultraTabPageControl12.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ultraTabPageControl12.Name = "ultraTabPageControl12";
-            this.ultraTabPageControl12.Size = new System.Drawing.Size(1140, 625);
+            this.ultraTabPageControl12.Size = new System.Drawing.Size(798, 451);
             // 
             // ultraGridSignosVitales
             // 
@@ -1564,9 +1506,9 @@ namespace His.Formulario
             this.ultraGridSignosVitales.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridSignosVitales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGridSignosVitales.Location = new System.Drawing.Point(0, 31);
-            this.ultraGridSignosVitales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ultraGridSignosVitales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ultraGridSignosVitales.Name = "ultraGridSignosVitales";
-            this.ultraGridSignosVitales.Size = new System.Drawing.Size(1140, 594);
+            this.ultraGridSignosVitales.Size = new System.Drawing.Size(798, 420);
             this.ultraGridSignosVitales.TabIndex = 87;
             this.ultraGridSignosVitales.Text = "ultraGrid1";
             this.ultraGridSignosVitales.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridSignosVitales_InitializeLayout);
@@ -1580,10 +1522,30 @@ namespace His.Formulario
             this.tsbImprimirCT});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(1140, 31);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(798, 31);
             this.toolStrip2.TabIndex = 88;
             this.toolStrip2.Text = "toolStrip2";
+            // 
+            // tsbImprimirSV
+            // 
+            this.tsbImprimirSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbImprimirSV.Image = ((System.Drawing.Image)(resources.GetObject("tsbImprimirSV.Image")));
+            this.tsbImprimirSV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImprimirSV.Name = "tsbImprimirSV";
+            this.tsbImprimirSV.Size = new System.Drawing.Size(28, 28);
+            this.tsbImprimirSV.Text = "Imprimir Registro Signos";
+            this.tsbImprimirSV.Click += new System.EventHandler(this.tsbImprimirSV_Click);
+            // 
+            // tsbImprimirCT
+            // 
+            this.tsbImprimirCT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbImprimirCT.Image = global::His.Formulario.Properties.Resources.medical_22_icon_icons_com_73922__1_;
+            this.tsbImprimirCT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImprimirCT.Name = "tsbImprimirCT";
+            this.tsbImprimirCT.Size = new System.Drawing.Size(28, 28);
+            this.tsbImprimirCT.Text = "Curva Termica";
+            this.tsbImprimirCT.Click += new System.EventHandler(this.tsbImprimirCT_Click);
             // 
             // toolStrip1
             // 
@@ -1597,28 +1559,89 @@ namespace His.Formulario
             this.btnSalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1468, 36);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1028, 36);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNuevo.Image = global::His.Formulario.Properties.Resources.HIS_NUEVO;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Padding = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Size = new System.Drawing.Size(32, 32);
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(28, 33);
+            this.btnGuardar.Text = "Guardar ";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimir.Enabled = false;
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(28, 33);
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnActualizar.Image = global::His.Formulario.Properties.Resources.HIS_REFRESH;
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(28, 33);
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelar.Image = global::His.Formulario.Properties.Resources.HIS_CANCELAR;
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(28, 33);
+            this.btnCancelar.Text = "toolStripButton1";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalir.Image = global::His.Formulario.Properties.Resources.HIS_SALIR;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(28, 33);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtDiaSignos
             // 
             this.txtDiaSignos.Enabled = false;
-            this.txtDiaSignos.Location = new System.Drawing.Point(885, 54);
-            this.txtDiaSignos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaSignos.Location = new System.Drawing.Point(664, 44);
             this.txtDiaSignos.Name = "txtDiaSignos";
-            this.txtDiaSignos.Size = new System.Drawing.Size(82, 22);
+            this.txtDiaSignos.Size = new System.Drawing.Size(62, 20);
             this.txtDiaSignos.TabIndex = 105;
             // 
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Enabled = false;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(885, 82);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(664, 67);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(108, 22);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(82, 20);
             this.dtpFechaIngreso.TabIndex = 104;
             // 
             // label24
@@ -1626,20 +1649,18 @@ namespace His.Formulario
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(764, 87);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Location = new System.Drawing.Point(573, 71);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(118, 17);
+            this.label24.Size = new System.Drawing.Size(90, 13);
             this.label24.TabIndex = 103;
             this.label24.Text = "Fecha de Ingreso";
             // 
             // cmb_dias
             // 
             this.cmb_dias.FormattingEnabled = true;
-            this.cmb_dias.Location = new System.Drawing.Point(1003, 82);
-            this.cmb_dias.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_dias.Location = new System.Drawing.Point(752, 67);
             this.cmb_dias.Name = "cmb_dias";
-            this.cmb_dias.Size = new System.Drawing.Size(130, 24);
+            this.cmb_dias.Size = new System.Drawing.Size(98, 21);
             this.cmb_dias.TabIndex = 98;
             this.cmb_dias.Visible = false;
             this.cmb_dias.SelectedIndexChanged += new System.EventHandler(this.cmb_dias_SelectedIndexChanged);
@@ -1648,10 +1669,9 @@ namespace His.Formulario
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Location = new System.Drawing.Point(699, 58);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(524, 47);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(182, 17);
+            this.label21.Size = new System.Drawing.Size(137, 13);
             this.label21.TabIndex = 97;
             this.label21.Text = "Dia de Toma Signos Vitales";
             // 
@@ -1690,28 +1710,28 @@ namespace His.Formulario
             // 
             this.textBox1.Location = new System.Drawing.Point(151, 35);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(45, 22);
+            this.textBox1.Size = new System.Drawing.Size(45, 20);
             this.textBox1.TabIndex = 82;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(151, 67);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(45, 22);
+            this.textBox2.Size = new System.Drawing.Size(45, 20);
             this.textBox2.TabIndex = 81;
             // 
             // textBox111
             // 
             this.textBox111.Location = new System.Drawing.Point(96, 67);
             this.textBox111.Name = "textBox111";
-            this.textBox111.Size = new System.Drawing.Size(45, 22);
+            this.textBox111.Size = new System.Drawing.Size(45, 20);
             this.textBox111.TabIndex = 80;
             // 
             // textBox112
             // 
             this.textBox112.Location = new System.Drawing.Point(96, 35);
             this.textBox112.Name = "textBox112";
-            this.textBox112.Size = new System.Drawing.Size(45, 22);
+            this.textBox112.Size = new System.Drawing.Size(45, 20);
             this.textBox112.TabIndex = 79;
             // 
             // label1
@@ -1721,7 +1741,7 @@ namespace His.Formulario
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(102, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.Size = new System.Drawing.Size(36, 12);
             this.label1.TabIndex = 78;
             this.label1.Text = "PULSO";
             // 
@@ -1732,7 +1752,7 @@ namespace His.Formulario
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(158, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.Size = new System.Drawing.Size(34, 12);
             this.label2.TabIndex = 77;
             this.label2.Text = "TEMP.";
             // 
@@ -1740,56 +1760,56 @@ namespace His.Formulario
             // 
             this.textBox113.Location = new System.Drawing.Point(465, 68);
             this.textBox113.Name = "textBox113";
-            this.textBox113.Size = new System.Drawing.Size(100, 22);
+            this.textBox113.Size = new System.Drawing.Size(100, 20);
             this.textBox113.TabIndex = 70;
             // 
             // textBox114
             // 
             this.textBox114.Location = new System.Drawing.Point(465, 35);
             this.textBox114.Name = "textBox114";
-            this.textBox114.Size = new System.Drawing.Size(100, 22);
+            this.textBox114.Size = new System.Drawing.Size(100, 20);
             this.textBox114.TabIndex = 69;
             // 
             // textBox115
             // 
             this.textBox115.Location = new System.Drawing.Point(338, 35);
             this.textBox115.Name = "textBox115";
-            this.textBox115.Size = new System.Drawing.Size(100, 22);
+            this.textBox115.Size = new System.Drawing.Size(100, 20);
             this.textBox115.TabIndex = 68;
             // 
             // textBox116
             // 
             this.textBox116.Location = new System.Drawing.Point(338, 68);
             this.textBox116.Name = "textBox116";
-            this.textBox116.Size = new System.Drawing.Size(100, 22);
+            this.textBox116.Size = new System.Drawing.Size(100, 20);
             this.textBox116.TabIndex = 67;
             // 
             // textBox117
             // 
             this.textBox117.Location = new System.Drawing.Point(212, 67);
             this.textBox117.Name = "textBox117";
-            this.textBox117.Size = new System.Drawing.Size(100, 22);
+            this.textBox117.Size = new System.Drawing.Size(100, 20);
             this.textBox117.TabIndex = 66;
             // 
             // textBox118
             // 
             this.textBox118.Location = new System.Drawing.Point(212, 35);
             this.textBox118.Name = "textBox118";
-            this.textBox118.Size = new System.Drawing.Size(100, 22);
+            this.textBox118.Size = new System.Drawing.Size(100, 20);
             this.textBox118.TabIndex = 65;
             // 
             // textBox119
             // 
             this.textBox119.Location = new System.Drawing.Point(35, 67);
             this.textBox119.Name = "textBox119";
-            this.textBox119.Size = new System.Drawing.Size(53, 22);
+            this.textBox119.Size = new System.Drawing.Size(53, 20);
             this.textBox119.TabIndex = 64;
             // 
             // textBox120
             // 
             this.textBox120.Location = new System.Drawing.Point(35, 35);
             this.textBox120.Name = "textBox120";
-            this.textBox120.Size = new System.Drawing.Size(53, 22);
+            this.textBox120.Size = new System.Drawing.Size(53, 20);
             this.textBox120.TabIndex = 63;
             // 
             // label3
@@ -1798,7 +1818,7 @@ namespace His.Formulario
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(6, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 17);
+            this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 62;
             this.label3.Text = "AM";
             // 
@@ -1808,7 +1828,7 @@ namespace His.Formulario
             this.label68.BackColor = System.Drawing.Color.Transparent;
             this.label68.Location = new System.Drawing.Point(6, 67);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(28, 17);
+            this.label68.Size = new System.Drawing.Size(23, 13);
             this.label68.TabIndex = 61;
             this.label68.Text = "PM";
             // 
@@ -1819,7 +1839,7 @@ namespace His.Formulario
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.Location = new System.Drawing.Point(462, 9);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(134, 15);
+            this.label69.Size = new System.Drawing.Size(108, 12);
             this.label69.TabIndex = 57;
             this.label69.Text = "PRESION DIASTÓNICA";
             // 
@@ -1830,7 +1850,7 @@ namespace His.Formulario
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.Location = new System.Drawing.Point(341, 9);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(126, 15);
+            this.label70.Size = new System.Drawing.Size(100, 12);
             this.label70.TabIndex = 56;
             this.label70.Text = "PRESION SISTÓNICA";
             // 
@@ -1841,7 +1861,7 @@ namespace His.Formulario
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.Location = new System.Drawing.Point(211, 9);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(139, 15);
+            this.label71.Size = new System.Drawing.Size(110, 12);
             this.label71.TabIndex = 55;
             this.label71.Text = "F.RESPIRATORIA X min";
             // 
@@ -1874,28 +1894,28 @@ namespace His.Formulario
             // 
             this.textBox121.Location = new System.Drawing.Point(151, 35);
             this.textBox121.Name = "textBox121";
-            this.textBox121.Size = new System.Drawing.Size(45, 22);
+            this.textBox121.Size = new System.Drawing.Size(45, 20);
             this.textBox121.TabIndex = 101;
             // 
             // textBox122
             // 
             this.textBox122.Location = new System.Drawing.Point(151, 67);
             this.textBox122.Name = "textBox122";
-            this.textBox122.Size = new System.Drawing.Size(45, 22);
+            this.textBox122.Size = new System.Drawing.Size(45, 20);
             this.textBox122.TabIndex = 100;
             // 
             // textBox123
             // 
             this.textBox123.Location = new System.Drawing.Point(96, 67);
             this.textBox123.Name = "textBox123";
-            this.textBox123.Size = new System.Drawing.Size(45, 22);
+            this.textBox123.Size = new System.Drawing.Size(45, 20);
             this.textBox123.TabIndex = 99;
             // 
             // textBox124
             // 
             this.textBox124.Location = new System.Drawing.Point(96, 35);
             this.textBox124.Name = "textBox124";
-            this.textBox124.Size = new System.Drawing.Size(45, 22);
+            this.textBox124.Size = new System.Drawing.Size(45, 20);
             this.textBox124.TabIndex = 98;
             // 
             // label72
@@ -1905,7 +1925,7 @@ namespace His.Formulario
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.Location = new System.Drawing.Point(102, 9);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(48, 15);
+            this.label72.Size = new System.Drawing.Size(36, 12);
             this.label72.TabIndex = 97;
             this.label72.Text = "PULSO";
             // 
@@ -1916,7 +1936,7 @@ namespace His.Formulario
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(158, 9);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(44, 15);
+            this.label73.Size = new System.Drawing.Size(34, 12);
             this.label73.TabIndex = 96;
             this.label73.Text = "TEMP.";
             // 
@@ -1924,56 +1944,56 @@ namespace His.Formulario
             // 
             this.textBox125.Location = new System.Drawing.Point(465, 68);
             this.textBox125.Name = "textBox125";
-            this.textBox125.Size = new System.Drawing.Size(100, 22);
+            this.textBox125.Size = new System.Drawing.Size(100, 20);
             this.textBox125.TabIndex = 95;
             // 
             // textBox126
             // 
             this.textBox126.Location = new System.Drawing.Point(465, 35);
             this.textBox126.Name = "textBox126";
-            this.textBox126.Size = new System.Drawing.Size(100, 22);
+            this.textBox126.Size = new System.Drawing.Size(100, 20);
             this.textBox126.TabIndex = 94;
             // 
             // textBox127
             // 
             this.textBox127.Location = new System.Drawing.Point(338, 35);
             this.textBox127.Name = "textBox127";
-            this.textBox127.Size = new System.Drawing.Size(100, 22);
+            this.textBox127.Size = new System.Drawing.Size(100, 20);
             this.textBox127.TabIndex = 93;
             // 
             // textBox128
             // 
             this.textBox128.Location = new System.Drawing.Point(338, 68);
             this.textBox128.Name = "textBox128";
-            this.textBox128.Size = new System.Drawing.Size(100, 22);
+            this.textBox128.Size = new System.Drawing.Size(100, 20);
             this.textBox128.TabIndex = 92;
             // 
             // textBox129
             // 
             this.textBox129.Location = new System.Drawing.Point(212, 67);
             this.textBox129.Name = "textBox129";
-            this.textBox129.Size = new System.Drawing.Size(100, 22);
+            this.textBox129.Size = new System.Drawing.Size(100, 20);
             this.textBox129.TabIndex = 91;
             // 
             // textBox130
             // 
             this.textBox130.Location = new System.Drawing.Point(212, 35);
             this.textBox130.Name = "textBox130";
-            this.textBox130.Size = new System.Drawing.Size(100, 22);
+            this.textBox130.Size = new System.Drawing.Size(100, 20);
             this.textBox130.TabIndex = 90;
             // 
             // textBox131
             // 
             this.textBox131.Location = new System.Drawing.Point(35, 67);
             this.textBox131.Name = "textBox131";
-            this.textBox131.Size = new System.Drawing.Size(53, 22);
+            this.textBox131.Size = new System.Drawing.Size(53, 20);
             this.textBox131.TabIndex = 89;
             // 
             // textBox132
             // 
             this.textBox132.Location = new System.Drawing.Point(35, 35);
             this.textBox132.Name = "textBox132";
-            this.textBox132.Size = new System.Drawing.Size(53, 22);
+            this.textBox132.Size = new System.Drawing.Size(53, 20);
             this.textBox132.TabIndex = 88;
             // 
             // label74
@@ -1982,7 +2002,7 @@ namespace His.Formulario
             this.label74.BackColor = System.Drawing.Color.Transparent;
             this.label74.Location = new System.Drawing.Point(6, 38);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(28, 17);
+            this.label74.Size = new System.Drawing.Size(23, 13);
             this.label74.TabIndex = 87;
             this.label74.Text = "AM";
             // 
@@ -1992,7 +2012,7 @@ namespace His.Formulario
             this.label75.BackColor = System.Drawing.Color.Transparent;
             this.label75.Location = new System.Drawing.Point(6, 67);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(28, 17);
+            this.label75.Size = new System.Drawing.Size(23, 13);
             this.label75.TabIndex = 86;
             this.label75.Text = "PM";
             // 
@@ -2003,7 +2023,7 @@ namespace His.Formulario
             this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label76.Location = new System.Drawing.Point(462, 9);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(134, 15);
+            this.label76.Size = new System.Drawing.Size(108, 12);
             this.label76.TabIndex = 85;
             this.label76.Text = "PRESION DIASTÓNICA";
             // 
@@ -2014,7 +2034,7 @@ namespace His.Formulario
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label77.Location = new System.Drawing.Point(341, 9);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(126, 15);
+            this.label77.Size = new System.Drawing.Size(100, 12);
             this.label77.TabIndex = 84;
             this.label77.Text = "PRESION SISTÓNICA";
             // 
@@ -2025,7 +2045,7 @@ namespace His.Formulario
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label78.Location = new System.Drawing.Point(211, 9);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(139, 15);
+            this.label78.Size = new System.Drawing.Size(110, 12);
             this.label78.TabIndex = 83;
             this.label78.Text = "F.RESPIRATORIA X min";
             // 
@@ -2058,28 +2078,28 @@ namespace His.Formulario
             // 
             this.textBox133.Location = new System.Drawing.Point(151, 35);
             this.textBox133.Name = "textBox133";
-            this.textBox133.Size = new System.Drawing.Size(45, 22);
+            this.textBox133.Size = new System.Drawing.Size(45, 20);
             this.textBox133.TabIndex = 101;
             // 
             // textBox134
             // 
             this.textBox134.Location = new System.Drawing.Point(151, 67);
             this.textBox134.Name = "textBox134";
-            this.textBox134.Size = new System.Drawing.Size(45, 22);
+            this.textBox134.Size = new System.Drawing.Size(45, 20);
             this.textBox134.TabIndex = 100;
             // 
             // textBox135
             // 
             this.textBox135.Location = new System.Drawing.Point(96, 67);
             this.textBox135.Name = "textBox135";
-            this.textBox135.Size = new System.Drawing.Size(45, 22);
+            this.textBox135.Size = new System.Drawing.Size(45, 20);
             this.textBox135.TabIndex = 99;
             // 
             // textBox136
             // 
             this.textBox136.Location = new System.Drawing.Point(96, 35);
             this.textBox136.Name = "textBox136";
-            this.textBox136.Size = new System.Drawing.Size(45, 22);
+            this.textBox136.Size = new System.Drawing.Size(45, 20);
             this.textBox136.TabIndex = 98;
             // 
             // label79
@@ -2089,7 +2109,7 @@ namespace His.Formulario
             this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label79.Location = new System.Drawing.Point(102, 9);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(48, 15);
+            this.label79.Size = new System.Drawing.Size(36, 12);
             this.label79.TabIndex = 97;
             this.label79.Text = "PULSO";
             // 
@@ -2100,7 +2120,7 @@ namespace His.Formulario
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.Location = new System.Drawing.Point(158, 9);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(44, 15);
+            this.label80.Size = new System.Drawing.Size(34, 12);
             this.label80.TabIndex = 96;
             this.label80.Text = "TEMP.";
             // 
@@ -2108,56 +2128,56 @@ namespace His.Formulario
             // 
             this.textBox137.Location = new System.Drawing.Point(465, 68);
             this.textBox137.Name = "textBox137";
-            this.textBox137.Size = new System.Drawing.Size(100, 22);
+            this.textBox137.Size = new System.Drawing.Size(100, 20);
             this.textBox137.TabIndex = 95;
             // 
             // textBox138
             // 
             this.textBox138.Location = new System.Drawing.Point(465, 35);
             this.textBox138.Name = "textBox138";
-            this.textBox138.Size = new System.Drawing.Size(100, 22);
+            this.textBox138.Size = new System.Drawing.Size(100, 20);
             this.textBox138.TabIndex = 94;
             // 
             // textBox139
             // 
             this.textBox139.Location = new System.Drawing.Point(338, 35);
             this.textBox139.Name = "textBox139";
-            this.textBox139.Size = new System.Drawing.Size(100, 22);
+            this.textBox139.Size = new System.Drawing.Size(100, 20);
             this.textBox139.TabIndex = 93;
             // 
             // textBox140
             // 
             this.textBox140.Location = new System.Drawing.Point(338, 68);
             this.textBox140.Name = "textBox140";
-            this.textBox140.Size = new System.Drawing.Size(100, 22);
+            this.textBox140.Size = new System.Drawing.Size(100, 20);
             this.textBox140.TabIndex = 92;
             // 
             // textBox141
             // 
             this.textBox141.Location = new System.Drawing.Point(212, 67);
             this.textBox141.Name = "textBox141";
-            this.textBox141.Size = new System.Drawing.Size(100, 22);
+            this.textBox141.Size = new System.Drawing.Size(100, 20);
             this.textBox141.TabIndex = 91;
             // 
             // textBox142
             // 
             this.textBox142.Location = new System.Drawing.Point(212, 35);
             this.textBox142.Name = "textBox142";
-            this.textBox142.Size = new System.Drawing.Size(100, 22);
+            this.textBox142.Size = new System.Drawing.Size(100, 20);
             this.textBox142.TabIndex = 90;
             // 
             // textBox143
             // 
             this.textBox143.Location = new System.Drawing.Point(35, 67);
             this.textBox143.Name = "textBox143";
-            this.textBox143.Size = new System.Drawing.Size(53, 22);
+            this.textBox143.Size = new System.Drawing.Size(53, 20);
             this.textBox143.TabIndex = 89;
             // 
             // textBox144
             // 
             this.textBox144.Location = new System.Drawing.Point(35, 35);
             this.textBox144.Name = "textBox144";
-            this.textBox144.Size = new System.Drawing.Size(53, 22);
+            this.textBox144.Size = new System.Drawing.Size(53, 20);
             this.textBox144.TabIndex = 88;
             // 
             // label81
@@ -2166,7 +2186,7 @@ namespace His.Formulario
             this.label81.BackColor = System.Drawing.Color.Transparent;
             this.label81.Location = new System.Drawing.Point(6, 38);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(28, 17);
+            this.label81.Size = new System.Drawing.Size(23, 13);
             this.label81.TabIndex = 87;
             this.label81.Text = "AM";
             // 
@@ -2176,7 +2196,7 @@ namespace His.Formulario
             this.label82.BackColor = System.Drawing.Color.Transparent;
             this.label82.Location = new System.Drawing.Point(6, 67);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(28, 17);
+            this.label82.Size = new System.Drawing.Size(23, 13);
             this.label82.TabIndex = 86;
             this.label82.Text = "PM";
             // 
@@ -2187,7 +2207,7 @@ namespace His.Formulario
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label83.Location = new System.Drawing.Point(462, 9);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(134, 15);
+            this.label83.Size = new System.Drawing.Size(108, 12);
             this.label83.TabIndex = 85;
             this.label83.Text = "PRESION DIASTÓNICA";
             // 
@@ -2198,7 +2218,7 @@ namespace His.Formulario
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label84.Location = new System.Drawing.Point(341, 9);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(126, 15);
+            this.label84.Size = new System.Drawing.Size(100, 12);
             this.label84.TabIndex = 84;
             this.label84.Text = "PRESION SISTÓNICA";
             // 
@@ -2209,7 +2229,7 @@ namespace His.Formulario
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.Location = new System.Drawing.Point(211, 9);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(139, 15);
+            this.label85.Size = new System.Drawing.Size(110, 12);
             this.label85.TabIndex = 83;
             this.label85.Text = "F.RESPIRATORIA X min";
             // 
@@ -2242,28 +2262,28 @@ namespace His.Formulario
             // 
             this.textBox145.Location = new System.Drawing.Point(151, 35);
             this.textBox145.Name = "textBox145";
-            this.textBox145.Size = new System.Drawing.Size(45, 22);
+            this.textBox145.Size = new System.Drawing.Size(45, 20);
             this.textBox145.TabIndex = 101;
             // 
             // textBox146
             // 
             this.textBox146.Location = new System.Drawing.Point(151, 67);
             this.textBox146.Name = "textBox146";
-            this.textBox146.Size = new System.Drawing.Size(45, 22);
+            this.textBox146.Size = new System.Drawing.Size(45, 20);
             this.textBox146.TabIndex = 100;
             // 
             // textBox147
             // 
             this.textBox147.Location = new System.Drawing.Point(96, 67);
             this.textBox147.Name = "textBox147";
-            this.textBox147.Size = new System.Drawing.Size(45, 22);
+            this.textBox147.Size = new System.Drawing.Size(45, 20);
             this.textBox147.TabIndex = 99;
             // 
             // textBox148
             // 
             this.textBox148.Location = new System.Drawing.Point(96, 35);
             this.textBox148.Name = "textBox148";
-            this.textBox148.Size = new System.Drawing.Size(45, 22);
+            this.textBox148.Size = new System.Drawing.Size(45, 20);
             this.textBox148.TabIndex = 98;
             // 
             // label86
@@ -2273,7 +2293,7 @@ namespace His.Formulario
             this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label86.Location = new System.Drawing.Point(102, 9);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(48, 15);
+            this.label86.Size = new System.Drawing.Size(36, 12);
             this.label86.TabIndex = 97;
             this.label86.Text = "PULSO";
             // 
@@ -2284,7 +2304,7 @@ namespace His.Formulario
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label87.Location = new System.Drawing.Point(158, 9);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(44, 15);
+            this.label87.Size = new System.Drawing.Size(34, 12);
             this.label87.TabIndex = 96;
             this.label87.Text = "TEMP.";
             // 
@@ -2292,56 +2312,56 @@ namespace His.Formulario
             // 
             this.textBox149.Location = new System.Drawing.Point(465, 68);
             this.textBox149.Name = "textBox149";
-            this.textBox149.Size = new System.Drawing.Size(100, 22);
+            this.textBox149.Size = new System.Drawing.Size(100, 20);
             this.textBox149.TabIndex = 95;
             // 
             // textBox150
             // 
             this.textBox150.Location = new System.Drawing.Point(465, 35);
             this.textBox150.Name = "textBox150";
-            this.textBox150.Size = new System.Drawing.Size(100, 22);
+            this.textBox150.Size = new System.Drawing.Size(100, 20);
             this.textBox150.TabIndex = 94;
             // 
             // textBox151
             // 
             this.textBox151.Location = new System.Drawing.Point(338, 35);
             this.textBox151.Name = "textBox151";
-            this.textBox151.Size = new System.Drawing.Size(100, 22);
+            this.textBox151.Size = new System.Drawing.Size(100, 20);
             this.textBox151.TabIndex = 93;
             // 
             // textBox152
             // 
             this.textBox152.Location = new System.Drawing.Point(338, 68);
             this.textBox152.Name = "textBox152";
-            this.textBox152.Size = new System.Drawing.Size(100, 22);
+            this.textBox152.Size = new System.Drawing.Size(100, 20);
             this.textBox152.TabIndex = 92;
             // 
             // textBox153
             // 
             this.textBox153.Location = new System.Drawing.Point(212, 67);
             this.textBox153.Name = "textBox153";
-            this.textBox153.Size = new System.Drawing.Size(100, 22);
+            this.textBox153.Size = new System.Drawing.Size(100, 20);
             this.textBox153.TabIndex = 91;
             // 
             // textBox154
             // 
             this.textBox154.Location = new System.Drawing.Point(212, 35);
             this.textBox154.Name = "textBox154";
-            this.textBox154.Size = new System.Drawing.Size(100, 22);
+            this.textBox154.Size = new System.Drawing.Size(100, 20);
             this.textBox154.TabIndex = 90;
             // 
             // textBox155
             // 
             this.textBox155.Location = new System.Drawing.Point(35, 67);
             this.textBox155.Name = "textBox155";
-            this.textBox155.Size = new System.Drawing.Size(53, 22);
+            this.textBox155.Size = new System.Drawing.Size(53, 20);
             this.textBox155.TabIndex = 89;
             // 
             // textBox156
             // 
             this.textBox156.Location = new System.Drawing.Point(35, 35);
             this.textBox156.Name = "textBox156";
-            this.textBox156.Size = new System.Drawing.Size(53, 22);
+            this.textBox156.Size = new System.Drawing.Size(53, 20);
             this.textBox156.TabIndex = 88;
             // 
             // label88
@@ -2350,7 +2370,7 @@ namespace His.Formulario
             this.label88.BackColor = System.Drawing.Color.Transparent;
             this.label88.Location = new System.Drawing.Point(6, 38);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(28, 17);
+            this.label88.Size = new System.Drawing.Size(23, 13);
             this.label88.TabIndex = 87;
             this.label88.Text = "AM";
             // 
@@ -2360,7 +2380,7 @@ namespace His.Formulario
             this.label89.BackColor = System.Drawing.Color.Transparent;
             this.label89.Location = new System.Drawing.Point(6, 67);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(28, 17);
+            this.label89.Size = new System.Drawing.Size(23, 13);
             this.label89.TabIndex = 86;
             this.label89.Text = "PM";
             // 
@@ -2371,7 +2391,7 @@ namespace His.Formulario
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label90.Location = new System.Drawing.Point(462, 9);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(134, 15);
+            this.label90.Size = new System.Drawing.Size(108, 12);
             this.label90.TabIndex = 85;
             this.label90.Text = "PRESION DIASTÓNICA";
             // 
@@ -2382,7 +2402,7 @@ namespace His.Formulario
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label91.Location = new System.Drawing.Point(341, 9);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(126, 15);
+            this.label91.Size = new System.Drawing.Size(100, 12);
             this.label91.TabIndex = 84;
             this.label91.Text = "PRESION SISTÓNICA";
             // 
@@ -2393,7 +2413,7 @@ namespace His.Formulario
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label92.Location = new System.Drawing.Point(211, 9);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(139, 15);
+            this.label92.Size = new System.Drawing.Size(110, 12);
             this.label92.TabIndex = 83;
             this.label92.Text = "F.RESPIRATORIA X min";
             // 
@@ -2426,28 +2446,28 @@ namespace His.Formulario
             // 
             this.textBox157.Location = new System.Drawing.Point(151, 35);
             this.textBox157.Name = "textBox157";
-            this.textBox157.Size = new System.Drawing.Size(45, 22);
+            this.textBox157.Size = new System.Drawing.Size(45, 20);
             this.textBox157.TabIndex = 101;
             // 
             // textBox158
             // 
             this.textBox158.Location = new System.Drawing.Point(151, 67);
             this.textBox158.Name = "textBox158";
-            this.textBox158.Size = new System.Drawing.Size(45, 22);
+            this.textBox158.Size = new System.Drawing.Size(45, 20);
             this.textBox158.TabIndex = 100;
             // 
             // textBox159
             // 
             this.textBox159.Location = new System.Drawing.Point(96, 67);
             this.textBox159.Name = "textBox159";
-            this.textBox159.Size = new System.Drawing.Size(45, 22);
+            this.textBox159.Size = new System.Drawing.Size(45, 20);
             this.textBox159.TabIndex = 99;
             // 
             // textBox160
             // 
             this.textBox160.Location = new System.Drawing.Point(96, 35);
             this.textBox160.Name = "textBox160";
-            this.textBox160.Size = new System.Drawing.Size(45, 22);
+            this.textBox160.Size = new System.Drawing.Size(45, 20);
             this.textBox160.TabIndex = 98;
             // 
             // label93
@@ -2457,7 +2477,7 @@ namespace His.Formulario
             this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label93.Location = new System.Drawing.Point(102, 9);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(48, 15);
+            this.label93.Size = new System.Drawing.Size(36, 12);
             this.label93.TabIndex = 97;
             this.label93.Text = "PULSO";
             // 
@@ -2468,7 +2488,7 @@ namespace His.Formulario
             this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label94.Location = new System.Drawing.Point(158, 9);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(44, 15);
+            this.label94.Size = new System.Drawing.Size(34, 12);
             this.label94.TabIndex = 96;
             this.label94.Text = "TEMP.";
             // 
@@ -2476,56 +2496,56 @@ namespace His.Formulario
             // 
             this.textBox161.Location = new System.Drawing.Point(465, 68);
             this.textBox161.Name = "textBox161";
-            this.textBox161.Size = new System.Drawing.Size(100, 22);
+            this.textBox161.Size = new System.Drawing.Size(100, 20);
             this.textBox161.TabIndex = 95;
             // 
             // textBox162
             // 
             this.textBox162.Location = new System.Drawing.Point(465, 35);
             this.textBox162.Name = "textBox162";
-            this.textBox162.Size = new System.Drawing.Size(100, 22);
+            this.textBox162.Size = new System.Drawing.Size(100, 20);
             this.textBox162.TabIndex = 94;
             // 
             // textBox163
             // 
             this.textBox163.Location = new System.Drawing.Point(338, 35);
             this.textBox163.Name = "textBox163";
-            this.textBox163.Size = new System.Drawing.Size(100, 22);
+            this.textBox163.Size = new System.Drawing.Size(100, 20);
             this.textBox163.TabIndex = 93;
             // 
             // textBox164
             // 
             this.textBox164.Location = new System.Drawing.Point(338, 68);
             this.textBox164.Name = "textBox164";
-            this.textBox164.Size = new System.Drawing.Size(100, 22);
+            this.textBox164.Size = new System.Drawing.Size(100, 20);
             this.textBox164.TabIndex = 92;
             // 
             // textBox165
             // 
             this.textBox165.Location = new System.Drawing.Point(212, 67);
             this.textBox165.Name = "textBox165";
-            this.textBox165.Size = new System.Drawing.Size(100, 22);
+            this.textBox165.Size = new System.Drawing.Size(100, 20);
             this.textBox165.TabIndex = 91;
             // 
             // textBox166
             // 
             this.textBox166.Location = new System.Drawing.Point(212, 35);
             this.textBox166.Name = "textBox166";
-            this.textBox166.Size = new System.Drawing.Size(100, 22);
+            this.textBox166.Size = new System.Drawing.Size(100, 20);
             this.textBox166.TabIndex = 90;
             // 
             // textBox167
             // 
             this.textBox167.Location = new System.Drawing.Point(35, 67);
             this.textBox167.Name = "textBox167";
-            this.textBox167.Size = new System.Drawing.Size(53, 22);
+            this.textBox167.Size = new System.Drawing.Size(53, 20);
             this.textBox167.TabIndex = 89;
             // 
             // textBox168
             // 
             this.textBox168.Location = new System.Drawing.Point(35, 35);
             this.textBox168.Name = "textBox168";
-            this.textBox168.Size = new System.Drawing.Size(53, 22);
+            this.textBox168.Size = new System.Drawing.Size(53, 20);
             this.textBox168.TabIndex = 88;
             // 
             // label95
@@ -2534,7 +2554,7 @@ namespace His.Formulario
             this.label95.BackColor = System.Drawing.Color.Transparent;
             this.label95.Location = new System.Drawing.Point(6, 38);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(28, 17);
+            this.label95.Size = new System.Drawing.Size(23, 13);
             this.label95.TabIndex = 87;
             this.label95.Text = "AM";
             // 
@@ -2544,7 +2564,7 @@ namespace His.Formulario
             this.label96.BackColor = System.Drawing.Color.Transparent;
             this.label96.Location = new System.Drawing.Point(6, 67);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(28, 17);
+            this.label96.Size = new System.Drawing.Size(23, 13);
             this.label96.TabIndex = 86;
             this.label96.Text = "PM";
             // 
@@ -2555,7 +2575,7 @@ namespace His.Formulario
             this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label97.Location = new System.Drawing.Point(462, 9);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(134, 15);
+            this.label97.Size = new System.Drawing.Size(108, 12);
             this.label97.TabIndex = 85;
             this.label97.Text = "PRESION DIASTÓNICA";
             // 
@@ -2566,7 +2586,7 @@ namespace His.Formulario
             this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label98.Location = new System.Drawing.Point(341, 9);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(126, 15);
+            this.label98.Size = new System.Drawing.Size(100, 12);
             this.label98.TabIndex = 84;
             this.label98.Text = "PRESION SISTÓNICA";
             // 
@@ -2577,7 +2597,7 @@ namespace His.Formulario
             this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label99.Location = new System.Drawing.Point(211, 9);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(139, 15);
+            this.label99.Size = new System.Drawing.Size(110, 12);
             this.label99.TabIndex = 83;
             this.label99.Text = "F.RESPIRATORIA X min";
             // 
@@ -2610,28 +2630,28 @@ namespace His.Formulario
             // 
             this.textBox169.Location = new System.Drawing.Point(151, 35);
             this.textBox169.Name = "textBox169";
-            this.textBox169.Size = new System.Drawing.Size(45, 22);
+            this.textBox169.Size = new System.Drawing.Size(45, 20);
             this.textBox169.TabIndex = 101;
             // 
             // textBox170
             // 
             this.textBox170.Location = new System.Drawing.Point(151, 67);
             this.textBox170.Name = "textBox170";
-            this.textBox170.Size = new System.Drawing.Size(45, 22);
+            this.textBox170.Size = new System.Drawing.Size(45, 20);
             this.textBox170.TabIndex = 100;
             // 
             // textBox171
             // 
             this.textBox171.Location = new System.Drawing.Point(96, 67);
             this.textBox171.Name = "textBox171";
-            this.textBox171.Size = new System.Drawing.Size(45, 22);
+            this.textBox171.Size = new System.Drawing.Size(45, 20);
             this.textBox171.TabIndex = 99;
             // 
             // textBox172
             // 
             this.textBox172.Location = new System.Drawing.Point(96, 35);
             this.textBox172.Name = "textBox172";
-            this.textBox172.Size = new System.Drawing.Size(45, 22);
+            this.textBox172.Size = new System.Drawing.Size(45, 20);
             this.textBox172.TabIndex = 98;
             // 
             // label100
@@ -2641,7 +2661,7 @@ namespace His.Formulario
             this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label100.Location = new System.Drawing.Point(102, 9);
             this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(48, 15);
+            this.label100.Size = new System.Drawing.Size(36, 12);
             this.label100.TabIndex = 97;
             this.label100.Text = "PULSO";
             // 
@@ -2652,7 +2672,7 @@ namespace His.Formulario
             this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label101.Location = new System.Drawing.Point(158, 9);
             this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(44, 15);
+            this.label101.Size = new System.Drawing.Size(34, 12);
             this.label101.TabIndex = 96;
             this.label101.Text = "TEMP.";
             // 
@@ -2660,56 +2680,56 @@ namespace His.Formulario
             // 
             this.textBox173.Location = new System.Drawing.Point(465, 68);
             this.textBox173.Name = "textBox173";
-            this.textBox173.Size = new System.Drawing.Size(100, 22);
+            this.textBox173.Size = new System.Drawing.Size(100, 20);
             this.textBox173.TabIndex = 95;
             // 
             // textBox174
             // 
             this.textBox174.Location = new System.Drawing.Point(465, 35);
             this.textBox174.Name = "textBox174";
-            this.textBox174.Size = new System.Drawing.Size(100, 22);
+            this.textBox174.Size = new System.Drawing.Size(100, 20);
             this.textBox174.TabIndex = 94;
             // 
             // textBox175
             // 
             this.textBox175.Location = new System.Drawing.Point(338, 35);
             this.textBox175.Name = "textBox175";
-            this.textBox175.Size = new System.Drawing.Size(100, 22);
+            this.textBox175.Size = new System.Drawing.Size(100, 20);
             this.textBox175.TabIndex = 93;
             // 
             // textBox176
             // 
             this.textBox176.Location = new System.Drawing.Point(338, 68);
             this.textBox176.Name = "textBox176";
-            this.textBox176.Size = new System.Drawing.Size(100, 22);
+            this.textBox176.Size = new System.Drawing.Size(100, 20);
             this.textBox176.TabIndex = 92;
             // 
             // textBox177
             // 
             this.textBox177.Location = new System.Drawing.Point(212, 67);
             this.textBox177.Name = "textBox177";
-            this.textBox177.Size = new System.Drawing.Size(100, 22);
+            this.textBox177.Size = new System.Drawing.Size(100, 20);
             this.textBox177.TabIndex = 91;
             // 
             // textBox178
             // 
             this.textBox178.Location = new System.Drawing.Point(212, 35);
             this.textBox178.Name = "textBox178";
-            this.textBox178.Size = new System.Drawing.Size(100, 22);
+            this.textBox178.Size = new System.Drawing.Size(100, 20);
             this.textBox178.TabIndex = 90;
             // 
             // textBox179
             // 
             this.textBox179.Location = new System.Drawing.Point(35, 67);
             this.textBox179.Name = "textBox179";
-            this.textBox179.Size = new System.Drawing.Size(53, 22);
+            this.textBox179.Size = new System.Drawing.Size(53, 20);
             this.textBox179.TabIndex = 89;
             // 
             // textBox180
             // 
             this.textBox180.Location = new System.Drawing.Point(35, 35);
             this.textBox180.Name = "textBox180";
-            this.textBox180.Size = new System.Drawing.Size(53, 22);
+            this.textBox180.Size = new System.Drawing.Size(53, 20);
             this.textBox180.TabIndex = 88;
             // 
             // label102
@@ -2718,7 +2738,7 @@ namespace His.Formulario
             this.label102.BackColor = System.Drawing.Color.Transparent;
             this.label102.Location = new System.Drawing.Point(6, 38);
             this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(28, 17);
+            this.label102.Size = new System.Drawing.Size(23, 13);
             this.label102.TabIndex = 87;
             this.label102.Text = "AM";
             // 
@@ -2728,7 +2748,7 @@ namespace His.Formulario
             this.label103.BackColor = System.Drawing.Color.Transparent;
             this.label103.Location = new System.Drawing.Point(6, 67);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(28, 17);
+            this.label103.Size = new System.Drawing.Size(23, 13);
             this.label103.TabIndex = 86;
             this.label103.Text = "PM";
             // 
@@ -2739,7 +2759,7 @@ namespace His.Formulario
             this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label104.Location = new System.Drawing.Point(462, 9);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(134, 15);
+            this.label104.Size = new System.Drawing.Size(108, 12);
             this.label104.TabIndex = 85;
             this.label104.Text = "PRESION DIASTÓNICA";
             // 
@@ -2750,7 +2770,7 @@ namespace His.Formulario
             this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label105.Location = new System.Drawing.Point(341, 9);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(126, 15);
+            this.label105.Size = new System.Drawing.Size(100, 12);
             this.label105.TabIndex = 84;
             this.label105.Text = "PRESION SISTÓNICA";
             // 
@@ -2761,7 +2781,7 @@ namespace His.Formulario
             this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label106.Location = new System.Drawing.Point(211, 9);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(139, 15);
+            this.label106.Size = new System.Drawing.Size(110, 12);
             this.label106.TabIndex = 83;
             this.label106.Text = "F.RESPIRATORIA X min";
             // 
@@ -2794,28 +2814,28 @@ namespace His.Formulario
             // 
             this.textBox181.Location = new System.Drawing.Point(151, 35);
             this.textBox181.Name = "textBox181";
-            this.textBox181.Size = new System.Drawing.Size(45, 22);
+            this.textBox181.Size = new System.Drawing.Size(45, 20);
             this.textBox181.TabIndex = 101;
             // 
             // textBox182
             // 
             this.textBox182.Location = new System.Drawing.Point(151, 67);
             this.textBox182.Name = "textBox182";
-            this.textBox182.Size = new System.Drawing.Size(45, 22);
+            this.textBox182.Size = new System.Drawing.Size(45, 20);
             this.textBox182.TabIndex = 100;
             // 
             // textBox183
             // 
             this.textBox183.Location = new System.Drawing.Point(96, 67);
             this.textBox183.Name = "textBox183";
-            this.textBox183.Size = new System.Drawing.Size(45, 22);
+            this.textBox183.Size = new System.Drawing.Size(45, 20);
             this.textBox183.TabIndex = 99;
             // 
             // textBox184
             // 
             this.textBox184.Location = new System.Drawing.Point(96, 35);
             this.textBox184.Name = "textBox184";
-            this.textBox184.Size = new System.Drawing.Size(45, 22);
+            this.textBox184.Size = new System.Drawing.Size(45, 20);
             this.textBox184.TabIndex = 98;
             // 
             // label107
@@ -2825,7 +2845,7 @@ namespace His.Formulario
             this.label107.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label107.Location = new System.Drawing.Point(102, 9);
             this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(48, 15);
+            this.label107.Size = new System.Drawing.Size(36, 12);
             this.label107.TabIndex = 97;
             this.label107.Text = "PULSO";
             // 
@@ -2836,7 +2856,7 @@ namespace His.Formulario
             this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label108.Location = new System.Drawing.Point(158, 9);
             this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(44, 15);
+            this.label108.Size = new System.Drawing.Size(34, 12);
             this.label108.TabIndex = 96;
             this.label108.Text = "TEMP.";
             // 
@@ -2844,56 +2864,56 @@ namespace His.Formulario
             // 
             this.textBox185.Location = new System.Drawing.Point(465, 68);
             this.textBox185.Name = "textBox185";
-            this.textBox185.Size = new System.Drawing.Size(100, 22);
+            this.textBox185.Size = new System.Drawing.Size(100, 20);
             this.textBox185.TabIndex = 95;
             // 
             // textBox186
             // 
             this.textBox186.Location = new System.Drawing.Point(465, 35);
             this.textBox186.Name = "textBox186";
-            this.textBox186.Size = new System.Drawing.Size(100, 22);
+            this.textBox186.Size = new System.Drawing.Size(100, 20);
             this.textBox186.TabIndex = 94;
             // 
             // textBox187
             // 
             this.textBox187.Location = new System.Drawing.Point(338, 35);
             this.textBox187.Name = "textBox187";
-            this.textBox187.Size = new System.Drawing.Size(100, 22);
+            this.textBox187.Size = new System.Drawing.Size(100, 20);
             this.textBox187.TabIndex = 93;
             // 
             // textBox188
             // 
             this.textBox188.Location = new System.Drawing.Point(338, 68);
             this.textBox188.Name = "textBox188";
-            this.textBox188.Size = new System.Drawing.Size(100, 22);
+            this.textBox188.Size = new System.Drawing.Size(100, 20);
             this.textBox188.TabIndex = 92;
             // 
             // textBox189
             // 
             this.textBox189.Location = new System.Drawing.Point(212, 67);
             this.textBox189.Name = "textBox189";
-            this.textBox189.Size = new System.Drawing.Size(100, 22);
+            this.textBox189.Size = new System.Drawing.Size(100, 20);
             this.textBox189.TabIndex = 91;
             // 
             // textBox190
             // 
             this.textBox190.Location = new System.Drawing.Point(212, 35);
             this.textBox190.Name = "textBox190";
-            this.textBox190.Size = new System.Drawing.Size(100, 22);
+            this.textBox190.Size = new System.Drawing.Size(100, 20);
             this.textBox190.TabIndex = 90;
             // 
             // textBox191
             // 
             this.textBox191.Location = new System.Drawing.Point(35, 67);
             this.textBox191.Name = "textBox191";
-            this.textBox191.Size = new System.Drawing.Size(53, 22);
+            this.textBox191.Size = new System.Drawing.Size(53, 20);
             this.textBox191.TabIndex = 89;
             // 
             // textBox192
             // 
             this.textBox192.Location = new System.Drawing.Point(35, 35);
             this.textBox192.Name = "textBox192";
-            this.textBox192.Size = new System.Drawing.Size(53, 22);
+            this.textBox192.Size = new System.Drawing.Size(53, 20);
             this.textBox192.TabIndex = 88;
             // 
             // label109
@@ -2902,7 +2922,7 @@ namespace His.Formulario
             this.label109.BackColor = System.Drawing.Color.Transparent;
             this.label109.Location = new System.Drawing.Point(6, 38);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(28, 17);
+            this.label109.Size = new System.Drawing.Size(23, 13);
             this.label109.TabIndex = 87;
             this.label109.Text = "AM";
             // 
@@ -2912,7 +2932,7 @@ namespace His.Formulario
             this.label110.BackColor = System.Drawing.Color.Transparent;
             this.label110.Location = new System.Drawing.Point(6, 67);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(28, 17);
+            this.label110.Size = new System.Drawing.Size(23, 13);
             this.label110.TabIndex = 86;
             this.label110.Text = "PM";
             // 
@@ -2923,7 +2943,7 @@ namespace His.Formulario
             this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label111.Location = new System.Drawing.Point(462, 9);
             this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(134, 15);
+            this.label111.Size = new System.Drawing.Size(108, 12);
             this.label111.TabIndex = 85;
             this.label111.Text = "PRESION DIASTÓNICA";
             // 
@@ -2934,7 +2954,7 @@ namespace His.Formulario
             this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label112.Location = new System.Drawing.Point(341, 9);
             this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(126, 15);
+            this.label112.Size = new System.Drawing.Size(100, 12);
             this.label112.TabIndex = 84;
             this.label112.Text = "PRESION SISTÓNICA";
             // 
@@ -2945,7 +2965,7 @@ namespace His.Formulario
             this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label113.Location = new System.Drawing.Point(211, 9);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(139, 15);
+            this.label113.Size = new System.Drawing.Size(110, 12);
             this.label113.TabIndex = 83;
             this.label113.Text = "F.RESPIRATORIA X min";
             // 
@@ -2978,28 +2998,28 @@ namespace His.Formulario
             // 
             this.textBox193.Location = new System.Drawing.Point(151, 35);
             this.textBox193.Name = "textBox193";
-            this.textBox193.Size = new System.Drawing.Size(45, 22);
+            this.textBox193.Size = new System.Drawing.Size(45, 20);
             this.textBox193.TabIndex = 101;
             // 
             // textBox194
             // 
             this.textBox194.Location = new System.Drawing.Point(151, 67);
             this.textBox194.Name = "textBox194";
-            this.textBox194.Size = new System.Drawing.Size(45, 22);
+            this.textBox194.Size = new System.Drawing.Size(45, 20);
             this.textBox194.TabIndex = 100;
             // 
             // textBox195
             // 
             this.textBox195.Location = new System.Drawing.Point(96, 67);
             this.textBox195.Name = "textBox195";
-            this.textBox195.Size = new System.Drawing.Size(45, 22);
+            this.textBox195.Size = new System.Drawing.Size(45, 20);
             this.textBox195.TabIndex = 99;
             // 
             // textBox196
             // 
             this.textBox196.Location = new System.Drawing.Point(96, 35);
             this.textBox196.Name = "textBox196";
-            this.textBox196.Size = new System.Drawing.Size(45, 22);
+            this.textBox196.Size = new System.Drawing.Size(45, 20);
             this.textBox196.TabIndex = 98;
             // 
             // label114
@@ -3009,7 +3029,7 @@ namespace His.Formulario
             this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label114.Location = new System.Drawing.Point(102, 9);
             this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(48, 15);
+            this.label114.Size = new System.Drawing.Size(36, 12);
             this.label114.TabIndex = 97;
             this.label114.Text = "PULSO";
             // 
@@ -3020,7 +3040,7 @@ namespace His.Formulario
             this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label115.Location = new System.Drawing.Point(158, 9);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(44, 15);
+            this.label115.Size = new System.Drawing.Size(34, 12);
             this.label115.TabIndex = 96;
             this.label115.Text = "TEMP.";
             // 
@@ -3028,56 +3048,56 @@ namespace His.Formulario
             // 
             this.textBox197.Location = new System.Drawing.Point(465, 68);
             this.textBox197.Name = "textBox197";
-            this.textBox197.Size = new System.Drawing.Size(100, 22);
+            this.textBox197.Size = new System.Drawing.Size(100, 20);
             this.textBox197.TabIndex = 95;
             // 
             // textBox198
             // 
             this.textBox198.Location = new System.Drawing.Point(465, 35);
             this.textBox198.Name = "textBox198";
-            this.textBox198.Size = new System.Drawing.Size(100, 22);
+            this.textBox198.Size = new System.Drawing.Size(100, 20);
             this.textBox198.TabIndex = 94;
             // 
             // textBox199
             // 
             this.textBox199.Location = new System.Drawing.Point(338, 35);
             this.textBox199.Name = "textBox199";
-            this.textBox199.Size = new System.Drawing.Size(100, 22);
+            this.textBox199.Size = new System.Drawing.Size(100, 20);
             this.textBox199.TabIndex = 93;
             // 
             // textBox200
             // 
             this.textBox200.Location = new System.Drawing.Point(338, 68);
             this.textBox200.Name = "textBox200";
-            this.textBox200.Size = new System.Drawing.Size(100, 22);
+            this.textBox200.Size = new System.Drawing.Size(100, 20);
             this.textBox200.TabIndex = 92;
             // 
             // textBox201
             // 
             this.textBox201.Location = new System.Drawing.Point(212, 67);
             this.textBox201.Name = "textBox201";
-            this.textBox201.Size = new System.Drawing.Size(100, 22);
+            this.textBox201.Size = new System.Drawing.Size(100, 20);
             this.textBox201.TabIndex = 91;
             // 
             // textBox202
             // 
             this.textBox202.Location = new System.Drawing.Point(212, 35);
             this.textBox202.Name = "textBox202";
-            this.textBox202.Size = new System.Drawing.Size(100, 22);
+            this.textBox202.Size = new System.Drawing.Size(100, 20);
             this.textBox202.TabIndex = 90;
             // 
             // textBox203
             // 
             this.textBox203.Location = new System.Drawing.Point(35, 67);
             this.textBox203.Name = "textBox203";
-            this.textBox203.Size = new System.Drawing.Size(53, 22);
+            this.textBox203.Size = new System.Drawing.Size(53, 20);
             this.textBox203.TabIndex = 89;
             // 
             // textBox204
             // 
             this.textBox204.Location = new System.Drawing.Point(35, 35);
             this.textBox204.Name = "textBox204";
-            this.textBox204.Size = new System.Drawing.Size(53, 22);
+            this.textBox204.Size = new System.Drawing.Size(53, 20);
             this.textBox204.TabIndex = 88;
             // 
             // label116
@@ -3086,7 +3106,7 @@ namespace His.Formulario
             this.label116.BackColor = System.Drawing.Color.Transparent;
             this.label116.Location = new System.Drawing.Point(6, 38);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(28, 17);
+            this.label116.Size = new System.Drawing.Size(23, 13);
             this.label116.TabIndex = 87;
             this.label116.Text = "AM";
             // 
@@ -3096,7 +3116,7 @@ namespace His.Formulario
             this.label117.BackColor = System.Drawing.Color.Transparent;
             this.label117.Location = new System.Drawing.Point(6, 67);
             this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(28, 17);
+            this.label117.Size = new System.Drawing.Size(23, 13);
             this.label117.TabIndex = 86;
             this.label117.Text = "PM";
             // 
@@ -3107,7 +3127,7 @@ namespace His.Formulario
             this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label118.Location = new System.Drawing.Point(462, 9);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(134, 15);
+            this.label118.Size = new System.Drawing.Size(108, 12);
             this.label118.TabIndex = 85;
             this.label118.Text = "PRESION DIASTÓNICA";
             // 
@@ -3118,7 +3138,7 @@ namespace His.Formulario
             this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label119.Location = new System.Drawing.Point(341, 9);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(126, 15);
+            this.label119.Size = new System.Drawing.Size(100, 12);
             this.label119.TabIndex = 84;
             this.label119.Text = "PRESION SISTÓNICA";
             // 
@@ -3129,7 +3149,7 @@ namespace His.Formulario
             this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label120.Location = new System.Drawing.Point(211, 9);
             this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(139, 15);
+            this.label120.Size = new System.Drawing.Size(110, 12);
             this.label120.TabIndex = 83;
             this.label120.Text = "F.RESPIRATORIA X min";
             // 
@@ -3177,28 +3197,28 @@ namespace His.Formulario
             // 
             this.textBox259.Location = new System.Drawing.Point(262, 82);
             this.textBox259.Name = "textBox259";
-            this.textBox259.Size = new System.Drawing.Size(100, 22);
+            this.textBox259.Size = new System.Drawing.Size(100, 20);
             this.textBox259.TabIndex = 82;
             // 
             // textBox260
             // 
             this.textBox260.Location = new System.Drawing.Point(92, 82);
             this.textBox260.Name = "textBox260";
-            this.textBox260.Size = new System.Drawing.Size(100, 22);
+            this.textBox260.Size = new System.Drawing.Size(100, 20);
             this.textBox260.TabIndex = 81;
             // 
             // textBox261
             // 
             this.textBox261.Location = new System.Drawing.Point(262, 54);
             this.textBox261.Name = "textBox261";
-            this.textBox261.Size = new System.Drawing.Size(100, 22);
+            this.textBox261.Size = new System.Drawing.Size(100, 20);
             this.textBox261.TabIndex = 80;
             // 
             // textBox262
             // 
             this.textBox262.Location = new System.Drawing.Point(92, 54);
             this.textBox262.Name = "textBox262";
-            this.textBox262.Size = new System.Drawing.Size(100, 22);
+            this.textBox262.Size = new System.Drawing.Size(100, 20);
             this.textBox262.TabIndex = 79;
             // 
             // label166
@@ -3208,7 +3228,7 @@ namespace His.Formulario
             this.label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label166.Location = new System.Drawing.Point(105, 6);
             this.label166.Name = "label166";
-            this.label166.Size = new System.Drawing.Size(89, 15);
+            this.label166.Size = new System.Drawing.Size(70, 12);
             this.label166.TabIndex = 78;
             this.label166.Text = "INGRESOS CC";
             // 
@@ -3219,7 +3239,7 @@ namespace His.Formulario
             this.label167.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label167.Location = new System.Drawing.Point(271, 6);
             this.label167.Name = "label167";
-            this.label167.Size = new System.Drawing.Size(103, 15);
+            this.label167.Size = new System.Drawing.Size(85, 12);
             this.label167.TabIndex = 77;
             this.label167.Text = "ELIMINACION CC";
             // 
@@ -3227,14 +3247,14 @@ namespace His.Formulario
             // 
             this.textBox263.Location = new System.Drawing.Point(262, 28);
             this.textBox263.Name = "textBox263";
-            this.textBox263.Size = new System.Drawing.Size(100, 22);
+            this.textBox263.Size = new System.Drawing.Size(100, 20);
             this.textBox263.TabIndex = 70;
             // 
             // textBox264
             // 
             this.textBox264.Location = new System.Drawing.Point(92, 28);
             this.textBox264.Name = "textBox264";
-            this.textBox264.Size = new System.Drawing.Size(100, 22);
+            this.textBox264.Size = new System.Drawing.Size(100, 20);
             this.textBox264.TabIndex = 69;
             // 
             // label168
@@ -3244,7 +3264,7 @@ namespace His.Formulario
             this.label168.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label168.Location = new System.Drawing.Point(26, 85);
             this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(50, 15);
+            this.label168.Size = new System.Drawing.Size(39, 12);
             this.label168.TabIndex = 57;
             this.label168.Text = "TOTAL :";
             // 
@@ -3255,7 +3275,7 @@ namespace His.Formulario
             this.label169.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label169.Location = new System.Drawing.Point(10, 58);
             this.label169.Name = "label169";
-            this.label169.Size = new System.Drawing.Size(65, 15);
+            this.label169.Size = new System.Drawing.Size(55, 12);
             this.label169.TabIndex = 56;
             this.label169.Text = "VIA ORAL :";
             // 
@@ -3266,7 +3286,7 @@ namespace His.Formulario
             this.label170.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label170.Location = new System.Drawing.Point(7, 32);
             this.label170.Name = "label170";
-            this.label170.Size = new System.Drawing.Size(75, 15);
+            this.label170.Size = new System.Drawing.Size(60, 12);
             this.label170.TabIndex = 55;
             this.label170.Text = "PARENTAL :";
             // 
@@ -3291,28 +3311,28 @@ namespace His.Formulario
             // 
             this.textBox265.Location = new System.Drawing.Point(262, 82);
             this.textBox265.Name = "textBox265";
-            this.textBox265.Size = new System.Drawing.Size(100, 22);
+            this.textBox265.Size = new System.Drawing.Size(100, 20);
             this.textBox265.TabIndex = 93;
             // 
             // textBox266
             // 
             this.textBox266.Location = new System.Drawing.Point(92, 82);
             this.textBox266.Name = "textBox266";
-            this.textBox266.Size = new System.Drawing.Size(100, 22);
+            this.textBox266.Size = new System.Drawing.Size(100, 20);
             this.textBox266.TabIndex = 92;
             // 
             // textBox267
             // 
             this.textBox267.Location = new System.Drawing.Point(262, 54);
             this.textBox267.Name = "textBox267";
-            this.textBox267.Size = new System.Drawing.Size(100, 22);
+            this.textBox267.Size = new System.Drawing.Size(100, 20);
             this.textBox267.TabIndex = 91;
             // 
             // textBox268
             // 
             this.textBox268.Location = new System.Drawing.Point(92, 54);
             this.textBox268.Name = "textBox268";
-            this.textBox268.Size = new System.Drawing.Size(100, 22);
+            this.textBox268.Size = new System.Drawing.Size(100, 20);
             this.textBox268.TabIndex = 90;
             // 
             // label171
@@ -3322,7 +3342,7 @@ namespace His.Formulario
             this.label171.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label171.Location = new System.Drawing.Point(105, 6);
             this.label171.Name = "label171";
-            this.label171.Size = new System.Drawing.Size(89, 15);
+            this.label171.Size = new System.Drawing.Size(70, 12);
             this.label171.TabIndex = 89;
             this.label171.Text = "INGRESOS CC";
             // 
@@ -3333,7 +3353,7 @@ namespace His.Formulario
             this.label172.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label172.Location = new System.Drawing.Point(271, 6);
             this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(103, 15);
+            this.label172.Size = new System.Drawing.Size(85, 12);
             this.label172.TabIndex = 88;
             this.label172.Text = "ELIMINACION CC";
             // 
@@ -3341,14 +3361,14 @@ namespace His.Formulario
             // 
             this.textBox269.Location = new System.Drawing.Point(262, 28);
             this.textBox269.Name = "textBox269";
-            this.textBox269.Size = new System.Drawing.Size(100, 22);
+            this.textBox269.Size = new System.Drawing.Size(100, 20);
             this.textBox269.TabIndex = 87;
             // 
             // textBox270
             // 
             this.textBox270.Location = new System.Drawing.Point(92, 28);
             this.textBox270.Name = "textBox270";
-            this.textBox270.Size = new System.Drawing.Size(100, 22);
+            this.textBox270.Size = new System.Drawing.Size(100, 20);
             this.textBox270.TabIndex = 86;
             // 
             // label173
@@ -3358,7 +3378,7 @@ namespace His.Formulario
             this.label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label173.Location = new System.Drawing.Point(26, 85);
             this.label173.Name = "label173";
-            this.label173.Size = new System.Drawing.Size(50, 15);
+            this.label173.Size = new System.Drawing.Size(39, 12);
             this.label173.TabIndex = 85;
             this.label173.Text = "TOTAL :";
             // 
@@ -3369,7 +3389,7 @@ namespace His.Formulario
             this.label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label174.Location = new System.Drawing.Point(10, 58);
             this.label174.Name = "label174";
-            this.label174.Size = new System.Drawing.Size(65, 15);
+            this.label174.Size = new System.Drawing.Size(55, 12);
             this.label174.TabIndex = 84;
             this.label174.Text = "VIA ORAL :";
             // 
@@ -3380,7 +3400,7 @@ namespace His.Formulario
             this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label175.Location = new System.Drawing.Point(7, 32);
             this.label175.Name = "label175";
-            this.label175.Size = new System.Drawing.Size(75, 15);
+            this.label175.Size = new System.Drawing.Size(60, 12);
             this.label175.TabIndex = 83;
             this.label175.Text = "PARENTAL :";
             // 
@@ -3405,28 +3425,28 @@ namespace His.Formulario
             // 
             this.textBox271.Location = new System.Drawing.Point(262, 82);
             this.textBox271.Name = "textBox271";
-            this.textBox271.Size = new System.Drawing.Size(100, 22);
+            this.textBox271.Size = new System.Drawing.Size(100, 20);
             this.textBox271.TabIndex = 93;
             // 
             // textBox272
             // 
             this.textBox272.Location = new System.Drawing.Point(92, 82);
             this.textBox272.Name = "textBox272";
-            this.textBox272.Size = new System.Drawing.Size(100, 22);
+            this.textBox272.Size = new System.Drawing.Size(100, 20);
             this.textBox272.TabIndex = 92;
             // 
             // textBox273
             // 
             this.textBox273.Location = new System.Drawing.Point(262, 54);
             this.textBox273.Name = "textBox273";
-            this.textBox273.Size = new System.Drawing.Size(100, 22);
+            this.textBox273.Size = new System.Drawing.Size(100, 20);
             this.textBox273.TabIndex = 91;
             // 
             // textBox274
             // 
             this.textBox274.Location = new System.Drawing.Point(92, 54);
             this.textBox274.Name = "textBox274";
-            this.textBox274.Size = new System.Drawing.Size(100, 22);
+            this.textBox274.Size = new System.Drawing.Size(100, 20);
             this.textBox274.TabIndex = 90;
             // 
             // label176
@@ -3436,7 +3456,7 @@ namespace His.Formulario
             this.label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label176.Location = new System.Drawing.Point(105, 6);
             this.label176.Name = "label176";
-            this.label176.Size = new System.Drawing.Size(89, 15);
+            this.label176.Size = new System.Drawing.Size(70, 12);
             this.label176.TabIndex = 89;
             this.label176.Text = "INGRESOS CC";
             // 
@@ -3447,7 +3467,7 @@ namespace His.Formulario
             this.label177.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label177.Location = new System.Drawing.Point(271, 6);
             this.label177.Name = "label177";
-            this.label177.Size = new System.Drawing.Size(103, 15);
+            this.label177.Size = new System.Drawing.Size(85, 12);
             this.label177.TabIndex = 88;
             this.label177.Text = "ELIMINACION CC";
             // 
@@ -3455,14 +3475,14 @@ namespace His.Formulario
             // 
             this.textBox275.Location = new System.Drawing.Point(262, 28);
             this.textBox275.Name = "textBox275";
-            this.textBox275.Size = new System.Drawing.Size(100, 22);
+            this.textBox275.Size = new System.Drawing.Size(100, 20);
             this.textBox275.TabIndex = 87;
             // 
             // textBox276
             // 
             this.textBox276.Location = new System.Drawing.Point(92, 28);
             this.textBox276.Name = "textBox276";
-            this.textBox276.Size = new System.Drawing.Size(100, 22);
+            this.textBox276.Size = new System.Drawing.Size(100, 20);
             this.textBox276.TabIndex = 86;
             // 
             // label178
@@ -3472,7 +3492,7 @@ namespace His.Formulario
             this.label178.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label178.Location = new System.Drawing.Point(26, 85);
             this.label178.Name = "label178";
-            this.label178.Size = new System.Drawing.Size(50, 15);
+            this.label178.Size = new System.Drawing.Size(39, 12);
             this.label178.TabIndex = 85;
             this.label178.Text = "TOTAL :";
             // 
@@ -3483,7 +3503,7 @@ namespace His.Formulario
             this.label179.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label179.Location = new System.Drawing.Point(10, 58);
             this.label179.Name = "label179";
-            this.label179.Size = new System.Drawing.Size(65, 15);
+            this.label179.Size = new System.Drawing.Size(55, 12);
             this.label179.TabIndex = 84;
             this.label179.Text = "VIA ORAL :";
             // 
@@ -3494,7 +3514,7 @@ namespace His.Formulario
             this.label180.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label180.Location = new System.Drawing.Point(7, 32);
             this.label180.Name = "label180";
-            this.label180.Size = new System.Drawing.Size(75, 15);
+            this.label180.Size = new System.Drawing.Size(60, 12);
             this.label180.TabIndex = 83;
             this.label180.Text = "PARENTAL :";
             // 
@@ -3519,28 +3539,28 @@ namespace His.Formulario
             // 
             this.textBox277.Location = new System.Drawing.Point(262, 82);
             this.textBox277.Name = "textBox277";
-            this.textBox277.Size = new System.Drawing.Size(100, 22);
+            this.textBox277.Size = new System.Drawing.Size(100, 20);
             this.textBox277.TabIndex = 93;
             // 
             // textBox278
             // 
             this.textBox278.Location = new System.Drawing.Point(92, 82);
             this.textBox278.Name = "textBox278";
-            this.textBox278.Size = new System.Drawing.Size(100, 22);
+            this.textBox278.Size = new System.Drawing.Size(100, 20);
             this.textBox278.TabIndex = 92;
             // 
             // textBox279
             // 
             this.textBox279.Location = new System.Drawing.Point(262, 54);
             this.textBox279.Name = "textBox279";
-            this.textBox279.Size = new System.Drawing.Size(100, 22);
+            this.textBox279.Size = new System.Drawing.Size(100, 20);
             this.textBox279.TabIndex = 91;
             // 
             // textBox280
             // 
             this.textBox280.Location = new System.Drawing.Point(92, 54);
             this.textBox280.Name = "textBox280";
-            this.textBox280.Size = new System.Drawing.Size(100, 22);
+            this.textBox280.Size = new System.Drawing.Size(100, 20);
             this.textBox280.TabIndex = 90;
             // 
             // label181
@@ -3550,7 +3570,7 @@ namespace His.Formulario
             this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label181.Location = new System.Drawing.Point(105, 6);
             this.label181.Name = "label181";
-            this.label181.Size = new System.Drawing.Size(89, 15);
+            this.label181.Size = new System.Drawing.Size(70, 12);
             this.label181.TabIndex = 89;
             this.label181.Text = "INGRESOS CC";
             // 
@@ -3561,7 +3581,7 @@ namespace His.Formulario
             this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label182.Location = new System.Drawing.Point(271, 6);
             this.label182.Name = "label182";
-            this.label182.Size = new System.Drawing.Size(103, 15);
+            this.label182.Size = new System.Drawing.Size(85, 12);
             this.label182.TabIndex = 88;
             this.label182.Text = "ELIMINACION CC";
             // 
@@ -3569,14 +3589,14 @@ namespace His.Formulario
             // 
             this.textBox281.Location = new System.Drawing.Point(262, 28);
             this.textBox281.Name = "textBox281";
-            this.textBox281.Size = new System.Drawing.Size(100, 22);
+            this.textBox281.Size = new System.Drawing.Size(100, 20);
             this.textBox281.TabIndex = 87;
             // 
             // textBox282
             // 
             this.textBox282.Location = new System.Drawing.Point(92, 28);
             this.textBox282.Name = "textBox282";
-            this.textBox282.Size = new System.Drawing.Size(100, 22);
+            this.textBox282.Size = new System.Drawing.Size(100, 20);
             this.textBox282.TabIndex = 86;
             // 
             // label183
@@ -3586,7 +3606,7 @@ namespace His.Formulario
             this.label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label183.Location = new System.Drawing.Point(26, 85);
             this.label183.Name = "label183";
-            this.label183.Size = new System.Drawing.Size(50, 15);
+            this.label183.Size = new System.Drawing.Size(39, 12);
             this.label183.TabIndex = 85;
             this.label183.Text = "TOTAL :";
             // 
@@ -3597,7 +3617,7 @@ namespace His.Formulario
             this.label184.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label184.Location = new System.Drawing.Point(10, 58);
             this.label184.Name = "label184";
-            this.label184.Size = new System.Drawing.Size(65, 15);
+            this.label184.Size = new System.Drawing.Size(55, 12);
             this.label184.TabIndex = 84;
             this.label184.Text = "VIA ORAL :";
             // 
@@ -3608,7 +3628,7 @@ namespace His.Formulario
             this.label185.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label185.Location = new System.Drawing.Point(7, 32);
             this.label185.Name = "label185";
-            this.label185.Size = new System.Drawing.Size(75, 15);
+            this.label185.Size = new System.Drawing.Size(60, 12);
             this.label185.TabIndex = 83;
             this.label185.Text = "PARENTAL :";
             // 
@@ -3633,28 +3653,28 @@ namespace His.Formulario
             // 
             this.textBox283.Location = new System.Drawing.Point(262, 82);
             this.textBox283.Name = "textBox283";
-            this.textBox283.Size = new System.Drawing.Size(100, 22);
+            this.textBox283.Size = new System.Drawing.Size(100, 20);
             this.textBox283.TabIndex = 93;
             // 
             // textBox284
             // 
             this.textBox284.Location = new System.Drawing.Point(92, 82);
             this.textBox284.Name = "textBox284";
-            this.textBox284.Size = new System.Drawing.Size(100, 22);
+            this.textBox284.Size = new System.Drawing.Size(100, 20);
             this.textBox284.TabIndex = 92;
             // 
             // textBox285
             // 
             this.textBox285.Location = new System.Drawing.Point(262, 54);
             this.textBox285.Name = "textBox285";
-            this.textBox285.Size = new System.Drawing.Size(100, 22);
+            this.textBox285.Size = new System.Drawing.Size(100, 20);
             this.textBox285.TabIndex = 91;
             // 
             // textBox286
             // 
             this.textBox286.Location = new System.Drawing.Point(92, 54);
             this.textBox286.Name = "textBox286";
-            this.textBox286.Size = new System.Drawing.Size(100, 22);
+            this.textBox286.Size = new System.Drawing.Size(100, 20);
             this.textBox286.TabIndex = 90;
             // 
             // label186
@@ -3664,7 +3684,7 @@ namespace His.Formulario
             this.label186.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label186.Location = new System.Drawing.Point(105, 6);
             this.label186.Name = "label186";
-            this.label186.Size = new System.Drawing.Size(89, 15);
+            this.label186.Size = new System.Drawing.Size(70, 12);
             this.label186.TabIndex = 89;
             this.label186.Text = "INGRESOS CC";
             // 
@@ -3675,7 +3695,7 @@ namespace His.Formulario
             this.label187.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label187.Location = new System.Drawing.Point(271, 6);
             this.label187.Name = "label187";
-            this.label187.Size = new System.Drawing.Size(103, 15);
+            this.label187.Size = new System.Drawing.Size(85, 12);
             this.label187.TabIndex = 88;
             this.label187.Text = "ELIMINACION CC";
             // 
@@ -3683,14 +3703,14 @@ namespace His.Formulario
             // 
             this.textBox287.Location = new System.Drawing.Point(262, 28);
             this.textBox287.Name = "textBox287";
-            this.textBox287.Size = new System.Drawing.Size(100, 22);
+            this.textBox287.Size = new System.Drawing.Size(100, 20);
             this.textBox287.TabIndex = 87;
             // 
             // textBox288
             // 
             this.textBox288.Location = new System.Drawing.Point(92, 28);
             this.textBox288.Name = "textBox288";
-            this.textBox288.Size = new System.Drawing.Size(100, 22);
+            this.textBox288.Size = new System.Drawing.Size(100, 20);
             this.textBox288.TabIndex = 86;
             // 
             // label188
@@ -3700,7 +3720,7 @@ namespace His.Formulario
             this.label188.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label188.Location = new System.Drawing.Point(26, 85);
             this.label188.Name = "label188";
-            this.label188.Size = new System.Drawing.Size(50, 15);
+            this.label188.Size = new System.Drawing.Size(39, 12);
             this.label188.TabIndex = 85;
             this.label188.Text = "TOTAL :";
             // 
@@ -3711,7 +3731,7 @@ namespace His.Formulario
             this.label189.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label189.Location = new System.Drawing.Point(10, 58);
             this.label189.Name = "label189";
-            this.label189.Size = new System.Drawing.Size(65, 15);
+            this.label189.Size = new System.Drawing.Size(55, 12);
             this.label189.TabIndex = 84;
             this.label189.Text = "VIA ORAL :";
             // 
@@ -3722,7 +3742,7 @@ namespace His.Formulario
             this.label190.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label190.Location = new System.Drawing.Point(7, 32);
             this.label190.Name = "label190";
-            this.label190.Size = new System.Drawing.Size(75, 15);
+            this.label190.Size = new System.Drawing.Size(60, 12);
             this.label190.TabIndex = 83;
             this.label190.Text = "PARENTAL :";
             // 
@@ -3747,28 +3767,28 @@ namespace His.Formulario
             // 
             this.textBox289.Location = new System.Drawing.Point(262, 82);
             this.textBox289.Name = "textBox289";
-            this.textBox289.Size = new System.Drawing.Size(100, 22);
+            this.textBox289.Size = new System.Drawing.Size(100, 20);
             this.textBox289.TabIndex = 93;
             // 
             // textBox290
             // 
             this.textBox290.Location = new System.Drawing.Point(92, 82);
             this.textBox290.Name = "textBox290";
-            this.textBox290.Size = new System.Drawing.Size(100, 22);
+            this.textBox290.Size = new System.Drawing.Size(100, 20);
             this.textBox290.TabIndex = 92;
             // 
             // textBox291
             // 
             this.textBox291.Location = new System.Drawing.Point(262, 54);
             this.textBox291.Name = "textBox291";
-            this.textBox291.Size = new System.Drawing.Size(100, 22);
+            this.textBox291.Size = new System.Drawing.Size(100, 20);
             this.textBox291.TabIndex = 91;
             // 
             // textBox292
             // 
             this.textBox292.Location = new System.Drawing.Point(92, 54);
             this.textBox292.Name = "textBox292";
-            this.textBox292.Size = new System.Drawing.Size(100, 22);
+            this.textBox292.Size = new System.Drawing.Size(100, 20);
             this.textBox292.TabIndex = 90;
             // 
             // label191
@@ -3778,7 +3798,7 @@ namespace His.Formulario
             this.label191.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label191.Location = new System.Drawing.Point(105, 6);
             this.label191.Name = "label191";
-            this.label191.Size = new System.Drawing.Size(89, 15);
+            this.label191.Size = new System.Drawing.Size(70, 12);
             this.label191.TabIndex = 89;
             this.label191.Text = "INGRESOS CC";
             // 
@@ -3789,7 +3809,7 @@ namespace His.Formulario
             this.label192.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label192.Location = new System.Drawing.Point(271, 6);
             this.label192.Name = "label192";
-            this.label192.Size = new System.Drawing.Size(103, 15);
+            this.label192.Size = new System.Drawing.Size(85, 12);
             this.label192.TabIndex = 88;
             this.label192.Text = "ELIMINACION CC";
             // 
@@ -3797,14 +3817,14 @@ namespace His.Formulario
             // 
             this.textBox293.Location = new System.Drawing.Point(262, 28);
             this.textBox293.Name = "textBox293";
-            this.textBox293.Size = new System.Drawing.Size(100, 22);
+            this.textBox293.Size = new System.Drawing.Size(100, 20);
             this.textBox293.TabIndex = 87;
             // 
             // textBox294
             // 
             this.textBox294.Location = new System.Drawing.Point(92, 28);
             this.textBox294.Name = "textBox294";
-            this.textBox294.Size = new System.Drawing.Size(100, 22);
+            this.textBox294.Size = new System.Drawing.Size(100, 20);
             this.textBox294.TabIndex = 86;
             // 
             // label193
@@ -3814,7 +3834,7 @@ namespace His.Formulario
             this.label193.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label193.Location = new System.Drawing.Point(26, 85);
             this.label193.Name = "label193";
-            this.label193.Size = new System.Drawing.Size(50, 15);
+            this.label193.Size = new System.Drawing.Size(39, 12);
             this.label193.TabIndex = 85;
             this.label193.Text = "TOTAL :";
             // 
@@ -3825,7 +3845,7 @@ namespace His.Formulario
             this.label194.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label194.Location = new System.Drawing.Point(10, 58);
             this.label194.Name = "label194";
-            this.label194.Size = new System.Drawing.Size(65, 15);
+            this.label194.Size = new System.Drawing.Size(55, 12);
             this.label194.TabIndex = 84;
             this.label194.Text = "VIA ORAL :";
             // 
@@ -3836,7 +3856,7 @@ namespace His.Formulario
             this.label195.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label195.Location = new System.Drawing.Point(7, 32);
             this.label195.Name = "label195";
-            this.label195.Size = new System.Drawing.Size(75, 15);
+            this.label195.Size = new System.Drawing.Size(60, 12);
             this.label195.TabIndex = 83;
             this.label195.Text = "PARENTAL :";
             // 
@@ -3861,28 +3881,28 @@ namespace His.Formulario
             // 
             this.textBox295.Location = new System.Drawing.Point(262, 82);
             this.textBox295.Name = "textBox295";
-            this.textBox295.Size = new System.Drawing.Size(100, 22);
+            this.textBox295.Size = new System.Drawing.Size(100, 20);
             this.textBox295.TabIndex = 93;
             // 
             // textBox296
             // 
             this.textBox296.Location = new System.Drawing.Point(92, 82);
             this.textBox296.Name = "textBox296";
-            this.textBox296.Size = new System.Drawing.Size(100, 22);
+            this.textBox296.Size = new System.Drawing.Size(100, 20);
             this.textBox296.TabIndex = 92;
             // 
             // textBox297
             // 
             this.textBox297.Location = new System.Drawing.Point(262, 54);
             this.textBox297.Name = "textBox297";
-            this.textBox297.Size = new System.Drawing.Size(100, 22);
+            this.textBox297.Size = new System.Drawing.Size(100, 20);
             this.textBox297.TabIndex = 91;
             // 
             // textBox298
             // 
             this.textBox298.Location = new System.Drawing.Point(92, 54);
             this.textBox298.Name = "textBox298";
-            this.textBox298.Size = new System.Drawing.Size(100, 22);
+            this.textBox298.Size = new System.Drawing.Size(100, 20);
             this.textBox298.TabIndex = 90;
             // 
             // label196
@@ -3892,7 +3912,7 @@ namespace His.Formulario
             this.label196.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label196.Location = new System.Drawing.Point(105, 6);
             this.label196.Name = "label196";
-            this.label196.Size = new System.Drawing.Size(89, 15);
+            this.label196.Size = new System.Drawing.Size(70, 12);
             this.label196.TabIndex = 89;
             this.label196.Text = "INGRESOS CC";
             // 
@@ -3903,7 +3923,7 @@ namespace His.Formulario
             this.label197.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label197.Location = new System.Drawing.Point(271, 6);
             this.label197.Name = "label197";
-            this.label197.Size = new System.Drawing.Size(103, 15);
+            this.label197.Size = new System.Drawing.Size(85, 12);
             this.label197.TabIndex = 88;
             this.label197.Text = "ELIMINACION CC";
             // 
@@ -3911,14 +3931,14 @@ namespace His.Formulario
             // 
             this.textBox299.Location = new System.Drawing.Point(262, 28);
             this.textBox299.Name = "textBox299";
-            this.textBox299.Size = new System.Drawing.Size(100, 22);
+            this.textBox299.Size = new System.Drawing.Size(100, 20);
             this.textBox299.TabIndex = 87;
             // 
             // textBox300
             // 
             this.textBox300.Location = new System.Drawing.Point(92, 28);
             this.textBox300.Name = "textBox300";
-            this.textBox300.Size = new System.Drawing.Size(100, 22);
+            this.textBox300.Size = new System.Drawing.Size(100, 20);
             this.textBox300.TabIndex = 86;
             // 
             // label198
@@ -3928,7 +3948,7 @@ namespace His.Formulario
             this.label198.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label198.Location = new System.Drawing.Point(26, 85);
             this.label198.Name = "label198";
-            this.label198.Size = new System.Drawing.Size(50, 15);
+            this.label198.Size = new System.Drawing.Size(39, 12);
             this.label198.TabIndex = 85;
             this.label198.Text = "TOTAL :";
             // 
@@ -3939,7 +3959,7 @@ namespace His.Formulario
             this.label199.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label199.Location = new System.Drawing.Point(10, 58);
             this.label199.Name = "label199";
-            this.label199.Size = new System.Drawing.Size(65, 15);
+            this.label199.Size = new System.Drawing.Size(55, 12);
             this.label199.TabIndex = 84;
             this.label199.Text = "VIA ORAL :";
             // 
@@ -3950,7 +3970,7 @@ namespace His.Formulario
             this.label200.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label200.Location = new System.Drawing.Point(7, 32);
             this.label200.Name = "label200";
-            this.label200.Size = new System.Drawing.Size(75, 15);
+            this.label200.Size = new System.Drawing.Size(60, 12);
             this.label200.TabIndex = 83;
             this.label200.Text = "PARENTAL :";
             // 
@@ -3975,28 +3995,28 @@ namespace His.Formulario
             // 
             this.textBox301.Location = new System.Drawing.Point(262, 82);
             this.textBox301.Name = "textBox301";
-            this.textBox301.Size = new System.Drawing.Size(100, 22);
+            this.textBox301.Size = new System.Drawing.Size(100, 20);
             this.textBox301.TabIndex = 93;
             // 
             // textBox302
             // 
             this.textBox302.Location = new System.Drawing.Point(92, 82);
             this.textBox302.Name = "textBox302";
-            this.textBox302.Size = new System.Drawing.Size(100, 22);
+            this.textBox302.Size = new System.Drawing.Size(100, 20);
             this.textBox302.TabIndex = 92;
             // 
             // textBox303
             // 
             this.textBox303.Location = new System.Drawing.Point(262, 54);
             this.textBox303.Name = "textBox303";
-            this.textBox303.Size = new System.Drawing.Size(100, 22);
+            this.textBox303.Size = new System.Drawing.Size(100, 20);
             this.textBox303.TabIndex = 91;
             // 
             // textBox304
             // 
             this.textBox304.Location = new System.Drawing.Point(92, 54);
             this.textBox304.Name = "textBox304";
-            this.textBox304.Size = new System.Drawing.Size(100, 22);
+            this.textBox304.Size = new System.Drawing.Size(100, 20);
             this.textBox304.TabIndex = 90;
             // 
             // label201
@@ -4006,7 +4026,7 @@ namespace His.Formulario
             this.label201.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label201.Location = new System.Drawing.Point(105, 6);
             this.label201.Name = "label201";
-            this.label201.Size = new System.Drawing.Size(89, 15);
+            this.label201.Size = new System.Drawing.Size(70, 12);
             this.label201.TabIndex = 89;
             this.label201.Text = "INGRESOS CC";
             // 
@@ -4017,7 +4037,7 @@ namespace His.Formulario
             this.label202.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label202.Location = new System.Drawing.Point(271, 6);
             this.label202.Name = "label202";
-            this.label202.Size = new System.Drawing.Size(103, 15);
+            this.label202.Size = new System.Drawing.Size(85, 12);
             this.label202.TabIndex = 88;
             this.label202.Text = "ELIMINACION CC";
             // 
@@ -4025,14 +4045,14 @@ namespace His.Formulario
             // 
             this.textBox305.Location = new System.Drawing.Point(262, 28);
             this.textBox305.Name = "textBox305";
-            this.textBox305.Size = new System.Drawing.Size(100, 22);
+            this.textBox305.Size = new System.Drawing.Size(100, 20);
             this.textBox305.TabIndex = 87;
             // 
             // textBox306
             // 
             this.textBox306.Location = new System.Drawing.Point(92, 28);
             this.textBox306.Name = "textBox306";
-            this.textBox306.Size = new System.Drawing.Size(100, 22);
+            this.textBox306.Size = new System.Drawing.Size(100, 20);
             this.textBox306.TabIndex = 86;
             // 
             // label203
@@ -4042,7 +4062,7 @@ namespace His.Formulario
             this.label203.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label203.Location = new System.Drawing.Point(26, 85);
             this.label203.Name = "label203";
-            this.label203.Size = new System.Drawing.Size(50, 15);
+            this.label203.Size = new System.Drawing.Size(39, 12);
             this.label203.TabIndex = 85;
             this.label203.Text = "TOTAL :";
             // 
@@ -4053,7 +4073,7 @@ namespace His.Formulario
             this.label204.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label204.Location = new System.Drawing.Point(10, 58);
             this.label204.Name = "label204";
-            this.label204.Size = new System.Drawing.Size(65, 15);
+            this.label204.Size = new System.Drawing.Size(55, 12);
             this.label204.TabIndex = 84;
             this.label204.Text = "VIA ORAL :";
             // 
@@ -4064,7 +4084,7 @@ namespace His.Formulario
             this.label205.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label205.Location = new System.Drawing.Point(7, 32);
             this.label205.Name = "label205";
-            this.label205.Size = new System.Drawing.Size(75, 15);
+            this.label205.Size = new System.Drawing.Size(60, 12);
             this.label205.TabIndex = 83;
             this.label205.Text = "PARENTAL :";
             // 
@@ -4101,13 +4121,12 @@ namespace His.Formulario
             this.gridSol.ColumnHeadersVisible = false;
             this.gridSol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSol.GridColor = System.Drawing.SystemColors.Window;
-            this.gridSol.Location = new System.Drawing.Point(4, 4);
-            this.gridSol.Margin = new System.Windows.Forms.Padding(4);
+            this.gridSol.Location = new System.Drawing.Point(3, 3);
             this.gridSol.Name = "gridSol";
             this.gridSol.ReadOnly = true;
             this.gridSol.RowHeadersVisible = false;
             this.gridSol.RowHeadersWidth = 62;
-            this.gridSol.Size = new System.Drawing.Size(310, 649);
+            this.gridSol.Size = new System.Drawing.Size(216, 474);
             this.gridSol.TabIndex = 95;
             this.gridSol.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSol_CellDoubleClick);
             // 
@@ -4136,9 +4155,9 @@ namespace His.Formulario
             this.ultraGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultraGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOutsideBorder;
             this.ultraGroupBox1.Location = new System.Drawing.Point(0, 36);
-            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ultraGroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
-            this.ultraGroupBox1.Size = new System.Drawing.Size(1468, 114);
+            this.ultraGroupBox1.Size = new System.Drawing.Size(1028, 93);
             this.ultraGroupBox1.TabIndex = 96;
             this.ultraGroupBox1.Text = "Datos del Paciente";
             this.ultraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -4148,9 +4167,10 @@ namespace His.Formulario
             this.lblHabitacion.AutoSize = true;
             this.lblHabitacion.BackColor = System.Drawing.Color.Transparent;
             this.lblHabitacion.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHabitacion.Location = new System.Drawing.Point(663, 86);
+            this.lblHabitacion.Location = new System.Drawing.Point(497, 70);
+            this.lblHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHabitacion.Name = "lblHabitacion";
-            this.lblHabitacion.Size = new System.Drawing.Size(47, 17);
+            this.lblHabitacion.Size = new System.Drawing.Size(39, 15);
             this.lblHabitacion.TabIndex = 13;
             this.lblHabitacion.Text = "label8";
             // 
@@ -4159,9 +4179,10 @@ namespace His.Formulario
             this.lblHc.AutoSize = true;
             this.lblHc.BackColor = System.Drawing.Color.Transparent;
             this.lblHc.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHc.Location = new System.Drawing.Point(615, 58);
+            this.lblHc.Location = new System.Drawing.Point(461, 47);
+            this.lblHc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHc.Name = "lblHc";
-            this.lblHc.Size = new System.Drawing.Size(47, 17);
+            this.lblHc.Size = new System.Drawing.Size(39, 15);
             this.lblHc.TabIndex = 12;
             this.lblHc.Text = "label8";
             // 
@@ -4170,9 +4191,10 @@ namespace His.Formulario
             this.lblatencion.AutoSize = true;
             this.lblatencion.BackColor = System.Drawing.Color.Transparent;
             this.lblatencion.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblatencion.Location = new System.Drawing.Point(640, 34);
+            this.lblatencion.Location = new System.Drawing.Point(480, 28);
+            this.lblatencion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblatencion.Name = "lblatencion";
-            this.lblatencion.Size = new System.Drawing.Size(47, 17);
+            this.lblatencion.Size = new System.Drawing.Size(39, 15);
             this.lblatencion.TabIndex = 11;
             this.lblatencion.Text = "label8";
             // 
@@ -4181,9 +4203,10 @@ namespace His.Formulario
             this.lbledad.AutoSize = true;
             this.lbledad.BackColor = System.Drawing.Color.Transparent;
             this.lbledad.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbledad.Location = new System.Drawing.Point(349, 58);
+            this.lbledad.Location = new System.Drawing.Point(262, 47);
+            this.lbledad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbledad.Name = "lbledad";
-            this.lbledad.Size = new System.Drawing.Size(47, 17);
+            this.lbledad.Size = new System.Drawing.Size(39, 15);
             this.lbledad.TabIndex = 10;
             this.lbledad.Text = "label8";
             // 
@@ -4192,9 +4215,10 @@ namespace His.Formulario
             this.lblmedico.AutoSize = true;
             this.lblmedico.BackColor = System.Drawing.Color.Transparent;
             this.lblmedico.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmedico.Location = new System.Drawing.Point(76, 86);
+            this.lblmedico.Location = new System.Drawing.Point(57, 70);
+            this.lblmedico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmedico.Name = "lblmedico";
-            this.lblmedico.Size = new System.Drawing.Size(47, 17);
+            this.lblmedico.Size = new System.Drawing.Size(39, 15);
             this.lblmedico.TabIndex = 9;
             this.lblmedico.Text = "label8";
             // 
@@ -4203,9 +4227,10 @@ namespace His.Formulario
             this.lblsexo.AutoSize = true;
             this.lblsexo.BackColor = System.Drawing.Color.Transparent;
             this.lblsexo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsexo.Location = new System.Drawing.Point(59, 58);
+            this.lblsexo.Location = new System.Drawing.Point(44, 47);
+            this.lblsexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsexo.Name = "lblsexo";
-            this.lblsexo.Size = new System.Drawing.Size(47, 17);
+            this.lblsexo.Size = new System.Drawing.Size(39, 15);
             this.lblsexo.TabIndex = 8;
             this.lblsexo.Text = "label8";
             // 
@@ -4214,9 +4239,10 @@ namespace His.Formulario
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.BackColor = System.Drawing.Color.Transparent;
             this.lblPaciente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaciente.Location = new System.Drawing.Point(84, 34);
+            this.lblPaciente.Location = new System.Drawing.Point(63, 28);
+            this.lblPaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaciente.Name = "lblPaciente";
-            this.lblPaciente.Size = new System.Drawing.Size(47, 17);
+            this.lblPaciente.Size = new System.Drawing.Size(39, 15);
             this.lblPaciente.TabIndex = 7;
             this.lblPaciente.Text = "label8";
             // 
@@ -4225,9 +4251,10 @@ namespace His.Formulario
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(300, 58);
+            this.label25.Location = new System.Drawing.Point(225, 47);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(41, 17);
+            this.label25.Size = new System.Drawing.Size(34, 15);
             this.label25.TabIndex = 6;
             this.label25.Text = "Edad:";
             // 
@@ -4236,9 +4263,10 @@ namespace His.Formulario
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(567, 86);
+            this.label26.Location = new System.Drawing.Point(425, 70);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 17);
+            this.label26.Size = new System.Drawing.Size(62, 15);
             this.label26.TabIndex = 5;
             this.label26.Text = "Habitacion:";
             // 
@@ -4247,9 +4275,10 @@ namespace His.Formulario
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(567, 58);
+            this.label27.Location = new System.Drawing.Point(425, 47);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(41, 17);
+            this.label27.Size = new System.Drawing.Size(34, 15);
             this.label27.TabIndex = 4;
             this.label27.Text = "HCL:";
             // 
@@ -4258,9 +4287,10 @@ namespace His.Formulario
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(567, 34);
+            this.label28.Location = new System.Drawing.Point(425, 28);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(64, 17);
+            this.label28.Size = new System.Drawing.Size(54, 15);
             this.label28.TabIndex = 3;
             this.label28.Text = "Atención:";
             // 
@@ -4269,9 +4299,10 @@ namespace His.Formulario
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(11, 86);
+            this.label29.Location = new System.Drawing.Point(8, 70);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(55, 17);
+            this.label29.Size = new System.Drawing.Size(47, 15);
             this.label29.TabIndex = 2;
             this.label29.Text = "Médico:";
             // 
@@ -4280,9 +4311,10 @@ namespace His.Formulario
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(11, 58);
+            this.label30.Location = new System.Drawing.Point(8, 47);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(40, 17);
+            this.label30.Size = new System.Drawing.Size(32, 15);
             this.label30.TabIndex = 1;
             this.label30.Text = "Sexo:";
             // 
@@ -4291,9 +4323,10 @@ namespace His.Formulario
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(11, 34);
+            this.label31.Location = new System.Drawing.Point(8, 28);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(63, 17);
+            this.label31.Size = new System.Drawing.Size(52, 15);
             this.label31.TabIndex = 0;
             this.label31.Text = "Nombre: ";
             // 
@@ -4304,11 +4337,10 @@ namespace His.Formulario
             this.tabulador.Controls.Add(this.ultraTabPageControl9);
             this.tabulador.Controls.Add(this.ultraTabPageControl12);
             this.tabulador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabulador.Location = new System.Drawing.Point(322, 4);
-            this.tabulador.Margin = new System.Windows.Forms.Padding(4);
+            this.tabulador.Location = new System.Drawing.Point(225, 3);
             this.tabulador.Name = "tabulador";
             this.tabulador.SharedControlsPage = this.ultraTabSharedControlsPage2;
-            this.tabulador.Size = new System.Drawing.Size(1142, 649);
+            this.tabulador.Size = new System.Drawing.Size(800, 474);
             this.tabulador.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon;
             this.tabulador.TabIndex = 97;
             ultraTab1.Key = "tratamiento";
@@ -4326,9 +4358,8 @@ namespace His.Formulario
             // ultraTabSharedControlsPage2
             // 
             this.ultraTabSharedControlsPage2.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabSharedControlsPage2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabSharedControlsPage2.Name = "ultraTabSharedControlsPage2";
-            this.ultraTabSharedControlsPage2.Size = new System.Drawing.Size(1140, 625);
+            this.ultraTabSharedControlsPage2.Size = new System.Drawing.Size(798, 451);
             // 
             // tableLayoutPanel1
             // 
@@ -4338,121 +4369,23 @@ namespace His.Formulario
             this.tableLayoutPanel1.Controls.Add(this.gridSol, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabulador, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 150);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 129);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1468, 657);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1028, 480);
             this.tableLayoutPanel1.TabIndex = 98;
-            // 
-            // btnGrabasignos
-            // 
-            this.btnGrabasignos.BackgroundImage = global::His.Formulario.Properties.Resources.HIS_GUARDAR;
-            this.btnGrabasignos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGrabasignos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrabasignos.Location = new System.Drawing.Point(750, 72);
-            this.btnGrabasignos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGrabasignos.Name = "btnGrabasignos";
-            this.btnGrabasignos.Size = new System.Drawing.Size(44, 34);
-            this.btnGrabasignos.TabIndex = 140;
-            this.btnGrabasignos.UseVisualStyleBackColor = true;
-            this.btnGrabasignos.Visible = false;
-            this.btnGrabasignos.Click += new System.EventHandler(this.btnGrabasignos_Click);
-            // 
-            // tsbImprimirSV
-            // 
-            this.tsbImprimirSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbImprimirSV.Image = ((System.Drawing.Image)(resources.GetObject("tsbImprimirSV.Image")));
-            this.tsbImprimirSV.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbImprimirSV.Name = "tsbImprimirSV";
-            this.tsbImprimirSV.Size = new System.Drawing.Size(29, 28);
-            this.tsbImprimirSV.Text = "Imprimir Registro Signos";
-            this.tsbImprimirSV.Click += new System.EventHandler(this.tsbImprimirSV_Click);
-            // 
-            // tsbImprimirCT
-            // 
-            this.tsbImprimirCT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbImprimirCT.Image = global::His.Formulario.Properties.Resources.medical_22_icon_icons_com_73922__1_;
-            this.tsbImprimirCT.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbImprimirCT.Name = "tsbImprimirCT";
-            this.tsbImprimirCT.Size = new System.Drawing.Size(29, 28);
-            this.tsbImprimirCT.Text = "Curva Termica";
-            this.tsbImprimirCT.Click += new System.EventHandler(this.tsbImprimirCT_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = global::His.Formulario.Properties.Resources.HIS_NUEVO;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Padding = new System.Windows.Forms.Padding(2);
-            this.btnNuevo.Size = new System.Drawing.Size(32, 32);
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(29, 33);
-            this.btnGuardar.Text = "Guardar ";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Enabled = false;
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(29, 33);
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnActualizar.Image = global::His.Formulario.Properties.Resources.HIS_REFRESH;
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(29, 33);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = global::His.Formulario.Properties.Resources.HIS_CANCELAR;
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(29, 33);
-            this.btnCancelar.Text = "toolStripButton1";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalir.Image = global::His.Formulario.Properties.Resources.HIS_SALIR;
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(29, 33);
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frm_Form020
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1468, 807);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ultraGroupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_Form020";
             this.Text = "Form.020";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

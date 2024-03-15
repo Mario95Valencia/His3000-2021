@@ -605,6 +605,14 @@ namespace His.Datos
                         contexto.AddToPEDIDOS(pedido);
                         contexto.SaveChanges();
                         Int64 codCuenta = 0;
+                        COPAGO coriginal = contexto.COPAGO.FirstOrDefault(x => x.ATE_CODIGO == pedido.ATE_CODIGO);
+                        COPAGO cseguro = contexto.COPAGO.FirstOrDefault(x => x.ATE_CODIGO_COPAGO == pedido.ATE_CODIGO);
+                        bool copago = false;
+                        if (coriginal != null)
+                            copago = true;
+                        else if (cseguro != null)
+                            copago = true;
+
                         foreach (var item in ndetalle)
                         {
                             Int64 codigo = (from p in contexto.PEDIDOS_DETALLE
@@ -655,6 +663,35 @@ namespace His.Datos
                             cuenta.CUE_CODIGO = codCuenta;
                             contexto.AddToCUENTAS_PACIENTES(cuenta);
                             contexto.SaveChanges();
+                            if (copago)
+                            {
+                                CUENTAS_PACIENTES_COPAGO ccopago = new CUENTAS_PACIENTES_COPAGO();
+                                if (coriginal != null)
+                                    ccopago.ATE_CODIGO = (int?)coriginal.ATE_CODIGO;
+                                else if (cseguro != null)
+                                    ccopago.ATE_CODIGO = (int?)cseguro.ATE_CODIGO;
+                                ccopago.CUE_CODIGO = codCuenta;
+                                ccopago.PRO_CODIGO = Convert.ToString(item.PRODUCTOReference.EntityKey.EntityKeyValues[0].Value);
+                                ccopago.CUE_ESTADO = 1;
+                                ccopago.CUE_FECHA = (DateTime)pedido.PED_FECHA;
+                                ccopago.CUE_VALOR_UNITARIO = item.PDD_VALOR;
+                                ccopago.CUE_IVA = item.PDD_IVA;
+                                ccopago.CUE_VALOR = item.PDD_VALOR * item.PDD_CANTIDAD;
+                                ccopago.ID_USUARIO = pedido.ID_USUARIO;
+                                ccopago.PED_CODIGO = xcodDiv;
+                                ccopago.RUB_CODIGO = XRubro;
+                                ccopago.CAT_CODIGO = 0;
+                                ccopago.CUE_CANTIDAD = Convert.ToDecimal(item.PDD_CANTIDAD);
+                                ccopago.CUE_DETALLE = item.PRO_DESCRIPCION;
+                                ccopago.CUE_NUM_FAC = "0";
+                                ccopago.PRO_CODIGO_BARRAS = item.PRO_CODIGO_BARRAS;
+                                ccopago.MED_CODIGO = pedido.MED_CODIGO;
+                                ccopago.Codigo_Pedido = pedido.PED_CODIGO;
+                                ccopago.DivideFactura = "N";
+                                ccopago.FECHA_FACTURA = (DateTime)pedido.PED_FECHA;
+                                contexto.Crear("CUENTAS_PACIENTES_COPAGO", ccopago);
+                                contexto.SaveChanges();
+                            }
                         }
                         transa.Commit();
                         resultado = true;
@@ -3026,165 +3063,266 @@ namespace His.Datos
 
         public Int64 CreaPedido(DtoPedidoOtros Pedido, Int64 Numvale)
         {
+            #region Codigo annterior pedido 
             // GIOVANNY TAPIA / 07/08/2012
+            //SqlConnection Sqlcon;   // Se comenta para el nuevo codigo y trabajar con el modelo // Mario Valencia // 07-03-2024
+            //SqlCommand Sqlcmd;
+            //SqlDataAdapter Sqldap;
+            //DataTable Dts = new DataTable();
+            //SqlTransaction transaction;
+            //BaseContextoDatos obj = new BaseContextoDatos();
+            //Sqlcon = obj.ConectarBd();
+            //try
+            //{
+            //    Sqlcon.Open();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
-            Int32 Resultado = 0;
-            SqlConnection Sqlcon;
-            SqlCommand Sqlcmd;
-            SqlDataAdapter Sqldap;
-            DataTable Dts = new DataTable();
-            SqlTransaction transaction;
-            BaseContextoDatos obj = new BaseContextoDatos();
-            Sqlcon = obj.ConectarBd();
-            try
+            //transaction = Sqlcon.BeginTransaction();
+
+            //try
+            //{
+            //    Sqlcmd = new SqlCommand("sp_GuardaEncabezadoPedido", Sqlcon);
+            //    Sqlcmd.CommandType = CommandType.StoredProcedure;
+
+            //    Sqlcmd.Transaction = transaction;
+
+            //    Sqlcmd.Parameters.Add("@Ped_Codigo", SqlDbType.Int);
+            //    Sqlcmd.Parameters["@Ped_Codigo"].Value = Pedido.PED_CODIGO;
+
+            //    Sqlcmd.Parameters.Add("@PEA_CODIGO", SqlDbType.SmallInt);
+            //    Sqlcmd.Parameters["@PEA_CODIGO"].Value = Pedido.PEA_CODIGO;
+
+            //    Sqlcmd.Parameters.Add("@PEE_CODIGO", SqlDbType.TinyInt);
+            //    Sqlcmd.Parameters["@PEE_CODIGO"].Value = Pedido.PEE_CODIGO;
+
+            //    Sqlcmd.Parameters.Add("@PED_DESCRIPCION", SqlDbType.VarChar);
+            //    Sqlcmd.Parameters["@PED_DESCRIPCION"].Value = Pedido.PED_DESCRIPCION;
+
+            //    Sqlcmd.Parameters.Add("@PED_ESTADO", SqlDbType.SmallInt);
+            //    Sqlcmd.Parameters["@PED_ESTADO"].Value = Pedido.PED_ESTADO;
+
+            //    Sqlcmd.Parameters.Add("@PED_FECHA", SqlDbType.DateTime);
+            //    Sqlcmd.Parameters["@PED_FECHA"].Value = Pedido.PED_FECHA;
+
+            //    Sqlcmd.Parameters.Add("@ID_USUARIO", SqlDbType.SmallInt);
+            //    Sqlcmd.Parameters["@ID_USUARIO"].Value = Pedido.ID_USUARIO;
+
+            //    Sqlcmd.Parameters.Add("@ATE_CODIGO", SqlDbType.Int);
+            //    Sqlcmd.Parameters["@ATE_CODIGO"].Value = Pedido.ATE_CODIGO;
+
+            //    Sqlcmd.Parameters.Add("@TIP_PEDIDO", SqlDbType.SmallInt);
+            //    Sqlcmd.Parameters["@TIP_PEDIDO"].Value = Pedido.TIP_PEDIDO;
+
+            //    Sqlcmd.Parameters.Add("@PED_PRIORIDAD", SqlDbType.TinyInt);
+            //    Sqlcmd.Parameters["@PED_PRIORIDAD"].Value = Pedido.PED_PRIORIDAD;
+
+            //    Sqlcmd.Parameters.Add("@PED_TRANSACCION", SqlDbType.Int);
+            //    Sqlcmd.Parameters["@PED_TRANSACCION"].Value = Pedido.PED_TRANSACCION;
+
+            //    Sqlcmd.Parameters.Add("@MED_CODIGO", SqlDbType.Int);
+            //    Sqlcmd.Parameters["@MED_CODIGO"].Value = Pedido.MED_CODIGO;
+
+            //    Sqldap = new SqlDataAdapter();
+            //    Sqlcmd.CommandTimeout = 180; //ESTABLECE EL TIEMPO MAXIMO DE ESPERA A UNA CONSULTA EN EL SERVIDOR EN SEGUNDOS/ GIOVANNY TAPIA /03/07/2012
+            //    Sqldap.SelectCommand = Sqlcmd;
+
+            //    Sqldap.Fill(Dts);
+
+            //    Resultado = Convert.ToInt32(Dts.Rows[0][0]);
+
+            //    foreach (var _Pedido in Pedido.DetallePedidoOtros)
+            //    {
+
+            //        Sqlcmd = new SqlCommand("sp_GuardaPedidoDetalle", Sqlcon);
+            //        Sqlcmd.CommandType = CommandType.StoredProcedure;
+
+            //        Sqlcmd.Transaction = transaction;
+
+            //        Sqlcmd.Parameters.Add("@PDD_CODIGO", SqlDbType.BigInt);
+            //        Sqlcmd.Parameters["@PDD_CODIGO"].Value = _Pedido.PDD_CODIGO;
+
+            //        Sqlcmd.Parameters.Add("@PED_CODIGO", SqlDbType.Int);
+            //        Sqlcmd.Parameters["@PED_CODIGO"].Value = Resultado;
+
+            //        Sqlcmd.Parameters.Add("@PRO_CODIGO", SqlDbType.Int);
+            //        Sqlcmd.Parameters["@PRO_CODIGO"].Value = _Pedido.PRO_CODIGO;
+
+            //        Sqlcmd.Parameters.Add("@PRO_DESCRIPCION", SqlDbType.NVarChar);
+            //        Sqlcmd.Parameters["@PRO_DESCRIPCION"].Value = _Pedido.PRO_DESCRIPCION;
+
+            //        Sqlcmd.Parameters.Add("@PDD_CANTIDAD", SqlDbType.Decimal);
+            //        Sqlcmd.Parameters["@PDD_CANTIDAD"].Value = _Pedido.PDD_CANTIDAD;
+
+            //        Sqlcmd.Parameters.Add("@PDD_VALOR", SqlDbType.Decimal);
+            //        Sqlcmd.Parameters["@PDD_VALOR"].Value = _Pedido.PDD_VALOR;
+
+            //        Sqlcmd.Parameters.Add("@PDD_IVA", SqlDbType.Decimal);
+            //        Sqlcmd.Parameters["@PDD_IVA"].Value = _Pedido.PDD_IVA;
+
+            //        Sqlcmd.Parameters.Add("@PDD_TOTAL", SqlDbType.Decimal);
+            //        Sqlcmd.Parameters["@PDD_TOTAL"].Value = _Pedido.PDD_TOTAL;
+
+            //        Sqlcmd.Parameters.Add("@PDD_ESTADO", SqlDbType.Bit);
+            //        Sqlcmd.Parameters["@PDD_ESTADO"].Value = _Pedido.PDD_ESTADO;
+
+            //        Sqlcmd.Parameters.Add("@PDD_COSTO", SqlDbType.Decimal);
+            //        Sqlcmd.Parameters["@PDD_COSTO"].Value = _Pedido.PDD_COSTO;
+
+            //        Sqlcmd.Parameters.Add("@PDD_FACTURA", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@PDD_FACTURA"].Value = _Pedido.PDD_FACTURA;
+
+            //        Sqlcmd.Parameters.Add("@PDD_ESTADO_FACTURA", SqlDbType.Int);
+            //        Sqlcmd.Parameters["@PDD_ESTADO_FACTURA"].Value = _Pedido.PDD_ESTADO_FACTURA;
+
+            //        Sqlcmd.Parameters.Add("@PDD_FECHA_FACTURA", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@PDD_FECHA_FACTURA"].Value = _Pedido.PDD_FECHA_FACTURA;
+
+            //        Sqlcmd.Parameters.Add("@PDD_RESULTADO", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@PDD_RESULTADO"].Value = _Pedido.PDD_RESULTADO;
+
+            //        Sqlcmd.Parameters.Add("@PRO_CODIGO_BARRAS", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@PRO_CODIGO_BARRAS"].Value = _Pedido.PRO_CODIGO_BARRAS;
+
+            //        Sqlcmd.Parameters.Add("@Atencion_codigo", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@Atencion_codigo"].Value = Pedido.ATE_CODIGO;
+
+            //        Sqlcmd.Parameters.Add("@Rub_Codigo", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@Rub_Codigo"].Value = 31;
+
+            //        Sqlcmd.Parameters.Add("@Pedido_Area", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@Pedido_Area"].Value = Pedido.PEA_CODIGO;
+
+            //        Sqlcmd.Parameters.Add("@Usuario_Id", SqlDbType.VarChar);
+            //        Sqlcmd.Parameters["@Usuario_Id"].Value = Pedido.ID_USUARIO;
+
+            //        Sqlcmd.Parameters.Add("@NumVale", SqlDbType.Int);
+            //        Sqlcmd.Parameters["@Numvale"].Value = Numvale;
+
+            //        Sqldap = new SqlDataAdapter();
+            //        Sqlcmd.CommandTimeout = 180; //ESTABLECE EL TIEMPO MAXIMO DE ESPERA A UNA CONSULTA EN EL SERVIDOR EN SEGUNDOS/ GIOVANNY TAPIA /03/07/2012
+            //        Sqldap.SelectCommand = Sqlcmd;
+
+            //        Sqldap.Fill(Dts);
+
+            //    }
+
+            //    transaction.Commit();
+
+            //    return Resultado;
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    transaction.Rollback();
+            //    return 0;
+            //}
+            #endregion
+            using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
             {
-                Sqlcon.Open();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            transaction = Sqlcon.BeginTransaction();
-
-            try
-            {
-                Sqlcmd = new SqlCommand("sp_GuardaEncabezadoPedido", Sqlcon);
-                Sqlcmd.CommandType = CommandType.StoredProcedure;
-
-                Sqlcmd.Transaction = transaction;
-
-                Sqlcmd.Parameters.Add("@Ped_Codigo", SqlDbType.Int);
-                Sqlcmd.Parameters["@Ped_Codigo"].Value = Pedido.PED_CODIGO;
-
-                Sqlcmd.Parameters.Add("@PEA_CODIGO", SqlDbType.SmallInt);
-                Sqlcmd.Parameters["@PEA_CODIGO"].Value = Pedido.PEA_CODIGO;
-
-                Sqlcmd.Parameters.Add("@PEE_CODIGO", SqlDbType.TinyInt);
-                Sqlcmd.Parameters["@PEE_CODIGO"].Value = Pedido.PEE_CODIGO;
-
-                Sqlcmd.Parameters.Add("@PED_DESCRIPCION", SqlDbType.VarChar);
-                Sqlcmd.Parameters["@PED_DESCRIPCION"].Value = Pedido.PED_DESCRIPCION;
-
-                Sqlcmd.Parameters.Add("@PED_ESTADO", SqlDbType.SmallInt);
-                Sqlcmd.Parameters["@PED_ESTADO"].Value = Pedido.PED_ESTADO;
-
-                Sqlcmd.Parameters.Add("@PED_FECHA", SqlDbType.DateTime);
-                Sqlcmd.Parameters["@PED_FECHA"].Value = Pedido.PED_FECHA;
-
-                Sqlcmd.Parameters.Add("@ID_USUARIO", SqlDbType.SmallInt);
-                Sqlcmd.Parameters["@ID_USUARIO"].Value = Pedido.ID_USUARIO;
-
-                Sqlcmd.Parameters.Add("@ATE_CODIGO", SqlDbType.Int);
-                Sqlcmd.Parameters["@ATE_CODIGO"].Value = Pedido.ATE_CODIGO;
-
-                Sqlcmd.Parameters.Add("@TIP_PEDIDO", SqlDbType.SmallInt);
-                Sqlcmd.Parameters["@TIP_PEDIDO"].Value = Pedido.TIP_PEDIDO;
-
-                Sqlcmd.Parameters.Add("@PED_PRIORIDAD", SqlDbType.TinyInt);
-                Sqlcmd.Parameters["@PED_PRIORIDAD"].Value = Pedido.PED_PRIORIDAD;
-
-                Sqlcmd.Parameters.Add("@PED_TRANSACCION", SqlDbType.Int);
-                Sqlcmd.Parameters["@PED_TRANSACCION"].Value = Pedido.PED_TRANSACCION;
-
-                Sqlcmd.Parameters.Add("@MED_CODIGO", SqlDbType.Int);
-                Sqlcmd.Parameters["@MED_CODIGO"].Value = Pedido.MED_CODIGO;
-
-                Sqldap = new SqlDataAdapter();
-                Sqlcmd.CommandTimeout = 180; //ESTABLECE EL TIEMPO MAXIMO DE ESPERA A UNA CONSULTA EN EL SERVIDOR EN SEGUNDOS/ GIOVANNY TAPIA /03/07/2012
-                Sqldap.SelectCommand = Sqlcmd;
-
-                Sqldap.Fill(Dts);
-
-                Resultado = Convert.ToInt32(Dts.Rows[0][0]);
-
-                foreach (var _Pedido in Pedido.DetallePedidoOtros)
+                ConexionEntidades.ConexionEDM.Open();
+                DbTransaction transa = ConexionEntidades.ConexionEDM.BeginTransaction();
+                try
                 {
+                    var maxPedido = db.PEDIDOS.OrderByDescending(x => x.PED_CODIGO).FirstOrDefault();
+                    Int64 maxp = Convert.ToInt64(maxPedido.PED_CODIGO) + 1;
+                    PEDIDOS pedido = new PEDIDOS();
+                    pedido.PED_CODIGO = maxPedido.PED_CODIGO + 1;
+                    pedido.PEDIDOS_AREAS.PEA_CODIGO = Pedido.PEA_CODIGO;
+                    pedido.PEE_CODIGO = (byte?)Pedido.PEE_CODIGO;
+                    pedido.PED_DESCRIPCION = Pedido.PED_DESCRIPCION;
+                    pedido.PED_ESTADO = Pedido.PED_ESTADO;
+                    pedido.PED_FECHA = Pedido.PED_FECHA;
+                    pedido.ID_USUARIO = Pedido.ID_USUARIO;
+                    pedido.ATE_CODIGO = Pedido.ATE_CODIGO;
+                    pedido.TIP_PEDIDO = Pedido.TIP_PEDIDO;
+                    pedido.PED_PRIORIDAD = (byte?)Pedido.PED_PRIORIDAD;
+                    pedido.PED_TRANSACCION = Pedido.PED_TRANSACCION;
+                    pedido.MED_CODIGO = Pedido.MED_CODIGO;
+                    db.Crear("PEDIDOS", pedido);
 
-                    Sqlcmd = new SqlCommand("sp_GuardaPedidoDetalle", Sqlcon);
-                    Sqlcmd.CommandType = CommandType.StoredProcedure;
+                    List<PEDIDOS_DETALLE> peddetalle = new List<PEDIDOS_DETALLE>();
+                    var maxdetalle = db.PEDIDOS_DETALLE.OrderByDescending(x => x.PDD_CODIGO).FirstOrDefault();
+                    Int64 max = Convert.ToInt64(maxdetalle.PDD_CODIGO);
+                    foreach (var ped in Pedido.DetallePedidoOtros)
+                    {
+                        PEDIDOS_DETALLE detalle = new PEDIDOS_DETALLE();
+                        detalle.PDD_CODIGO = max + 1;
+                        detalle.PEDIDOS.PED_CODIGO = maxPedido.PED_CODIGO + 1;
+                        detalle.PRODUCTO.PRO_CODIGO = ped.PRO_CODIGO;
+                        detalle.PRO_DESCRIPCION = ped.PRO_DESCRIPCION;
+                        detalle.PDD_CANTIDAD = ped.PDD_CANTIDAD;
+                        detalle.PDD_VALOR = ped.PDD_VALOR;
+                        detalle.PDD_IVA = ped.PDD_IVA;
+                        detalle.PDD_TOTAL = ped.PDD_TOTAL;
+                        detalle.PDD_ESTADO = ped.PDD_ESTADO;
+                        detalle.PDD_COSTO = ped.PDD_CODIGO;
+                        detalle.PDD_FACTURA = ped.PDD_FACTURA;
+                        detalle.PDD_ESTADO_FACTURA = ped.PDD_ESTADO_FACTURA;
+                        detalle.PDD_FECHA_FACTURA = ped.PDD_FECHA_FACTURA;
+                        detalle.PDD_RESULTADO = ped.PDD_RESULTADO;
+                        detalle.PRO_CODIGO_BARRAS = ped.PRO_CODIGO_BARRAS;
+                        peddetalle.Add(detalle);
+                    }
+                    db.CrearLista("PEDIDOS_DETALLE", peddetalle);
 
-                    Sqlcmd.Transaction = transaction;
+                    List<CUENTAS_PACIENTES> cuenta = new List<CUENTAS_PACIENTES>();
+                    var maxNumeroCuentaPaciente = db.CUENTAS_PACIENTES.OrderByDescending(z => z.CUE_CODIGO).FirstOrDefault();
+                    Int64 CUE_NUMERO_CONTROL = maxNumeroCuentaPaciente.CUE_CODIGO + 1;
+                    foreach (var item in Pedido.DetallePedidoOtros)
+                    {
+                        CUENTAS_PACIENTES cp = new CUENTAS_PACIENTES();
+                        cp.CUE_CODIGO = CUE_NUMERO_CONTROL;
+                        cp.ATE_CODIGO = Pedido.ATE_CODIGO;
+                        cp.CUE_FECHA = DateTime.Now;
+                        cp.PRO_CODIGO = Convert.ToString(item.PRO_CODIGO);
+                        cp.CUE_DETALLE = item.PRO_DESCRIPCION;
+                        cp.CUE_VALOR_UNITARIO = item.PDD_VALOR;
+                        cp.CUE_CANTIDAD = item.PDD_CANTIDAD;
+                        cp.CUE_VALOR = item.PDD_TOTAL;
+                        cp.CUE_IVA = item.PDD_IVA;
+                        cp.CUE_ESTADO = 1;
+                        cp.CUE_NUM_FAC = "";
+                        cp.RUB_CODIGO = 31;
+                        cp.PED_CODIGO = Pedido.PEA_CODIGO;
+                        cp.ID_USUARIO = Pedido.ID_USUARIO;
+                        cp.CAT_CODIGO = 0;
+                        cp.PRO_CODIGO_BARRAS = item.PRO_CODIGO_BARRAS;
+                        cp.CUE_NUM_CONTROL = "0";
+                        cp.CUE_OBSERVACION = "OTROS RUBROS";
+                        cp.MED_CODIGO = 0;
+                        cp.CUE_ORDER_IMPRESION = null;
+                        //cp.Codigo_Pedido = item.Codigo_Pedido;
+                        //cp.Id_Tipo_Medico = item.Id_Tipo_Medico;
+                        //cp.COSTO = item.COSTO;
+                        //cp.NumVale = item.NumVale;
+                        //cp.DivideFactura = item.DivideFactura;
+                        //cp.Descuento = item.Descuento;
+                        //cp.PorDescuento = item.PorDescuento;
+                        //cp.USUARIO_FACTURA = item.USUARIO_FACTURA;
+                        //cp.FECHA_FACTURA = item.FECHA_FACTURA;
+                        cuenta.Add(cp);
+                        CUE_NUMERO_CONTROL++;
+                    }
+                    db.CrearLista("CUENTAS_PACIENTES", cuenta);
 
-                    Sqlcmd.Parameters.Add("@PDD_CODIGO", SqlDbType.BigInt);
-                    Sqlcmd.Parameters["@PDD_CODIGO"].Value = _Pedido.PDD_CODIGO;
-
-                    Sqlcmd.Parameters.Add("@PED_CODIGO", SqlDbType.Int);
-                    Sqlcmd.Parameters["@PED_CODIGO"].Value = Resultado;
-
-                    Sqlcmd.Parameters.Add("@PRO_CODIGO", SqlDbType.Int);
-                    Sqlcmd.Parameters["@PRO_CODIGO"].Value = _Pedido.PRO_CODIGO;
-
-                    Sqlcmd.Parameters.Add("@PRO_DESCRIPCION", SqlDbType.NVarChar);
-                    Sqlcmd.Parameters["@PRO_DESCRIPCION"].Value = _Pedido.PRO_DESCRIPCION;
-
-                    Sqlcmd.Parameters.Add("@PDD_CANTIDAD", SqlDbType.Decimal);
-                    Sqlcmd.Parameters["@PDD_CANTIDAD"].Value = _Pedido.PDD_CANTIDAD;
-
-                    Sqlcmd.Parameters.Add("@PDD_VALOR", SqlDbType.Decimal);
-                    Sqlcmd.Parameters["@PDD_VALOR"].Value = _Pedido.PDD_VALOR;
-
-                    Sqlcmd.Parameters.Add("@PDD_IVA", SqlDbType.Decimal);
-                    Sqlcmd.Parameters["@PDD_IVA"].Value = _Pedido.PDD_IVA;
-
-                    Sqlcmd.Parameters.Add("@PDD_TOTAL", SqlDbType.Decimal);
-                    Sqlcmd.Parameters["@PDD_TOTAL"].Value = _Pedido.PDD_TOTAL;
-
-                    Sqlcmd.Parameters.Add("@PDD_ESTADO", SqlDbType.Bit);
-                    Sqlcmd.Parameters["@PDD_ESTADO"].Value = _Pedido.PDD_ESTADO;
-
-                    Sqlcmd.Parameters.Add("@PDD_COSTO", SqlDbType.Decimal);
-                    Sqlcmd.Parameters["@PDD_COSTO"].Value = _Pedido.PDD_COSTO;
-
-                    Sqlcmd.Parameters.Add("@PDD_FACTURA", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@PDD_FACTURA"].Value = _Pedido.PDD_FACTURA;
-
-                    Sqlcmd.Parameters.Add("@PDD_ESTADO_FACTURA", SqlDbType.Int);
-                    Sqlcmd.Parameters["@PDD_ESTADO_FACTURA"].Value = _Pedido.PDD_ESTADO_FACTURA;
-
-                    Sqlcmd.Parameters.Add("@PDD_FECHA_FACTURA", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@PDD_FECHA_FACTURA"].Value = _Pedido.PDD_FECHA_FACTURA;
-
-                    Sqlcmd.Parameters.Add("@PDD_RESULTADO", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@PDD_RESULTADO"].Value = _Pedido.PDD_RESULTADO;
-
-                    Sqlcmd.Parameters.Add("@PRO_CODIGO_BARRAS", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@PRO_CODIGO_BARRAS"].Value = _Pedido.PRO_CODIGO_BARRAS;
-
-                    Sqlcmd.Parameters.Add("@Atencion_codigo", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@Atencion_codigo"].Value = Pedido.ATE_CODIGO;
-
-                    Sqlcmd.Parameters.Add("@Rub_Codigo", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@Rub_Codigo"].Value = 31;
-
-                    Sqlcmd.Parameters.Add("@Pedido_Area", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@Pedido_Area"].Value = Pedido.PEA_CODIGO;
-
-                    Sqlcmd.Parameters.Add("@Usuario_Id", SqlDbType.VarChar);
-                    Sqlcmd.Parameters["@Usuario_Id"].Value = Pedido.ID_USUARIO;
-
-                    Sqlcmd.Parameters.Add("@NumVale", SqlDbType.Int);
-                    Sqlcmd.Parameters["@Numvale"].Value = Numvale;
-
-                    Sqldap = new SqlDataAdapter();
-                    Sqlcmd.CommandTimeout = 180; //ESTABLECE EL TIEMPO MAXIMO DE ESPERA A UNA CONSULTA EN EL SERVIDOR EN SEGUNDOS/ GIOVANNY TAPIA /03/07/2012
-                    Sqldap.SelectCommand = Sqlcmd;
-
-                    Sqldap.Fill(Dts);
-
+                    db.SaveChanges();
+                    transa.Commit();
+                    ConexionEntidades.ConexionEDM.Close();
+                    return maxp;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    transa.Rollback();
+                    ConexionEntidades.ConexionEDM.Close();
+                    return 0;
                 }
 
-                transaction.Commit();
-
-                return Resultado;
-
             }
-            catch (Exception ex)
-            {
-                transaction.Rollback();
-                return 0;
-            }
-
         }
 
         public DataTable ListaPedidos(DateTime Fecha1, DateTime Fecha2)

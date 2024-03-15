@@ -243,6 +243,9 @@ advertencia 6002: La tabla o vista 'His3000.dbo.ARE_ASIGNADA' no tiene definida 
           <Property Name="ate_carnet_conadis" Type="varchar" MaxLength="32" />
           <Property Name="ATE_ID_ACCIDENTE" Type="int" />
           <Property Name="idTipoDescuento" Type="int" Nullable="false" />
+          <Property Name="ATE_FUENTE_INFORMACION" Type="varchar" MaxLength="500" />
+          <Property Name="ATE_INSTITUCION_ENTREGA" Type="varchar" MaxLength="500" />
+          <Property Name="ATE_INSTITUCION_TELEFONO" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ATENCIONES_DETALLE_SEGUROS">
           <Key>
@@ -996,6 +999,7 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="FH_DIRECTORIO" Type="nvarchar" MaxLength="1000" />
           <Property Name="FH_FECHA_CREACION" Type="date" />
           <Property Name="FH_ESTADO" Type="bit" />
+          <Property Name="fecha" Type="date" />
         </EntityType>
         <EntityType Name="FORMULARIOS_MSP_CERRADOS">
           <Key>
@@ -1398,7 +1402,7 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="EMER_OTRO_MOTIVO" Type="varchar" MaxLength="150" />
           <Property Name="EMER_FECHA_EVENTO" Type="datetime" />
           <Property Name="HCC_CODIGO_LE" Type="int" />
-          <Property Name="EMER_DIRECCION_EVENTO" Type="varchar" MaxLength="80" />
+          <Property Name="EMER_DIRECCION_EVENTO" Type="varchar" MaxLength="500" />
           <Property Name="EMER_CUSTODIA_POLICIAL" Type="bit" />
           <Property Name="HCC_CODIGO_AVIEQ" Type="int" />
           <Property Name="EMER_OBS_AVIEQ" Type="varchar(max)" />
@@ -1439,7 +1443,7 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="EMER_CONDICION_EST" Type="bit" />
           <Property Name="EMER_CONDICION_INES" Type="bit" />
           <Property Name="EMER_DIAS_INCAP" Type="int" />
-          <Property Name="EMER_CAUSA_MUERTE" Type="varchar" MaxLength="50" />
+          <Property Name="EMER_CAUSA_MUERTE" Type="varchar" MaxLength="500" />
           <Property Name="ID_USUARIO" Type="smallint" />
           <Property Name="EMER_ESTADO" Type="int" />
           <Property Name="EMER_FECHA_E" Type="datetime" />
@@ -1447,6 +1451,46 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="EMER_NOMBRE_PROF_E" Type="varchar" MaxLength="110" />
           <Property Name="EMER_CODIGO_PRO_E" Type="varchar" MaxLength="16" />
           <Property Name="EMER_OBSER_GENERAL" Type="varchar" MaxLength="5000" />
+          <Property Name="EMER_CL_ESTABLE" Type="int" />
+          <Property Name="EMER_CL_INESTABLE" Type="int" />
+          <Property Name="EMER_CL_FALLECIDO" Type="int" />
+          <Property Name="EMER_CL_MOTIVO" Type="varchar" MaxLength="500" />
+          <Property Name="EMER_ACT_TRA" Type="int" />
+          <Property Name="EMER_VIO_ARM" Type="int" />
+          <Property Name="EMER_INT_ALC" Type="int" />
+          <Property Name="EMER_CAIDA" Type="int" />
+          <Property Name="EMER_VIO_PUN" Type="int" />
+          <Property Name="EMER_INT_ALI" Type="int" />
+          <Property Name="EMER_QUEMADURA" Type="int" />
+          <Property Name="EMER_VIO_RINA" Type="int" />
+          <Property Name="EMER_INT_DRO" Type="int" />
+          <Property Name="EMER_MORDEDURA" Type="int" />
+          <Property Name="EMER_VIO_FAM" Type="int" />
+          <Property Name="EMER_INH_GAS" Type="int" />
+          <Property Name="EMER_AHOGAMIENTO" Type="int" />
+          <Property Name="EMER_PRE_FIS" Type="int" />
+          <Property Name="EMER_OTR_INT" Type="int" />
+          <Property Name="EMER_CUE_EXT" Type="int" />
+          <Property Name="EMER_PRE_PSI" Type="int" />
+          <Property Name="EMER_PICADURA" Type="int" />
+          <Property Name="EMER_APLASTAMIENTO" Type="int" />
+          <Property Name="EMER_PRE_SEX" Type="int" />
+          <Property Name="EMER_ENVENENAMIENTO" Type="int" />
+          <Property Name="EMER_OTR_ACC" Type="int" />
+          <Property Name="EMER_NOTIFICACION" Type="int" />
+          <Property Name="EMER_ANAFILAXIA" Type="int" />
+          <Property Name="EMER_LLE_CAP" Type="varchar" MaxLength="6" />
+          <Property Name="EMER_SIN_VIT" Type="int" />
+          <Property Name="EMER_PERIMETRO" Type="varchar" MaxLength="6" />
+          <Property Name="EMER_GRU_PRIO" Type="int" />
+          <Property Name="EMER_PRIORITARIO" Type="varchar" MaxLength="50" />
+          <Property Name="EMER_HOSPITALIZACION" Type="int" />
+          <Property Name="EMER_REF_INV" Type="int" />
+          <Property Name="EMER_OBS_EGR" Type="varchar" MaxLength="500" />
+          <Property Name="EMER_DERIVACION" Type="int" />
+          <Property Name="EMER_OBS_EXA_FIS" Type="varchar" MaxLength="1000" />
+          <Property Name="EMER_ALT_DEF" Type="int" />
+          <Property Name="EMER_SCORE" Type="int" />
         </EntityType>
         <EntityType Name="HC_EMERGENCIA_FORM_DIAGNOSTICOS">
           <Key>
@@ -1520,6 +1564,9 @@ advertencia 6002: La tabla o vista 'His3000.dbo.CERTIFICADO_MEDICO_IESS' no tien
           <Property Name="ID_USUARIO" Type="smallint" />
           <Property Name="EMER_POSOLOGIA" Type="varchar" MaxLength="64" />
           <Property Name="PRO_CODIGO" Type="varchar" MaxLength="64" />
+          <Property Name="DOSIS" Type="varchar" MaxLength="50" />
+          <Property Name="VIA" Type="varchar" MaxLength="50" />
+          <Property Name="DIAS" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="HC_EMERGENCIA_IMAGENES">
           <Key>
@@ -1960,7 +2007,7 @@ advertencia 6002: La tabla o vista 'His3000.dbo.HC_INGESTA_ELIMINACION_DETALLE' 
           <Property Name="HIN_CAMA" Type="int" />
           <Property Name="HIN_TIPO" Type="char" MaxLength="1" />
           <Property Name="HIN_MED_INTERCONSULTADO" Type="varchar" MaxLength="100" />
-          <Property Name="HIN_DESCRIPCION_MOTIVO" Type="varchar" MaxLength="100" />
+          <Property Name="HIN_DESCRIPCION_MOTIVO" Type="varchar(max)" />
           <Property Name="HIN_CUADRO_CLINICO" Type="text" />
           <Property Name="HIN_RESULTADO_EXAMENES" Type="text" />
           <Property Name="HIN_PLANES_TERAPEUTICOS" Type="text" />
@@ -8535,6 +8582,9 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <NavigationProperty Name="HC_ANAMNESIS" Relationship="HIS3000BDModel.FK_HC_ANAMNESIS_ATENCIONES" FromRole="ATENCIONES" ToRole="HC_ANAMNESIS" />
           <NavigationProperty Name="HC_INTERCONSULTA" Relationship="HIS3000BDModel.FK_HC_INTERCONSULTA_ATENCIONES" FromRole="ATENCIONES" ToRole="HC_INTERCONSULTA" />
           <NavigationProperty Name="PACIENTES_DATOS_ADICIONALES" Relationship="HIS3000BDModel.FK_ATENCIONES_PACIENTES_DATOS_ADICIONALES" FromRole="ATENCIONES" ToRole="PACIENTES_DATOS_ADICIONALES" />
+          <Property Name="ATE_FUENTE_INFORMACION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ATE_INSTITUCION_ENTREGA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ATE_INSTITUCION_TELEFONO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
 				</EntityType>
 				<EntityType Name="BANCOS">
 					<Key>
@@ -9985,6 +10035,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="FH_FECHA_CREACION" Type="DateTime" Nullable="true" Precision="0" />
 					<Property Name="FH_ESTADO" Type="Boolean" Nullable="true" />
 					<NavigationProperty Name="ATENCION_DETALLE_FORMULARIOS_HCU" Relationship="HIS3000BDModel.FK_ATENCION_DETALLE_FORMULARIOS_HCU_FORMULARIOS_HCU" FromRole="FORMULARIOS_HCU" ToRole="ATENCION_DETALLE_FORMULARIOS_HCU" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
 				</EntityType>
 				<Association Name="FK_ATENCION_DETALLE_FORMULARIOS_HCU_ATENCIONES">
 					<End Type="HIS3000BDModel.ATENCIONES" Role="ATENCIONES" Multiplicity="0..1" />
@@ -10943,7 +10994,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="EMER_OTRO_MOTIVO" Type="String" Nullable="true" MaxLength="150" Unicode="false" FixedLength="false" />
 					<Property Name="EMER_FECHA_EVENTO" Type="DateTime" Nullable="true" Precision="3" />
 					<Property Name="HCC_CODIGO_LE" Type="Int32" Nullable="true" />
-					<Property Name="EMER_DIRECCION_EVENTO" Type="String" Nullable="true" MaxLength="80" Unicode="false" FixedLength="false" />
+					<Property Name="EMER_DIRECCION_EVENTO" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
 					<Property Name="EMER_CUSTODIA_POLICIAL" Type="Boolean" Nullable="true" />
 					<Property Name="HCC_CODIGO_AVIEQ" Type="Int32" Nullable="true" />
 					<Property Name="EMER_OBS_AVIEQ" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -10984,7 +11035,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="EMER_CONDICION_EST" Type="Boolean" Nullable="true" />
 					<Property Name="EMER_CONDICION_INES" Type="Boolean" Nullable="true" />
 					<Property Name="EMER_DIAS_INCAP" Type="Int32" Nullable="true" />
-					<Property Name="EMER_CAUSA_MUERTE" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+					<Property Name="EMER_CAUSA_MUERTE" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
 					<NavigationProperty Name="ATENCIONES" Relationship="HIS3000BDModel.FK_HC_EMERGENCIA_FORM_ATENCIONES" FromRole="HC_EMERGENCIA_FORM" ToRole="ATENCIONES" />
 					<NavigationProperty Name="HC_EMERGENCIA_FORM_DIAGNOSTICOS" Relationship="HIS3000BDModel.FK_HC_EMERGENCIA_FORM_DIAGNOSTICOS_HC_EMERGENCIA_FORM" FromRole="HC_EMERGENCIA_FORM" ToRole="HC_EMERGENCIA_FORM_DIAGNOSTICOS" />
 					<NavigationProperty Name="HC_EMERGENCIA_FORM_EXAMENES" Relationship="HIS3000BDModel.FK_HC_EMERGENCIA_FORM_EXAMENES_HC_EMERGENCIA_FORM" FromRole="HC_EMERGENCIA_FORM" ToRole="HC_EMERGENCIA_FORM_EXAMENES" />
@@ -10999,6 +11050,46 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="EMER_NOMBRE_PROF_E" Type="String" Nullable="true" MaxLength="110" Unicode="false" FixedLength="false" />
 					<Property Name="EMER_CODIGO_PRO_E" Type="String" Nullable="true" MaxLength="16" Unicode="false" FixedLength="false" />
 					<Property Name="EMER_OBSER_GENERAL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_CL_ESTABLE" Type="Int32" />
+          <Property Name="EMER_CL_INESTABLE" Type="Int32" />
+          <Property Name="EMER_CL_FALLECIDO" Type="Int32" />
+          <Property Name="EMER_CL_MOTIVO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_ACT_TRA" Type="Int32" />
+          <Property Name="EMER_VIO_ARM" Type="Int32" />
+          <Property Name="EMER_INT_ALC" Type="Int32" />
+          <Property Name="EMER_CAIDA" Type="Int32" />
+          <Property Name="EMER_VIO_PUN" Type="Int32" />
+          <Property Name="EMER_INT_ALI" Type="Int32" />
+          <Property Name="EMER_QUEMADURA" Type="Int32" />
+          <Property Name="EMER_VIO_RINA" Type="Int32" />
+          <Property Name="EMER_INT_DRO" Type="Int32" />
+          <Property Name="EMER_MORDEDURA" Type="Int32" />
+          <Property Name="EMER_VIO_FAM" Type="Int32" />
+          <Property Name="EMER_INH_GAS" Type="Int32" />
+          <Property Name="EMER_AHOGAMIENTO" Type="Int32" />
+          <Property Name="EMER_PRE_FIS" Type="Int32" />
+          <Property Name="EMER_OTR_INT" Type="Int32" />
+          <Property Name="EMER_CUE_EXT" Type="Int32" />
+          <Property Name="EMER_PRE_PSI" Type="Int32" />
+          <Property Name="EMER_PICADURA" Type="Int32" />
+          <Property Name="EMER_APLASTAMIENTO" Type="Int32" />
+          <Property Name="EMER_PRE_SEX" Type="Int32" />
+          <Property Name="EMER_ENVENENAMIENTO" Type="Int32" />
+          <Property Name="EMER_OTR_ACC" Type="Int32" />
+          <Property Name="EMER_NOTIFICACION" Type="Int32" />
+          <Property Name="EMER_ANAFILAXIA" Type="Int32" />
+          <Property Name="EMER_LLE_CAP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_SIN_VIT" Type="Int32" />
+          <Property Name="EMER_PERIMETRO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_GRU_PRIO" Type="Int32" />
+          <Property Name="EMER_PRIORITARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_HOSPITALIZACION" Type="Int32" />
+          <Property Name="EMER_REF_INV" Type="Int32" />
+          <Property Name="EMER_OBS_EGR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_DERIVACION" Type="Int32" />
+          <Property Name="EMER_OBS_EXA_FIS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="EMER_ALT_DEF" Type="Int32" />
+          <Property Name="EMER_SCORE" Type="Int32" />
 				</EntityType>
 				<EntityType Name="HC_EMERGENCIA_FORM_DIAGNOSTICOS">
 					<Key>
@@ -11072,6 +11163,9 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="ID_USUARIO" Type="Int16" Nullable="true" />
 					<Property Name="EMER_POSOLOGIA" Type="String" Nullable="true" MaxLength="64" Unicode="false" FixedLength="false" />
 					<Property Name="PRO_CODIGO" Type="String" Nullable="true" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="DOSIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIAS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
 				</EntityType>
 				<Association Name="FK_HC_EMERGENCIA_FORM_ATENCIONES">
 					<End Type="HIS3000BDModel.ATENCIONES" Role="ATENCIONES" Multiplicity="0..1" />
@@ -12529,7 +12623,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <Property Name="HIN_CAMA" Type="Int32" />
           <Property Name="HIN_TIPO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="HIN_MED_INTERCONSULTADO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="HIN_DESCRIPCION_MOTIVO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HIN_DESCRIPCION_MOTIVO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="HIN_CUADRO_CLINICO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="HIN_RESULTADO_EXAMENES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="HIN_PLANES_TERAPEUTICOS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -14690,7 +14784,10 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<EntitySetMapping Name="ATENCIONES">
 						<EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.ATENCIONES)">
 							<MappingFragment StoreEntitySet="ATENCIONES">
-								<ScalarProperty Name="idTipoDescuento" ColumnName="idTipoDescuento" />
+								<ScalarProperty Name="ATE_INSTITUCION_TELEFONO" ColumnName="ATE_INSTITUCION_TELEFONO" />
+                <ScalarProperty Name="ATE_INSTITUCION_ENTREGA" ColumnName="ATE_INSTITUCION_ENTREGA" />
+                <ScalarProperty Name="ATE_FUENTE_INFORMACION" ColumnName="ATE_FUENTE_INFORMACION" />
+                <ScalarProperty Name="idTipoDescuento" ColumnName="idTipoDescuento" />
 								<ScalarProperty Name="ATE_ID_ACCIDENTE" ColumnName="ATE_ID_ACCIDENTE" />
 								<ScalarProperty Name="ate_carnet_conadis" ColumnName="ate_carnet_conadis" />
 								<ScalarProperty Name="ate_discapacidad" ColumnName="ate_discapacidad" />
@@ -15180,7 +15277,8 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<EntitySetMapping Name="FORMULARIOS_HCU">
 						<EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.FORMULARIOS_HCU)">
 							<MappingFragment StoreEntitySet="FORMULARIOS_HCU">
-								<ScalarProperty Name="FH_ESTADO" ColumnName="FH_ESTADO" />
+								<ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="FH_ESTADO" ColumnName="FH_ESTADO" />
 								<ScalarProperty Name="FH_FECHA_CREACION" ColumnName="FH_FECHA_CREACION" />
 								<ScalarProperty Name="FH_DIRECTORIO" ColumnName="FH_DIRECTORIO" />
 								<ScalarProperty Name="FH_DESCRIPCION" ColumnName="FH_DESCRIPCION" />
@@ -16251,7 +16349,47 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<EntitySetMapping Name="HC_EMERGENCIA_FORM">
 						<EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HC_EMERGENCIA_FORM)">
 							<MappingFragment StoreEntitySet="HC_EMERGENCIA_FORM">
-								<ScalarProperty Name="EMER_OBSER_GENERAL" ColumnName="EMER_OBSER_GENERAL" />
+								<ScalarProperty Name="EMER_SCORE" ColumnName="EMER_SCORE" />
+                <ScalarProperty Name="EMER_ALT_DEF" ColumnName="EMER_ALT_DEF" />
+                <ScalarProperty Name="EMER_OBS_EXA_FIS" ColumnName="EMER_OBS_EXA_FIS" />
+                <ScalarProperty Name="EMER_DERIVACION" ColumnName="EMER_DERIVACION" />
+                <ScalarProperty Name="EMER_OBS_EGR" ColumnName="EMER_OBS_EGR" />
+                <ScalarProperty Name="EMER_REF_INV" ColumnName="EMER_REF_INV" />
+                <ScalarProperty Name="EMER_HOSPITALIZACION" ColumnName="EMER_HOSPITALIZACION" />
+                <ScalarProperty Name="EMER_PRIORITARIO" ColumnName="EMER_PRIORITARIO" />
+                <ScalarProperty Name="EMER_GRU_PRIO" ColumnName="EMER_GRU_PRIO" />
+                <ScalarProperty Name="EMER_PERIMETRO" ColumnName="EMER_PERIMETRO" />
+                <ScalarProperty Name="EMER_SIN_VIT" ColumnName="EMER_SIN_VIT" />
+                <ScalarProperty Name="EMER_LLE_CAP" ColumnName="EMER_LLE_CAP" />
+                <ScalarProperty Name="EMER_ANAFILAXIA" ColumnName="EMER_ANAFILAXIA" />
+                <ScalarProperty Name="EMER_NOTIFICACION" ColumnName="EMER_NOTIFICACION" />
+                <ScalarProperty Name="EMER_OTR_ACC" ColumnName="EMER_OTR_ACC" />
+                <ScalarProperty Name="EMER_ENVENENAMIENTO" ColumnName="EMER_ENVENENAMIENTO" />
+                <ScalarProperty Name="EMER_PRE_SEX" ColumnName="EMER_PRE_SEX" />
+                <ScalarProperty Name="EMER_APLASTAMIENTO" ColumnName="EMER_APLASTAMIENTO" />
+                <ScalarProperty Name="EMER_PICADURA" ColumnName="EMER_PICADURA" />
+                <ScalarProperty Name="EMER_PRE_PSI" ColumnName="EMER_PRE_PSI" />
+                <ScalarProperty Name="EMER_CUE_EXT" ColumnName="EMER_CUE_EXT" />
+                <ScalarProperty Name="EMER_OTR_INT" ColumnName="EMER_OTR_INT" />
+                <ScalarProperty Name="EMER_PRE_FIS" ColumnName="EMER_PRE_FIS" />
+                <ScalarProperty Name="EMER_AHOGAMIENTO" ColumnName="EMER_AHOGAMIENTO" />
+                <ScalarProperty Name="EMER_INH_GAS" ColumnName="EMER_INH_GAS" />
+                <ScalarProperty Name="EMER_VIO_FAM" ColumnName="EMER_VIO_FAM" />
+                <ScalarProperty Name="EMER_MORDEDURA" ColumnName="EMER_MORDEDURA" />
+                <ScalarProperty Name="EMER_INT_DRO" ColumnName="EMER_INT_DRO" />
+                <ScalarProperty Name="EMER_VIO_RINA" ColumnName="EMER_VIO_RINA" />
+                <ScalarProperty Name="EMER_QUEMADURA" ColumnName="EMER_QUEMADURA" />
+                <ScalarProperty Name="EMER_INT_ALI" ColumnName="EMER_INT_ALI" />
+                <ScalarProperty Name="EMER_VIO_PUN" ColumnName="EMER_VIO_PUN" />
+                <ScalarProperty Name="EMER_CAIDA" ColumnName="EMER_CAIDA" />
+                <ScalarProperty Name="EMER_INT_ALC" ColumnName="EMER_INT_ALC" />
+                <ScalarProperty Name="EMER_VIO_ARM" ColumnName="EMER_VIO_ARM" />
+                <ScalarProperty Name="EMER_ACT_TRA" ColumnName="EMER_ACT_TRA" />
+                <ScalarProperty Name="EMER_CL_MOTIVO" ColumnName="EMER_CL_MOTIVO" />
+                <ScalarProperty Name="EMER_CL_FALLECIDO" ColumnName="EMER_CL_FALLECIDO" />
+                <ScalarProperty Name="EMER_CL_INESTABLE" ColumnName="EMER_CL_INESTABLE" />
+                <ScalarProperty Name="EMER_CL_ESTABLE" ColumnName="EMER_CL_ESTABLE" />
+                <ScalarProperty Name="EMER_OBSER_GENERAL" ColumnName="EMER_OBSER_GENERAL" />
 								<ScalarProperty Name="EMER_CODIGO_PRO_E" ColumnName="EMER_CODIGO_PRO_E" />
 								<ScalarProperty Name="EMER_NOMBRE_PROF_E" ColumnName="EMER_NOMBRE_PROF_E" />
 								<ScalarProperty Name="EMER_HORA_E" ColumnName="EMER_HORA_E" />
@@ -16376,7 +16514,10 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<EntitySetMapping Name="HC_EMERGENCIA_FORM_TRATAMIENTO">
 						<EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HC_EMERGENCIA_FORM_TRATAMIENTO)">
 							<MappingFragment StoreEntitySet="HC_EMERGENCIA_FORM_TRATAMIENTO">
-								<ScalarProperty Name="PRO_CODIGO" ColumnName="PRO_CODIGO" />
+								<ScalarProperty Name="DIAS" ColumnName="DIAS" />
+                <ScalarProperty Name="VIA" ColumnName="VIA" />
+                <ScalarProperty Name="DOSIS" ColumnName="DOSIS" />
+                <ScalarProperty Name="PRO_CODIGO" ColumnName="PRO_CODIGO" />
 								<ScalarProperty Name="EMER_POSOLOGIA" ColumnName="EMER_POSOLOGIA" />
 								<ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
 								<ScalarProperty Name="ETRA_DESCRIPCION" ColumnName="ETRA_DESCRIPCION" />
@@ -18800,7 +18941,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 		</edmx:Options>
 		<!-- Diagram content (shape and connector positions) -->
 		<edmx:Diagrams>
-			<Diagram Name="HisModelo" ZoomLevel="59" ShowGrid="true">
+			<Diagram Name="HisModelo" ZoomLevel="42" ShowGrid="true">
 				<EntityTypeShape EntityType="HIS3000BDModel.ACCESO_OPCIONES" Width="1.5" PointX="11.25" PointY="21.5" Height="1.7566536458333353" IsExpanded="true" />
 				<EntityTypeShape EntityType="HIS3000BDModel.AREAS_MEDICAS" Width="1.5" PointX="7.5" PointY="34.75" Height="1.7566536458333317" IsExpanded="true" />
 				<EntityTypeShape EntityType="HIS3000BDModel.ATENCIONES" Width="1.875" PointX="17.75" PointY="51.375" Height="9.1522835286458388" IsExpanded="true" />

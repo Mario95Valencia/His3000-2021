@@ -21,5 +21,9 @@ namespace His.Negocio
         {
             return new DatCopago().cuentaAuditoria(ate_codigo);
         }
+        public static List<DtopAnulaCopago> cuentasCopago()
+        {
+            return new DatCopago().cuentasCopago();
+        }
     }
 }

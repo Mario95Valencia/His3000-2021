@@ -18,7 +18,10 @@ namespace His.Negocio
         {
             return new DatParametros().RecuperaPorCodigo(codigo);
         }
-
+        public static FORMULARIOS_HCU RecuperaFechaPorCodigo(int codigo)
+        {
+            return new DatParametros().RecuperaFechaPorCodigo(codigo);
+        }
         public static DataTable RecuepraHorasyLitros(int hora)
         {
             return new DatParametros().RecuepraHorasyLitros(hora);

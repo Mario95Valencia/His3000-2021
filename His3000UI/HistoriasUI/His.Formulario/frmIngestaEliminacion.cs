@@ -111,7 +111,7 @@ namespace His.Formulario
         {
             valorSvActividad = NegSignosVitales.validadeSv((Int32)CodigoAtencion, dtp_Creacion.Value);
             if (valorSvActividad)
-                txtDescripcionR.Enabled = true;
+                txtDescripcionR.Enabled = true; //No se valida si no es Ambulatorio 20240313 Andrés
             DataTable ing = NegIngestaEliminacion.ingestaXfecha((Int32)CodigoAtencion, dtp_Creacion.Value);
             if (ing.Rows.Count == 0)
             {
@@ -242,15 +242,15 @@ namespace His.Formulario
                 {
                     dtgParentalN.Rows.Add(ParentalN.Rows[i][0].ToString(), ParentalN.Rows[i][2].ToString(), ParentalN.Rows[i][3].ToString(), ParentalN.Rows[i][4].ToString());
                 }
-                for (int i = 0; i < EnteralM.Rows.Count; i++)
+                for (int i = 0; i < EnteralM.Rows.Count; i++) //ENTERAL DE MAÑANA
                 {
                     dtgEnteral.Rows.Add(EnteralM.Rows[i][0].ToString(), EnteralM.Rows[i][2].ToString(), EnteralM.Rows[i][3].ToString(), EnteralM.Rows[i][4].ToString());
                 }
-                for (int i = 0; i < EnteralT.Rows.Count; i++)
+                for (int i = 0; i < EnteralT.Rows.Count; i++) //ENTERAL DE TARDE
                 {
                     dtgEnteralT.Rows.Add(EnteralT.Rows[i][0].ToString(), EnteralT.Rows[i][2].ToString(), EnteralT.Rows[i][3].ToString(), EnteralT.Rows[i][4].ToString());
                 }
-                for (int i = 0; i < EnteralN.Rows.Count; i++)
+                for (int i = 0; i < EnteralN.Rows.Count; i++) //ENTERAL DE NOCHE
                 {
                     dtgEnteralN.Rows.Add(EnteralN.Rows[i][0].ToString(), EnteralN.Rows[i][2].ToString(), EnteralN.Rows[i][3].ToString(), EnteralN.Rows[i][4].ToString());
                 }
@@ -944,9 +944,12 @@ namespace His.Formulario
         {
             grbDatOral.Enabled = grid;
             grbDatParenteral.Enabled = grid;
-            //grbDatOrina.Enabled = grid;
+            grbDatEnteral.Enabled = grid;
+            grbDatOrina.Enabled = grid;
             grbDatOtros.Enabled = grid;
+            grbDatDeposiciones.Enabled = grid;
             grbDatDrenaje.Enabled = grid;
+            grbDatVomito.Enabled = grid;            
             dtgOral.Enabled = grid;
             dtgOralt.Enabled = grid;
             dtgOralN.Enabled = grid;
@@ -2288,8 +2291,8 @@ namespace His.Formulario
                 frm.Tables["ParentalN"].Rows.Add(dr);
             }
 
-            DataTable EnteralN = NegIngestaEliminacion.cargaGrid("IEM", IE_CODIGO);
-            ID_USUARIO = NegIngestaEliminacion.idUsuario(IE_CODIGO, "IEM");
+            DataTable EnteralN = NegIngestaEliminacion.cargaGrid("IEN", IE_CODIGO); //Se cambio de IEM Mañana a IEN Tarde la ENTERAL
+            ID_USUARIO = NegIngestaEliminacion.idUsuario(IE_CODIGO, "IEN");
             if (EnteralN.Rows.Count > 0)
                 usr = NegUsuarios.RecuperaUsuario(ID_USUARIO);
             for (int i = 0; i < EnteralN.Rows.Count; i++)

@@ -1999,6 +1999,9 @@ namespace His.Datos
                 atencion.ate_discapacidad = atencionModificada.ate_discapacidad;
                 atencion.ate_carnet_conadis = atencionModificada.ate_carnet_conadis;
                 atencion.ATE_ID_ACCIDENTE = atencionModificada.ATE_ID_ACCIDENTE;
+                atencion.ATE_FUENTE_INFORMACION = atencionModificada.ATE_FUENTE_INFORMACION;
+                atencion.ATE_INSTITUCION_ENTREGA = atencionModificada.ATE_INSTITUCION_ENTREGA;
+                atencion.ATE_INSTITUCION_TELEFONO = atencionModificada.ATE_INSTITUCION_TELEFONO;
                 /**/
                 try
                 {

@@ -63,6 +63,23 @@ namespace His.Datos
                 throw;
             }
         }
+        public FORMULARIOS_HCU RecuperaFechaPorCodigo(int codigo)
+        {
+            try
+            {
+                using (var contexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
+                {
+                    return (from c in contexto.FORMULARIOS_HCU
+                            where c.FH_CODIGO == codigo
+                            select c).FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public DataTable RecuepraHorasyLitros(int hora)
         {
