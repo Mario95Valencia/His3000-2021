@@ -2591,6 +2591,7 @@ namespace His.Emergencia
                 txt_DiasInc.Text = "";
                 cmb_Destino.Enabled = false;
                 cmb_Destino.Text = "";
+                cmb_Destino.SelectedIndex = -1;
 
 
                 txt_servicioReferencia.Text = "";

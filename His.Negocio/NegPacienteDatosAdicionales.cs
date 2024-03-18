@@ -57,7 +57,7 @@ namespace His.Negocio
         {
             new DatPacientesDatosAdicionales().PDA2_save(pda);
         }
-        public static DtoPacienteDatosAdicionales2 PDA2_find(int codigoPaciente)
+        public static DtoPacienteDatosAdicionales2 PDA2_find(Int64 codigoPaciente)
         {
             return new DatPacientesDatosAdicionales().PDA2_find(codigoPaciente);
         }

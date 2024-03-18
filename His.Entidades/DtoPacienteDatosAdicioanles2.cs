@@ -8,7 +8,7 @@ namespace His.Entidades
 {
     public class DtoPacienteDatosAdicionales2
     {
-        public int COD_PACIENTE { get; set; }
+        public Int64 COD_PACIENTE { get; set; }
         public string REF_TELEFONO_2 { get; set; }
         public bool FALLECIDO { get; set; }
         public string FEC_FALLECIDO { get; set; }

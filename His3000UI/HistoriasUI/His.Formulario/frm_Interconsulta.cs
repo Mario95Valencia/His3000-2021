@@ -2016,6 +2016,11 @@ namespace His.Formulario
             //        flag = true;
             //    }
             //}
+            if(txt_med_interconsultado.Text.Trim() == "")
+            {
+                AgregarError(txt_med_interconsultado);
+                flag = true;
+            }
             return flag;
         }
 

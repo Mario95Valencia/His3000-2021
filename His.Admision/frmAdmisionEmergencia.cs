@@ -750,7 +750,7 @@ namespace His.Admision
         private void CargarDatosAdicionales2(int codigoPaciente)//lx2020
         {
             datosPaciente2 = null;
-            datosPaciente2 = NegPacienteDatosAdicionales.PDA2_find(Convert.ToInt16(codigoPaciente));
+            datosPaciente2 = NegPacienteDatosAdicionales.PDA2_find(Convert.ToInt64(codigoPaciente));
 
             if (datosPaciente2 != null)
             {

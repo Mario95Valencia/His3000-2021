@@ -59,7 +59,7 @@ namespace His.Datos
             }
         }
 
-        public DtoPacienteDatosAdicionales2 PDA2_find(int codigoPaciente)
+        public DtoPacienteDatosAdicionales2 PDA2_find(Int64 codigoPaciente)
         {
             DtoPacienteDatosAdicionales2 pda = null;
             int r;
