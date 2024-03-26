@@ -4521,7 +4521,7 @@ namespace His.Emergencia
                 }
                 else if (item.HCC_CODIGO == 905)
                 {
-                    dr["Pediatrico"] = "X";
+                    dr["Pediatricos"] = "X";
                     num = 5;
                 }
 

@@ -28,9 +28,10 @@
         </Grid.RenderTransform>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF2182BF" Offset="0.896"/>
-                <GradientStop Color="#FF344885" Offset="0.128"/>
-                <GradientStop Color="#FF2182BF" Offset="0.485"/>
+                <GradientStop Color="#FFBCC4DD" Offset="0.573"/>
+                <GradientStop Color="#FF2182BF" Offset="0.048"/>
+                <GradientStop Color="#FF358AC2" Offset="0.809"/>
+                <GradientStop Color="#FFA0B8D7" Offset="0.28"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid HorizontalAlignment="Left" Margin="10,10,0,23" x:Name="grid1" Width="177.272" Opacity="1" OpacityMask="DarkSeaGreen" Grid.RowSpan="2" Grid.ColumnSpan="2">
@@ -216,7 +217,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Image x:Name="pasteur_gap_3_png" Margin="105.5,203.467,28.084,265.4" Source="logo_cocamed.png" Stretch="Fill" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Image x:Name="pasteur_gap_3_png" Margin="139.072,117.667,70.533,313.133" Source="logo_integral.png" Stretch="Fill" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Image x:Name="img_Pedidos" HorizontalAlignment="Left" Height="37" Margin="26,486,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="44" Source="imagenes/medical-05_icon-icons.com_73942.ico" PreviewMouseLeftButtonDown="image_PreviewMouseLeftButtonDown" MouseEnter="image_MouseEnter" MouseLeave="image_MouseLeave" Cursor="Hand"/>
         <Image x:Name="img_Cuenta" HorizontalAlignment="Left" Height="37" Margin="26,538,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="44" Source="imagenes/medical-12_icon-icons.com_73944.ico" PreviewMouseLeftButtonDown="image_Copy_PreviewMouseLeftButtonDown" MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" Cursor="Hand"/>
         <Image x:Name="img_Emergencia" HorizontalAlignment="Left" Height="37" Margin="26,444,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="44" Source="imagenes/medical-27_icon-icons.com_73934.ico" MouseEnter="image_Copy1_MouseEnter" Cursor="Hand" MouseLeave="image_Copy1_MouseLeave" PreviewMouseLeftButtonDown="image_Copy1_PreviewMouseLeftButtonDown"/>
@@ -228,5 +229,6 @@
         <Image x:Name="img_Admision" Height="37" Margin="26,151,57.272,0" Grid.RowSpan="2" VerticalAlignment="Top" Source="imagenes/medical-11_icon-icons.com_73929.ico" PreviewMouseLeftButtonDown="image_Copy7_PreviewMouseLeftButtonDown" MouseEnter="image_Copy7_MouseEnter" MouseLeave="image_Copy7_MouseLeave" Cursor="Hand" RenderTransformOrigin="0.364,0.595"/>
         <Image x:Name="img_Mantenimiento" Height="37" Margin="26,58.667,57.272,0" Grid.RowSpan="2" VerticalAlignment="Top" Source="imagenes/Office_-26_icon-icons.com_74013.ico" PreviewMouseLeftButtonDown="image_Copy8_PreviewMouseLeftButtonDown" MouseEnter="image_Copy8_MouseEnter" MouseLeave="image_Copy8_MouseLeave" Cursor="Hand"/>
         <Image x:Name="img_Honorarios" HorizontalAlignment="Left" Height="37" Margin="26,109,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="44" Source="imagenes/medical-09_icon-icons.com_73940.ico" PreviewMouseLeftButtonDown="image_Copy9_PreviewMouseLeftButtonDown" MouseEnter="image_Copy9_MouseEnter" MouseLeave="image_Copy9_MouseLeave" Cursor="Hand"/>
+        <Image x:Name="pie" Margin="230.272,312,-22.267,223.4" Source="leyenda_integral.png" Stretch="Fill" Grid.RowSpan="2" Grid.Column="2"/>
     </Grid>
 </Window>

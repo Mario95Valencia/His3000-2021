@@ -225,7 +225,7 @@ namespace His.Negocio
         {
             return new DatPacientes().pacientePorIdentificacion(id);
         }
-        public static PACIENTES recuperarPacientePorAtencion(int codAtencion)
+        public static PACIENTES recuperarPacientePorAtencion(Int64 codAtencion)
         {
             return new DatPacientes().recuperarPacientePorAtencion(codAtencion);
         }
@@ -467,7 +467,7 @@ namespace His.Negocio
             return new DatPacientes().BuscaPacienteJireParametro(hc, nombre, cedula);
         }
 
-        public static DataTable RecuperaResultadosImagen(Int32 ateCodigo)
+        public static DataTable RecuperaResultadosImagen(Int64 ateCodigo)
         {
             return new DatPacientes().RecuperaResultadosImagen(ateCodigo);
         }

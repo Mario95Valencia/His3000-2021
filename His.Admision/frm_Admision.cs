@@ -7025,7 +7025,7 @@ namespace His.Admision
             drAdmision["Direccion"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO.Trim();
             //drAdmision["CalleSecundaria"] = datosPacienteActual.DAP_DIRECCION_DOMICILIO2.Trim();
             drAdmision["CalleSecundaria"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_DIRECCION_DOMICILIO2) ? datosPacienteActual.DAP_DIRECCION_DOMICILIO2 : "N/A";
-            drAdmision["Referencia"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_REFERENCIA.Trim()) ? datosPacienteActual.DAP_REFERENCIA.Trim() : "N/A";
+            drAdmision["Referencia"] = !string.IsNullOrEmpty(datosPacienteActual.DAP_REFERENCIA) ? datosPacienteActual.DAP_REFERENCIA : "N/A";
             drAdmision["Email"] = !string.IsNullOrEmpty(pacienteActual.PAC_EMAIL) ? pacienteActual.PAC_EMAIL : "N/A";
 
             if (datosPacienteActual.COD_SECTOR != null)

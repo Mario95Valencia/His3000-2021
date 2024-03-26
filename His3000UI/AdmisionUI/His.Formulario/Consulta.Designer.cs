@@ -876,7 +876,7 @@
             // ultraTabPageControl11
             // 
             this.ultraTabPageControl11.Controls.Add(this.grpCincoSeis);
-            this.ultraTabPageControl11.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl11.Location = new System.Drawing.Point(1, 31);
             this.ultraTabPageControl11.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl11.Name = "ultraTabPageControl11";
             this.ultraTabPageControl11.Size = new System.Drawing.Size(1319, 764);
@@ -1542,7 +1542,7 @@
             this.txtEnfermedadProblema.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnfermedadProblema.Location = new System.Drawing.Point(8, 39);
             this.txtEnfermedadProblema.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEnfermedadProblema.MaxLength = 500;
+            this.txtEnfermedadProblema.MaxLength = 1000;
             this.txtEnfermedadProblema.Multiline = true;
             this.txtEnfermedadProblema.Name = "txtEnfermedadProblema";
             this.txtEnfermedadProblema.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -2883,7 +2883,7 @@
             // ultraTabPageControl13
             // 
             this.ultraTabPageControl13.Controls.Add(this.grpDiezOnceDoce);
-            this.ultraTabPageControl13.Location = new System.Drawing.Point(1, 31);
+            this.ultraTabPageControl13.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl13.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl13.Name = "ultraTabPageControl13";
             this.ultraTabPageControl13.Size = new System.Drawing.Size(1319, 764);

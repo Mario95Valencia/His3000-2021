@@ -47,7 +47,7 @@ namespace His.Formulario
             this.Datos = datos1;
         }
 
-        public frmReportes(int parParametro, string reporte, bool enviaEmail, string _para, string _mensaje, string _asunto, string nombre)
+        public frmReportes(int parParametro, string reporte, bool enviaEmail, string _para, string _mensaje, string _asunto, string nombre,DataSet datos)
         {
             this.parametro = parParametro;
             this.reporte = reporte;
@@ -57,6 +57,7 @@ namespace His.Formulario
             mensaje = _mensaje;
             asunto = _asunto;
             nombrePac = nombre;
+            this.Datos = datos;
         }
 
         public frmReportes(int parParamentro, string reporte, DataSet datos)
@@ -580,70 +581,70 @@ namespace His.Formulario
                 #region Form012
                 else if (reporte == "form012")
                 {
-                    try
-                    {
-                        ReportDocument reporteAnamnesis = new ReportDocument();
-                        reporteAnamnesis.FileName = Application.StartupPath + "\\Reportes\\HistoriasClinicas\\rptForm012.rpt";
-                        TableLogOnInfo logInCon = new TableLogOnInfo();
-                        logInCon.ConnectionInfo.DatabaseName = Application.StartupPath + "\\Reportes\\His3000Reportes.mdb";
+                    mailImagen();
+                    //try
+                    //{
+                    //    ReportDocument reporteAnamnesis = new ReportDocument();
+                    //    reporteAnamnesis.FileName = Application.StartupPath + "\\Reportes\\HistoriasClinicas\\rptForm012.rpt";
+                    //    TableLogOnInfo logInCon = new TableLogOnInfo();
+                    //    logInCon.ConnectionInfo.DatabaseName = Application.StartupPath + "\\Reportes\\His3000Reportes.mdb";
 
-                        foreach (Table tb in reporteAnamnesis.Database.Tables)
-                        {
-                            tb.ApplyLogOnInfo(logInCon);
-                        }
-                        reporteAnamnesis.Refresh();
-                        crystalReportViewer1.ReportSource = reporteAnamnesis;
-                        crystalReportViewer1.RefreshReport();
-                        if (_envia)
-                        {
-                            List<DtoParametros> Informacion = new List<DtoParametros>();
-                            Informacion = NegUtilitarios.RecuperaInformacionCorreo();
-                            string[] datos = new string[10];
-                            foreach (var item in Informacion)
-                            {
-                                datos = item.PAD_VALOR.Split(';');
-                            }
-                            ExportOptions CrExportOptions;
-                            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                            PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                            CrDiskFileDestinationOptions.DiskFileName = datos[0].ToString() + nombrePac + ".pdf";
-                            CrExportOptions = reporteAnamnesis.ExportOptions;
-                            {
-                                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                                CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                            }
-                            reporteAnamnesis.Export();
-                            reporteAnamnesis.Close();
-                            SmtpClient smtp = new SmtpClient();
-                            MailMessage mail = new MailMessage();
-                            Attachment anexar = new Attachment(datos[0].ToString() + nombrePac + ".pdf");
-                            mail.Attachments.Add(anexar);
-                            smtp.Host = datos[1].ToString();
-                            smtp.Port = Convert.ToInt16(datos[2].ToString());
-                            smtp.EnableSsl = true;
-                            smtp.UseDefaultCredentials = false;
-                            smtp.Credentials = new System.Net.NetworkCredential(datos[3].ToString(), datos[4].ToString());
-                            mail.From = new MailAddress(datos[3].ToString());
-                            mail.To.Add(new MailAddress(para));
-                            mail.Subject = asunto;
-                            mail.Body = mensaje;
+                    //    foreach (Table tb in reporteAnamnesis.Database.Tables)
+                    //    {
+                    //        tb.ApplyLogOnInfo(logInCon);
+                    //    }
+                    //    reporteAnamnesis.Refresh();
+                    //    crystalReportViewer1.ReportSource = reporteAnamnesis;
+                    //    crystalReportViewer1.RefreshReport();
+                    //    if (_envia)
+                    //    {
+                    //        List<DtoParametros> Informacion = new List<DtoParametros>();
+                    //        Informacion = NegUtilitarios.RecuperaInformacionCorreo();
+                    //        string[] datos = new string[10];
+                    //        foreach (var item in Informacion)
+                    //        {
+                    //            datos = item.PAD_VALOR.Split(';');
+                    //        }
+                    //        ExportOptions CrExportOptions;
+                    //        DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //        PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //        CrDiskFileDestinationOptions.DiskFileName = datos[0].ToString() + nombrePac + ".pdf";
+                    //        CrExportOptions = reporteAnamnesis.ExportOptions;
+                    //        {
+                    //            CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //            CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //            CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //            CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //        }
+                    //        reporteAnamnesis.Export();
+                    //        reporteAnamnesis.Close();
+                    //        SmtpClient smtp = new SmtpClient();
+                    //        MailMessage mail = new MailMessage();
+                    //        Attachment anexar = new Attachment(datos[0].ToString() + nombrePac + ".pdf");
+                    //        mail.Attachments.Add(anexar);
+                    //        smtp.Host = datos[1].ToString();
+                    //        smtp.Port = Convert.ToInt16(datos[2].ToString());
+                    //        smtp.EnableSsl = true;
+                    //        smtp.UseDefaultCredentials = false;
+                    //        smtp.Credentials = new System.Net.NetworkCredential(datos[3].ToString(), datos[4].ToString());
+                    //        mail.From = new MailAddress(datos[3].ToString());
+                    //        mail.To.Add(new MailAddress(para));
+                    //        mail.Subject = asunto;
+                    //        mail.Body = mensaje;
 
-                            smtp.Send(mail);
+                    //        smtp.Send(mail);
 
-                            //File.Delete(datos[0].ToString() + nombrePac + ".pdf");
-                            this.Close();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                    //        //File.Delete(datos[0].ToString() + nombrePac + ".pdf");
+                    //        this.Close();
+                    //    }
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.ToString());
+                    //}
 
                 }
                 #endregion
-
                 #region REFERENCIA
                 else if (reporte == "Referencia")
                 {
@@ -968,7 +969,7 @@ namespace His.Formulario
                 #region AnamnesisNew
                 else if (reporte == "AnamnesisNew")
                 {
-                    FrmAnamnesi003 myreport = new FrmAnamnesi003();
+                    rptFormAnamnesis myreport = new rptFormAnamnesis();
                     myreport.Refresh();
                     myreport.SetDataSource(Datos);
                     crystalReportViewer1.ReportSource = myreport;
@@ -2039,7 +2040,64 @@ namespace His.Formulario
             myreport.Close();
            //myreport.Dispose();
         }
+        private void mailImagen()
+        {
 
+            try
+            {
+                //CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+                rptFrom12Imagen myreport = new rptFrom12Imagen();
+                myreport.Refresh();
+                myreport.SetDataSource(Datos);
+
+                crystalReportViewer1.ReportSource = myreport;
+                crystalReportViewer1.RefreshReport();
+                crystalReportViewer1.Visible = true;
+
+                List<DtoParametros> Informacion = new List<DtoParametros>();
+                Informacion = NegUtilitarios.RecuperaInformacionCorreo();
+                string[] datos = new string[10];
+                foreach (var item in Informacion)
+                {
+                    datos = item.PAD_VALOR.Split(';');
+                }
+                ExportOptions CrExportOptions;
+                DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                CrDiskFileDestinationOptions.DiskFileName = datos[0].ToString() + nombrePac + ".pdf";
+                CrExportOptions = myreport.ExportOptions;
+                {
+                    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                }
+                myreport.Export();
+                myreport.Close();
+                SmtpClient smtp = new SmtpClient();
+                MailMessage mail = new MailMessage();
+                Attachment anexar = new Attachment(datos[0].ToString() + nombrePac + ".pdf");
+                mail.Attachments.Add(anexar);
+                smtp.Host = datos[1].ToString();
+                smtp.Port = Convert.ToInt16(datos[2].ToString());
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential(datos[3].ToString(), datos[4].ToString());
+                mail.From = new MailAddress(datos[3].ToString());
+                mail.To.Add(new MailAddress(para));
+                mail.Subject = asunto;
+                mail.Body = mensaje;
+
+                smtp.Send(mail);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                //throw;
+            }
+        }
         private void frmReportes_FormClosed(object sender, FormClosedEventArgs e)
         {
             crystalReportViewer1.Dispose();

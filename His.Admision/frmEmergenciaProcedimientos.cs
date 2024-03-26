@@ -688,7 +688,7 @@ namespace His.Admision
                 }
                 else
                 {
-                    Paciente.PAC_CODIGO = Convert.ToInt16(pacCodigo);
+                    Paciente.PAC_CODIGO = Convert.ToInt32(pacCodigo);
                     Paciente.PAC_HISTORIA_CLINICA = Convert.ToString(pacHistoraClinica);
                     Paciente.USUARIOSReference.EntityKey = Usuario.EntityKey;
                     Paciente.DIPO_CODIINEC = "17";

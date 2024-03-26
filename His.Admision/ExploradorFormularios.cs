@@ -543,7 +543,7 @@ namespace His.Admision
                         His.ConsultaExterna.Consulta consulta = new ConsultaExterna.Consulta(Convert.ToString(codigoAtencion));
                         //consulta.subsecuentes = true;
                         consulta.Show();
-                        consulta.Close();
+                        //consulta.Close();
                     }
                     else if (c.Equals("NOTA EVOLUCION"))
                     {

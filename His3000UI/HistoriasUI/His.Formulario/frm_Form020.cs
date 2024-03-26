@@ -495,7 +495,7 @@ namespace His.Formulario
             cmbFrecuencia.SelectedIndex = -1;
             chkOxigeno.Checked = false;
             chkAmbiente.Checked = false;
-           
+
             errorProvider1.Clear();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -1959,17 +1959,41 @@ namespace His.Formulario
             DSForm020 frm = new DSForm020();
             DataRow dr;
             LOGOS_EMPRESA log = NegParametros.logosEmpresa(9);
-            foreach (var item in lsv)
+            if (NegSignosVitales.editarReporteCT())
             {
-                NegSignosVitales.cargaCurvaTermica(item, contador);
-                if (contador != 1)
+                foreach (var item in lsv)
                 {
-                    contador++;
-                    if (item.SVD_HORA == horaCorte.TimeOfDay)
+                    NegSignosVitales.cargaCurvaTermica(item, contador);
+                    if (contador != 1)
+                    {
+                        contador++;
+                        if (item.SVD_HORA == horaCorte.TimeOfDay)
+                        {
+                            try
+                            {
+                                contador = 1;
+                                grabaDatosExcel(8);
+                                grabarImagenExcelCT(8, 9, imagen);
+                                dr = frm.Tables["CurvaTermica"].NewRow();
+                                dr["path"] = log.LEM_RUTA + imagen + ".png";
+                                frm.Tables["CurvaTermica"].Rows.Add(dr);
+                                imagen++;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                                wf.Close();
+                            }
+
+                        }
+                    }
+                    else
+                        contador++;
+                    registros++;
+                    if (lsv.Count == registros)
                     {
                         try
                         {
-                            contador = 1;
                             grabaDatosExcel(8);
                             grabarImagenExcelCT(8, 9, imagen);
                             dr = frm.Tables["CurvaTermica"].NewRow();
@@ -1982,31 +2006,11 @@ namespace His.Formulario
                             Console.WriteLine(ex.Message);
                             wf.Close();
                         }
-                        NegSignosVitales.editarReporteCT();
-                    }
-                }
-                else
-                    contador++;
-                registros++;
-                if (lsv.Count == registros)
-                {
-                    try
-                    {
-                        grabaDatosExcel(8);
-                        grabarImagenExcelCT(8, 9, imagen);
-                        dr = frm.Tables["CurvaTermica"].NewRow();
-                        dr["path"] = log.LEM_RUTA + imagen + ".png";
-                        frm.Tables["CurvaTermica"].Rows.Add(dr);
-                        imagen++;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        wf.Close();
                     }
                 }
             }
-
+            else
+                MessageBox.Show("No se pudo crear el grafico \r\n de curva termica", "His3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //if (NegSignosVitales.editarReporteCT())
             //{
             //    if (NegSignosVitales.cargaCurvaTermica(CodigoAtencion))

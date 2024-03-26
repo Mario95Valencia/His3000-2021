@@ -14,15 +14,15 @@ namespace His.Negocio
         {
             return new DatImagen().getSubareas();
         }
-        public static DataTable getForm012(int x)
+        public static DataTable getForm012(Int64 x)
         {
             return new DatImagen().getForm012(x);
         }
-        public static DataTable getForm012Dx(int x)
+        public static DataTable getForm012Dx(Int64 x)
         {
             return new DatImagen().getForm012Dx(x);
         }
-        public static DataTable getForm012Estudios(int x)
+        public static DataTable getForm012Estudios(Int64 x)
         {
             return new DatImagen().getForm012Estudios(x);
         }

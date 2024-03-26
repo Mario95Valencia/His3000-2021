@@ -343,7 +343,7 @@ namespace His.Datos
             }
         }
 
-        public DataTable getForm012Estudios(int x)
+        public DataTable getForm012Estudios(Int64 x)
         {
             SqlConnection Sqlcon;
             SqlCommand Sqlcmd;
@@ -379,7 +379,7 @@ namespace His.Datos
             return Dts;
         }
 
-        public DataTable getForm012Dx(int x)
+        public DataTable getForm012Dx(Int64 x)
         {
             SqlConnection Sqlcon;
             SqlCommand Sqlcmd;
@@ -417,7 +417,7 @@ namespace His.Datos
             return Dts;
         }
 
-        public DataTable getForm012(int x)
+        public DataTable getForm012(Int64 x)
         {
             SqlConnection Sqlcon;
             SqlCommand Sqlcmd;

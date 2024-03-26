@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
@@ -291,7 +292,7 @@
             this.NOM_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRES_FARMACOTERAPIA_INDICACIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRES_FARMACOS_INSUMOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRES_FECHA = new Infragistics.Win.UltraDataGridView.UltraMaskEditorColumn();
+            this.PRES_FECHA = new Infragistics.Win.UltraDataGridView.UltraMaskEditorColumn(this.components);
             this.PRES_ESTADO = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label104 = new System.Windows.Forms.Label();
             this.P_Menu = new System.Windows.Forms.Panel();
@@ -359,8 +360,8 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ultraLabel6 = new Infragistics.Win.Misc.UltraLabel();
             this.gridNotasEvolucion = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.error = new System.Windows.Forms.ErrorProvider();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -369,7 +370,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorSV = new System.Windows.Forms.ErrorProvider();
+            this.errorSV = new System.Windows.Forms.ErrorProvider(this.components);
             this.ultraTabPageControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpPrimerGrupo)).BeginInit();
             this.grpPrimerGrupo.SuspendLayout();
@@ -875,7 +876,7 @@
             // ultraTabPageControl11
             // 
             this.ultraTabPageControl11.Controls.Add(this.grpCincoSeis);
-            this.ultraTabPageControl11.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl11.Location = new System.Drawing.Point(1, 31);
             this.ultraTabPageControl11.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl11.Name = "ultraTabPageControl11";
             this.ultraTabPageControl11.Size = new System.Drawing.Size(1319, 764);
@@ -1541,7 +1542,7 @@
             this.txtEnfermedadProblema.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnfermedadProblema.Location = new System.Drawing.Point(8, 39);
             this.txtEnfermedadProblema.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEnfermedadProblema.MaxLength = 500;
+            this.txtEnfermedadProblema.MaxLength = 1000;
             this.txtEnfermedadProblema.Multiline = true;
             this.txtEnfermedadProblema.Name = "txtEnfermedadProblema";
             this.txtEnfermedadProblema.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -2882,7 +2883,7 @@
             // ultraTabPageControl13
             // 
             this.ultraTabPageControl13.Controls.Add(this.grpDiezOnceDoce);
-            this.ultraTabPageControl13.Location = new System.Drawing.Point(1, 31);
+            this.ultraTabPageControl13.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl13.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl13.Name = "ultraTabPageControl13";
             this.ultraTabPageControl13.Size = new System.Drawing.Size(1319, 764);

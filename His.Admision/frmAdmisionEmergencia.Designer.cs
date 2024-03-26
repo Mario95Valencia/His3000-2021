@@ -415,7 +415,6 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripSplitButton();
             this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.form001ADMISIONYALTAEGRESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -426,6 +425,7 @@
             this.listaDeVerificacionDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brazzaleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiquetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnFormularios = new System.Windows.Forms.ToolStripButton();
             this.btnCerrar = new System.Windows.Forms.ToolStripButton();
             this.ultraToolTipManager1 = new Infragistics.Win.UltraWinToolTip.UltraToolTipManager(this.components);
@@ -539,7 +539,7 @@
             this.ultraTabPageControl5.Controls.Add(this.label27);
             this.ultraTabPageControl5.Controls.Add(this.label28);
             this.ultraTabPageControl5.Controls.Add(this.txt_direccionAcomp);
-            this.ultraTabPageControl5.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl5.Location = new System.Drawing.Point(1, 24);
             this.ultraTabPageControl5.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl5.Name = "ultraTabPageControl5";
             this.ultraTabPageControl5.Size = new System.Drawing.Size(1237, 126);
@@ -1025,7 +1025,7 @@
             this.ultraTabPageControl6.Controls.Add(this.txt_DireccionTitular);
             this.ultraTabPageControl6.Controls.Add(this.txt_nombreTitular);
             this.ultraTabPageControl6.Controls.Add(this.labeelnombre);
-            this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 24);
+            this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl6.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl6.Name = "ultraTabPageControl6";
             this.ultraTabPageControl6.Size = new System.Drawing.Size(1237, 126);
@@ -1787,7 +1787,7 @@
             this.ultraTabPageControl1.Controls.Add(this.rbRuc);
             this.ultraTabPageControl1.Controls.Add(this.ubtnDatosIncompletos);
             this.ultraTabPageControl1.Controls.Add(this.panelBotonesDir);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 25);
             this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(1353, 725);
@@ -3229,6 +3229,8 @@
             this.cb_etnia.Name = "cb_etnia";
             this.cb_etnia.Size = new System.Drawing.Size(193, 25);
             this.cb_etnia.TabIndex = 7;
+            this.cb_etnia.SelectedIndexChanged += new System.EventHandler(this.cb_etnia_SelectedIndexChanged_1);
+            this.cb_etnia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_etnia_KeyDown_1);
             // 
             // label47
             // 
@@ -3806,7 +3808,7 @@
             // ultraTabPageControl2
             // 
             this.ultraTabPageControl2.Controls.Add(this.panel2);
-            this.ultraTabPageControl2.Location = new System.Drawing.Point(1, 25);
+            this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl2.Margin = new System.Windows.Forms.Padding(4);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
             this.ultraTabPageControl2.Size = new System.Drawing.Size(1353, 725);
@@ -4806,17 +4808,6 @@
             this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Image = global::His.Admision.Properties.Resources.HIS_CANCELAR;
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 43);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
             // btnImprimir
             // 
             this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -4901,6 +4892,17 @@
             this.etiquetaToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.etiquetaToolStripMenuItem.Text = "Etiqueta";
             this.etiquetaToolStripMenuItem.Click += new System.EventHandler(this.etiquetaToolStripMenuItem_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Image = global::His.Admision.Properties.Resources.HIS_CANCELAR;
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 43);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnFormularios
             // 

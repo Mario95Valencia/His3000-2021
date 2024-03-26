@@ -287,9 +287,10 @@ namespace His.Maintenance
             this.ultraTabPageControl1.Controls.Add(this.tableLayoutPanel1);
             this.ultraTabPageControl1.Controls.Add(this.ultrgHis);
             this.ultraTabPageControl1.Controls.Add(this.tools);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 21);
+            this.ultraTabPageControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
-            this.ultraTabPageControl1.Size = new System.Drawing.Size(905, 368);
+            this.ultraTabPageControl1.Size = new System.Drawing.Size(1207, 457);
             // 
             // tableLayoutPanel1
             // 
@@ -299,30 +300,30 @@ namespace His.Maintenance
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ultraGridAccesos, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 80);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 98);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(905, 288);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 359);
             this.tableLayoutPanel1.TabIndex = 89;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel2.Controls.Add(this.ultraGridModulo, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.ultraGridPerfil, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(448, 284);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(597, 355);
             this.tableLayoutPanel2.TabIndex = 88;
             // 
             // ultraGridModulo
@@ -382,10 +383,10 @@ namespace His.Maintenance
             this.ultraGridModulo.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridModulo.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridModulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridModulo.Location = new System.Drawing.Point(2, 144);
-            this.ultraGridModulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridModulo.Location = new System.Drawing.Point(3, 179);
+            this.ultraGridModulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridModulo.Name = "ultraGridModulo";
-            this.ultraGridModulo.Size = new System.Drawing.Size(444, 138);
+            this.ultraGridModulo.Size = new System.Drawing.Size(591, 174);
             this.ultraGridModulo.TabIndex = 86;
             this.ultraGridModulo.Text = "ultraGrid1";
             this.ultraGridModulo.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridModulo_InitializeLayout);
@@ -451,10 +452,10 @@ namespace His.Maintenance
             this.ultraGridPerfil.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridPerfil.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridPerfil.Location = new System.Drawing.Point(2, 2);
-            this.ultraGridPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridPerfil.Location = new System.Drawing.Point(3, 2);
+            this.ultraGridPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridPerfil.Name = "ultraGridPerfil";
-            this.ultraGridPerfil.Size = new System.Drawing.Size(444, 138);
+            this.ultraGridPerfil.Size = new System.Drawing.Size(591, 173);
             this.ultraGridPerfil.TabIndex = 84;
             this.ultraGridPerfil.Text = "ultraGrid1";
             this.ultraGridPerfil.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridPerfil_InitializeLayout);
@@ -517,10 +518,10 @@ namespace His.Maintenance
             this.ultraGridAccesos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridAccesos.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridAccesos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridAccesos.Location = new System.Drawing.Point(454, 2);
-            this.ultraGridAccesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridAccesos.Location = new System.Drawing.Point(606, 2);
+            this.ultraGridAccesos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridAccesos.Name = "ultraGridAccesos";
-            this.ultraGridAccesos.Size = new System.Drawing.Size(449, 284);
+            this.ultraGridAccesos.Size = new System.Drawing.Size(598, 355);
             this.ultraGridAccesos.TabIndex = 85;
             this.ultraGridAccesos.Text = "ultraGrid1";
             this.ultraGridAccesos.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridAccesos_InitializeLayout);
@@ -531,11 +532,11 @@ namespace His.Maintenance
             this.ultrgHis.Controls.Add(this.ultraExpandableGroupBoxPanel1);
             this.ultrgHis.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultrgHis.Enabled = false;
-            this.ultrgHis.ExpandedSize = new System.Drawing.Size(905, 45);
-            this.ultrgHis.Location = new System.Drawing.Point(0, 35);
-            this.ultrgHis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultrgHis.ExpandedSize = new System.Drawing.Size(1207, 55);
+            this.ultrgHis.Location = new System.Drawing.Point(0, 43);
+            this.ultrgHis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultrgHis.Name = "ultrgHis";
-            this.ultrgHis.Size = new System.Drawing.Size(905, 45);
+            this.ultrgHis.Size = new System.Drawing.Size(1207, 55);
             this.ultrgHis.TabIndex = 85;
             this.ultrgHis.Text = "Datos del Perfil";
             this.ultrgHis.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2000;
@@ -555,18 +556,18 @@ namespace His.Maintenance
             this.ultraExpandableGroupBoxPanel1.Controls.Add(this.btnGuardarPer);
             this.ultraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraExpandableGroupBoxPanel1.Location = new System.Drawing.Point(3, 19);
-            this.ultraExpandableGroupBoxPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraExpandableGroupBoxPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraExpandableGroupBoxPanel1.Name = "ultraExpandableGroupBoxPanel1";
-            this.ultraExpandableGroupBoxPanel1.Size = new System.Drawing.Size(899, 23);
+            this.ultraExpandableGroupBoxPanel1.Size = new System.Drawing.Size(1201, 33);
             this.ultraExpandableGroupBoxPanel1.TabIndex = 0;
             // 
             // lblMensaje
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(625, 3);
-            this.lblMensaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMensaje.Location = new System.Drawing.Point(833, 4);
+            this.lblMensaje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(232, 16);
+            this.lblMensaje.Size = new System.Drawing.Size(309, 20);
             this.lblMensaje.TabIndex = 19;
             this.lblMensaje.Text = "-";
             // 
@@ -574,50 +575,50 @@ namespace His.Maintenance
             // 
             this.cmbModulo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.cmbModulo.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.cmbModulo.Location = new System.Drawing.Point(138, 29);
-            this.cmbModulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbModulo.Location = new System.Drawing.Point(184, 36);
+            this.cmbModulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbModulo.Name = "cmbModulo";
-            this.cmbModulo.Size = new System.Drawing.Size(324, 21);
+            this.cmbModulo.Size = new System.Drawing.Size(432, 24);
             this.cmbModulo.TabIndex = 18;
             this.cmbModulo.Visible = false;
             // 
             // ultraLabel2
             // 
             this.ultraLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel2.Location = new System.Drawing.Point(3, 32);
-            this.ultraLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel2.Location = new System.Drawing.Point(4, 39);
+            this.ultraLabel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel2.Name = "ultraLabel2";
-            this.ultraLabel2.Size = new System.Drawing.Size(105, 16);
+            this.ultraLabel2.Size = new System.Drawing.Size(140, 20);
             this.ultraLabel2.TabIndex = 17;
             this.ultraLabel2.Text = "Modulo*:";
             this.ultraLabel2.Visible = false;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(581, 57);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(775, 70);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 19);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Visible = false;
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(491, 57);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadir.Location = new System.Drawing.Point(655, 70);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(75, 19);
+            this.btnAñadir.Size = new System.Drawing.Size(100, 23);
             this.btnAñadir.TabIndex = 15;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.Visible = false;
             // 
             // btnEliminarPer
             // 
-            this.btnEliminarPer.Location = new System.Drawing.Point(545, 2);
-            this.btnEliminarPer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarPer.Location = new System.Drawing.Point(727, 2);
+            this.btnEliminarPer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarPer.Name = "btnEliminarPer";
-            this.btnEliminarPer.Size = new System.Drawing.Size(75, 19);
+            this.btnEliminarPer.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarPer.TabIndex = 14;
             this.btnEliminarPer.Text = "Eliminar";
             this.btnEliminarPer.Click += new System.EventHandler(this.btnEliminarPer_Click_1);
@@ -626,20 +627,20 @@ namespace His.Maintenance
             // 
             this.cmbAcceso.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.cmbAcceso.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.cmbAcceso.Location = new System.Drawing.Point(138, 57);
-            this.cmbAcceso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAcceso.Location = new System.Drawing.Point(184, 70);
+            this.cmbAcceso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbAcceso.Name = "cmbAcceso";
-            this.cmbAcceso.Size = new System.Drawing.Size(343, 21);
+            this.cmbAcceso.Size = new System.Drawing.Size(457, 24);
             this.cmbAcceso.TabIndex = 7;
             this.cmbAcceso.Visible = false;
             // 
             // lblproducto
             // 
             this.lblproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblproducto.Location = new System.Drawing.Point(2, 59);
-            this.lblproducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblproducto.Location = new System.Drawing.Point(3, 73);
+            this.lblproducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblproducto.Name = "lblproducto";
-            this.lblproducto.Size = new System.Drawing.Size(123, 16);
+            this.lblproducto.Size = new System.Drawing.Size(164, 20);
             this.lblproducto.TabIndex = 6;
             this.lblproducto.Text = "Opciones de Acceso*:";
             this.lblproducto.Visible = false;
@@ -648,28 +649,28 @@ namespace His.Maintenance
             // 
             this.txtPerfil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPerfil.Enabled = false;
-            this.txtPerfil.Location = new System.Drawing.Point(138, 3);
-            this.txtPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPerfil.Location = new System.Drawing.Point(184, 4);
+            this.txtPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(324, 21);
+            this.txtPerfil.Size = new System.Drawing.Size(432, 24);
             this.txtPerfil.TabIndex = 5;
             // 
             // ultraLabel1
             // 
             this.ultraLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel1.Location = new System.Drawing.Point(2, 5);
-            this.ultraLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel1.Location = new System.Drawing.Point(3, 6);
+            this.ultraLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel1.Name = "ultraLabel1";
-            this.ultraLabel1.Size = new System.Drawing.Size(111, 16);
+            this.ultraLabel1.Size = new System.Drawing.Size(148, 20);
             this.ultraLabel1.TabIndex = 4;
             this.ultraLabel1.Text = "Nombre del Perfil*:";
             // 
             // btnGuardarPer
             // 
-            this.btnGuardarPer.Location = new System.Drawing.Point(466, 2);
-            this.btnGuardarPer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarPer.Location = new System.Drawing.Point(621, 2);
+            this.btnGuardarPer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarPer.Name = "btnGuardarPer";
-            this.btnGuardarPer.Size = new System.Drawing.Size(75, 19);
+            this.btnGuardarPer.Size = new System.Drawing.Size(100, 23);
             this.btnGuardarPer.TabIndex = 0;
             this.btnGuardarPer.Text = "Guardar";
             this.btnGuardarPer.Click += new System.EventHandler(this.btnGuardarPer_Click_1);
@@ -686,8 +687,8 @@ namespace His.Maintenance
             this.btnSalir});
             this.tools.Location = new System.Drawing.Point(0, 0);
             this.tools.Name = "tools";
-            this.tools.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.tools.Size = new System.Drawing.Size(905, 35);
+            this.tools.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.tools.Size = new System.Drawing.Size(1207, 43);
             this.tools.TabIndex = 84;
             this.tools.Text = "toolStrip1";
             // 
@@ -700,20 +701,20 @@ namespace His.Maintenance
             this.btnNuevo.Image = global::His.Maintenance.Properties.Resources.Add2;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(37, 32);
+            this.btnNuevo.Size = new System.Drawing.Size(38, 40);
             this.btnNuevo.Text = "toolStripDropDownButton3";
             // 
             // nuevoPerfilToolStripMenuItem2
             // 
             this.nuevoPerfilToolStripMenuItem2.Name = "nuevoPerfilToolStripMenuItem2";
-            this.nuevoPerfilToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
+            this.nuevoPerfilToolStripMenuItem2.Size = new System.Drawing.Size(191, 26);
             this.nuevoPerfilToolStripMenuItem2.Text = "Nuevo Perfil";
             this.nuevoPerfilToolStripMenuItem2.Click += new System.EventHandler(this.nuevoPerfilToolStripMenuItem2_Click);
             // 
             // nuevoModuloToolStripMenuItem1
             // 
             this.nuevoModuloToolStripMenuItem1.Name = "nuevoModuloToolStripMenuItem1";
-            this.nuevoModuloToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.nuevoModuloToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
             this.nuevoModuloToolStripMenuItem1.Text = "Nuevo Modulo";
             this.nuevoModuloToolStripMenuItem1.Click += new System.EventHandler(this.nuevoModuloToolStripMenuItem1_Click);
             // 
@@ -746,7 +747,7 @@ namespace His.Maintenance
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
             // 
             // btnSalir
             // 
@@ -766,9 +767,10 @@ namespace His.Maintenance
             this.ultraTabPageControl3.Controls.Add(this.tableLayoutPanel5);
             this.ultraTabPageControl3.Controls.Add(this.ultrgSic);
             this.ultraTabPageControl3.Controls.Add(this.toolStrip1);
-            this.ultraTabPageControl3.Location = new System.Drawing.Point(-7500, -8125);
+            this.ultraTabPageControl3.Location = new System.Drawing.Point(-13333, -12308);
+            this.ultraTabPageControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ultraTabPageControl3.Name = "ultraTabPageControl3";
-            this.ultraTabPageControl3.Size = new System.Drawing.Size(905, 368);
+            this.ultraTabPageControl3.Size = new System.Drawing.Size(1207, 457);
             // 
             // tableLayoutPanel5
             // 
@@ -778,30 +780,30 @@ namespace His.Maintenance
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.ultraGridAccesosSic, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 45);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 55);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 327F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(905, 323);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 398F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1207, 402);
             this.tableLayoutPanel5.TabIndex = 90;
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel6.Controls.Add(this.ultraGridModuloSic, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.ultraGridPerfilesSic, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(448, 319);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(597, 398);
             this.tableLayoutPanel6.TabIndex = 88;
             // 
             // ultraGridModuloSic
@@ -861,10 +863,10 @@ namespace His.Maintenance
             this.ultraGridModuloSic.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridModuloSic.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridModuloSic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridModuloSic.Location = new System.Drawing.Point(2, 161);
-            this.ultraGridModuloSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridModuloSic.Location = new System.Drawing.Point(3, 201);
+            this.ultraGridModuloSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridModuloSic.Name = "ultraGridModuloSic";
-            this.ultraGridModuloSic.Size = new System.Drawing.Size(444, 156);
+            this.ultraGridModuloSic.Size = new System.Drawing.Size(591, 195);
             this.ultraGridModuloSic.TabIndex = 86;
             this.ultraGridModuloSic.Text = "ultraGrid3";
             this.ultraGridModuloSic.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridModuloSic_InitializeLayout);
@@ -930,10 +932,10 @@ namespace His.Maintenance
             this.ultraGridPerfilesSic.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridPerfilesSic.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridPerfilesSic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridPerfilesSic.Location = new System.Drawing.Point(2, 2);
-            this.ultraGridPerfilesSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridPerfilesSic.Location = new System.Drawing.Point(3, 2);
+            this.ultraGridPerfilesSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridPerfilesSic.Name = "ultraGridPerfilesSic";
-            this.ultraGridPerfilesSic.Size = new System.Drawing.Size(444, 155);
+            this.ultraGridPerfilesSic.Size = new System.Drawing.Size(591, 195);
             this.ultraGridPerfilesSic.TabIndex = 84;
             this.ultraGridPerfilesSic.Text = "ultraGrid1";
             this.ultraGridPerfilesSic.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridPerfilesSic_InitializeLayout);
@@ -996,10 +998,10 @@ namespace His.Maintenance
             this.ultraGridAccesosSic.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridAccesosSic.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridAccesosSic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridAccesosSic.Location = new System.Drawing.Point(454, 2);
-            this.ultraGridAccesosSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridAccesosSic.Location = new System.Drawing.Point(606, 2);
+            this.ultraGridAccesosSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridAccesosSic.Name = "ultraGridAccesosSic";
-            this.ultraGridAccesosSic.Size = new System.Drawing.Size(449, 319);
+            this.ultraGridAccesosSic.Size = new System.Drawing.Size(598, 398);
             this.ultraGridAccesosSic.TabIndex = 85;
             this.ultraGridAccesosSic.Text = "ultraGrid1";
             this.ultraGridAccesosSic.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridAccesosSic_InitializeLayout);
@@ -1010,11 +1012,11 @@ namespace His.Maintenance
             this.ultrgSic.Controls.Add(this.ultraExpandableGroupBoxPanel2);
             this.ultrgSic.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultrgSic.Enabled = false;
-            this.ultrgSic.ExpandedSize = new System.Drawing.Size(905, 45);
+            this.ultrgSic.ExpandedSize = new System.Drawing.Size(1207, 55);
             this.ultrgSic.Location = new System.Drawing.Point(0, 0);
-            this.ultrgSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultrgSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultrgSic.Name = "ultrgSic";
-            this.ultrgSic.Size = new System.Drawing.Size(905, 45);
+            this.ultrgSic.Size = new System.Drawing.Size(1207, 55);
             this.ultrgSic.TabIndex = 91;
             this.ultrgSic.Text = "Datos del Perfil";
             this.ultrgSic.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2000;
@@ -1034,18 +1036,18 @@ namespace His.Maintenance
             this.ultraExpandableGroupBoxPanel2.Controls.Add(this.btnGuardarSic);
             this.ultraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraExpandableGroupBoxPanel2.Location = new System.Drawing.Point(3, 19);
-            this.ultraExpandableGroupBoxPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraExpandableGroupBoxPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraExpandableGroupBoxPanel2.Name = "ultraExpandableGroupBoxPanel2";
-            this.ultraExpandableGroupBoxPanel2.Size = new System.Drawing.Size(899, 23);
+            this.ultraExpandableGroupBoxPanel2.Size = new System.Drawing.Size(1201, 33);
             this.ultraExpandableGroupBoxPanel2.TabIndex = 0;
             // 
             // lblMensajeSic
             // 
             this.lblMensajeSic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeSic.Location = new System.Drawing.Point(625, 2);
-            this.lblMensajeSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMensajeSic.Location = new System.Drawing.Point(833, 2);
+            this.lblMensajeSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblMensajeSic.Name = "lblMensajeSic";
-            this.lblMensajeSic.Size = new System.Drawing.Size(238, 16);
+            this.lblMensajeSic.Size = new System.Drawing.Size(317, 20);
             this.lblMensajeSic.TabIndex = 20;
             this.lblMensajeSic.Text = "-";
             // 
@@ -1053,50 +1055,50 @@ namespace His.Maintenance
             // 
             this.ultraComboEditor1.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.ultraComboEditor1.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.ultraComboEditor1.Location = new System.Drawing.Point(138, 29);
-            this.ultraComboEditor1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraComboEditor1.Location = new System.Drawing.Point(184, 36);
+            this.ultraComboEditor1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraComboEditor1.Name = "ultraComboEditor1";
-            this.ultraComboEditor1.Size = new System.Drawing.Size(324, 21);
+            this.ultraComboEditor1.Size = new System.Drawing.Size(432, 24);
             this.ultraComboEditor1.TabIndex = 18;
             this.ultraComboEditor1.Visible = false;
             // 
             // ultraLabel3
             // 
             this.ultraLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel3.Location = new System.Drawing.Point(3, 32);
-            this.ultraLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel3.Location = new System.Drawing.Point(4, 39);
+            this.ultraLabel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel3.Name = "ultraLabel3";
-            this.ultraLabel3.Size = new System.Drawing.Size(105, 16);
+            this.ultraLabel3.Size = new System.Drawing.Size(140, 20);
             this.ultraLabel3.TabIndex = 17;
             this.ultraLabel3.Text = "Modulo*:";
             this.ultraLabel3.Visible = false;
             // 
             // ultraButton1
             // 
-            this.ultraButton1.Location = new System.Drawing.Point(581, 57);
-            this.ultraButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraButton1.Location = new System.Drawing.Point(775, 70);
+            this.ultraButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraButton1.Name = "ultraButton1";
-            this.ultraButton1.Size = new System.Drawing.Size(75, 19);
+            this.ultraButton1.Size = new System.Drawing.Size(100, 23);
             this.ultraButton1.TabIndex = 16;
             this.ultraButton1.Text = "Eliminar";
             this.ultraButton1.Visible = false;
             // 
             // ultraButton2
             // 
-            this.ultraButton2.Location = new System.Drawing.Point(491, 57);
-            this.ultraButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraButton2.Location = new System.Drawing.Point(655, 70);
+            this.ultraButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraButton2.Name = "ultraButton2";
-            this.ultraButton2.Size = new System.Drawing.Size(75, 19);
+            this.ultraButton2.Size = new System.Drawing.Size(100, 23);
             this.ultraButton2.TabIndex = 15;
             this.ultraButton2.Text = "Añadir";
             this.ultraButton2.Visible = false;
             // 
             // btnEliminarSic
             // 
-            this.btnEliminarSic.Location = new System.Drawing.Point(545, 2);
-            this.btnEliminarSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarSic.Location = new System.Drawing.Point(727, 2);
+            this.btnEliminarSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarSic.Name = "btnEliminarSic";
-            this.btnEliminarSic.Size = new System.Drawing.Size(75, 19);
+            this.btnEliminarSic.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarSic.TabIndex = 14;
             this.btnEliminarSic.Text = "Eliminar";
             this.btnEliminarSic.Visible = false;
@@ -1106,20 +1108,20 @@ namespace His.Maintenance
             // 
             this.ultraComboEditor2.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.ultraComboEditor2.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.ultraComboEditor2.Location = new System.Drawing.Point(138, 57);
-            this.ultraComboEditor2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraComboEditor2.Location = new System.Drawing.Point(184, 70);
+            this.ultraComboEditor2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraComboEditor2.Name = "ultraComboEditor2";
-            this.ultraComboEditor2.Size = new System.Drawing.Size(343, 21);
+            this.ultraComboEditor2.Size = new System.Drawing.Size(457, 24);
             this.ultraComboEditor2.TabIndex = 7;
             this.ultraComboEditor2.Visible = false;
             // 
             // ultraLabel4
             // 
             this.ultraLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel4.Location = new System.Drawing.Point(2, 59);
-            this.ultraLabel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel4.Location = new System.Drawing.Point(3, 73);
+            this.ultraLabel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel4.Name = "ultraLabel4";
-            this.ultraLabel4.Size = new System.Drawing.Size(123, 16);
+            this.ultraLabel4.Size = new System.Drawing.Size(164, 20);
             this.ultraLabel4.TabIndex = 6;
             this.ultraLabel4.Text = "Opciones de Acceso*:";
             this.ultraLabel4.Visible = false;
@@ -1128,30 +1130,30 @@ namespace His.Maintenance
             // 
             this.txtNuevoSic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNuevoSic.Enabled = false;
-            this.txtNuevoSic.Location = new System.Drawing.Point(138, 3);
-            this.txtNuevoSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNuevoSic.Location = new System.Drawing.Point(184, 4);
+            this.txtNuevoSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNuevoSic.Name = "txtNuevoSic";
-            this.txtNuevoSic.Size = new System.Drawing.Size(324, 21);
+            this.txtNuevoSic.Size = new System.Drawing.Size(432, 24);
             this.txtNuevoSic.TabIndex = 5;
             this.txtNuevoSic.Visible = false;
             // 
             // lbNuevoSic
             // 
             this.lbNuevoSic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNuevoSic.Location = new System.Drawing.Point(2, 5);
-            this.lbNuevoSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbNuevoSic.Location = new System.Drawing.Point(3, 6);
+            this.lbNuevoSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbNuevoSic.Name = "lbNuevoSic";
-            this.lbNuevoSic.Size = new System.Drawing.Size(111, 16);
+            this.lbNuevoSic.Size = new System.Drawing.Size(148, 20);
             this.lbNuevoSic.TabIndex = 4;
             this.lbNuevoSic.Text = "Nombre del Perfil*:";
             this.lbNuevoSic.Visible = false;
             // 
             // btnGuardarSic
             // 
-            this.btnGuardarSic.Location = new System.Drawing.Point(466, 2);
-            this.btnGuardarSic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarSic.Location = new System.Drawing.Point(621, 2);
+            this.btnGuardarSic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarSic.Name = "btnGuardarSic";
-            this.btnGuardarSic.Size = new System.Drawing.Size(75, 19);
+            this.btnGuardarSic.Size = new System.Drawing.Size(100, 23);
             this.btnGuardarSic.TabIndex = 0;
             this.btnGuardarSic.Text = "Guardar";
             this.btnGuardarSic.Visible = false;
@@ -1169,8 +1171,8 @@ namespace His.Maintenance
             this.btnSalirSic});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(905, 35);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1207, 43);
             this.toolStrip1.TabIndex = 85;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Visible = false;
@@ -1184,20 +1186,20 @@ namespace His.Maintenance
             this.btnNuevoSic.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoSic.Image")));
             this.btnNuevoSic.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevoSic.Name = "btnNuevoSic";
-            this.btnNuevoSic.Size = new System.Drawing.Size(37, 32);
+            this.btnNuevoSic.Size = new System.Drawing.Size(38, 40);
             this.btnNuevoSic.Text = "Nuevo";
             // 
             // nuevoPerfilToolStripMenuItem
             // 
             this.nuevoPerfilToolStripMenuItem.Name = "nuevoPerfilToolStripMenuItem";
-            this.nuevoPerfilToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.nuevoPerfilToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.nuevoPerfilToolStripMenuItem.Text = "Nuevo Perfil";
             this.nuevoPerfilToolStripMenuItem.Click += new System.EventHandler(this.nuevoPerfilToolStripMenuItem_Click);
             // 
             // nuevoAccesoToolStripMenuItem1
             // 
             this.nuevoAccesoToolStripMenuItem1.Name = "nuevoAccesoToolStripMenuItem1";
-            this.nuevoAccesoToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.nuevoAccesoToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
             this.nuevoAccesoToolStripMenuItem1.Text = "Nuevo Modulo";
             this.nuevoAccesoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoAccesoToolStripMenuItem1_Click);
             // 
@@ -1230,7 +1232,7 @@ namespace His.Maintenance
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 35);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 43);
             // 
             // btnSalirSic
             // 
@@ -1250,9 +1252,10 @@ namespace His.Maintenance
             this.ultraTabPageControl2.Controls.Add(this.tableLayoutPanel3);
             this.ultraTabPageControl2.Controls.Add(this.ultrgCg);
             this.ultraTabPageControl2.Controls.Add(this.toolStrip2);
-            this.ultraTabPageControl2.Location = new System.Drawing.Point(1, 20);
+            this.ultraTabPageControl2.Location = new System.Drawing.Point(-13333, -12308);
+            this.ultraTabPageControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
-            this.ultraTabPageControl2.Size = new System.Drawing.Size(905, 368);
+            this.ultraTabPageControl2.Size = new System.Drawing.Size(1207, 457);
             // 
             // tableLayoutPanel3
             // 
@@ -1262,30 +1265,30 @@ namespace His.Maintenance
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.ultraGridAccesosCg, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 45);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 55);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 327F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(905, 323);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 398F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1207, 402);
             this.tableLayoutPanel3.TabIndex = 90;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel4.Controls.Add(this.ultraGridModuloCg, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.ultraGridPerfilesCg, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(448, 319);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(597, 398);
             this.tableLayoutPanel4.TabIndex = 88;
             // 
             // ultraGridModuloCg
@@ -1345,10 +1348,10 @@ namespace His.Maintenance
             this.ultraGridModuloCg.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridModuloCg.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridModuloCg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridModuloCg.Location = new System.Drawing.Point(2, 161);
-            this.ultraGridModuloCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridModuloCg.Location = new System.Drawing.Point(3, 201);
+            this.ultraGridModuloCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridModuloCg.Name = "ultraGridModuloCg";
-            this.ultraGridModuloCg.Size = new System.Drawing.Size(444, 156);
+            this.ultraGridModuloCg.Size = new System.Drawing.Size(591, 195);
             this.ultraGridModuloCg.TabIndex = 86;
             this.ultraGridModuloCg.Text = "ultraGrid1";
             this.ultraGridModuloCg.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridModuloCg_InitializeLayout);
@@ -1414,10 +1417,10 @@ namespace His.Maintenance
             this.ultraGridPerfilesCg.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridPerfilesCg.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridPerfilesCg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridPerfilesCg.Location = new System.Drawing.Point(2, 2);
-            this.ultraGridPerfilesCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridPerfilesCg.Location = new System.Drawing.Point(3, 2);
+            this.ultraGridPerfilesCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridPerfilesCg.Name = "ultraGridPerfilesCg";
-            this.ultraGridPerfilesCg.Size = new System.Drawing.Size(444, 155);
+            this.ultraGridPerfilesCg.Size = new System.Drawing.Size(591, 195);
             this.ultraGridPerfilesCg.TabIndex = 84;
             this.ultraGridPerfilesCg.Text = "ultraGrid1";
             this.ultraGridPerfilesCg.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridPerfilesCg_InitializeLayout);
@@ -1480,10 +1483,10 @@ namespace His.Maintenance
             this.ultraGridAccesosCg.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGridAccesosCg.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.ultraGridAccesosCg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraGridAccesosCg.Location = new System.Drawing.Point(454, 2);
-            this.ultraGridAccesosCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraGridAccesosCg.Location = new System.Drawing.Point(606, 2);
+            this.ultraGridAccesosCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraGridAccesosCg.Name = "ultraGridAccesosCg";
-            this.ultraGridAccesosCg.Size = new System.Drawing.Size(449, 319);
+            this.ultraGridAccesosCg.Size = new System.Drawing.Size(598, 398);
             this.ultraGridAccesosCg.TabIndex = 85;
             this.ultraGridAccesosCg.Text = "ultraGrid1";
             this.ultraGridAccesosCg.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGridAccesosCg_InitializeLayout);
@@ -1494,11 +1497,11 @@ namespace His.Maintenance
             this.ultrgCg.Controls.Add(this.ultraExpandableGroupBoxPanel3);
             this.ultrgCg.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultrgCg.Enabled = false;
-            this.ultrgCg.ExpandedSize = new System.Drawing.Size(905, 45);
+            this.ultrgCg.ExpandedSize = new System.Drawing.Size(1207, 55);
             this.ultrgCg.Location = new System.Drawing.Point(0, 0);
-            this.ultrgCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultrgCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultrgCg.Name = "ultrgCg";
-            this.ultrgCg.Size = new System.Drawing.Size(905, 45);
+            this.ultrgCg.Size = new System.Drawing.Size(1207, 55);
             this.ultrgCg.TabIndex = 92;
             this.ultrgCg.Text = "Datos del Perfil";
             this.ultrgCg.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2000;
@@ -1518,18 +1521,18 @@ namespace His.Maintenance
             this.ultraExpandableGroupBoxPanel3.Controls.Add(this.btnGuardarCG);
             this.ultraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraExpandableGroupBoxPanel3.Location = new System.Drawing.Point(3, 19);
-            this.ultraExpandableGroupBoxPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraExpandableGroupBoxPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraExpandableGroupBoxPanel3.Name = "ultraExpandableGroupBoxPanel3";
-            this.ultraExpandableGroupBoxPanel3.Size = new System.Drawing.Size(899, 23);
+            this.ultraExpandableGroupBoxPanel3.Size = new System.Drawing.Size(1201, 33);
             this.ultraExpandableGroupBoxPanel3.TabIndex = 0;
             // 
             // lblMensajeCg
             // 
             this.lblMensajeCg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeCg.Location = new System.Drawing.Point(625, 2);
-            this.lblMensajeCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMensajeCg.Location = new System.Drawing.Point(833, 2);
+            this.lblMensajeCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblMensajeCg.Name = "lblMensajeCg";
-            this.lblMensajeCg.Size = new System.Drawing.Size(248, 16);
+            this.lblMensajeCg.Size = new System.Drawing.Size(331, 20);
             this.lblMensajeCg.TabIndex = 20;
             this.lblMensajeCg.Text = "-";
             // 
@@ -1537,50 +1540,50 @@ namespace His.Maintenance
             // 
             this.ultraComboEditor3.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.ultraComboEditor3.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.ultraComboEditor3.Location = new System.Drawing.Point(138, 29);
-            this.ultraComboEditor3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraComboEditor3.Location = new System.Drawing.Point(184, 36);
+            this.ultraComboEditor3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraComboEditor3.Name = "ultraComboEditor3";
-            this.ultraComboEditor3.Size = new System.Drawing.Size(324, 21);
+            this.ultraComboEditor3.Size = new System.Drawing.Size(432, 24);
             this.ultraComboEditor3.TabIndex = 18;
             this.ultraComboEditor3.Visible = false;
             // 
             // ultraLabel6
             // 
             this.ultraLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel6.Location = new System.Drawing.Point(3, 32);
-            this.ultraLabel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel6.Location = new System.Drawing.Point(4, 39);
+            this.ultraLabel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel6.Name = "ultraLabel6";
-            this.ultraLabel6.Size = new System.Drawing.Size(105, 16);
+            this.ultraLabel6.Size = new System.Drawing.Size(140, 20);
             this.ultraLabel6.TabIndex = 17;
             this.ultraLabel6.Text = "Modulo*:";
             this.ultraLabel6.Visible = false;
             // 
             // ultraButton5
             // 
-            this.ultraButton5.Location = new System.Drawing.Point(581, 57);
-            this.ultraButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraButton5.Location = new System.Drawing.Point(775, 70);
+            this.ultraButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraButton5.Name = "ultraButton5";
-            this.ultraButton5.Size = new System.Drawing.Size(75, 19);
+            this.ultraButton5.Size = new System.Drawing.Size(100, 23);
             this.ultraButton5.TabIndex = 16;
             this.ultraButton5.Text = "Eliminar";
             this.ultraButton5.Visible = false;
             // 
             // ultraButton6
             // 
-            this.ultraButton6.Location = new System.Drawing.Point(491, 57);
-            this.ultraButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraButton6.Location = new System.Drawing.Point(655, 70);
+            this.ultraButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraButton6.Name = "ultraButton6";
-            this.ultraButton6.Size = new System.Drawing.Size(75, 19);
+            this.ultraButton6.Size = new System.Drawing.Size(100, 23);
             this.ultraButton6.TabIndex = 15;
             this.ultraButton6.Text = "Añadir";
             this.ultraButton6.Visible = false;
             // 
             // btnEliminarCG
             // 
-            this.btnEliminarCG.Location = new System.Drawing.Point(545, 2);
-            this.btnEliminarCG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarCG.Location = new System.Drawing.Point(727, 2);
+            this.btnEliminarCG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarCG.Name = "btnEliminarCG";
-            this.btnEliminarCG.Size = new System.Drawing.Size(75, 19);
+            this.btnEliminarCG.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarCG.TabIndex = 14;
             this.btnEliminarCG.Text = "Eliminar";
             this.btnEliminarCG.Visible = false;
@@ -1590,20 +1593,20 @@ namespace His.Maintenance
             // 
             this.ultraComboEditor4.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend;
             this.ultraComboEditor4.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains;
-            this.ultraComboEditor4.Location = new System.Drawing.Point(138, 57);
-            this.ultraComboEditor4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraComboEditor4.Location = new System.Drawing.Point(184, 70);
+            this.ultraComboEditor4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraComboEditor4.Name = "ultraComboEditor4";
-            this.ultraComboEditor4.Size = new System.Drawing.Size(343, 21);
+            this.ultraComboEditor4.Size = new System.Drawing.Size(457, 24);
             this.ultraComboEditor4.TabIndex = 7;
             this.ultraComboEditor4.Visible = false;
             // 
             // ultraLabel7
             // 
             this.ultraLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ultraLabel7.Location = new System.Drawing.Point(2, 59);
-            this.ultraLabel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ultraLabel7.Location = new System.Drawing.Point(3, 73);
+            this.ultraLabel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ultraLabel7.Name = "ultraLabel7";
-            this.ultraLabel7.Size = new System.Drawing.Size(123, 16);
+            this.ultraLabel7.Size = new System.Drawing.Size(164, 20);
             this.ultraLabel7.TabIndex = 6;
             this.ultraLabel7.Text = "Opciones de Acceso*:";
             this.ultraLabel7.Visible = false;
@@ -1612,30 +1615,30 @@ namespace His.Maintenance
             // 
             this.txtNuevoCg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNuevoCg.Enabled = false;
-            this.txtNuevoCg.Location = new System.Drawing.Point(138, 3);
-            this.txtNuevoCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNuevoCg.Location = new System.Drawing.Point(184, 4);
+            this.txtNuevoCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNuevoCg.Name = "txtNuevoCg";
-            this.txtNuevoCg.Size = new System.Drawing.Size(324, 21);
+            this.txtNuevoCg.Size = new System.Drawing.Size(432, 24);
             this.txtNuevoCg.TabIndex = 5;
             this.txtNuevoCg.Visible = false;
             // 
             // lbNuevoCg
             // 
             this.lbNuevoCg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNuevoCg.Location = new System.Drawing.Point(2, 5);
-            this.lbNuevoCg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbNuevoCg.Location = new System.Drawing.Point(3, 6);
+            this.lbNuevoCg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbNuevoCg.Name = "lbNuevoCg";
-            this.lbNuevoCg.Size = new System.Drawing.Size(111, 16);
+            this.lbNuevoCg.Size = new System.Drawing.Size(148, 20);
             this.lbNuevoCg.TabIndex = 4;
             this.lbNuevoCg.Text = "Nombre del Perfil*:";
             this.lbNuevoCg.Visible = false;
             // 
             // btnGuardarCG
             // 
-            this.btnGuardarCG.Location = new System.Drawing.Point(466, 2);
-            this.btnGuardarCG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarCG.Location = new System.Drawing.Point(621, 2);
+            this.btnGuardarCG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarCG.Name = "btnGuardarCG";
-            this.btnGuardarCG.Size = new System.Drawing.Size(75, 19);
+            this.btnGuardarCG.Size = new System.Drawing.Size(100, 23);
             this.btnGuardarCG.TabIndex = 0;
             this.btnGuardarCG.Text = "Guardar";
             this.btnGuardarCG.Visible = false;
@@ -1653,8 +1656,8 @@ namespace His.Maintenance
             this.btnSalirCg});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(905, 35);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(1207, 43);
             this.toolStrip2.TabIndex = 85;
             this.toolStrip2.Text = "toolStrip1";
             this.toolStrip2.Visible = false;
@@ -1668,20 +1671,20 @@ namespace His.Maintenance
             this.btnNuevoCg.Image = global::His.Maintenance.Properties.Resources.Add2;
             this.btnNuevoCg.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevoCg.Name = "btnNuevoCg";
-            this.btnNuevoCg.Size = new System.Drawing.Size(37, 32);
+            this.btnNuevoCg.Size = new System.Drawing.Size(38, 40);
             this.btnNuevoCg.Text = "Nuevo";
             // 
             // nuevoPerfilToolStripMenuItem1
             // 
             this.nuevoPerfilToolStripMenuItem1.Name = "nuevoPerfilToolStripMenuItem1";
-            this.nuevoPerfilToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.nuevoPerfilToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
             this.nuevoPerfilToolStripMenuItem1.Text = "Nuevo Perfil";
             this.nuevoPerfilToolStripMenuItem1.Click += new System.EventHandler(this.nuevoPerfilToolStripMenuItem1_Click);
             // 
             // nuevoModuloToolStripMenuItem
             // 
             this.nuevoModuloToolStripMenuItem.Name = "nuevoModuloToolStripMenuItem";
-            this.nuevoModuloToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.nuevoModuloToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.nuevoModuloToolStripMenuItem.Text = "Nuevo Modulo";
             this.nuevoModuloToolStripMenuItem.Click += new System.EventHandler(this.nuevoModuloToolStripMenuItem_Click);
             // 
@@ -1714,7 +1717,7 @@ namespace His.Maintenance
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 35);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 43);
             // 
             // btnSalirCg
             // 
@@ -1739,12 +1742,12 @@ namespace His.Maintenance
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoAccesoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 28);
             // 
             // nuevoAccesoToolStripMenuItem
             // 
             this.nuevoAccesoToolStripMenuItem.Name = "nuevoAccesoToolStripMenuItem";
-            this.nuevoAccesoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.nuevoAccesoToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.nuevoAccesoToolStripMenuItem.Text = "Editar Modulo";
             this.nuevoAccesoToolStripMenuItem.Click += new System.EventHandler(this.nuevoAccesoToolStripMenuItem_Click);
             // 
@@ -1759,9 +1762,10 @@ namespace His.Maintenance
             this.ultraTabControl1.Controls.Add(this.ultraTabPageControl3);
             this.ultraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.ultraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ultraTabControl1.Name = "ultraTabControl1";
             this.ultraTabControl1.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.ultraTabControl1.Size = new System.Drawing.Size(907, 389);
+            this.ultraTabControl1.Size = new System.Drawing.Size(1209, 479);
             this.ultraTabControl1.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.VisualStudio2005;
             this.ultraTabControl1.TabIndex = 89;
             ultraTab1.TabPage = this.ultraTabPageControl1;
@@ -1779,8 +1783,9 @@ namespace His.Maintenance
             // ultraTabSharedControlsPage1
             // 
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabSharedControlsPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(905, 368);
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(1207, 457);
             // 
             // contextMenuStrip2
             // 
@@ -1788,12 +1793,12 @@ namespace His.Maintenance
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(150, 26);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(174, 28);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
             this.toolStripMenuItem1.Text = "Editar Modulo";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1803,12 +1808,12 @@ namespace His.Maintenance
             this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.contextMenuStrip3.Name = "contextMenuStrip1";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(150, 26);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(174, 28);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(173, 24);
             this.toolStripMenuItem2.Text = "Editar Modulo";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -1819,11 +1824,11 @@ namespace His.Maintenance
             // 
             // frmCreacionPerfiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 389);
+            this.ClientSize = new System.Drawing.Size(1209, 479);
             this.Controls.Add(this.ultraTabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCreacionPerfiles";
             this.Text = "Perfiles His-3000";
             this.Load += new System.EventHandler(this.frmCreacionPerfiles_Load);

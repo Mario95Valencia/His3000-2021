@@ -183,7 +183,7 @@ namespace His.Datos
 
                     throw;
                 }
-                
+
             }
         }
         //. Recupera la lista por defecto de pacientes
@@ -2212,16 +2212,16 @@ namespace His.Datos
 
             Sqlcmd.Parameters.Add("@PAC_DATOS_INCOMPLETOS", SqlDbType.Bit);
             Sqlcmd.Parameters["@PAC_DATOS_INCOMPLETOS"].Value = paciente.PAC_DATOS_INCOMPLETOS;
-            
+
             Sqlcmd.Parameters.Add("@PAC_ESTADO_NIVEDU", SqlDbType.Bit);
             Sqlcmd.Parameters["@PAC_ESTADO_NIVEDU"].Value = paciente.PAC_DATOS_INCOMPLETOS;
-            
+
             Sqlcmd.Parameters.Add("@PAC_TIP_EMPRESA", SqlDbType.Bit);
             Sqlcmd.Parameters["@PAC_TIP_EMPRESA"].Value = paciente.PAC_DATOS_INCOMPLETOS;
-            
+
             Sqlcmd.Parameters.Add("@PAC_SEG_SALUD", SqlDbType.Bit);
             Sqlcmd.Parameters["@PAC_SEG_SALUD"].Value = paciente.PAC_DATOS_INCOMPLETOS;
-            
+
             Sqlcmd.Parameters.Add("@PAC_TIP_BONO", SqlDbType.Bit);
             Sqlcmd.Parameters["@PAC_TIP_BONO"].Value = paciente.PAC_DATOS_INCOMPLETOS;
 
@@ -2263,7 +2263,7 @@ namespace His.Datos
                     ConexionEntidades.ConexionEDM.Close();
                     Console.WriteLine(ex.Message);
                 }
-                
+
             }
         }
 
@@ -2641,7 +2641,7 @@ namespace His.Datos
             }
         }
 
-        public PACIENTES recuperarPacientePorAtencion(int codAtencion)
+        public PACIENTES recuperarPacientePorAtencion(Int64 codAtencion)
         {
             using (var contexto = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
             {
@@ -2680,7 +2680,7 @@ namespace His.Datos
 
         }
 
-        public DataTable RecuperaResultadosImagen(Int32 ateCodigo)
+        public DataTable RecuperaResultadosImagen(Int64 ateCodigo)
         {
             BaseContextoDatos obj = new BaseContextoDatos();
             Sqlcon = obj.ConectarBd();

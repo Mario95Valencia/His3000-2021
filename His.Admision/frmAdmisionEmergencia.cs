@@ -8363,6 +8363,39 @@ namespace His.Admision
             if (txtPorcentageDA.Text.Trim() == "")
                 txtPorcentageDA.Text = "0";
         }
+
+        private void cb_etnia_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (int.TryParse(cb_etnia.SelectedValue.ToString(), out int codigoEtnia))
+            {
+                if (codigoEtnia == 15)
+                {
+                    cb_netnica.Enabled = true;
+                    //cb_pueblo.Enabled = true;
+                }
+                else
+                {
+                    cb_netnica.Enabled = false;
+                    cb_pueblo.Enabled = false;
+                    cb_pueblo.SelectedIndex = -1;
+                    cb_netnica.SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void cb_etnia_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == (GeneralPAR.TeclaTabular) || e.KeyCode == (Keys.Tab))
+            {
+                e.Handled = true;
+                SendKeys.SendWait("{TAB}");
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                cb_gruposanguineo.Focus();
+                //SendKeys.SendWait("{TAB}");
+            }
+        }
     }
 }
 
