@@ -543,8 +543,8 @@ namespace His.Datos
                 using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
                 {
                     var valor = (from p in db.PARAMETROS_DETALLE
-                            where p.PAD_CODIGO == codigo && p.PAD_ACTIVO == true
-                            select p).FirstOrDefault();
+                                 where p.PAD_CODIGO == codigo && p.PAD_ACTIVO == true
+                                 select p).FirstOrDefault();
                     val = Convert.ToInt64(valor.PAD_VALOR);
                     return val;
                 }
@@ -560,7 +560,17 @@ namespace His.Datos
             using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
             {
                 return (from le in db.LOGOS_EMPRESA
-                        where le.LEM_CODIGO == LEM_CODIGO select le).FirstOrDefault();
+                        where le.LEM_CODIGO == LEM_CODIGO
+                        select le).FirstOrDefault();
+            }
+        }
+        public TABLA17sri tablaIva()
+        {
+            using (var db = new HIS3000BDEntities(ConexionEntidades.ConexionEDM))
+            {
+                return (from t in db.TABLA17sri
+                        where t.ACTIVO == 1
+                        select t).FirstOrDefault();
             }
         }
     }

@@ -264,6 +264,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.detallePorAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalleCuentasAgrupadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleCopagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimir = new System.Windows.Forms.ToolStripSplitButton();
             this.estadoDeCuentaXFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -309,7 +310,6 @@
             this.dtsDesgloseFactura = new CuentaPaciente.dtsDesgloseFactura();
             this.datosFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datosCuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.detalleCopagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ultraTabPageControl3.SuspendLayout();
             this.gbxIdentificadores.SuspendLayout();
             this.ultraTabPageControl1.SuspendLayout();
@@ -2862,6 +2862,13 @@
             this.detalleCuentasAgrupadasToolStripMenuItem.Visible = false;
             this.detalleCuentasAgrupadasToolStripMenuItem.Click += new System.EventHandler(this.detalleCuentasAgrupadasToolStripMenuItem_Click);
             // 
+            // detalleCopagoToolStripMenuItem
+            // 
+            this.detalleCopagoToolStripMenuItem.Name = "detalleCopagoToolStripMenuItem";
+            this.detalleCopagoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.detalleCopagoToolStripMenuItem.Text = "Detalle Copago";
+            this.detalleCopagoToolStripMenuItem.Click += new System.EventHandler(this.detalleCopagoToolStripMenuItem_Click);
+            // 
             // btnImprimir
             // 
             this.btnImprimir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3290,18 +3297,11 @@
             this.datosCuentasBindingSource.DataMember = "DatosCuentas";
             this.datosCuentasBindingSource.DataSource = this.dtsDesgloseFactura;
             // 
-            // detalleCopagoToolStripMenuItem
-            // 
-            this.detalleCopagoToolStripMenuItem.Name = "detalleCopagoToolStripMenuItem";
-            this.detalleCopagoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.detalleCopagoToolStripMenuItem.Text = "Detalle Copago";
-            this.detalleCopagoToolStripMenuItem.Click += new System.EventHandler(this.detalleCopagoToolStripMenuItem_Click);
-            // 
             // frmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1716, 600);
+            this.ClientSize = new System.Drawing.Size(1716, 728);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.P_Gridfactura);
             this.Controls.Add(this.P_Factura);

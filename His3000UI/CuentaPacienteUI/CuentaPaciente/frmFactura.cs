@@ -410,6 +410,7 @@ namespace CuentaPaciente
             double totalIVA = 0;
             double descuentoFinal = 0;
             //CARGA CUENTA DE PACIENTE
+            TABLA17sri parametroIva = NegParametros.tablaIva();
             DataTable lista = new DataTable();
             if (VectorCodigoOK == "0")
             {
@@ -483,7 +484,7 @@ namespace CuentaPaciente
                             {
                                 //iva += ((Convert.ToDouble(lista.Rows[j]["CUE_VALOR_UNITARIO"].ToString()) * Convert.ToDouble(lista.Rows[j]["CUE_CANTIDAD"].ToString())) - Convert.ToDouble(lista.Rows[j]["DESCUENTO"].ToString())) * valorIva;
                                 totalIVA += (Convert.ToDouble(lista.Rows[j]["CUE_VALOR_UNITARIO"].ToString()) * Convert.ToDouble(lista.Rows[j]["CUE_CANTIDAD"].ToString())) - Convert.ToDouble(lista.Rows[j]["DESCUENTO"].ToString());
-                                iva = totalIVA * 0.12;
+                                iva = totalIVA * (double)parametroIva.PORCENTAJE;
                             }
                             else
                             {
@@ -2153,7 +2154,6 @@ namespace CuentaPaciente
                     {
                         txtfacturaelectronica.AppendText("      <campoAdicional nombre=\"Factura\">Copago</campoAdicional>\r\n");
                     }
-
                     txtfacturaelectronica.AppendText("      <campoAdicional nombre=\"Teléfono Clínica\">" + Empresa.Rows[0]["telefono"].ToString() + "</campoAdicional>\r\n");
 
                     if (Parametros.Rows[1][4].ToString() == "2")
@@ -4212,6 +4212,8 @@ namespace CuentaPaciente
             FacturaSic3000.GrupoCliente = false;
             FacturaSic3000.EmpId = 0;
             FacturaSic3000.ConvId = 0;
+            TABLA17sri tiva = NegParametros.tablaIva();
+            FacturaSic3000.porcentajeIva = (decimal)tiva.PORCENTAJE;
 
 
             if (dgvDivideFactura.Rows.Count > 0)
@@ -5679,6 +5681,12 @@ namespace CuentaPaciente
 
         private void btnAuditaCuenta_Click(object sender, EventArgs e)
         {
+            COPAGO copor = NegCopago.recuperaCopago(Convert.ToInt64(txt_Atencion.Text));
+            if (copor == null)
+            {
+                MessageBox.Show("No se puede revertir el estado de una atencion Copago", "His3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (Convert.ToDouble(txt_Descuento.Text) > 0)
             {
                 DialogResult result = MessageBox.Show("La siguiente acciòn eliminara los descuentos ingresados y habilitara la cuenta en el módulo de habitaciones. Desea continuar?", "His3000", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -6758,7 +6766,7 @@ namespace CuentaPaciente
                 dr["Cantidad"] = item.CANTIDAD;
                 dr["unitario"] = item.VALOR_UNITARIO;
                 dr["iva"] = item.IVA;
-                dr["valor"] = item.TOTAL;
+                dr["valor"] = item.PRO_CODIGO;
                 dr["total"] = item.TOTAL;
 
                 DtoReporteCopago roriginal = original.FirstOrDefault(o => o.PRO_CODIGO == item.PRO_CODIGO);

@@ -38,12 +38,13 @@ namespace His.Negocio
         public static double ParametroIva()
         {
             return new DatParametros().ParametroIva();
-        }public static decimal ProductoPagaIVA( Int64 codPro)
+        }
+        public static decimal ProductoPagaIVA(Int64 codPro)
         {
             return new DatParametros().ProductoPagaIVA(codPro);
         }
 
-        public static  bool ParametroDevolucionBienes()
+        public static bool ParametroDevolucionBienes()
         {
             return new DatParametros().ParametroDevolucionBienes();
         }
@@ -59,7 +60,7 @@ namespace His.Negocio
         {
             return new DatParametros().ParametroHabitacionDefault();
         }
-        public static bool ParametroAdmisionAcceso() 
+        public static bool ParametroAdmisionAcceso()
         {
             return new DatParametros().ParametroAdmisionAcceso();
         }
@@ -95,6 +96,10 @@ namespace His.Negocio
         public static LOGOS_EMPRESA logosEmpresa(Int64 LEM_CODIGO)
         {
             return new DatParametros().logosEmpresa(LEM_CODIGO);
+        }
+        public static TABLA17sri tablaIva()
+        {
+            return new DatParametros().tablaIva();
         }
     }
 }

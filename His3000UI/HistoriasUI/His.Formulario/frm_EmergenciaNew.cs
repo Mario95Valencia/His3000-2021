@@ -4313,8 +4313,8 @@ namespace His.Emergencia
             {
                 dr["Pueblo"] = "N/A";
             }
-            dr["Informacion"] = !string.IsNullOrEmpty(atencionActual.ATE_FUENTE_INFORMACION.Trim()) ? atencionActual.ATE_FUENTE_INFORMACION.Trim() : "N/A";
-            dr["Telefono2"] = !string.IsNullOrEmpty(atencionActual.ATE_INSTITUCION_TELEFONO.Trim()) ? atencionActual.ATE_INSTITUCION_TELEFONO.Trim() : "N/A";
+            dr["Informacion"] = !string.IsNullOrEmpty(atencionActual.ATE_FUENTE_INFORMACION) ? atencionActual.ATE_FUENTE_INFORMACION.Trim() : "N/A";
+            dr["Telefono2"] = !string.IsNullOrEmpty(atencionActual.ATE_INSTITUCION_TELEFONO) ? atencionActual.ATE_INSTITUCION_TELEFONO.Trim() : "N/A";
             #endregion
 
             #region 2) INICIO DE ATENCION

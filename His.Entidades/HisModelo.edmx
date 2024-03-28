@@ -2037,7 +2037,7 @@ advertencia 6002: La tabla o vista 'His3000.dbo.HC_INGESTA_ELIMINACION_DETALLE' 
           <Property Name="HID_ESTADO" Type="bit" />
           <Property Name="ID_USUARIO" Type="smallint" />
           <Property Name="HID_TIPO" Type="char" MaxLength="1" />
-          <Property Name="HID_DIAGNOSTICO" Type="varchar" MaxLength="100" />
+          <Property Name="HID_DIAGNOSTICO" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="HC_LABORATORIO_CLINICO">
           <Key>
@@ -3364,6 +3364,16 @@ advertencia 6002: La tabla o vista 'His3000.dbo.SUCURSALES' no tiene definida ni
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TABLA17sri">
+          <Key>
+            <PropertyRef Name="COD_TABLA17" />
+          </Key>
+          <Property Name="COD_TABLA17" Type="int" Nullable="false" />
+          <Property Name="PORCENTAJE" Type="decimal" Precision="2" Scale="2" />
+          <Property Name="CODIGO" Type="int" />
+          <Property Name="ACTIVO" Type="int" />
+          <Property Name="TARIFA" Type="int" />
         </EntityType>
         <EntityType Name="TARIFARIO_IESS">
           <Key>
@@ -6312,6 +6322,7 @@ advertencia 6037: La restricción de clave externa 'FK_NOTAS_CR_REFERENCE_TIPO_D
           <EntitySet Name="RUBROS" EntityType="Self.RUBROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIGNOSVITALES_CONSULTAEXTERNA" EntityType="Self.SIGNOSVITALES_CONSULTAEXTERNA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLA17sri" EntityType="Self.TABLA17sri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TARIFARIO_IESS" EntityType="Self.TARIFARIO_IESS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TARIFARIOS" EntityType="Self.TARIFARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TARIFARIOS_DETALLE" EntityType="Self.TARIFARIOS_DETALLE" Schema="dbo" store:Type="Tables" />
@@ -8486,6 +8497,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <EntitySet Name="SIGNOSVITALES_CONSULTAEXTERNA" EntityType="HIS3000BDModel.SIGNOSVITALES_CONSULTAEXTERNA" />
           <EntitySet Name="COPAGO" EntityType="HIS3000BDModel.COPAGO" />
           <EntitySet Name="CUENTAS_PACIENTES_COPAGO" EntityType="HIS3000BDModel.CUENTAS_PACIENTES_COPAGO" />
+          <EntitySet Name="TABLA17sri" EntityType="HIS3000BDModel.TABLA17sri" />
           </EntityContainer>
 				<EntityType Name="ACCESO_OPCIONES">
 					<Key>
@@ -10354,7 +10366,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
 					<Property Name="HID_ESTADO" Type="Boolean" Nullable="true" />
 					<Property Name="ID_USUARIO" Type="Int16" Nullable="true" />
 					<Property Name="HID_TIPO" Type="String" Nullable="true" MaxLength="1" Unicode="false" FixedLength="true" />
-					<Property Name="HID_DIAGNOSTICO" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+					<Property Name="HID_DIAGNOSTICO" Type="String" Nullable="true" MaxLength="1000" Unicode="false" FixedLength="false" />
 					<Property Name="HID_CODIGO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="HC_INTERCONSULTA" Relationship="HIS3000BDModel.FK_HC_INTERCONSULTA_DIAGNOSTICO_HC_INTERCONSULTA" FromRole="HC_INTERCONSULTA_DIAGNOSTICO" ToRole="HC_INTERCONSULTA" />
 				</EntityType>
@@ -13329,6 +13341,16 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
           <Property Name="PorDescuento" Type="Double" Nullable="false" />
           <Property Name="USUARIO_FACTURA" Type="Int32" Nullable="false" />
           <Property Name="FECHA_FACTURA" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TABLA17sri">
+          <Key>
+            <PropertyRef Name="COD_TABLA17" />
+          </Key>
+          <Property Name="COD_TABLA17" Type="Int32" Nullable="false" />
+          <Property Name="PORCENTAJE" Type="Decimal" Precision="2" Scale="2" />
+          <Property Name="CODIGO" Type="Int32" />
+          <Property Name="ACTIVO" Type="Int32" />
+          <Property Name="TARIFA" Type="Int32" />
         </EntityType>
         </Schema>
 		</edmx:ConceptualModels>
@@ -18920,6 +18942,17 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TABLA17sri">
+            <EntityTypeMapping TypeName="HIS3000BDModel.TABLA17sri">
+              <MappingFragment StoreEntitySet="TABLA17sri">
+                <ScalarProperty Name="TARIFA" ColumnName="TARIFA" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="PORCENTAJE" ColumnName="PORCENTAJE" />
+                <ScalarProperty Name="COD_TABLA17" ColumnName="COD_TABLA17" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
 			</Mapping>
 		</edmx:Mappings>
@@ -20426,6 +20459,7 @@ FROM [dbo].[Vista_HonorariosCxE] AS [Vista_HonorariosCxE]</DefiningQuery>
         <EntityTypeShape EntityType="HIS3000BDModel.SIGNOSVITALES_CONSULTAEXTERNA" Width="1.5" PointX="25.375" PointY="37.75" />
         <EntityTypeShape EntityType="HIS3000BDModel.COPAGO" Width="1.5" PointX="27.375" PointY="36.75" />
         <EntityTypeShape EntityType="HIS3000BDModel.CUENTAS_PACIENTES_COPAGO" Width="1.5" PointX="42.375" PointY="27.75" />
+        <EntityTypeShape EntityType="HIS3000BDModel.TABLA17sri" Width="1.5" PointX="30.375" PointY="41.75" />
 			</Diagram>
 		</edmx:Diagrams>
 	</edmx:Designer>

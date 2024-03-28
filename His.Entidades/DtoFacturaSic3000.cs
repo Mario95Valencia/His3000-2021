@@ -64,6 +64,7 @@ namespace His.Entidades
         public Boolean GrupoCliente { get; set; }
         public Int32 EmpId { get; set; }
         public Int32 ConvId { get; set; }
+        public decimal porcentajeIva { get; set; }
         public List<DtoFacturaDetalleSic3000> DetalleFactura { get; set; }
     }
 }
