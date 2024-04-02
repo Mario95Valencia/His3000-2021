@@ -495,6 +495,9 @@ namespace His.Datos
                 Sqlcmd.Parameters.Add("@tipoIdentificacion", SqlDbType.NVarChar);
                 Sqlcmd.Parameters["@tipoIdentificacion"].Value = (identificador);
 
+                Sqlcmd.Parameters.Add("@porcentajeIva", SqlDbType.Float);
+                Sqlcmd.Parameters["@porcentajeIva"].Value = (Factura.porcentajeIva);
+
                 Sqldap = new SqlDataAdapter();
                 Sqlcmd.CommandTimeout = 180; //ESTABLECE EL TIEMPO MAXIMO DE ESPERA A UNA CONSULTA EN EL SERVIDOR EN SEGUNDOS/ GIOVANNY TAPIA /03/07/2012
                 Sqldap.SelectCommand = Sqlcmd;

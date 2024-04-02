@@ -411,6 +411,15 @@ namespace CuentaPaciente
             double descuentoFinal = 0;
             //CARGA CUENTA DE PACIENTE
             TABLA17sri parametroIva = NegParametros.tablaIva();
+            ATENCIONES atencion = NegAtenciones.RecuperarAtencionID(ultimaAtencion.ATE_CODIGO);
+            if (atencion.ESC_CODIGO == 6)
+            {
+                DataTable df = NegFactura.FacturaDetalleAgrupado(atencion.ATE_FACTURA_PACIENTE);
+                if (df.Rows[0]["porcentajeIva"].ToString() == "12")
+                {
+                    parametroIva.PORCENTAJE = (decimal?)0.12;
+                }
+            }
             DataTable lista = new DataTable();
             if (VectorCodigoOK == "0")
             {
@@ -3963,7 +3972,8 @@ namespace CuentaPaciente
                 DetalleFactura.cajero = Convert.ToInt16(CodigoNominaUsuario);
                 DetalleFactura.candev = 0;
                 DetalleFactura.encero = "0";
-                DetalleFactura.porcentajeIva = 12;
+                TABLA17sri tiva = NegParametros.tablaIva();
+                DetalleFactura.porcentajeIva = (decimal)tiva.PORCENTAJE;
                 DetalleFactura.descuento = Math.Round(descuentoConIva, 2);
                 ListaDetalleFactura.Add(DetalleFactura);
                 DetalleFactura = null;
@@ -4030,7 +4040,8 @@ namespace CuentaPaciente
                 DetalleFactura.cajero = Convert.ToInt16(CodigoNominaUsuario);
                 DetalleFactura.candev = 0;
                 DetalleFactura.encero = "0";
-                DetalleFactura.porcentajeIva = 12;
+                TABLA17sri tiva = NegParametros.tablaIva();
+                DetalleFactura.porcentajeIva = (decimal)tiva.PORCENTAJE;
                 DetalleFactura.descuento = Math.Round(Convert.ToDecimal(gridDetalleFactura.Rows[i].Cells["DESCUENTO"].Value.ToString()), 2);
                 ListaDetalleFactura.Add(DetalleFactura);
                 DetalleFactura = null;
@@ -4066,7 +4077,8 @@ namespace CuentaPaciente
                 DetalleFactura.cajero = Convert.ToInt16(CodigoNominaUsuario);
                 DetalleFactura.candev = 0;
                 DetalleFactura.encero = "0";
-                DetalleFactura.porcentajeIva = 12;
+                TABLA17sri tiva = NegParametros.tablaIva();
+                DetalleFactura.porcentajeIva = (decimal)tiva.PORCENTAJE;
                 DetalleFactura.descuento = Math.Round(Convert.ToDecimal(gridDetalleFactura.Rows[i].Cells["DESCUENTO"].Value.ToString()), 2);
                 ListaDetalleFactura.Add(DetalleFactura);
                 DetalleFactura = null;
@@ -5682,7 +5694,7 @@ namespace CuentaPaciente
         private void btnAuditaCuenta_Click(object sender, EventArgs e)
         {
             COPAGO copor = NegCopago.recuperaCopago(Convert.ToInt64(txt_Atencion.Text));
-            if (copor == null)
+            if (copor != null)
             {
                 MessageBox.Show("No se puede revertir el estado de una atencion Copago", "His3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
